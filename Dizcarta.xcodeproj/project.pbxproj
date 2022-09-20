@@ -16,6 +16,7 @@
 		1555381428D8E3DD00CA5573 /* DizcartaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381328D8E3DD00CA5573 /* DizcartaTests.swift */; };
 		1555381E28D8E3DD00CA5573 /* DizcartaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */; };
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
+		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1555381928D8E3DD00CA5573 /* DizcartaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DizcartaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITests.swift; sourceTree = "<group>"; };
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		155537FB28D8E3DA00CA5573 /* Dizcarta */ = {
 			isa = PBXGroup;
 			children = (
+				238DF94F28DA509900F9A23B /* README.md */,
 				238DF94828DA387100F9A23B /* Core */,
 				238DF94728DA383D00F9A23B /* Persistence */,
 				238DF94628DA383000F9A23B /* Screens */,
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */,
 			);
