@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		155537FD28D8E3DA00CA5573 /* DizcartaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FC28D8E3DA00CA5573 /* DizcartaApp.swift */; };
-		155537FF28D8E3DA00CA5573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FE28D8E3DA00CA5573 /* ContentView.swift */; };
+		155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FC28D8E3DA00CA5573 /* AppCore.swift */; };
+		155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FE28D8E3DA00CA5573 /* HomeView.swift */; };
 		1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1555380028D8E3DC00CA5573 /* Assets.xcassets */; };
 		1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1555380328D8E3DC00CA5573 /* Preview Assets.xcassets */; };
-		1555380628D8E3DC00CA5573 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555380528D8E3DC00CA5573 /* Persistence.swift */; };
+		1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555380528D8E3DC00CA5573 /* PersistenceController.swift */; };
 		1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1555380728D8E3DC00CA5573 /* Dizcarta.xcdatamodeld */; };
 		1555381428D8E3DD00CA5573 /* DizcartaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381328D8E3DD00CA5573 /* DizcartaTests.swift */; };
 		1555381E28D8E3DD00CA5573 /* DizcartaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */; };
@@ -37,11 +37,11 @@
 
 /* Begin PBXFileReference section */
 		155537F928D8E3DA00CA5573 /* Dizcarta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dizcarta.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		155537FC28D8E3DA00CA5573 /* DizcartaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaApp.swift; sourceTree = "<group>"; };
-		155537FE28D8E3DA00CA5573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		155537FC28D8E3DA00CA5573 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
+		155537FE28D8E3DA00CA5573 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1555380028D8E3DC00CA5573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1555380328D8E3DC00CA5573 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1555380528D8E3DC00CA5573 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1555380528D8E3DC00CA5573 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		1555380828D8E3DC00CA5573 /* Dizcarta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dizcarta.xcdatamodel; sourceTree = "<group>"; };
 		1555380A28D8E3DC00CA5573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1555380F28D8E3DD00CA5573 /* DizcartaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DizcartaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,12 +99,11 @@
 		155537FB28D8E3DA00CA5573 /* Dizcarta */ = {
 			isa = PBXGroup;
 			children = (
-				155537FC28D8E3DA00CA5573 /* DizcartaApp.swift */,
-				155537FE28D8E3DA00CA5573 /* ContentView.swift */,
+				238DF94828DA387100F9A23B /* Core */,
+				238DF94728DA383D00F9A23B /* Persistence */,
+				238DF94628DA383000F9A23B /* Screens */,
 				1555380028D8E3DC00CA5573 /* Assets.xcassets */,
-				1555380528D8E3DC00CA5573 /* Persistence.swift */,
 				1555380A28D8E3DC00CA5573 /* Info.plist */,
-				1555380728D8E3DC00CA5573 /* Dizcarta.xcdatamodeld */,
 				1555380228D8E3DC00CA5573 /* Preview Content */,
 			);
 			path = Dizcarta;
@@ -133,6 +132,47 @@
 				1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */,
 			);
 			path = DizcartaUITests;
+			sourceTree = "<group>";
+		};
+		238DF94628DA383000F9A23B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				238DF94928DA397000F9A23B /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		238DF94728DA383D00F9A23B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				1555380728D8E3DC00CA5573 /* Dizcarta.xcdatamodeld */,
+				1555380528D8E3DC00CA5573 /* PersistenceController.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		238DF94828DA387100F9A23B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				155537FC28D8E3DA00CA5573 /* AppCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		238DF94928DA397000F9A23B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				238DF94A28DA398100F9A23B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		238DF94A28DA398100F9A23B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				155537FE28D8E3DA00CA5573 /* HomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1555380628D8E3DC00CA5573 /* Persistence.swift in Sources */,
-				155537FF28D8E3DA00CA5573 /* ContentView.swift in Sources */,
-				155537FD28D8E3DA00CA5573 /* DizcartaApp.swift in Sources */,
+				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
+				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
+				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,11 +470,15 @@
 				DEVELOPMENT_TEAM = 3753BCYQD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Dizcarta;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,9 +486,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipeb.Dizcarta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,11 +506,15 @@
 				DEVELOPMENT_TEAM = 3753BCYQD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Dizcarta;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,9 +522,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipeb.Dizcarta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
