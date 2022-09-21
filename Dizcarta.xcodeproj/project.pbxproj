@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155277E328DB915C003F83EF /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E228DB915C003F83EF /* PlayerListView.swift */; };
 		155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FC28D8E3DA00CA5573 /* AppCore.swift */; };
 		155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FE28D8E3DA00CA5573 /* HomeView.swift */; };
 		1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1555380028D8E3DC00CA5573 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		155277E228DB915C003F83EF /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		155537F928D8E3DA00CA5573 /* Dizcarta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dizcarta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155537FC28D8E3DA00CA5573 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		155537FE28D8E3DA00CA5573 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155277E028DB9137003F83EF /* PlayerList */ = {
+			isa = PBXGroup;
+			children = (
+				155277E128DB914A003F83EF /* View */,
+			);
+			path = PlayerList;
+			sourceTree = "<group>";
+		};
+		155277E128DB914A003F83EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				155277E228DB915C003F83EF /* PlayerListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		155537F028D8E3DA00CA5573 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +160,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				155277E028DB9137003F83EF /* PlayerList */,
 				238DF94928DA397000F9A23B /* Home */,
 			);
 			path = Screens;
@@ -329,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
+				155277E328DB915C003F83EF /* PlayerListView.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
