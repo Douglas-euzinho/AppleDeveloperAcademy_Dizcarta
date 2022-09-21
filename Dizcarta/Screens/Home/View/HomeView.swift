@@ -11,8 +11,47 @@ import CoreData
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            EmptyView()
+            VStack{
+                Rectangle()
+                    .frame(width: 352, height: 156, alignment: .center)
+                    .padding(25)
+                
+                VStack{
+                    Button {
+                        
+                    } label: {
+                        CreateButtons{
+                            Image(systemName: "play.fill")
+                            Text("Jogar")
+                        }
+                        .tint(.black)
+                    }
+                    .padding(15)
+                    
+                    Button {
+                        
+                    } label: {
+                        CreateButtons{
+                            Image(systemName: "gearshape.fill")
+                            Text("Configurações")
+                        }
+                        .tint(.black)
+                    }
+                    .padding(15)
+                    Button {
+                        
+                    } label: {
+                        CreateButtons{
+                            Image(systemName: "clock")
+                            Text("histórico")
+                        }
+                        .padding(15)
+                    }
+                   .tint(.black)
+                }
+            }
         }
+        .ignoresSafeArea(.all)
     }
 }
 
