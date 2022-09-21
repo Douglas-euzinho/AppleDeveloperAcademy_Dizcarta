@@ -17,6 +17,7 @@
 		1555381E28D8E3DD00CA5573 /* DizcartaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */; };
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
+		CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITests.swift; sourceTree = "<group>"; };
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		238DF94A28DA398100F9A23B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD0FC89428DA76EC00C0C6F8 /* Shared */,
 				155537FE28D8E3DA00CA5573 /* HomeView.swift */,
 			);
 			path = View;
@@ -184,6 +187,14 @@
 			children = (
 			);
 			path = DesignSystems;
+			sourceTree = "<group>";
+		};
+		CD0FC89428DA76EC00C0C6F8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 			files = (
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
+				CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 			);
