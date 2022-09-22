@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
+  @State var isPlayerListView = false
+  
     var body: some View {
         NavigationView {
             VStack{
@@ -16,9 +18,10 @@ struct HomeView: View {
                     .frame(width: 352, height: 156, alignment: .center)
                     .padding(25)
                 
-                VStack{
+                VStack {
+                  NavigationLink(destination: PlayerListView(), isActive: $isPlayerListView) {
                     Button {
-                        
+                      self.isPlayerListView = true
                     } label: {
                         CreateButtons{
                             Image(systemName: "play.fill")
@@ -27,6 +30,7 @@ struct HomeView: View {
                         .tint(.black)
                     }
                     .padding(15)
+                  }
                     
                     Button {
                         
