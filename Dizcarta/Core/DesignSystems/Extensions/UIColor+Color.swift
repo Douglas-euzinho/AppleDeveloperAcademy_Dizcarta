@@ -15,5 +15,5 @@ extension Color {
   public static let avatarColorYellow: Color = Color(UIColor(named: "avatarColorYellow") ?? .black)
   public static let avatarColorBlue: Color = Color(UIColor(named: "avatarColorBlue") ?? .black)
   public static let avatarColorPatina: Color = Color(UIColor(named: "avatarColorPatina") ?? .black)
-
+public static let backGroundPickerColor: Color = Color(UIColor(named: "backGroundPickerColor") ?? .black)
 }

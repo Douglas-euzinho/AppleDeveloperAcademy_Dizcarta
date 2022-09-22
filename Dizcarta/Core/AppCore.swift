@@ -11,7 +11,7 @@ import SwiftUI
 struct AppCore: App {
     var body: some Scene {
         WindowGroup {
-            PickColorView()
+            HomeView()
         }
     }
 }
