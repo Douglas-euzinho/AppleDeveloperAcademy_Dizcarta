@@ -13,45 +13,32 @@ struct HomeView: View {
   
     var body: some View {
         NavigationView {
-            VStack{
-                Rectangle()
-                    .frame(width: 352, height: 156, alignment: .center)
-                    .padding(25)
-                
+            Group {
                 VStack {
-                  NavigationLink(destination: PlayerListView(), isActive: $isPlayerListView) {
-                    Button {
-                      self.isPlayerListView = true
-                    } label: {
-                        CreateButtons{
-                            Image(systemName: "play.fill")
-                            Text("Jogar")
+                    Rectangle()
+                        .frame(width: 352, height: 156, alignment: .center)
+                        .padding(25)
+                    VStack {
+                        Button {
+                            
+                        } label: {
+                            CreateButtons(label: "Jogar", image: "PlayButtonHome")
                         }
-                        .tint(.black)
-                    }
-                    .padding(15)
-                  }
-                    
-                    Button {
+                        .padding(15)
                         
-                    } label: {
-                        CreateButtons{
-                            Image(systemName: "gearshape.fill")
-                            Text("Configurações")
+                        Button {
+                            
+                        } label: {
+                            CreateButtons(label: "Configurações", image: "ConfigButtonHome")
                         }
-                        .tint(.black)
-                    }
-                    .padding(15)
-                    Button {
-                        
-                    } label: {
-                        CreateButtons{
-                            Image(systemName: "clock")
-                            Text("histórico")
+                        .padding(15)
+                        Button {
+                            
+                        } label: {
+                            CreateButtons(label: "Histórico", image: "HistoryButtonHome")
                         }
                         .padding(15)
                     }
-                   .tint(.black)
                 }
             }
         }

@@ -7,31 +7,43 @@
 
 import SwiftUI
 
-struct CreateButtons<Content>: View where Content: View {
-    var label: Content
-    var retangle: Content
+struct CreateButtons: View {
+    
+    var label: String?
+    var color: String?
+    var image: String?
 
-#warning("fix this bug attribution")
-    init(@ViewBuilder content: () -> Content) {
-        self.label = content()
-        self.retangle = content()
+    init(label: String? = nil, color: String? = nil, image: String? = nil) {
+        self.label = label
+        self.color = color
+        self.image = image
     }
-
+    
     var body: some View {
-        Group {
-            ZStack{
-                retangle
-                Rectangle()
-                    .frame(width: 189, height: 111, alignment: .center)
-                    .cornerRadius(20)
-                
-                VStack{
-                    label
-                        .font(.custom("macrofont", size: 25))
-                        .padding(5)
-                        .foregroundColor(.white)
+        VStack {
+            Rectangle()
+                .frame(minWidth: 110, maxWidth: 180, minHeight: 30, maxHeight: 110)
+                .cornerRadius(20)
+                .foregroundColor(.black)
+                .overlay {
+                    VStack {
+                        if image?.isEmpty == false {
+                            Spacer(minLength: 10)
+                            checkIfImageExist(name: image!)
+                                .frame(width: 41, height: 38)
+                        }
+                        Text(self.label ?? "")
+                            .font(.custom("macrofont", size: 35))
+                            .minimumScaleFactor(0.01)
+                            .padding(5)
+                            .foregroundColor(.white)
+                    }
                 }
-            }
         }
+    }
+    
+    func checkIfImageExist(name: String) -> Image {
+        let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
+        return Image(uiImage: uiImage)
     }
 }
