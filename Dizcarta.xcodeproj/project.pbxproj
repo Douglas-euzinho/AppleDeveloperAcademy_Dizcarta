@@ -150,7 +150,6 @@
 				155277E828DBB343003F83EF /* PlayerView.swift */,
 			);
 			path = Player;
-
 		155277EA28DC76CF003F83EF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +265,6 @@
 		3606A1F128DA5486004C9BF9 /* DesignSystems */ = {
 			isa = PBXGroup;
 			children = (
-				155277E728DBB32B003F83EF /* Player */,
 				155277EA28DC76CF003F83EF /* Extensions */,
 			);
 			path = DesignSystems;
@@ -414,7 +412,6 @@
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				155277E328DB915C003F83EF /* PlayerListView.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
-				155277E928DBB343003F83EF /* PlayerView.swift in Sources */,
 				CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */,
 				155277F128DC7C83003F83EF /* BackCard.swift in Sources */,
 				155277F528DC8011003F83EF /* FrontCard.swift in Sources */,
