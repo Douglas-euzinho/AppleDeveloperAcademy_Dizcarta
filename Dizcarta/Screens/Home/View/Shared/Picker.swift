@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Picker: View {
     @Binding var selectedColor: Color
-    private let colors: [Color] = [.red, .yellow, .orange, .purple, .black, .green]
+    private let colors: [Color] = [.avatarColorPurple, .avatarColorGreen, .avatarColorCopperRose, .avatarColorYellow, .avatarColorBlue, .avatarColorPatina]
     
     var body: some View {
         HStack{

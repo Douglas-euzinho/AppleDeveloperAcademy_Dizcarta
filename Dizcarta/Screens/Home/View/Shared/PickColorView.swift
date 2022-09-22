@@ -10,7 +10,7 @@ import SwiftUI
 struct PickColorView: View {
     @State private var text: String = ""
     @State private var color: Color = Color.black
-    @State private var selectedColor: Color = .blue
+    @State private var selectedColor: Color = .avatarColorYellow
 
     var body: some View {
         VStack{
@@ -18,7 +18,7 @@ struct PickColorView: View {
                 Rectangle()
                     .frame(width: 318, height: 350, alignment: .center)
                     .cornerRadius(20)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.backGroundPickerColor)
                 
                 Circle()
                     .frame(width: 80, height: 80, alignment: .center)
@@ -35,7 +35,7 @@ struct PickColorView: View {
                 .frame(width: 240, height: 20)
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 13)
-                    .stroke(color, lineWidth: 2))
+                    .stroke(color, lineWidth: 1))
                 .padding(65)
                 .padding(.top, -75)
                 
