@@ -25,6 +25,8 @@
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */; };
+		CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B76F28DB900A007CF236 /* PickColorView.swift */; };
+		CD70B77228DCF295007CF236 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B77128DCF295007CF236 /* Picker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
+		CD70B76F28DB900A007CF236 /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickColorView.swift; path = Dizcarta/Screens/Home/View/Shared/PickColorView.swift; sourceTree = SOURCE_ROOT; };
+		CD70B77128DCF295007CF236 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Dizcarta/Screens/Home/View/Shared/Picker.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				155277F828DCE60C003F83EF /* Player */,
+				CD70B76F28DB900A007CF236 /* PickColorView.swift */,
+				CD70B77128DCF295007CF236 /* Picker.swift */,
 				155277EA28DC76CF003F83EF /* Extensions */,
 			);
 			path = DesignSystems;
@@ -410,12 +416,14 @@
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,
+				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
 				CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
 				155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				155277EC28DC76E4003F83EF /* UIColor+Color.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
+				CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */,
 				155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
