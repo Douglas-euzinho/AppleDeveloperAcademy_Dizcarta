@@ -10,6 +10,7 @@
 		155277E328DB915C003F83EF /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E228DB915C003F83EF /* PlayerListView.swift */; };
 		155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E528DB9DAB003F83EF /* ProgressBarView.swift */; };
 		155277F128DC7C83003F83EF /* BackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277F028DC7C83003F83EF /* BackCard.swift */; };
+		155277F528DC8011003F83EF /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277F428DC8011003F83EF /* FrontCard.swift */; };
 		155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FC28D8E3DA00CA5573 /* AppCore.swift */; };
 		155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155537FE28D8E3DA00CA5573 /* HomeView.swift */; };
 		1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1555380028D8E3DC00CA5573 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		155277E228DB915C003F83EF /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		155277E528DB9DAB003F83EF /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		155277F028DC7C83003F83EF /* BackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackCard.swift; sourceTree = "<group>"; };
+		155277F428DC8011003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
 		155537F928D8E3DA00CA5573 /* Dizcarta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dizcarta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155537FC28D8E3DA00CA5573 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		155537FE28D8E3DA00CA5573 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				155277F028DC7C83003F83EF /* BackCard.swift */,
+				155277F428DC8011003F83EF /* FrontCard.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */,
 				155277F128DC7C83003F83EF /* BackCard.swift in Sources */,
+				155277F528DC8011003F83EF /* FrontCard.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 				155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */,
