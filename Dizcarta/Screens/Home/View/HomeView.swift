@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
+  @State var isPlayerListView = false
+  
     var body: some View {
         NavigationView {
             Group {
