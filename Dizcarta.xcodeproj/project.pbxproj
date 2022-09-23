@@ -22,9 +22,12 @@
 		1555381428D8E3DD00CA5573 /* DizcartaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381328D8E3DD00CA5573 /* DizcartaTests.swift */; };
 		1555381E28D8E3DD00CA5573 /* DizcartaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */; };
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
+<<<<<<< HEAD
 		15D50F2B28DE2F620037104E /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D50F2A28DE2F620037104E /* PlayerView.swift */; };
 		15D50F2F28DE31440037104E /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D50F2E28DE31440037104E /* ConfigurationsView.swift */; };
 		15D50F3228DE33460037104E /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D50F3128DE33460037104E /* ConfigButton.swift */; };
+		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
+		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		3663D36228DCFB00001F0FE3 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
@@ -69,9 +72,12 @@
 		1555381928D8E3DD00CA5573 /* DizcartaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DizcartaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITests.swift; sourceTree = "<group>"; };
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		15D50F2A28DE2F620037104E /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		15D50F2E28DE31440037104E /* ConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		15D50F3128DE33460037104E /* ConfigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
+		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
@@ -253,6 +259,21 @@
 				15D50F2D28DE31350037104E /* Shared */,
 			);
 			path = View;
+		23199ECF28DE239B0064E574 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				23199ED028DE23A90064E574 /* PlayerRepository */,
+				23199ED128DE23DF0064E574 /* Repository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		23199ED028DE23A90064E574 /* PlayerRepository */ = {
+			isa = PBXGroup;
+			children = (
+				23199ED328DE24C20064E574 /* PlayerRepository.swift */,
+			);
+			path = PlayerRepository;
 			sourceTree = "<group>";
 		};
 		238DF94628DA383000F9A23B /* Screens */ = {
@@ -269,6 +290,7 @@
 		238DF94728DA383D00F9A23B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				23199ECF28DE239B0064E574 /* Repositories */,
 				1555380728D8E3DC00CA5573 /* Dizcarta.xcdatamodeld */,
 				1555380528D8E3DC00CA5573 /* PersistenceController.swift */,
 			);
@@ -446,6 +468,7 @@
 			files = (
 				1552780028DCE7E0003F83EF /* InGameView.swift in Sources */,
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
+				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				15D50F3228DE33460037104E /* ConfigButton.swift in Sources */,
 				15D50F2B28DE2F620037104E /* PlayerView.swift in Sources */,
@@ -460,6 +483,7 @@
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 				CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */,
 				155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */,
+				23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */,
 				3663D36228DCFB00001F0FE3 /* ButtonCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
