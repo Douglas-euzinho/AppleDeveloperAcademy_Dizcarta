@@ -1,4 +1,4 @@
-name: SwiftLint
+name: SwiftLint Verification
 
 on:
   pull_request:
