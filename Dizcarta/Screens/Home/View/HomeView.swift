@@ -10,12 +10,13 @@ import CoreData
 
 struct HomeView: View {
   @State var isPlayerListView = false
-  
+    let shared = GenericFunctions()
+    
     var body: some View {
         NavigationView {
             Group {
                 VStack {
-                    checkIfImageExist(name: "LogoHome")
+                    shared.checkIfImageExist(name: "LogoHome")
                         .resizable()
                         .frame(minWidth: 280, idealWidth: 340, maxWidth: 360, minHeight: 160, idealHeight: 192, maxHeight: 210, alignment: .center)
                         .padding(25)
@@ -44,11 +45,6 @@ struct HomeView: View {
             }
         }
         .ignoresSafeArea(.all)
-    }
-    
-    func checkIfImageExist(name: String) -> Image {
-        let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
-        return Image(uiImage: uiImage)
     }
 }
 
