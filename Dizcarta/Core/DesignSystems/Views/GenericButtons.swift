@@ -22,7 +22,7 @@ struct GenericButtons: View {
     var body: some View {
         VStack {
             Rectangle()
-                .frame(minWidth: 110, maxWidth: 180, minHeight: 30, maxHeight: 110)
+                .frame(minWidth: 70, idealWidth: 100, maxWidth: 180, minHeight: 20, idealHeight: 30, maxHeight: 110)
                 .cornerRadius(20)
                 .foregroundColor(.black)
                 .overlay {
@@ -33,8 +33,9 @@ struct GenericButtons: View {
                                 .frame(width: 41, height: 38)
                         }
                         Text(self.label ?? "")
+                            .frame(minWidth: 50, idealWidth: 63, maxWidth: 80, minHeight: 20, idealHeight: 24, maxHeight: 30)
                             .font(.custom("macrofont", size: 35))
-                            .minimumScaleFactor(0.01)
+                            .minimumScaleFactor(0.001)
                             .padding(5)
                             .foregroundColor(.white)
                     }
@@ -45,5 +46,12 @@ struct GenericButtons: View {
     func checkIfImageExist(name: String) -> Image {
         let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
         return Image(uiImage: uiImage)
+    }
+}
+
+
+struct GenericButtons_Previews: PreviewProvider {
+    static var previews: some View {
+        GenericButtons()
     }
 }

@@ -15,14 +15,16 @@ struct PickColorView: View {
     @State private var selectedColor: Color = .avatarColorYellow
 
     var body: some View {
-        VStack{
-            ZStack{
+        VStack {
+            ZStack {
                 Color.clear
                     .ignoresSafeArea(.all)
-                Rectangle()
-                    .frame(width: 318, height: 350, alignment: .center)
-                    .cornerRadius(20)
+                VStack {
+                    Rectangle()
+                        .frame(width: 318, height: 350, alignment: .center)
+                        .cornerRadius(20)
                     .foregroundColor(Color.backGroundPickerColor)
+                }
                 
                 Circle()
                     .frame(width: 80, height: 80, alignment: .center)
@@ -33,7 +35,7 @@ struct PickColorView: View {
                     .font(.custom("macrofont", size: 60))
                     .padding(.bottom, 230)
                 
-                HStack{
+                VStack {
                     TextField("Nome", text: $text)
                 }
                 .frame(width: 240, height: 20)
@@ -45,6 +47,9 @@ struct PickColorView: View {
                 
                 Picker(selectedColor: $selectedColor)
                     .padding(.top, 60)
+                GenericButtons(label: "Salvar")
+                    .frame(width: 120, height: 40)
+                    .padding(.top, 220)
             }
         }
     }
