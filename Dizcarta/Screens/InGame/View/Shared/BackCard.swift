@@ -18,7 +18,7 @@ struct BackCard: View {
         .foregroundColor(.gray)
         .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.9)
         .cornerRadius(15)
-      Image("CardLogo")
+      Image("LogoHome")
         .resizable()
         .frame(width: UIScreen.main.bounds.width / 1.65, height: UIScreen.main.bounds.height / 5, alignment: .center)
     } //: ZSTACK

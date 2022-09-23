@@ -1,13 +1,13 @@
 //
-//  HomeButtons.swift
+//  GenericButtons.swift
 //  Dizcarta
 //
-//  Created by Victor Brito on 20/09/22.
+//  Created by Douglas Figueirôa on 23/09/22.
 //
 
 import SwiftUI
 
-struct CreateButtons: View {
+struct GenericButtons: View {
     
     var label: String?
     var color: String?

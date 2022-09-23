@@ -15,27 +15,28 @@ struct HomeView: View {
         NavigationView {
             Group {
                 VStack {
-                    Rectangle()
-                        .frame(width: 352, height: 156, alignment: .center)
+                    checkIfImageExist(name: "LogoHome")
+                        .resizable()
+                        .frame(minWidth: 280, idealWidth: 340, maxWidth: 360, minHeight: 160, idealHeight: 192, maxHeight: 210, alignment: .center)
                         .padding(25)
                     VStack {
                         Button {
                             
                         } label: {
-                            CreateButtons(label: "Jogar", image: "PlayButtonHome")
+                            GenericButtons(label: "Jogar", image: "PlayButtonHome")
                         }
                         .padding(15)
                         
                         Button {
                             
                         } label: {
-                            CreateButtons(label: "Configurações", image: "ConfigButtonHome")
+                            GenericButtons(label: "Configurações", image: "ConfigButtonHome")
                         }
                         .padding(15)
                         Button {
                             
                         } label: {
-                            CreateButtons(label: "Histórico", image: "HistoryButtonHome")
+                            GenericButtons(label: "Histórico", image: "HistoryButtonHome")
                         }
                         .padding(15)
                     }
@@ -43,6 +44,11 @@ struct HomeView: View {
             }
         }
         .ignoresSafeArea(.all)
+    }
+    
+    func checkIfImageExist(name: String) -> Image {
+        let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
+        return Image(uiImage: uiImage)
     }
 }
 
