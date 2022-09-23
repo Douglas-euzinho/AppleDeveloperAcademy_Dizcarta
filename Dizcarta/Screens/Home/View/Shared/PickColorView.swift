@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PickColorView: View {
+    @Environment(\.dismiss) var dismiss
+
     @State private var text: String = ""
     @State private var color: Color = Color.black
     @State private var selectedColor: Color = .avatarColorYellow
@@ -15,6 +17,8 @@ struct PickColorView: View {
     var body: some View {
         VStack{
             ZStack{
+                Color.clear
+                    .ignoresSafeArea(.all)
                 Rectangle()
                     .frame(width: 318, height: 350, alignment: .center)
                     .cornerRadius(20)
