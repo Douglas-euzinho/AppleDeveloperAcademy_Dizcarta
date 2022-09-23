@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
-  @State var isPlayerListView = false
     let shared = GenericFunctions()
+    @State var isPlayerListView = false
     
     var body: some View {
         NavigationView {
@@ -21,12 +21,13 @@ struct HomeView: View {
                         .frame(minWidth: 280, idealWidth: 340, maxWidth: 360, minHeight: 160, idealHeight: 192, maxHeight: 210, alignment: .center)
                         .padding(25)
                     VStack {
-                        Button {
-                            
+                        NavigationLink {
+                            PlayerListView()
                         } label: {
                             GenericButtons(label: "Jogar", image: "PlayButtonHome")
                         }
-                        .padding(15)
+                        
+                    .padding(15)
                         
                         Button {
                             

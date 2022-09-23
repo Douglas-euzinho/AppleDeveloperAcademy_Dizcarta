@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E528DB9DAB003F83EF /* ProgressBarView.swift */; };
 		155277EC28DC76E4003F83EF /* UIColor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* UIColor+Color.swift */; };
-		155277F928DCE60C003F83EF /* Player in Resources */ = {isa = PBXBuildFile; fileRef = 155277F828DCE60C003F83EF /* Player */; };
 		155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FA28DCE638003F83EF /* PlayerListView.swift */; };
 		1552780028DCE7E0003F83EF /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FF28DCE7E0003F83EF /* InGameView.swift */; };
 		1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552780128DCE7EA003F83EF /* FrontCard.swift */; };
@@ -29,6 +28,8 @@
 		3663D36228DCFB00001F0FE3 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
+		CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */; };
+		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B76F28DB900A007CF236 /* PickColorView.swift */; };
 		CD70B77228DCF295007CF236 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B77128DCF295007CF236 /* Picker.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +54,6 @@
 /* Begin PBXFileReference section */
 		155277E528DB9DAB003F83EF /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		155277EB28DC76E4003F83EF /* UIColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Color.swift"; sourceTree = "<group>"; };
-		155277F828DCE60C003F83EF /* Player */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Player; sourceTree = "<group>"; };
 		155277FA28DCE638003F83EF /* PlayerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerListView.swift; path = Shared/PlayerListView.swift; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		1552780128DCE7EA003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
+		CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
+		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD70B76F28DB900A007CF236 /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickColorView.swift; path = Dizcarta/Screens/Home/View/Shared/PickColorView.swift; sourceTree = SOURCE_ROOT; };
 		CD70B77128DCF295007CF236 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Dizcarta/Screens/Home/View/Shared/Picker.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -291,7 +293,8 @@
 			children = (
 				3663D36A28DE3047001F0FE3 /* Views */,
 				3663D36928DE3033001F0FE3 /* Functions */,
-				155277F828DCE60C003F83EF /* Player */,
+				CD33B49028DE2B7700E25CF5 /* Player */,
+				3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */,
 				CD70B76F28DB900A007CF236 /* PickColorView.swift */,
 				CD70B77128DCF295007CF236 /* Picker.swift */,
 				155277EA28DC76CF003F83EF /* Extensions */,
@@ -314,6 +317,14 @@
 				3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD33B49028DE2B7700E25CF5 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +434,6 @@
 				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */,
-				155277F928DCE60C003F83EF /* Player in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +462,7 @@
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
+				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,
 				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
