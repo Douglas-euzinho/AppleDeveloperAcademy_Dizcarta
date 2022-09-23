@@ -68,5 +68,3 @@ A CI/CD do Projeto está configurada da seguinte maneira:
 **Branch Iniciando com o nome 'testflight/**' : Gera uma versão para o testflight da branch criada com esse padrão de nome
 
 **Branch Iniciando com o nome 'release/**' : Roda os Tests, Compila, Archive e Analyze. Gera uma versão para o testflight e AppStore da branch criada com esse padrão de nome 
-
-Alteração no readme para teste de automação.
