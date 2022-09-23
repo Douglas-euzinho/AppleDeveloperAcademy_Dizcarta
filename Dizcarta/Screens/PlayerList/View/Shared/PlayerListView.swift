@@ -8,31 +8,35 @@
 import SwiftUI
 
 struct PlayerListView: View {
-  // MARK: - VARIABLES
-  
-  // MARK: - BODY
-  var body: some View {
-    HStack {
-      VStack {
-        Button {
-          
-        } label: {
-          Image("AddPlayer")
-            .resizable()
-            .frame(width: 64, height: 64)
-        }
-        
-        Text("Adicione jogadores para começar a jogar.")
-      } //: VSTACK
-    } //: HSTACK
-    .navigationTitle("Jogadores")
-    .navigationBarTitleDisplayMode(.large)
-  } //: BODY
+    @State var showingPopup = false
+    // MARK: - VARIABLES
+    
+    // MARK: - BODY
+    var body: some View {
+        HStack {
+            VStack {
+                Button {
+                    showingPopup = true
+                } label: {
+                    Image("AddPlayer")
+                        .resizable()
+                        .frame(width: 64, height: 64)
+                }
+                .popover(isPresented: $showingPopup) {
+                    PickColorView()
+                }
+                
+                Text("Adicione jogadores para começar a jogar.")
+            } //: VSTACK
+        } //: HSTACK
+        .navigationTitle("Jogadores")
+        .navigationBarTitleDisplayMode(.large)
+    } //: BODY
 }
 
 // MARK: - PREVIEW
 struct PlayerListView_Previews: PreviewProvider {
-  static var previews: some View {
-    PlayerListView()
-  }
+    static var previews: some View {
+        PlayerListView()
+    }
 }
