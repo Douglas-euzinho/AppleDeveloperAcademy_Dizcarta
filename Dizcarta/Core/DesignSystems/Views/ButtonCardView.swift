@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ButtonCardView: View {
+    let shared = GenericFunctions()
+    
     var body: some View {
         HStack {
             Rectangle()
@@ -18,8 +20,8 @@ struct ButtonCardView: View {
                 .overlay {
                     VStack {
                         Spacer(minLength: 10)
-                            checkIfImageExist(name: "ButtonAccept")
-                                .frame(width: 41, height: 10)
+                        shared.checkIfImageExist(name: "ButtonAccept")
+                            .frame(width: 41, height: 10)
                         Spacer()
                         Text("Aceitar")
                             .font(.custom("macrofont", size: 20))
@@ -37,7 +39,7 @@ struct ButtonCardView: View {
                 .overlay {
                     VStack {
                         Spacer(minLength: 10)
-                            checkIfImageExist(name: "ButtonRefuse")
+                        shared.checkIfImageExist(name: "ButtonRefuse")
                                 .frame(width: 41, height: 10)
                         Spacer()
                         Text("Recusar")
@@ -48,11 +50,6 @@ struct ButtonCardView: View {
                     .padding(5)
                 }
         }.frame(width: .infinity, height: .infinity)
-    }
-    
-    func checkIfImageExist(name: String) -> Image {
-        let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
-        return Image(uiImage: uiImage)
     }
 }
 
