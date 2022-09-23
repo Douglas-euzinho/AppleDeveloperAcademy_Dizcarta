@@ -24,11 +24,10 @@
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
 		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
+		23199EDA28DE39410064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED928DE39410064E574 /* ButtonCardView.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
-		3663D36228DCFB00001F0FE3 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
-		CD0FC89628DA7BFB00C0C6F8 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */; };
 		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B76F28DB900A007CF236 /* PickColorView.swift */; };
 		CD70B77228DCF295007CF236 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B77128DCF295007CF236 /* Picker.swift */; };
@@ -73,11 +72,10 @@
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
+		23199ED928DE39410064E574 /* ButtonCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
-		CD0FC89528DA7BFB00C0C6F8 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
 		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD70B76F28DB900A007CF236 /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickColorView.swift; path = Dizcarta/Screens/Home/View/Shared/PickColorView.swift; sourceTree = SOURCE_ROOT; };
 		CD70B77128DCF295007CF236 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Dizcarta/Screens/Home/View/Shared/Picker.swift; sourceTree = SOURCE_ROOT; };
@@ -294,7 +292,6 @@
 				3663D36A28DE3047001F0FE3 /* Views */,
 				3663D36928DE3033001F0FE3 /* Functions */,
 				CD33B49028DE2B7700E25CF5 /* Player */,
-				3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */,
 				CD70B76F28DB900A007CF236 /* PickColorView.swift */,
 				CD70B77128DCF295007CF236 /* Picker.swift */,
 				155277EA28DC76CF003F83EF /* Extensions */,
@@ -313,8 +310,8 @@
 		3663D36A28DE3047001F0FE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23199ED928DE39410064E574 /* ButtonCardView.swift */,
 				3663D36328DE2230001F0FE3 /* GenericButtons.swift */,
-				3663D36128DCFB00001F0FE3 /* ButtonCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -470,12 +467,12 @@
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				155277EC28DC76E4003F83EF /* UIColor+Color.swift in Sources */,
 				3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */,
+				23199EDA28DE39410064E574 /* ButtonCardView.swift in Sources */,
 				3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 				CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */,
 				155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */,
 				23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */,
-				3663D36228DCFB00001F0FE3 /* ButtonCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
