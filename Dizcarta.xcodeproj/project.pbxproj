@@ -22,6 +22,7 @@
 		1555381428D8E3DD00CA5573 /* DizcartaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381328D8E3DD00CA5573 /* DizcartaTests.swift */; };
 		1555381E28D8E3DD00CA5573 /* DizcartaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */; };
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
+		15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0818E28E2274400D479B8 /* HistoryView.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
 		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
@@ -72,6 +73,7 @@
 		1555381928D8E3DD00CA5573 /* DizcartaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DizcartaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1555381D28D8E3DD00CA5573 /* DizcartaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITests.swift; sourceTree = "<group>"; };
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		15A0818E28E2274400D479B8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
@@ -228,6 +230,22 @@
 			path = DizcartaUITests;
 			sourceTree = "<group>";
 		};
+		15A0818C28E2273000D479B8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				15A0818D28E2273700D479B8 /* Shared */,
+				15A0818E28E2274400D479B8 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		15A0818D28E2273700D479B8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		23199ECF28DE239B0064E574 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +291,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				15A0818C28E2273000D479B8 /* History */,
 				23199EDB28DE527B0064E574 /* Configurations */,
 				155277FC28DCE7C1003F83EF /* InGame */,
 				155277E028DB9137003F83EF /* PlayerList */,
@@ -492,6 +511,7 @@
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
+				15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */,
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,
 				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
