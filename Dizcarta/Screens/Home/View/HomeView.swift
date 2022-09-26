@@ -18,7 +18,10 @@ struct HomeView: View {
                 VStack {
                     shared.checkIfImageExist(name: "LogoHome")
                         .resizable()
-                        .frame(minWidth: 280, idealWidth: 340, maxWidth: 360, minHeight: 160, idealHeight: 192, maxHeight: 210, alignment: .center)
+                        .frame(minWidth: 280, idealWidth: 340,
+                               maxWidth: 360, minHeight: 160,
+                               idealHeight: 192, maxHeight: 210,
+                               alignment: .center)
                         .padding(25)
                     VStack {
                         NavigationLink {
@@ -28,7 +31,6 @@ struct HomeView: View {
                         }
                         
                     .padding(15)
-                        
                         NavigationLink {
                             ConfigurationsView()
                         } label: {
