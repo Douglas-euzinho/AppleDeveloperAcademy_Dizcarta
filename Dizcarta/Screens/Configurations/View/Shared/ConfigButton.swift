@@ -39,9 +39,9 @@ struct ConfigButton: View {
   }
 }
 
-// MARK: - PREVIEW
-//struct ConfButton_Previews: PreviewProvider {
-//  static var previews: some View {
-//      ConfigButton(icon: "speaker.wave.3.fill", text: "Narrador")
-//  }
-//}
+ // MARK: - PREVIEW
+struct ConfButton_Previews: PreviewProvider {
+  static var previews: some View {
+    ConfigButton(icon: "speaker.wave.3.fill", text: "Narrador")
+  }
+}

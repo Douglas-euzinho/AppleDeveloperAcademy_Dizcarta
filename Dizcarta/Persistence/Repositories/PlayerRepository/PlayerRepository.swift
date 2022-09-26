@@ -55,7 +55,6 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         players.append(player)
     }
     
-    
 }
 
 final class PlayerRepository {
@@ -63,4 +62,3 @@ final class PlayerRepository {
         AppConfig.isMocked ? PlayerRepositoryMock(context: context) : PlayerRepositoryCoreData(context: context)
     }
 }
-
