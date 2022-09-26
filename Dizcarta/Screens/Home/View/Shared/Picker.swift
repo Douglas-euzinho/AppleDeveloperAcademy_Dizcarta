@@ -9,10 +9,14 @@ import SwiftUI
 
 struct Picker: View {
     @Binding var selectedColor: Color
-    private let colors: [Color] = [.avatarColorPurple, .avatarColorGreen, .avatarColorCopperRose, .avatarColorYellow, .avatarColorBlue, .avatarColorPatina]
+    private let colors: [Color] = [.avatarColorPurple,
+                                   .avatarColorGreen,
+                                   .avatarColorCopperRose,
+                                   .avatarColorYellow,
+                                   .avatarColorBlue, .avatarColorPatina]
     
     var body: some View {
-        HStack{
+        HStack {
             ForEach(colors, id: \.self) { color in
                 Circle()
                     .foregroundColor(color)
