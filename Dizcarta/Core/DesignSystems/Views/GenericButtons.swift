@@ -12,7 +12,7 @@ struct GenericButtons: View {
     var label: String?
     var color: String?
     var image: String?
-
+    
     init(label: String? = nil, color: String? = nil, image: String? = nil) {
         self.label = label
         self.color = color
@@ -42,7 +42,6 @@ struct GenericButtons: View {
                 }
         }
     }
-    
     func checkIfImageExist(name: String) -> Image {
         let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
         return Image(uiImage: uiImage)
