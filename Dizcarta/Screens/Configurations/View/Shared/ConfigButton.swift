@@ -13,7 +13,6 @@ struct ConfigButton: View {
     @State var icon: String = "speaker.wave.3.fill"
     @State var text: String = "Narrador"
     
-    
   // MARK: - BODY
   var body: some View {
     ZStack {
@@ -42,6 +41,6 @@ struct ConfigButton: View {
  // MARK: - PREVIEW
 struct ConfButton_Previews: PreviewProvider {
   static var previews: some View {
-    ConfigButton(icon: "speaker.wave.3.fill", text: "Narrador")
+      ConfigButton(isPressed: .constant(true), icon: "speaker.wave.3.fill", text: "Narrador")
   }
 }

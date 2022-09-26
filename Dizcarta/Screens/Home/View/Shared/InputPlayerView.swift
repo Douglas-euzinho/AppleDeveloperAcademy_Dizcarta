@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PickColorView: View {
+struct InputPlayerView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var text: String = ""
@@ -55,8 +55,8 @@ struct PickColorView: View {
     }
 }
 
-struct PickColorView_Previews: PreviewProvider {
+struct InputPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PickColorView()
+        InputPlayerView()
     }
 }
