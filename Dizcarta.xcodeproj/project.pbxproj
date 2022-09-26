@@ -33,6 +33,7 @@
 		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B76F28DB900A007CF236 /* PickColorView.swift */; };
 		CD70B77228DCF295007CF236 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B77128DCF295007CF236 /* Picker.swift */; };
+		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD70B76F28DB900A007CF236 /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickColorView.swift; path = Dizcarta/Screens/Home/View/Shared/PickColorView.swift; sourceTree = SOURCE_ROOT; };
 		CD70B77128DCF295007CF236 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Dizcarta/Screens/Home/View/Shared/Picker.swift; sourceTree = SOURCE_ROOT; };
+		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CDBFA47528E22A2700BBD368 /* SplashScreen */,
 				23199EDB28DE527B0064E574 /* Configurations */,
 				155277FC28DCE7C1003F83EF /* InGame */,
 				155277E028DB9137003F83EF /* PlayerList */,
@@ -352,6 +355,14 @@
 				CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		CDBFA47528E22A2700BBD368 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CDBFA47328E226B700BBD368 /* SplashScreen.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +505,7 @@
 				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,
 				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
+				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
 				155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
