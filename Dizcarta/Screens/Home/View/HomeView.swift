@@ -26,7 +26,8 @@ struct HomeView: View {
                         } label: {
                             GenericButtons(label: "Jogar", image: "PlayButtonHome")
                         }
-                        .padding(15)
+                        
+                    .padding(15)
                         
                         NavigationLink {
                             ConfigurationsView()
