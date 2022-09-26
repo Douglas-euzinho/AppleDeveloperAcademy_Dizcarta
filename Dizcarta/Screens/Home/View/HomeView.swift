@@ -30,7 +30,7 @@ struct HomeView: View {
                     .padding(15)
                         
                         NavigationLink {
-                            ConfigurationsView()
+                            ConfigurationsView(isNarratorPressed: false, isHapticsPressed: false, isRulesPressed: false, isColorBlindnessPressed: false)
                         } label: {
                             GenericButtons(label: "Configurações", image: "ConfigButtonHome")
                         }

@@ -30,6 +30,7 @@
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
+		36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */; };
 		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD70B77028DB900A007CF236 /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B76F28DB900A007CF236 /* PickColorView.swift */; };
 		CD70B77228DCF295007CF236 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B77128DCF295007CF236 /* Picker.swift */; };
@@ -80,6 +81,7 @@
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
+		36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButtonPress.swift; sourceTree = "<group>"; };
 		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD70B76F28DB900A007CF236 /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickColorView.swift; path = Dizcarta/Screens/Home/View/Shared/PickColorView.swift; sourceTree = SOURCE_ROOT; };
 		CD70B77128DCF295007CF236 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Dizcarta/Screens/Home/View/Shared/Picker.swift; sourceTree = SOURCE_ROOT; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				23199EDE28DE527B0064E574 /* ConfigButton.swift */,
+				36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,
 				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
+				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
 				155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				155277EC28DC76E4003F83EF /* UIColor+Color.swift in Sources */,
