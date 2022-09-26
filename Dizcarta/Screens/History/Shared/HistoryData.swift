@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HistoryData: View {
   // MARK: - PROPERTIES
+  @State var isPresented: Bool = false
   @State var date: Date
   @State var time: Date
   @State var numberOfPlayers: Int
@@ -16,33 +17,39 @@ struct HistoryData: View {
   
   // MARK: - BODY
   var body: some View {
-    NavigationView {
-      HStack {
-        VStack {
-          Text("\(date.formatted(date: .numeric, time: .omitted))")
-            .font(.system(size: 24, weight: .medium))
-    
-          Text("\(time.formatted(date: .omitted, time: .shortened))")
-            .font(.system(size: 12, weight: .semibold))
-        }
-        .padding(.trailing, 15)
+    HStack {
+      VStack {
+        Text("\(date.formatted(date: .numeric, time: .omitted))")
+          .font(.system(size: 24, weight: .medium))
         
-        VStack(alignment: .leading) {
-          Text("\(numberOfPlayers) jogadores")
-            .font(.system(size: 17, weight: .semibold))
-          
-          Text("Vencedor: \(winner)")
-            .font(.system(size: 15, weight: .medium))
-        }
-        .padding(.trailing, 20)
-        
-        NavigationLink(destination: HomeView()) {
-          Text("Ver Ranking")
-            .font(.system(size: 12, weight: .regular))
-            .foregroundColor(.configurationButtonSelected)
-        }
+        Text("\(time.formatted(date: .omitted, time: .shortened))")
+          .font(.system(size: 12, weight: .semibold))
       }
-    }
+      .padding(.trailing, 15)
+      
+      VStack(alignment: .leading) {
+        Text("\(numberOfPlayers) jogadores")
+          .font(.system(size: 17, weight: .semibold))
+        
+        Text("Vencedor: \(winner)")
+          .font(.system(size: 12, weight: .medium))
+      }
+      .padding(.trailing, 20)
+      
+      VStack(alignment: .trailing) {
+        Text("Ver Ranking")
+          .font(.system(size: 12, weight: .regular))
+          .foregroundColor(.configurationButtonSelected)
+          .sheet(isPresented: $isPresented) {
+            HomeView()
+          }
+          .onTapGesture {
+            isPresented.toggle()
+        }
+          .padding()
+      } //: VSTACK
+    } //: HSTACK
+    .padding()
   }
 }
 
