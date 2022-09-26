@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ConfigButton: View {
-  // MARK: - VARIABLES
-  @State var isPressed: Bool = false
-  @State var icon: String = "speaker.wave.3.fill"
-  @State var text: String = "Narrador"
-  
+    // MARK: - VARIABLES
+    @Binding var isPressed: Bool
+    @State var icon: String = "speaker.wave.3.fill"
+    @State var text: String = "Narrador"
+    
+    
   // MARK: - BODY
   var body: some View {
     ZStack {

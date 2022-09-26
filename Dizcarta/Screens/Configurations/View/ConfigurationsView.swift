@@ -9,20 +9,38 @@ import SwiftUI
 
 struct ConfigurationsView: View {
   // MARK: - VARIABLES
-  
+    @State var isNarratorPressed: Bool
+    @State var isHapticsPressed: Bool
+    @State var isRulesPressed: Bool
+    @State var isColorBlindnessPressed: Bool
+    
+    @State var isMessageOn = true
+
   // MARK: - BODY
   var body: some View {
     VStack {
       HStack {
-        ConfigButton(icon: "speaker.wave.3.fill", text: "Narrador")
-        ConfigButton(icon: "waveform", text: "Haptics")
+        ConfigButton(isPressed: $isNarratorPressed, icon: "speaker.wave.3.fill", text: "Narrador")
+        ConfigButton(isPressed: $isHapticsPressed, icon: "waveform", text: "Haptics")
       }
       
       HStack {
-        ConfigButton(icon: "questionmark.app.fill", text: "Regras")
-        ConfigButton(icon: "drop.fill", text: "Color Blindness")
+        ConfigButton(isPressed: $isRulesPressed, icon: "questionmark.app.fill", text: "Regras")
+        ConfigButton(isPressed: $isColorBlindnessPressed, icon: "drop.fill", text: "Color Blindness")
       }
-      
+        
+        if isNarratorPressed == true {
+            FeedbackButtonPress(selected: "Narrador")
+        }
+        if isHapticsPressed == true {
+            FeedbackButtonPress(selected: "Haptics")
+        }
+        if isRulesPressed == true {
+            FeedbackButtonPress(selected: "Regras")
+        }
+        if isColorBlindnessPressed == true {
+            FeedbackButtonPress(selected: "Color Blindness")
+        }
     }
     .navigationTitle("Configurações")
     .navigationBarTitleDisplayMode(.large)
@@ -32,6 +50,6 @@ struct ConfigurationsView: View {
 // MARK: - PREVIEW
 struct ConfigurationsView_Previews: PreviewProvider {
   static var previews: some View {
-    ConfigurationsView()
+      ConfigurationsView(isNarratorPressed: false, isHapticsPressed: false, isRulesPressed: false, isColorBlindnessPressed: false)
   }
 }
