@@ -49,7 +49,6 @@ struct GenericButtons: View {
     }
 }
 
-
 struct GenericButtons_Previews: PreviewProvider {
     static var previews: some View {
         GenericButtons()

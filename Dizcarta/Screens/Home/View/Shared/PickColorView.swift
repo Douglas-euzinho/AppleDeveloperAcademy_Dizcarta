@@ -23,7 +23,7 @@ struct PickColorView: View {
                     Rectangle()
                         .frame(width: 318, height: 350, alignment: .center)
                         .cornerRadius(20)
-                    .foregroundColor(Color.backGroundPickerColor)
+                        .foregroundColor(Color.backGroundPickerColor)
                 }
                 
                 Circle()

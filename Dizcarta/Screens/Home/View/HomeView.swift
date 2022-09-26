@@ -29,12 +29,13 @@ struct HomeView: View {
                         
                     .padding(15)
                         
-                        Button {
-                            
+                        NavigationLink {
+                            ConfigurationsView()
                         } label: {
                             GenericButtons(label: "Configurações", image: "ConfigButtonHome")
                         }
                         .padding(15)
+                        
                         Button {
                             
                         } label: {
