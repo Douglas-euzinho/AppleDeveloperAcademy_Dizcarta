@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+//MARK: Main view
 struct HomeView: View {
     let shared = GenericFunctions()
     @State var isPlayerListView = false
