@@ -35,8 +35,8 @@ struct HomeView: View {
                         }
                         .padding(15)
                         
-                        Button {
-                            
+                        NavigationLink {
+                            HistoryView()
                         } label: {
                             GenericButtons(label: "Histórico", image: "HistoryButtonHome")
                         }

@@ -12,14 +12,14 @@ struct HistoryView: View {
   
   // MARK: - BODY
   var body: some View {
-    VStack(alignment: .leading ,spacing: 10) {
+    VStack(alignment: .leading) {
       HistoryData(date: Date(), time: Date(), numberOfPlayers: 6, winner: "Alice")
       HistoryData(date: Date(), time: Date(), numberOfPlayers: 4, winner: "Angelina")
       HistoryData(date: Date(), time: Date(), numberOfPlayers: 6, winner: "João")
+      Spacer()
     } //: VSTACK
     .navigationTitle("Histórico")
     .navigationBarTitleDisplayMode(.large)
-    .padding()
   }
 }
 

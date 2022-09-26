@@ -34,22 +34,22 @@ struct HistoryData: View {
         Text("Vencedor: \(winner)")
           .font(.system(size: 12, weight: .medium))
       }
-      .padding(.trailing, 20)
+      .padding(20)
       
-      VStack(alignment: .trailing) {
+      VStack {
         Text("Ver Ranking")
           .font(.system(size: 12, weight: .regular))
           .foregroundColor(.configurationButtonSelected)
+          .padding(10)
           .sheet(isPresented: $isPresented) {
             HomeView()
           }
           .onTapGesture {
             isPresented.toggle()
-        }
+          }
           .padding()
       } //: VSTACK
     } //: HSTACK
-    .padding()
   }
 }
 
