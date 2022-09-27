@@ -10,9 +10,10 @@ import SwiftUI
 struct InputPlayerView: View {
     @Environment(\.dismiss) var dismiss
 
-    @State private var text: String = ""
-    @State private var color: Color = Color.black
-    @State private var selectedColor: Color = .avatarColorYellow
+    @Binding var text: String
+    @State private var textFieldColor: Color = .black
+    @Binding var selectedColor: Color
+    var saveAction: (() -> Void) = {}
 
     var body: some View {
         VStack {
@@ -41,7 +42,7 @@ struct InputPlayerView: View {
                 .frame(width: 240, height: 20)
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 13)
-                    .stroke(color, lineWidth: 1))
+                    .stroke(textFieldColor, lineWidth: 1))
                 .padding(65)
                 .padding(.top, -75)
                 
@@ -50,6 +51,10 @@ struct InputPlayerView: View {
                 GenericButtons(label: "Salvar")
                     .frame(width: 120, height: 40)
                     .padding(.top, 220)
+                    .onTapGesture {
+                        saveAction()
+                        dismiss.callAsFunction()
+                    }
             }
         }
     }
@@ -57,6 +62,6 @@ struct InputPlayerView: View {
 
 struct InputPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        InputPlayerView()
+        InputPlayerView(text: .constant(""), selectedColor: .constant(.avatarColorBlue))
     }
 }

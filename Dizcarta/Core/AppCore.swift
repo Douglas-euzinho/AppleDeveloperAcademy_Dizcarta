@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppConfig {
-    static var isMocked = false
+    static var isMocked = true
 }
 
 @main
