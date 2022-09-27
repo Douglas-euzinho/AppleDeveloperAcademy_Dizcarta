@@ -9,10 +9,10 @@ import SwiftUI
 
 struct PlayerView: View {
   // MARK: - VARIABLES
-  @State var name: String = "Alice"
+  @State var name: String
   @State var avatar: String = "person.circle.fill"
   @State var avatarColor: Color = .red
-  @State var points: Int? = 10
+  @State var points: Int?
   
   // MARK: - BODY
   var body: some View {
@@ -37,7 +37,7 @@ struct PlayerView: View {
         if let points {
           HStack {
             Text("\(points)")
-            Text(points == 1 ? "point" : "points")
+            Text(points == 1 ? "ponto" : "pontos")
           } //: HSTACK
         } //: IF
       } //: VSTACK
@@ -48,7 +48,7 @@ struct PlayerView: View {
 // MARK: - PREVIEW
 struct PlayerView_Previews: PreviewProvider {
   static var previews: some View {
-    PlayerView(name: "Alice", avatar: "person.circle.fill", avatarColor: .red)
+    PlayerView(name: "Alice", points: 10)
       .previewLayout(.sizeThatFits)
       .padding()
   }

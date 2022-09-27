@@ -25,20 +25,16 @@ struct ContentView : View {
     @State var splashScreen  = true
     
     var body: some View {
-        ZStack{
-            Group{
+        ZStack {
+            Group {
                 if splashScreen {
                     SplashScreen()
-                }
-                else{
+                } else {
                     HomeView()
                 }
             }
             .onAppear {
-                DispatchQueue
-                    .main
-                    .asyncAfter(deadline:
-                            .now() + 3) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                 splashScreen = false
                             }
             }

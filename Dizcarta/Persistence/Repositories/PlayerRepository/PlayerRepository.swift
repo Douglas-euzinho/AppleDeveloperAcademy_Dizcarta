@@ -36,29 +36,44 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
 final class PlayerRepositoryMock: PlayerRepositoryProtocol {
     
     var context: NSManagedObjectContext
-    var players = [Player]()
     
     init(context: NSManagedObjectContext) {
-        self.context = context
+        self.context = PersistenceController.inMemory.container.viewContext
     }
     
     func getPlayers() -> [Player] {
-        players
+        do {
+            let players = try PersistenceController.inMemory.container.viewContext.fetch(Player.fetchRequest())
+            print("Players fetched \(players)")
+            return players
+        } catch {
+            return []
+        }
     }
     
     func createPlayer(name: String, color: String) {
-        let player = Player()
+        let player = Player(context: context)
         player.name = name
         player.color = color
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
-        players.append(player)
+        save()
+    }
+    
+    func save() {
+        do {
+            if context.hasChanges {
+                try context.save()
+            }
+        } catch {
+            print("ERROR: Save core data player repository")
+        }
     }
     
 }
 
 final class PlayerRepository {
-    static func get(context : NSManagedObjectContext) -> PlayerRepositoryProtocol {
+    static func get(context: NSManagedObjectContext) -> PlayerRepositoryProtocol {
         AppConfig.isMocked ? PlayerRepositoryMock(context: context) : PlayerRepositoryCoreData(context: context)
     }
 }

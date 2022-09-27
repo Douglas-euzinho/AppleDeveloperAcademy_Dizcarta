@@ -29,6 +29,7 @@
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
 		23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDF28DE527B0064E574 /* ConfigurationsView.swift */; };
 		23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EE228DE53270064E574 /* ButtonCardView.swift */; };
+		233FB51628E3775F008EE961 /* PlayerList+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB51528E3775F008EE961 /* PlayerList+Observed.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
@@ -84,6 +85,7 @@
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 		23199EDF28DE527B0064E574 /* ConfigurationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		23199EE228DE53270064E574 /* ButtonCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
+		233FB51528E3775F008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				155277E428DB9D97003F83EF /* Shared */,
 				155277FA28DCE638003F83EF /* PlayerListView.swift */,
+				233FB51528E3775F008EE961 /* PlayerList+Observed.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
 				15A0819128E2280900D479B8 /* HistoryData.swift in Sources */,
 				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
+				233FB51628E3775F008EE961 /* PlayerList+Observed.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
 				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
 				155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */,
