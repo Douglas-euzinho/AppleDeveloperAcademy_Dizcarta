@@ -16,7 +16,7 @@ struct FinalFluxView: View {
             Text("Por enquanto é isso!")
                 .font(.largeTitle)
             Spacer()
-            shared.checkIfImageExist(name: "ImageFinalFluxApp")
+            shared.checkIfImageExist(name: "FaceHappy")
             Text("Estamos trabalhando arduamente em novas telas e jajá você ficará sabendo as nossas novas atualizações!")
                 .font(.title3)
                 .padding(20)
