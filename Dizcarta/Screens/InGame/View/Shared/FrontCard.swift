@@ -61,6 +61,9 @@ struct FrontCard: View {
 
 struct FrontCard_Previews: PreviewProvider {
   static var previews: some View {
-    FrontCard(image: .constant("house.fill"), title: .constant("Doente de Amor"), description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."), acceptPoints: .constant(4), declinePoints: .constant(4), degree: .constant(0.0))
+    FrontCard(image: .constant("house.fill"),
+              title: .constant("Doente de Amor"),
+              description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
+              acceptPoints: .constant(4), declinePoints: .constant(4), degree: .constant(0.0))
   }
 }

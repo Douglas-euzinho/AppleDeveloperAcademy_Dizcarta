@@ -23,4 +23,7 @@ extension Color {
      // MARK: - BUTTONS
      public static let configurationButtonUnselected: Color = Color(UIColor(named: "configurationButtonUnselected") ?? .black)
      public static let configurationButtonSelected: Color = Color(UIColor(named: "configurationButtonSelected") ?? .black)
+    
+    // MARK: - FEEDBACK
+    public static let feedbackButtonSelected: Color = Color(UIColor(named: "feedbackButtonSelected") ?? .black)
 }

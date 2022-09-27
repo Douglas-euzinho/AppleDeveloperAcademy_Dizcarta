@@ -23,7 +23,7 @@ struct PlayerListView: View {
                         .frame(width: 64, height: 64)
                 }
                 .popover(isPresented: $showingPopup) {
-                    PickColorView()
+                    InputPlayerView()
                 }
                 
                 Text("Adicione jogadores para começar a jogar.")
