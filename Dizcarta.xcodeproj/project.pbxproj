@@ -63,7 +63,7 @@
 /* Begin PBXFileReference section */
 		155277E528DB9DAB003F83EF /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		155277EB28DC76E4003F83EF /* UIColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Color.swift"; sourceTree = "<group>"; };
-		155277FA28DCE638003F83EF /* PlayerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerListView.swift; path = Shared/PlayerListView.swift; sourceTree = "<group>"; };
+		155277FA28DCE638003F83EF /* PlayerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		1552780128DCE7EA003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
 		1552780228DCE7EA003F83EF /* BackCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackCard.swift; sourceTree = "<group>"; };
@@ -129,7 +129,8 @@
 		155277E028DB9137003F83EF /* PlayerList */ = {
 			isa = PBXGroup;
 			children = (
-				155277E128DB914A003F83EF /* View */,
+				155277FA28DCE638003F83EF /* PlayerListView.swift */,
+				155277E428DB9D97003F83EF /* Shared */,
 			);
 			path = PlayerList;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 		155277FE28DCE7D4003F83EF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				155277E028DB9137003F83EF /* PlayerList */,
 				1552780228DCE7EA003F83EF /* BackCard.swift */,
 				1552780128DCE7EA003F83EF /* FrontCard.swift */,
 				36BE666828E37BA30069BB60 /* ActionChoise.swift */,
@@ -310,6 +310,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				155277E028DB9137003F83EF /* PlayerList */,
 				15A0819228E2416C00D479B8 /* Ranking */,
 				15A0818C28E2273000D479B8 /* History */,
 				CDBFA47528E22A2700BBD368 /* SplashScreen */,
