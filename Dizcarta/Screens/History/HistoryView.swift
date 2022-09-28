@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HistoryView: View {
   // MARK: - VARIABLES
+  @Environment(\.presentationMode) var presentation
   
   // MARK: - BODY
   var body: some View {
@@ -20,6 +21,18 @@ struct HistoryView: View {
     } //: VSTACK
     .navigationTitle("Histórico")
     .navigationBarTitleDisplayMode(.large)
+    .navigationBarBackButtonHidden(true)
+    .navigationBarItems(leading:
+      HStack {
+        Image(systemName: "chevron.left")
+        Text("Voltar")
+          .fontWeight(.medium)
+      }
+      .foregroundColor(.black)
+      .onTapGesture {
+        self.presentation.wrappedValue.dismiss()
+      }
+    )
   }
 }
 
