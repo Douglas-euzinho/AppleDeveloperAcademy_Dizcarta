@@ -24,6 +24,7 @@
 		1555382028D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */; };
 		15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0818E28E2274400D479B8 /* HistoryView.swift */; };
 		15A0819128E2280900D479B8 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0819028E2280900D479B8 /* HistoryData.swift */; };
+		15A0819528E2417A00D479B8 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0819428E2417A00D479B8 /* RankingView.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
 		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
@@ -81,6 +82,7 @@
 		1555381F28D8E3DD00CA5573 /* DizcartaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DizcartaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		15A0818E28E2274400D479B8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		15A0819028E2280900D479B8 /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
+		15A0819428E2417A00D479B8 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
@@ -261,6 +263,22 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		15A0819228E2416C00D479B8 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				15A0819328E2417000D479B8 /* Shared */,
+				15A0819428E2417A00D479B8 /* RankingView.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		15A0819328E2417000D479B8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		23199ECF28DE239B0064E574 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +325,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				15A0819228E2416C00D479B8 /* Ranking */,
 				15A0818C28E2273000D479B8 /* History */,
 				CDBFA47528E22A2700BBD368 /* SplashScreen */,
 				23199EDB28DE527B0064E574 /* Configurations */,
@@ -555,6 +574,7 @@
 				23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */,
 				1552780028DCE7E0003F83EF /* InGameView.swift in Sources */,
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
+				15A0819528E2417A00D479B8 /* RankingView.swift in Sources */,
 				23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */,
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
