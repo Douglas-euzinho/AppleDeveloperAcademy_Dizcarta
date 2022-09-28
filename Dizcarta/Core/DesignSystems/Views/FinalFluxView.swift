@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FinalFluxView: View {
-    let shared = GenericFunctions()
     
     var body: some View {
         VStack(alignment: .center) {
@@ -16,7 +15,7 @@ struct FinalFluxView: View {
             Text("Por enquanto é isso!")
                 .font(.largeTitle)
             Spacer()
-            shared.checkIfImageExist(name: "FaceHappy")
+            GenericFunctions.checkIfImageExist(name: "FaceHappy")
             Text("Estamos trabalhando arduamente em novas telas e jajá você ficará sabendo as nossas novas atualizações!")
                 .font(.title3)
                 .padding(20)
