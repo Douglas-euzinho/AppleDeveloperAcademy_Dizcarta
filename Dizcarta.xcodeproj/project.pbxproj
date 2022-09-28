@@ -163,23 +163,16 @@
 		155277FC28DCE7C1003F83EF /* InGame */ = {
 			isa = PBXGroup;
 			children = (
-				155277FD28DCE7CD003F83EF /* View */,
-			);
-			path = InGame;
-			sourceTree = "<group>";
-		};
-		155277FD28DCE7CD003F83EF /* View */ = {
-			isa = PBXGroup;
-			children = (
 				155277FF28DCE7E0003F83EF /* InGameView.swift */,
 				155277FE28DCE7D4003F83EF /* Shared */,
 			);
-			path = View;
+			path = InGame;
 			sourceTree = "<group>";
 		};
 		155277FE28DCE7D4003F83EF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				155277E028DB9137003F83EF /* PlayerList */,
 				1552780228DCE7EA003F83EF /* BackCard.swift */,
 				1552780128DCE7EA003F83EF /* FrontCard.swift */,
 				36BE666828E37BA30069BB60 /* ActionChoise.swift */,
@@ -249,8 +242,8 @@
 		15A0818C28E2273000D479B8 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				15A0818D28E2273700D479B8 /* Shared */,
 				15A0818E28E2274400D479B8 /* HistoryView.swift */,
+				15A0818D28E2273700D479B8 /* Shared */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -266,8 +259,8 @@
 		15A0819228E2416C00D479B8 /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
-				15A0819328E2417000D479B8 /* Shared */,
 				15A0819428E2417A00D479B8 /* RankingView.swift */,
+				15A0819328E2417000D479B8 /* Shared */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -299,18 +292,10 @@
 		23199EDB28DE527B0064E574 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				23199EDC28DE527B0064E574 /* View */,
+				23199EDF28DE527B0064E574 /* ConfigurationsView.swift */,
+				23199EDD28DE527B0064E574 /* Shared */,
 			);
 			path = Configurations;
-			sourceTree = "<group>";
-		};
-		23199EDC28DE527B0064E574 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				23199EDD28DE527B0064E574 /* Shared */,
-				23199EDF28DE527B0064E574 /* ConfigurationsView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		23199EDD28DE527B0064E574 /* Shared */ = {
@@ -330,7 +315,6 @@
 				CDBFA47528E22A2700BBD368 /* SplashScreen */,
 				23199EDB28DE527B0064E574 /* Configurations */,
 				155277FC28DCE7C1003F83EF /* InGame */,
-				155277E028DB9137003F83EF /* PlayerList */,
 				238DF94928DA397000F9A23B /* Home */,
 			);
 			path = Screens;
