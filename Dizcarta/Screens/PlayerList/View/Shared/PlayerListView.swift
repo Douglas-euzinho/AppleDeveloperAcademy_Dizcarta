@@ -13,14 +13,13 @@ struct PlayerListView: View {
     @State var showingPopup = false
     @State var playerName = ""
     @State var playerColor: Color = .avatarColorBlue
-    @State var players = [Player]()
-    @StateObject var observed = Observed(context: PersistenceController.shared.container.viewContext)
+    @StateObject var observed = Observed(context: PersistenceController.context)
     
     // MARK: - BODY
     var body: some View {
         HStack {
             VStack {
-                if players.isEmpty {
+                if observed.repository.players.isEmpty {
                     Button {
                         showingPopup = true
                     } label: {
@@ -31,7 +30,7 @@ struct PlayerListView: View {
                     Text("Adicione jogadores para começar a jogar.")
                 } else {
                     VStack(alignment: .leading) {
-                        ForEach(players.reversed()) { player in
+                        ForEach(observed.repository.players.reversed()) { player in
                             PlayerView(name: player.name ?? "", points: Int(player.points))
                                 .padding()
                             Divider()
@@ -41,22 +40,16 @@ struct PlayerListView: View {
                 }
             } //: VSTACK
         } //: HSTACK
-        .onAppear {
-            players = observed.repository.getPlayers()
-        }
         .popover(isPresented: $showingPopup) {
             InputPlayerView(text: $playerName, selectedColor: $playerColor) {
                 observed.repository.createPlayer(name: playerName, color: "Color Name")
-            }
-            .onDisappear {
-                players = observed.repository.getPlayers()
             }
         }
         .navigationTitle("Jogadores")
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                if !players.isEmpty {
+                if !observed.repository.players.isEmpty {
                     Button {
                         showingPopup = true
                     } label: {
