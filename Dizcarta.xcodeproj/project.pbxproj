@@ -39,6 +39,7 @@
 		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD70B77028DB900A007CF236 /* InputPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B76F28DB900A007CF236 /* InputPlayerView.swift */; };
 		CD70B77228DCF295007CF236 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70B77128DCF295007CF236 /* Picker.swift */; };
+		CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */; };
 		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD70B76F28DB900A007CF236 /* InputPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputPlayerView.swift; path = Dizcarta/Screens/Home/View/Shared/InputPlayerView.swift; sourceTree = SOURCE_ROOT; };
 		CD70B77128DCF295007CF236 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Dizcarta/Screens/Home/View/Shared/Picker.swift; sourceTree = SOURCE_ROOT; };
+		CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlayerView.swift; sourceTree = "<group>"; };
 		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +309,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CDA35D0A28E4E17F0064B3B8 /* ShiftPlayer */,
 				15A0818C28E2273000D479B8 /* History */,
 				CDBFA47528E22A2700BBD368 /* SplashScreen */,
 				23199EDB28DE527B0064E574 /* Configurations */,
@@ -389,6 +392,14 @@
 				CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		CDA35D0A28E4E17F0064B3B8 /* ShiftPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */,
+			);
+			path = ShiftPlayer;
 			sourceTree = "<group>";
 		};
 		CDBFA47528E22A2700BBD368 /* SplashScreen */ = {
@@ -566,6 +577,7 @@
 				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
 				233FB51628E3775F008EE961 /* PlayerList+Observed.swift in Sources */,
 				36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */,
+				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
 				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
 				155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */,
