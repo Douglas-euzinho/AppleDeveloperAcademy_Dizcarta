@@ -8,8 +8,8 @@
 import CoreData
 
 class PersistenceController {
-    static let shared = PersistenceController()
-    static let inMemory = PersistenceController(inMemory: true)
+    static let context = PersistenceController().container.viewContext
+    static let inMemoryContext = PersistenceController(inMemory: true).container.viewContext
     
     let container: NSPersistentCloudKitContainer
 

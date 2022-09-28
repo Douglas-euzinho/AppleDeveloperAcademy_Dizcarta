@@ -13,7 +13,7 @@
     </entity>
     <entity name="MatchInProgress" representedClassName="MatchInProgress" syncable="YES" codeGenerationType="class">
         <attribute name="dizDate" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="lastCards" optional="YES" attributeType="Transformable"/>
+        <attribute name="lastCards" optional="YES" attributeType="Binary"/>
         <attribute name="lastPlayer" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="matchInProgress" inverseEntity="Player"/>
     </entity>
