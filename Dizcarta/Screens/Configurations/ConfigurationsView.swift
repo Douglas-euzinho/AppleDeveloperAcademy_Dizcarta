@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ConfigurationsView: View {
   // MARK: - VARIABLES
+  @Environment(\.presentationMode) var presentation
     @State var isNarratorPressed: Bool
     @State var isHapticsPressed: Bool
     @State var isRulesPressed: Bool
     @State var isColorBlindnessPressed: Bool
-    
     @State var isMessageOn = true
 
   // MARK: - BODY
@@ -44,6 +44,18 @@ struct ConfigurationsView: View {
     }
     .navigationTitle("Configurações")
     .navigationBarTitleDisplayMode(.large)
+    .navigationBarBackButtonHidden(true)
+    .navigationBarItems(leading:
+      HStack {
+        Image(systemName: "chevron.left")
+        Text("Voltar")
+          .fontWeight(.medium)
+      }
+      .foregroundColor(.black)
+      .onTapGesture {
+        self.presentation.wrappedValue.dismiss()
+      }
+    )
   }
 }
 

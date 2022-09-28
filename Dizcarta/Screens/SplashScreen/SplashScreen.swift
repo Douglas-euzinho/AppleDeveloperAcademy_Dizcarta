@@ -13,8 +13,8 @@ struct SplashScreen: View {
     let shared = GenericFunctions()
 
     var body: some View {
-        ZStack{
-            shared.checkIfImageExist(name: "LogoHome")
+        ZStack {
+            GenericFunctions.checkIfImageExist(name: "LogoHome")
                 .resizable()
                 .frame(minWidth: 280, idealWidth: 340, maxWidth: 360, minHeight: 160, idealHeight: 192, maxHeight: 210, alignment: .center)
         }

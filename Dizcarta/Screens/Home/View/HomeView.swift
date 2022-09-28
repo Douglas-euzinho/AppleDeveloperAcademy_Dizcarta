@@ -10,14 +10,13 @@ import CoreData
 
 // MARK: Main view
 struct HomeView: View {
-    let shared = GenericFunctions()
     @State var isPlayerListView = false
     
     var body: some View {
         NavigationView {
             Group {
                 VStack {
-                    shared.checkIfImageExist(name: "LogoHome")
+                    GenericFunctions.checkIfImageExist(name: "LogoHome")
                         .resizable()
                         .frame(minWidth: 280, idealWidth: 340,
                                maxWidth: 360, minHeight: 160,
