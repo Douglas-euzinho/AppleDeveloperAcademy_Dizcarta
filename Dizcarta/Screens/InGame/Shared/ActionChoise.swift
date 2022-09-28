@@ -16,9 +16,7 @@ struct ActionChoise: View {
     var actionChoosed: Int?
     var cardType: CardType
     var points: Int?
-    
-    let shared = GenericFunctions()
-    
+        
     init(backgroundColor: Color, actionChoosed: Int? = nil, cardType: CardType, points: Int? = nil) {
         self.backgroundColor = backgroundColor
         self.actionChoosed = actionChoosed
@@ -43,16 +41,16 @@ struct ActionChoise: View {
         if cardType == .conventional {
             switch actionChoosed {
             case 0:
-                return shared.checkIfImageExist(name: "FaceSad")
+                return GenericFunctions.checkIfImageExist(name: "FaceSad")
             case 1:
-                return shared.checkIfImageExist(name: "FaceHappy")
+                return GenericFunctions.checkIfImageExist(name: "FaceHappy")
             default:
-                return shared.checkIfImageExist(name: "FaceHappy")
+                return GenericFunctions.checkIfImageExist(name: "FaceHappy")
             }
         } else if cardType == .loss {
-            return shared.checkIfImageExist(name: "FaceSad")
+            return GenericFunctions.checkIfImageExist(name: "FaceSad")
         }
-        return shared.checkIfImageExist(name: "FaceHappy")
+        return GenericFunctions.checkIfImageExist(name: "FaceHappy")
     }
     
     func checkText(points: Int, cardType: CardType) -> Text? {

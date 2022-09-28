@@ -10,10 +10,10 @@ import SwiftUI
 struct GenericButtons: View {
     
     var label: String?
-    var color: String?
+    var color: Color?
     var image: String?
     
-    init(label: String? = nil, color: String? = nil, image: String? = nil) {
+    init(label: String? = nil, color: Color? = .black, image: String? = nil) {
         self.label = label
         self.color = color
         self.image = image
@@ -24,7 +24,7 @@ struct GenericButtons: View {
             Rectangle()
                 .frame(minWidth: 70, idealWidth: 100, maxWidth: 180, minHeight: 20, idealHeight: 30, maxHeight: 110)
                 .cornerRadius(20)
-                .foregroundColor(.black)
+                .foregroundColor(color)
                 .overlay {
                     VStack {
                         if image?.isEmpty == false {
