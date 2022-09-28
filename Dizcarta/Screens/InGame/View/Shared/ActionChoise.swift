@@ -12,15 +12,15 @@ enum CardType {
 }
 
 struct ActionChoise: View {
-    var foregroundColor: Color?
+    var backgroundColor: Color
     var actionChoosed: Int?
     var cardType: CardType
     var points: Int?
     
     let shared = GenericFunctions()
     
-    init(foregroundColor: Color? = nil, actionChoosed: Int? = nil, cardType: CardType, points: Int? = nil) {
-        self.foregroundColor = foregroundColor
+    init(backgroundColor: Color, actionChoosed: Int? = nil, cardType: CardType, points: Int? = nil) {
+        self.backgroundColor = backgroundColor
         self.actionChoosed = actionChoosed
         self.cardType = cardType
         self.points = points
@@ -34,6 +34,9 @@ struct ActionChoise: View {
                 .padding(10)
                 checkText(points: self.points ?? 0, cardType: self.cardType)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(backgroundColor)
+        .ignoresSafeArea(.all)
     }
     
     func checkAction(cardType: CardType) -> Image? {
@@ -89,6 +92,6 @@ struct ActionChoise: View {
 
 struct ActionChoise_Previews: PreviewProvider {
     static var previews: some View {
-        ActionChoise(actionChoosed: 1, cardType: .surprise, points: 2)
+        ActionChoise(backgroundColor: Color.blue, actionChoosed: 1, cardType: .surprise, points: 2)
     }
 }
