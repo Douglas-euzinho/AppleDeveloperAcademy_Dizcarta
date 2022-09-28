@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RankingView: View {
   // MARK: - VARIABLES
-  @State var isFromHistory: Bool = false
+  @State var isFromHistory: Bool = true
   @State var date: Date
   @State var time: Date
   
@@ -33,6 +33,7 @@ struct RankingView: View {
           PlayerView(name: "Bella", avatar: "person.circle.fill", avatarColor: .avatarColorCopperRose, points: 12)
           
         } //: VSTACK
+        .padding(.top, 30)
         .padding(30)
         Spacer()
       }
@@ -44,6 +45,6 @@ struct RankingView: View {
 
 struct RankingView_Previews: PreviewProvider {
   static var previews: some View {
-    RankingView(isFromHistory: true, date: Date(), time: Date())
+    RankingView(isFromHistory: false, date: Date(), time: Date())
   }
 }
