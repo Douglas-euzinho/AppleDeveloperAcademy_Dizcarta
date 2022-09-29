@@ -9,6 +9,14 @@ import SwiftUI
 
 struct ButtonCardView: View {
     
+    var iconName: String
+    var text: String
+    
+    init(iconName: String, text: String) {
+        self.iconName = iconName
+        self.text = text
+    }
+    
     var body: some View {
         HStack {
             Rectangle()
@@ -19,10 +27,10 @@ struct ButtonCardView: View {
                 .overlay {
                     VStack {
                         Spacer(minLength: 10)
-                        GenericFunctions.checkIfImageExist(name: "ButtonAccept")
+                        GenericFunctions.checkIfImageExist(name: iconName)
                             .frame(width: 41, height: 10)
                         Spacer()
-                        Text("Aceitar")
+                        Text(text)
                             .font(.custom("macrofont", size: 20))
                             .minimumScaleFactor(0.01)
                             .foregroundColor(.black)
@@ -30,30 +38,12 @@ struct ButtonCardView: View {
                     .padding(5)
                 }
                 .padding(10)
-            Rectangle()
-                .frame(minWidth: 110, idealWidth: 115, maxWidth: 130, minHeight: 60, idealHeight: 65, maxHeight: 80)
-                .cornerRadius(20)
-                .foregroundColor(.white)
-                .shadow(radius: 7)
-                .overlay {
-                    VStack {
-                        Spacer(minLength: 10)
-                        GenericFunctions.checkIfImageExist(name: "ButtonRefuse")
-                                .frame(width: 41, height: 10)
-                        Spacer()
-                        Text("Recusar")
-                            .font(.custom("macrofont", size: 20))
-                            .minimumScaleFactor(0.01)
-                            .foregroundColor(.black)
-                    }
-                    .padding(5)
-                }
         }.frame(width: .infinity, height: .infinity)
     }
 }
 
 struct ButtonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonCardView()
+        ButtonCardView(iconName: "ButtonAccept", text: "Aceitar")
     }
 }
