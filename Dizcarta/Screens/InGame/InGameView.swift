@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct InGameView: View {
+    @Environment(\.dismiss) var dismiss
+    
     // MARK: - VARIABLES
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
+    var btnAction: (() -> Void) = {}
     
     let durationAndDelay : CGFloat = 0.3
     
@@ -33,7 +36,15 @@ struct InGameView: View {
                 .padding(30)
                 HStack {
                     ButtonCardView(iconName: "ButtonAccept", text: "Aceitar")
+                        .onTapGesture {
+                            btnAction()
+                            dismiss.callAsFunction()
+                        }
                     ButtonCardView(iconName: "ButtonRefuse", text: "Recusar")
+                        .onTapGesture {
+                            btnAction()
+                            dismiss.callAsFunction()
+                        }
                 }
             }
         }
