@@ -27,11 +27,14 @@ struct InGameView: View {
                               description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
                               acceptPoints: .constant(4), declinePoints: .constant(4), degree: $frontDegree)
                     BackCard(degree: $backDegree)
+                }.onTapGesture {
+                    flipCard()
                 }
                 .padding(30)
-                ButtonCardView()
-            }.onTapGesture {
-                flipCard()
+                HStack {
+                    ButtonCardView(iconName: "ButtonAccept", text: "Aceitar")
+                    ButtonCardView(iconName: "ButtonRefuse", text: "Recusar")
+                }
             }
         }
     }
