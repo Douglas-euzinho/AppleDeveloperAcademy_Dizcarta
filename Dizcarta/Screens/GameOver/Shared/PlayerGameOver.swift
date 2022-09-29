@@ -9,6 +9,10 @@ import SwiftUI
 
 struct PlayerGameOver: View {
   // MARK: - VARIABLES
+  @State var name: String
+  @State var avatarColor: Color
+  @State var podiumPosition: Int
+  @State var points: Int
   
   // MARK: - BODY
   var body: some View {
@@ -17,13 +21,13 @@ struct PlayerGameOver: View {
         Image(systemName: "person.circle.fill")
           .resizable()
           .frame(width: 94, height: 94)
-          .foregroundColor(.red)
+          .foregroundColor(avatarColor)
           .overlay {
             Circle()
               .stroke(.black, lineWidth: 1 )
           }
         
-          Text("1")
+          Text("\(podiumPosition)")
             .font(.system(size: 22))
             .fontWeight(.bold)
             .foregroundColor(.white)
@@ -33,12 +37,12 @@ struct PlayerGameOver: View {
             )
       } //: ZSTACK
       
-      Text("Alice")
+      Text(name)
         .font(.system(size: 24))
         .fontWeight(.medium)
         .padding(.vertical, 2)
       
-      Text("20 pontos")
+      Text("\(points) pontos")
         .font(.system(size: 15))
         .fontWeight(.semibold)
         .foregroundColor(.configurationButtonUnselected)
@@ -55,6 +59,6 @@ struct PlayerGameOver: View {
 // MARK: - PREVIEW
 struct PlayerGameOver_Previews: PreviewProvider {
   static var previews: some View {
-    PlayerGameOver()
+    PlayerGameOver(name: "Alice", avatarColor: .avatarColorPurple, podiumPosition: 1, points: 20)
   }
 }
