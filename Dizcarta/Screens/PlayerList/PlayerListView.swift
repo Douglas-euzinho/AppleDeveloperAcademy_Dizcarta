@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PlayerListView: View {
-    
+  
     // MARK: - VARIABLES
+    @Environment(\.presentationMode) var presentation
     @State var showingPopup = false
     @State var playerName = ""
     @State var playerColor: Color = .avatarColorBlue
@@ -47,6 +48,18 @@ struct PlayerListView: View {
         }
         .navigationTitle("Jogadores")
         .navigationBarTitleDisplayMode(.large)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+          HStack {
+            Image(systemName: "chevron.left")
+            Text("Voltar")
+              .fontWeight(.medium)
+        }
+          .foregroundColor(.black)
+          .onTapGesture {
+            self.presentation.wrappedValue.dismiss()
+          }
+        )
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if !observed.repository.players.isEmpty {

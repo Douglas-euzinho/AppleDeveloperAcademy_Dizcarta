@@ -51,7 +51,9 @@ struct InGameView: View {
                 backDegree = 0
             }
         }
+
     }
+  }
 }
 
 struct InGameView_Previews: PreviewProvider {
