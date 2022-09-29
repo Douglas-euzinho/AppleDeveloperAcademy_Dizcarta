@@ -17,7 +17,7 @@ struct InGameView: View {
     
     var body: some View {
         ZStack {
-            GenericFunctions.checkIfImageExist(name: "ExitButton")
+            GenericFunctions.checkIfImageExist(name: "exitButton")
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: Alignment.topLeading)
                 .padding()
             VStack {
@@ -28,6 +28,8 @@ struct InGameView: View {
                               acceptPoints: .constant(4), declinePoints: .constant(4), degree: $frontDegree)
                     BackCard(degree: $backDegree)
                 }
+                .padding(30)
+                ButtonCardView()
             }.onTapGesture {
                 flipCard()
             }
@@ -54,7 +56,7 @@ struct InGameView: View {
 
     }
   }
-}
+
 
 struct InGameView_Previews: PreviewProvider {
     static var previews: some View {
