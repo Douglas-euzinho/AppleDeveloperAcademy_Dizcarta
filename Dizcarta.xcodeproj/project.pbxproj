@@ -25,6 +25,8 @@
 		15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0818E28E2274400D479B8 /* HistoryView.swift */; };
 		15A0819128E2280900D479B8 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0819028E2280900D479B8 /* HistoryData.swift */; };
 		15A0819528E2417A00D479B8 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0819428E2417A00D479B8 /* RankingView.swift */; };
+		15A5A2C828E623E60038F2FF /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5A2C728E623E60038F2FF /* GameOverView.swift */; };
+		15A5A2CB28E624850038F2FF /* PlayerGameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
 		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
@@ -84,6 +86,8 @@
 		15A0818E28E2274400D479B8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		15A0819028E2280900D479B8 /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
 		15A0819428E2417A00D479B8 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		15A5A2C728E623E60038F2FF /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameOver.swift; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
@@ -267,6 +271,23 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		15A5A2C628E623D10038F2FF /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				15A5A2C728E623E60038F2FF /* GameOverView.swift */,
+				15A5A2C928E623E90038F2FF /* Shared */,
+			);
+			path = GameOver;
+			sourceTree = "<group>";
+		};
+		15A5A2C928E623E90038F2FF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		23199ECF28DE239B0064E574 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +334,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				15A5A2C628E623D10038F2FF /* GameOver */,
 				CDA35D0A28E4E17F0064B3B8 /* ShiftPlayer */,
 				155277E028DB9137003F83EF /* PlayerList */,
 				15A0819228E2416C00D479B8 /* Ranking */,
@@ -578,6 +600,8 @@
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
 				15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */,
+				15A5A2C828E623E60038F2FF /* GameOverView.swift in Sources */,
+				15A5A2CB28E624850038F2FF /* PlayerGameOver.swift in Sources */,
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,
 				CD70B77228DCF295007CF236 /* Picker.swift in Sources */,
 				15A0819128E2280900D479B8 /* HistoryData.swift in Sources */,
