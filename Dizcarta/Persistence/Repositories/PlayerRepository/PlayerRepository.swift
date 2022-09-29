@@ -10,9 +10,8 @@ import CoreData
 
 protocol PlayerRepositoryProtocol: AnyObject, Repository {
     var context: NSManagedObjectContext { get set}
-    var players: [Player] { get set }
     
-    func getPlayers()
+    func getPlayers() -> [Player]
     func createPlayer(name: String, color: String)
     
 }
@@ -37,13 +36,13 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
         self.context = context
     }
     
-    internal func getPlayers() {
+    func getPlayers() -> [Player] {
         do {
-            let players = try context.fetch(Player.fetchRequest())
-            self.players = players
+            return try context.fetch(Player.fetchRequest())
         } catch {
-            save()
+            print("[CORE DATA]: ERRO TO GET PLAYERS")
         }
+        return []
     }
     
     func createPlayer(name: String, color: String) {
@@ -53,7 +52,6 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
         save()
-        getPlayers()
     }
     
 }
@@ -67,13 +65,14 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         self.context = PersistenceController.inMemoryContext
     }
     
-    internal func getPlayers() {
+    func getPlayers() -> [Player] {
         do {
-            let players = try context.fetch(Player.fetchRequest())
-            self.players = players
+            print("[CORE DATA]: GET PLAYERS ")
+            return try context.fetch(Player.fetchRequest())
         } catch {
-            save()
+            print("[CORE DATA]: ERRO TO GET PLAYERS")
         }
+        return []
     }
     
     func createPlayer(name: String, color: String) {
@@ -82,8 +81,8 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         player.color = color
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
+        print("[CORE DATA]: PLAYER CREATED \(player)")
         save()
-        getPlayers()
     }
 }
 

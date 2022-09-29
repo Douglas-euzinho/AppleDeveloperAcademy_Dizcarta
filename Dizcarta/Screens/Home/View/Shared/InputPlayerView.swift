@@ -18,8 +18,6 @@ struct InputPlayerView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.clear
-                    .ignoresSafeArea(.all)
                 VStack {
                     Rectangle()
                         .frame(width: 318, height: 350, alignment: .center)
@@ -53,7 +51,6 @@ struct InputPlayerView: View {
                     .padding(.top, 220)
                     .onTapGesture {
                         saveAction()
-                        dismiss.callAsFunction()
                     }
             }
         }
