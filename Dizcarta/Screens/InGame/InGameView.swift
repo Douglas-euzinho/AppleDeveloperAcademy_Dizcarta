@@ -71,7 +71,6 @@ struct InGameView: View {
     }
   }
 
-
 struct InGameView_Previews: PreviewProvider {
     static var previews: some View {
         InGameView()

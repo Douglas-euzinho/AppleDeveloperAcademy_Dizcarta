@@ -34,7 +34,7 @@ struct GenericButtons: View {
                         }
                         Text(self.label ?? "")
                             .frame(minWidth: 50, idealWidth: 63, maxWidth: 80, minHeight: 20, idealHeight: 24, maxHeight: 30)
-                            .font(.custom("macrofont", size: 35))
+                            .font(.custom("macrofont", size: 30))
                             .minimumScaleFactor(0.001)
                             .padding(5)
                             .foregroundColor(.white)

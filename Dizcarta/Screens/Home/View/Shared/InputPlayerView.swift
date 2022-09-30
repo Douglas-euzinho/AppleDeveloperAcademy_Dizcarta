@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct InputPlayerView: View {
-    @Environment(\.dismiss) var dismiss
     
     @Binding var text: String
     @State private var textFieldColor: Color = .black
@@ -39,13 +38,13 @@ struct InputPlayerView: View {
                 
                 Picker(selectedColor: $selectedColor)
                 HStack {
-                    GenericButtons(label: "Cancel")
+                    GenericButtons(label: "Cancelar")
                         .frame(width: 120, height: 40)
                         .onTapGesture {
                             cancelAction()
                         }
                         .padding(.top)
-                    GenericButtons(label: "Save")
+                    GenericButtons(label: "Salvar")
                         .frame(width: 120, height: 40)
                         .onTapGesture {
                             saveAction()

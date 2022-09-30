@@ -48,6 +48,9 @@ struct PlayerListView: View {
                         playerName = ""
                         showingPopup = false
                         players = observed.repository.getPlayers()
+                    } cancelAction: {
+                        showingPopup = false
+                        playerName = ""
                     }
                 }
             }
