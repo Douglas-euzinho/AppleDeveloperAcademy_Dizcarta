@@ -9,49 +9,49 @@ import SwiftUI
 
 struct InputPlayerView: View {
     @Environment(\.dismiss) var dismiss
-
+    
     @Binding var text: String
     @State private var textFieldColor: Color = .black
     @Binding var selectedColor: Color
     var saveAction: (() -> Void) = {}
-
+    var cancelAction: (() -> Void) = {}
+    
     var body: some View {
-        VStack {
-            ZStack {
-                VStack {
-                    Rectangle()
-                        .frame(width: 318, height: 350, alignment: .center)
-                        .cornerRadius(20)
-                        .foregroundColor(Color.backGroundPickerColor)
+        ZStack {
+            Rectangle()
+                .frame(width: 318, height: 350, alignment: .center)
+                .cornerRadius(20)
+                .foregroundColor(Color.backGroundPickerColor)
+            VStack {
+                ZStack {
+                    Circle()
+                        .frame(width: 80, height: 80, alignment: .center)
+                        .foregroundColor(selectedColor)
+                    
+                    Image(systemName: "person")
+                        .font(.custom("macrofont", size: 60))
                 }
-                
-                Circle()
-                    .frame(width: 80, height: 80, alignment: .center)
-                    .foregroundColor(selectedColor)
-                    .padding(.bottom, 230)
-                
-                Image(systemName: "person")
-                    .font(.custom("macrofont", size: 60))
-                    .padding(.bottom, 230)
-                
-                VStack {
-                    TextField("Nome", text: $text)
-                }
-                .frame(width: 240, height: 20)
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 13)
-                    .stroke(textFieldColor, lineWidth: 1))
-                .padding(65)
-                .padding(.top, -75)
+                TextField("Nome", text: $text)
+                    .frame(width: 240, height: 20)
+                    .padding()
+                    .overlay(RoundedRectangle(cornerRadius: 13)
+                        .stroke(textFieldColor, lineWidth: 1))
                 
                 Picker(selectedColor: $selectedColor)
-                    .padding(.top, 60)
-                GenericButtons(label: "Salvar")
-                    .frame(width: 120, height: 40)
-                    .padding(.top, 220)
-                    .onTapGesture {
-                        saveAction()
-                    }
+                HStack {
+                    GenericButtons(label: "Cancel")
+                        .frame(width: 120, height: 40)
+                        .onTapGesture {
+                            cancelAction()
+                        }
+                        .padding(.top)
+                    GenericButtons(label: "Save")
+                        .frame(width: 120, height: 40)
+                        .onTapGesture {
+                            saveAction()
+                        }
+                        .padding(.top)
+                }
             }
         }
     }
