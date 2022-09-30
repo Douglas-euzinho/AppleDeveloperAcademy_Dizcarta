@@ -16,16 +16,30 @@ struct Picker: View {
                                    .avatarColorBlue, .avatarColorPatina]
     
     var body: some View {
-        HStack {
-            ForEach(colors, id: \.self) { color in
-                Circle()
-                    .foregroundColor(color)
-                    .frame(width: 45, height: 45)
-                    .opacity(color == selectedColor ? 0.5 : 1.0)
-                    .scaleEffect(color == selectedColor ? 1.1 : 1.0)
-                    .onTapGesture {
-                        selectedColor = color
-                    }
+        VStack {
+            HStack {
+                ForEach(colors[0...2], id: \.self) { color in
+                    Circle()
+                        .foregroundColor(color)
+                        .frame(width: 45, height: 45)
+                        .opacity(color == selectedColor ? 0.5 : 1.0)
+                        .scaleEffect(color == selectedColor ? 1.1 : 1.0)
+                        .onTapGesture {
+                            selectedColor = color
+                        }
+                }
+            }
+            HStack {
+                ForEach(colors[3...5], id: \.self) { color in
+                    Circle()
+                        .foregroundColor(color)
+                        .frame(width: 45, height: 45)
+                        .opacity(color == selectedColor ? 0.5 : 1.0)
+                        .scaleEffect(color == selectedColor ? 1.1 : 1.0)
+                        .onTapGesture {
+                            selectedColor = color
+                        }
+                }
             }
         }
     }

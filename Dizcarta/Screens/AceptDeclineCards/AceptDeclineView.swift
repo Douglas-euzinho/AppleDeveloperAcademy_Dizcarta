@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AceptDeclineView: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Color.avatarColorPatina
             InGameView()
                 .ignoresSafeArea()
