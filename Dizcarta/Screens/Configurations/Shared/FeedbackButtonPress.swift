@@ -19,7 +19,7 @@ struct FeedbackButtonPress: View {
             Rectangle()
                 .frame(minWidth: 280, idealWidth: 316, maxWidth: 316, minHeight: 31, idealHeight: 31, maxHeight: 36)
                 .cornerRadius(15)
-                .foregroundColor(Color.feedbackButtonSelected)
+                .foregroundColor(Color(.feedbackButtonSelected))
                 .overlay(alignment: .center) {
                     Text("\(selected) activated!")
                 }

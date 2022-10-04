@@ -17,7 +17,7 @@ struct ConfigButton: View {
   var body: some View {
     ZStack {
       Rectangle()
-        .foregroundColor(isPressed ? Color.configurationButtonSelected : Color.configurationButtonUnselected)
+        .foregroundColor(isPressed ? Color(.configurationButtonSelected) : Color(.configurationButtonUnselected))
         .frame(width: 130, height: 90)
         .cornerRadius(15)
       
@@ -25,11 +25,11 @@ struct ConfigButton: View {
         Image(systemName: icon)
           .resizable()
           .frame(width: 33, height: 33, alignment: .center)
-          .foregroundColor(isPressed ? Color.configurationButtonUnselected : Color.configurationButtonSelected)
+          .foregroundColor(isPressed ? Color(.configurationButtonUnselected) : Color(.configurationButtonSelected))
         
         Text(text)
           .font(.system(size: 14))
-          .foregroundColor(isPressed ? Color.configurationButtonUnselected : Color.configurationButtonSelected)
+          .foregroundColor(isPressed ? Color(.configurationButtonUnselected) : Color(.configurationButtonSelected))
       }
     }
     .onTapGesture {

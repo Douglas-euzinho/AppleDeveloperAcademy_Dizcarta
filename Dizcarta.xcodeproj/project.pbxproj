@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E528DB9DAB003F83EF /* ProgressBarView.swift */; };
-		155277EC28DC76E4003F83EF /* UIColor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* UIColor+Color.swift */; };
+		155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* Color+AppColor.swift */; };
 		155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FA28DCE638003F83EF /* PlayerListView.swift */; };
 		1552780028DCE7E0003F83EF /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FF28DCE7E0003F83EF /* InGameView.swift */; };
 		1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552780128DCE7EA003F83EF /* FrontCard.swift */; };
@@ -34,6 +34,7 @@
 		23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EE228DE53270064E574 /* ButtonCardView.swift */; };
 		233FB51D28E4CFB9008EE961 /* PlayerList+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB51C28E4CFB9008EE961 /* PlayerList+Observed.swift */; };
 		233FB52128E622FE008EE961 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB52028E622FE008EE961 /* AlertView.swift */; };
+		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
@@ -66,7 +67,7 @@
 
 /* Begin PBXFileReference section */
 		155277E528DB9DAB003F83EF /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
-		155277EB28DC76E4003F83EF /* UIColor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Color.swift"; sourceTree = "<group>"; };
+		155277EB28DC76E4003F83EF /* Color+AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColor.swift"; sourceTree = "<group>"; };
 		155277FA28DCE638003F83EF /* PlayerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		1552780128DCE7EA003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		233FB51528E3775F008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
 		233FB51C28E4CFB9008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
 		233FB52028E622FE008EE961 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
@@ -156,7 +158,7 @@
 		155277EA28DC76CF003F83EF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				155277EB28DC76E4003F83EF /* UIColor+Color.swift */,
+				155277EB28DC76E4003F83EF /* Color+AppColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				1555381328D8E3DD00CA5573 /* DizcartaTests.swift */,
+				2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */,
 			);
 			path = DizcartaTests;
 			sourceTree = "<group>";
@@ -615,7 +618,7 @@
 				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
 				155277FB28DCE638003F83EF /* PlayerListView.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
-				155277EC28DC76E4003F83EF /* UIColor+Color.swift in Sources */,
+				155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */,
 				36DFD53528E23BED002D1399 /* FinalFluxView.swift in Sources */,
 				3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */,
 				3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */,
@@ -633,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1555381428D8E3DD00CA5573 /* DizcartaTests.swift in Sources */,
+				2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
