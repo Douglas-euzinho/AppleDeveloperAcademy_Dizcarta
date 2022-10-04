@@ -14,6 +14,7 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
+            Color(.homeColor)
             GenericFunctions.checkIfImageExist(name: "HomeLogo")
                 .padding(.bottom, 215)
             ZStack {

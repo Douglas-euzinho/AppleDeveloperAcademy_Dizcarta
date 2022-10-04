@@ -26,6 +26,8 @@ enum AppColor: String, CaseIterable {
     // MARK: - PICKER COLOR
     case backGroundPickerColor
     
+    case homeColor
+    
     // MARK: - BUTTONS
     case configurationButtonUnselected
     case configurationButtonSelected
