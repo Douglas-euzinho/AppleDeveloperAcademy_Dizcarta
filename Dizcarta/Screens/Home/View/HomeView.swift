@@ -27,7 +27,7 @@ struct HomeView: View {
                         NavigationLink {
                             PlayerListView()
                         } label: {
-                            GenericButtons(label: "Jogar", image: "PlayButtonHome")
+                            GenericButtons(label: "Jogar")
                         }
                         
                     .padding(15)
@@ -36,14 +36,7 @@ struct HomeView: View {
                                                isHapticsPressed: false, isRulesPressed: false,
                                                isColorBlindnessPressed: false)
                         } label: {
-                            GenericButtons(label: "Configurações", image: "ConfigButtonHome")
-                        }
-                        .padding(15)
-                        
-                        NavigationLink {
-                            HistoryView()
-                        } label: {
-                            GenericButtons(label: "Histórico", image: "HistoryButtonHome")
+                            GenericButtons(label: "Partidas")
                         }
                         .padding(15)
                     }
