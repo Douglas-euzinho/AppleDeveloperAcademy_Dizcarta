@@ -33,6 +33,7 @@
 		23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDF28DE527B0064E574 /* ConfigurationsView.swift */; };
 		23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EE228DE53270064E574 /* ButtonCardView.swift */; };
 		233FB51D28E4CFB9008EE961 /* PlayerList+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB51C28E4CFB9008EE961 /* PlayerList+Observed.swift */; };
+		233FB52128E622FE008EE961 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB52028E622FE008EE961 /* AlertView.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
@@ -95,6 +96,7 @@
 		23199EE228DE53270064E574 /* ButtonCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
 		233FB51528E3775F008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
 		233FB51C28E4CFB9008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
+		233FB52028E622FE008EE961 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				23199EE228DE53270064E574 /* ButtonCardView.swift */,
 				3663D36328DE2230001F0FE3 /* GenericButtons.swift */,
 				36DFD53428E23BED002D1399 /* FinalFluxView.swift */,
+				233FB52028E622FE008EE961 /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 				CD70B77028DB900A007CF236 /* InputPlayerView.swift in Sources */,
+				233FB52128E622FE008EE961 /* AlertView.swift in Sources */,
 				155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */,
 				23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */,
 			);
@@ -779,7 +783,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 9HBFB9D4T4;
+				DEVELOPMENT_TEAM = 272983AP33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dizcarta;
@@ -815,7 +819,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 9HBFB9D4T4;
+				DEVELOPMENT_TEAM = 272983AP33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dizcarta;

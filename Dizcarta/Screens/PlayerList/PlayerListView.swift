@@ -13,39 +13,48 @@ struct PlayerListView: View {
     @Environment(\.presentationMode) var presentation
     @State var showingPopup = false
     @State var playerName = ""
+    @State var players = [Player]()
     @State var playerColor: Color = .avatarColorBlue
     @StateObject var observed = Observed(context: PersistenceController.context)
     
     // MARK: - BODY
     var body: some View {
-        HStack {
-            VStack {
-                if observed.repository.players.isEmpty {
-                    Button {
-                        showingPopup = true
-                    } label: {
-                        Image("AddPlayer")
-                            .resizable()
-                            .frame(width: 64, height: 64)
+        VStack {
+            ZStack {
+                if players.isEmpty {
+                    VStack {
+                        Button {
+                            showingPopup = true
+                        } label: {
+                            Image("AddPlayer")
+                                .resizable()
+                                .frame(width: 64, height: 64)
+                        }
+                        Text("Adicione jogadores para começar a jogar.")
                     }
-                    Text("Adicione jogadores para começar a jogar.")
                 } else {
                     VStack(alignment: .leading) {
-                        ForEach(observed.repository.players.reversed()) { player in
-                            PlayerView(name: player.name ?? "", points: Int(player.points))
+                        ForEach(players.reversed()) { player in
+                            PlayerView(name: player.name ?? "")
                                 .padding()
                             Divider()
                         }
                     }
                     Spacer()
                 }
-            } //: VSTACK
-        } //: HSTACK
-        .popover(isPresented: $showingPopup) {
-            InputPlayerView(text: $playerName, selectedColor: $playerColor) {
-                observed.repository.createPlayer(name: playerName, color: "Color Name")
+                AlertView(isActive: $showingPopup) {
+                    InputPlayerView(text: $playerName, selectedColor: $playerColor) {
+                        observed.repository.createPlayer(name: playerName, color: "Color Name")
+                        playerName = ""
+                        showingPopup = false
+                        players = observed.repository.getPlayers()
+                    } cancelAction: {
+                        showingPopup = false
+                        playerName = ""
+                    }
+                }
             }
-        }
+        } //: VSTACK
         .navigationTitle("Jogadores")
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
@@ -62,7 +71,7 @@ struct PlayerListView: View {
         )
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                if !observed.repository.players.isEmpty {
+                if !players.isEmpty && players.count < 6  && !showingPopup {
                     Button {
                         showingPopup = true
                     } label: {
