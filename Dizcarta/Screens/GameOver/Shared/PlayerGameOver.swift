@@ -45,12 +45,12 @@ struct PlayerGameOver: View {
       Text("\(points) pontos")
         .font(.system(size: 15))
         .fontWeight(.semibold)
-        .foregroundColor(.configurationButtonUnselected)
+        .foregroundColor(Color(.configurationButtonUnselected))
         .padding(.horizontal, 25)
         .padding(.vertical, 4)
         .background {
           RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(.configurationButtonSelected)
+            .foregroundColor(Color(.configurationButtonSelected))
         }
     } //: VSTACK
   }
@@ -59,6 +59,6 @@ struct PlayerGameOver: View {
 // MARK: - PREVIEW
 struct PlayerGameOver_Previews: PreviewProvider {
   static var previews: some View {
-    PlayerGameOver(name: "Alice", avatarColor: .avatarColorPurple, podiumPosition: 1, points: 20)
+    PlayerGameOver(name: "Alice", avatarColor: Color(.avatarColorPurple), podiumPosition: 1, points: 20)
   }
 }

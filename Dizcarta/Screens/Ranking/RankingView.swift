@@ -25,12 +25,12 @@ struct RankingView: View {
         }
         
         LazyVStack(alignment: .leading) {
-          PlayerView(name: "Alice", avatar: "person.circle.fill", avatarColor: .avatarColorPurple, points: 20)
-          PlayerView(name: "Angelina", avatar: "person.circle.fill", avatarColor: .avatarColorGreen, points: 13)
-          PlayerView(name: "João", avatar: "person.circle.fill", avatarColor: .avatarColorYellow, points: 16)
-          PlayerView(name: "Zion", avatar: "person.circle.fill", avatarColor: .avatarColorPatina, points: 15)
-          PlayerView(name: "Lucca", avatar: "person.circle.fill", avatarColor: .avatarColorBlue, points: 14)
-          PlayerView(name: "Bella", avatar: "person.circle.fill", avatarColor: .avatarColorCopperRose, points: 12)
+          PlayerView(name: "Alice", avatar: "person.circle.fill", avatarColor: Color(.avatarColorPurple), points: 20)
+          PlayerView(name: "Angelina", avatar: "person.circle.fill", avatarColor: Color(.avatarColorGreen), points: 13)
+          PlayerView(name: "João", avatar: "person.circle.fill", avatarColor: Color(.avatarColorYellow), points: 16)
+          PlayerView(name: "Zion", avatar: "person.circle.fill", avatarColor: Color(.avatarColorPatina), points: 15)
+          PlayerView(name: "Lucca", avatar: "person.circle.fill", avatarColor: Color(.avatarColorBlue), points: 14)
+          PlayerView(name: "Bella", avatar: "person.circle.fill", avatarColor: Color(.avatarColorCopperRose), points: 12)
           
         } //: VSTACK
         .padding(.top, 30)

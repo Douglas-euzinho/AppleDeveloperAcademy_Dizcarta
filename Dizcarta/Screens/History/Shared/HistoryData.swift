@@ -39,7 +39,7 @@ struct HistoryData: View {
       VStack {
         Text("Ver Ranking")
           .font(.system(size: 12, weight: .regular))
-          .foregroundColor(.configurationButtonSelected)
+          .foregroundColor(Color(.configurationButtonSelected))
           .padding(10)
           .sheet(isPresented: $isPresented) {
             RankingView(isFromHistory: true, date: Date(), time: Date())

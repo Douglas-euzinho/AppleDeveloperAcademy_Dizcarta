@@ -10,7 +10,7 @@ import SwiftUI
 struct ShiftPlayerView: View {
     var body: some View {
         ZStack {
-            Color.avatarColorYellow
+            Color(.avatarColorYellow)
                 .ignoresSafeArea(.all)
                 
             VStack {

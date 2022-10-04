@@ -20,7 +20,7 @@ struct InputPlayerView: View {
             Rectangle()
                 .frame(width: 318, height: 350, alignment: .center)
                 .cornerRadius(20)
-                .foregroundColor(Color.backGroundPickerColor)
+                .foregroundColor(Color(.backGroundPickerColor))
             VStack {
                 ZStack {
                     Circle()
@@ -44,10 +44,13 @@ struct InputPlayerView: View {
                             cancelAction()
                         }
                         .padding(.top)
+                    // TODO: Mudar opacidade do botão de salvar quando o text for empty
                     GenericButtons(label: "Salvar")
                         .frame(width: 120, height: 40)
                         .onTapGesture {
-                            saveAction()
+                            if !text.isEmpty {
+                                saveAction()
+                            }
                         }
                         .padding(.top)
                 }
@@ -58,6 +61,6 @@ struct InputPlayerView: View {
 
 struct InputPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        InputPlayerView(text: .constant(""), selectedColor: .constant(.avatarColorBlue))
+        InputPlayerView(text: .constant(""), selectedColor: .constant(Color(.avatarColorBlue)))
     }
 }
