@@ -32,6 +32,8 @@
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
 		23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDF28DE527B0064E574 /* ConfigurationsView.swift */; };
 		23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EE228DE53270064E574 /* ButtonCardView.swift */; };
+		232E1D7428EE034D00BBA976 /* CoreDataCreateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E1D7328EE034D00BBA976 /* CoreDataCreateTests.swift */; };
+		232E1D7628EE058100BBA976 /* CoreDataGetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E1D7528EE058100BBA976 /* CoreDataGetTests.swift */; };
 		233FB51D28E4CFB9008EE961 /* PlayerList+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB51C28E4CFB9008EE961 /* PlayerList+Observed.swift */; };
 		233FB52128E622FE008EE961 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB52028E622FE008EE961 /* AlertView.swift */; };
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
@@ -95,6 +97,8 @@
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 		23199EDF28DE527B0064E574 /* ConfigurationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		23199EE228DE53270064E574 /* ButtonCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
+		232E1D7328EE034D00BBA976 /* CoreDataCreateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCreateTests.swift; sourceTree = "<group>"; };
+		232E1D7528EE058100BBA976 /* CoreDataGetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGetTests.swift; sourceTree = "<group>"; };
 		233FB51528E3775F008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
 		233FB51C28E4CFB9008EE961 /* PlayerList+Observed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayerList+Observed.swift"; sourceTree = "<group>"; };
 		233FB52028E622FE008EE961 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 			children = (
 				1555381328D8E3DD00CA5573 /* DizcartaTests.swift */,
 				2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */,
+				232E1D7328EE034D00BBA976 /* CoreDataCreateTests.swift */,
+				232E1D7528EE058100BBA976 /* CoreDataGetTests.swift */,
 			);
 			path = DizcartaTests;
 			sourceTree = "<group>";
@@ -636,7 +642,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1555381428D8E3DD00CA5573 /* DizcartaTests.swift in Sources */,
+				232E1D7428EE034D00BBA976 /* CoreDataCreateTests.swift in Sources */,
 				2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */,
+				232E1D7628EE058100BBA976 /* CoreDataGetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
