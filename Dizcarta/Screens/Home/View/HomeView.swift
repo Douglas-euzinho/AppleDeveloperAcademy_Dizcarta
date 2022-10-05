@@ -15,24 +15,27 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color(.homeColor)
-            GenericFunctions.checkIfImageExist(name: "HomeLogo")
-                .padding(.bottom, 215)
-            ZStack {
-                GenericFunctions.checkIfImageExist(name: "LightningHome")
-                    .padding(.top, 15)
+                .ignoresSafeArea()
+            VStack(alignment: .leading) {
+                Spacer(minLength: 20)
+                GenericFunctions.checkIfImageExist(name: "LogoHome")
+                    .padding(.top, 20)
+                Spacer()
+                ZStack {
+                    
+                    HStack {
+                    }
+                    Spacer()
+                    .safeAreaInset(edge: .bottom) {
+                        GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
+                            .frame(width: .infinity, height: 50)
+                            .padding(.bottom)
+//                        Spacer(minLength: 20)
+                    }
+                    
+                }
+                
             }
-            .padding(.leading, 295)
-            ZStack {
-                GenericFunctions.checkIfImageExist(name: "LightningHomeB")
-                    .padding(.bottom, 560)
-            }
-            .padding(.trailing, 280)
-            ZStack {
-                GenericFunctions.checkIfImageExist(name: "HomeDetails")
-                    .rotationEffect(.degrees(9))
-                    .padding(.top, 750)
-            }
-            .padding(.leading, 360)
         }
     }
 }
