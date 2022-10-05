@@ -16,25 +16,22 @@ struct HomeView: View {
         ZStack {
             Color(.homeColor)
                 .ignoresSafeArea()
-            VStack(alignment: .leading) {
-                Spacer(minLength: 20)
+            VStack(alignment: .center) {
                 GenericFunctions.checkIfImageExist(name: "LogoHome")
-                    .padding(.top, 20)
-                Spacer()
-                ZStack {
-                    
-                    HStack {
-                    }
+                GenericFunctions.checkIfImageExist(name: "HomePlay")
+                GenericFunctions.checkIfImageExist(name: "HomeMatches")
+            }
+            .overlay {
+                HStack {
                     Spacer()
-                    .safeAreaInset(edge: .bottom) {
-                        GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
-                            .frame(width: .infinity, height: 50)
-                            .padding(.bottom)
-//                        Spacer(minLength: 20)
-                    }
-                    
                 }
-                
+                Spacer()
+                .safeAreaInset(edge: .bottom) {
+                    GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
+                        .frame(width: .infinity, height: 50)
+                        .padding(.bottom)
+                        Spacer()
+                }
             }
         }
     }
