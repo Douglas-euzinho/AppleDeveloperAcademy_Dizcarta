@@ -13,27 +13,42 @@ struct HomeView: View {
     @State var isPlayerListView = false
     
     var body: some View {
-        ZStack {
-            Color(.homeColor)
-            GenericFunctions.checkIfImageExist(name: "HomeLogo")
-                .padding(.bottom, 215)
-            ZStack {
-                GenericFunctions.checkIfImageExist(name: "LightningHome")
-                    .padding(.top, 15)
+        NavigationView {
+            Group {
+                VStack {
+                    GenericFunctions.checkIfImageExist(name: "LogoHome")
+                        .resizable()
+                        .frame(minWidth: 280, idealWidth: 340,
+                               maxWidth: 360, minHeight: 160,
+                               idealHeight: 192, maxHeight: 210,
+                               alignment: .center)
+                        .padding(25)
+                    VStack {
+                        NavigationLink {
+                            PlayerListView()
+                        } label: {
+                            GenericButtons(label: "Jogar", image: "PlayButtonHome")
+                        }
+                        
+                    .padding(15)
+                        NavigationLink {
+                          ConfigurationsView()
+                        } label: {
+                            GenericButtons(label: "Configurações", image: "ConfigButtonHome")
+                        }
+                        .padding(15)
+                        
+                        NavigationLink {
+                            HistoryView()
+                        } label: {
+                            GenericButtons(label: "Histórico", image: "HistoryButtonHome")
+                        }
+                        .padding(15)
+                    }
+                }
             }
-            .padding(.leading, 295)
-            ZStack {
-                GenericFunctions.checkIfImageExist(name: "LightningHomeB")
-                    .padding(.bottom, 560)
-            }
-            .padding(.trailing, 280)
-            ZStack {
-                GenericFunctions.checkIfImageExist(name: "HomeDetails")
-                    .rotationEffect(.degrees(9))
-                    .padding(.top, 750)
-            }
-            .padding(.leading, 360)
         }
+        .ignoreSafeArea(.all)
     }
 }
 
