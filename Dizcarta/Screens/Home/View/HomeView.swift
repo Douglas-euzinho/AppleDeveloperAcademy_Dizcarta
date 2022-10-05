@@ -13,42 +13,27 @@ struct HomeView: View {
     @State var isPlayerListView = false
     
     var body: some View {
-        NavigationView {
-            Group {
-                VStack {
-                    GenericFunctions.checkIfImageExist(name: "LogoHome")
-                        .resizable()
-                        .frame(minWidth: 280, idealWidth: 340,
-                               maxWidth: 360, minHeight: 160,
-                               idealHeight: 192, maxHeight: 210,
-                               alignment: .center)
-                        .padding(25)
-                    VStack {
-                        NavigationLink {
-                            PlayerListView()
-                        } label: {
-                            GenericButtons(label: "Jogar", image: "PlayButtonHome")
-                        }
-                        
-                    .padding(15)
-                        NavigationLink {
-                          ConfigurationsView()
-                        } label: {
-                            GenericButtons(label: "Configurações", image: "ConfigButtonHome")
-                        }
-                        .padding(15)
-                        
-                        NavigationLink {
-                            HistoryView()
-                        } label: {
-                            GenericButtons(label: "Histórico", image: "HistoryButtonHome")
-                        }
-                        .padding(15)
-                    }
+        ZStack {
+            Color(.homeColor)
+                .ignoresSafeArea()
+            VStack(alignment: .center) {
+                GenericFunctions.checkIfImageExist(name: "LogoHome")
+                GenericFunctions.checkIfImageExist(name: "HomePlay")
+                GenericFunctions.checkIfImageExist(name: "HomeMatches")
+            }
+            .overlay {
+                HStack {
+                    Spacer()
+                }
+                Spacer()
+                .safeAreaInset(edge: .bottom) {
+                    GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
+                        .frame(width: .infinity, height: 50)
+                        .padding(.bottom)
+                        Spacer()
                 }
             }
         }
-        .ignoreSafeArea(.all)
     }
 }
 
