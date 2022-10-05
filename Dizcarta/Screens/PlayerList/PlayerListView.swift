@@ -21,16 +21,17 @@ struct PlayerListView: View {
     var body: some View {
         VStack {
             ZStack {
+                Color(.playerListColor)
+                    .ignoresSafeArea()
                 if players.isEmpty {
                     VStack {
                         Button {
                             showingPopup = true
                         } label: {
                             Image("AddPlayer")
-                                .resizable()
-                                .frame(width: 64, height: 64)
                         }
                         Text("Adicione jogadores para começar a jogar.")
+                            .foregroundColor(Color.white)
                     }
                 } else {
                     VStack(alignment: .leading) {
@@ -57,6 +58,7 @@ struct PlayerListView: View {
             }
         } //: VSTACK
         .navigationTitle("Jogadores")
+        .foregroundColor(Color.white)
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
