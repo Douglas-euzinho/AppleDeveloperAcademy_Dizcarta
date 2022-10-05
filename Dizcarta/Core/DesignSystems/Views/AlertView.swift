@@ -37,7 +37,7 @@ struct AlertView_Previews: PreviewProvider {
     @State var shown = false
     static var previews: some View {
         AlertView(isActive: .constant(false), content: {
-            InputPlayerView(text: .constant(""), selectedColor: .constant(.gray))
+            InputPlayerView(text: .constant(""), selectedAvatar: .constant(""))
         })
     }
 }

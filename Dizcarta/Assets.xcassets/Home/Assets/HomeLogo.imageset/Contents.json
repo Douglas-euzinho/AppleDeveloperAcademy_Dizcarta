@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "DizCartaLogo.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "AddPlayer.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },

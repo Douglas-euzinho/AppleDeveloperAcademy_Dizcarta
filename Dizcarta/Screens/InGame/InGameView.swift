@@ -51,7 +51,7 @@ struct InGameView: View {
     }
     // MARK: Flip Card Function
     func flipCard() {
-        isFlipped = !isFlipped
+        isFlipped.toggle()
         if isFlipped {
             withAnimation(.linear(duration: durationAndDelay)) {
                 backDegree = 90

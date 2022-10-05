@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct Picker: View {
+    @State var avatarIcon = ""
     @Binding var selectedColor: Color
-    private let colors: [Color] = [.avatarColorPurple,
-                                   .avatarColorGreen,
-                                   .avatarColorCopperRose,
-                                   .avatarColorYellow,
-                                   .avatarColorBlue, .avatarColorPatina]
+    private let colors: [Color] = [Color(.avatarColorPurple),
+                                   Color(.avatarColorGreen),
+                                   Color(.avatarColorCopperRose),
+                                   Color(.avatarColorYellow),
+                                   Color(.avatarColorBlue), Color(.avatarColorPatina)]
     
     var body: some View {
         VStack {

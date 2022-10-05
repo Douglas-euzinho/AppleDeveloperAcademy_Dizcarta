@@ -21,14 +21,14 @@ struct GameOverView: View {
       
       Spacer(minLength: 30.0)
       
-      PlayerGameOver(name: "Alice", avatarColor: .avatarColorPurple, podiumPosition: 1, points: 20)
+      PlayerGameOver(name: "Alice", avatarColor: Color(.avatarColorPurple), podiumPosition: 1, points: 20)
         .padding()
       
       HStack {
-        PlayerGameOver(name: "João", avatarColor: .avatarColorYellow, podiumPosition: 2, points: 16)
+        PlayerGameOver(name: "João", avatarColor: Color(.avatarColorYellow), podiumPosition: 2, points: 16)
           .padding(.horizontal)
         
-        PlayerGameOver(name: "Zion", avatarColor: .avatarColorPatina, podiumPosition: 3, points: 15)
+        PlayerGameOver(name: "Zion", avatarColor: Color(.avatarColorPatina), podiumPosition: 3, points: 15)
           .padding(.horizontal)
       } //: HSTACK
       
