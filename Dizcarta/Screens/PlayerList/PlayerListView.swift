@@ -14,7 +14,7 @@ struct PlayerListView: View {
     @State var showingPopup = false
     @State var playerName = ""
     @State var players = [Player]()
-    @State var playerColor: Color = Color(.avatarColorBlue)
+    @State var avatarIcon = ""
     @StateObject var observed = Observed(context: PersistenceController.context)
     
     // MARK: - BODY
@@ -35,16 +35,17 @@ struct PlayerListView: View {
                 } else {
                     VStack(alignment: .leading) {
                         ForEach(players.reversed()) { player in
-                            PlayerView(name: player.name ?? "", avatarColor: Color(AppColor(rawValue: player.color ?? "notFoundColor")))
+                            PlayerView(name: player.name ?? "", avatar: avatarIcon)
                                 .padding()
                             Divider()
                         }
                     }
                     Spacer()
                 }
+                // TODO: - TROCAR A ALERT VIEW POR UM POPOVER
                 AlertView(isActive: $showingPopup) {
-                    InputPlayerView(text: $playerName, selectedColor: $playerColor) {
-                        observed.repository.createPlayer(name: playerName, color: AppColor.colorName(playerColor))
+                    InputPlayerView(text: $playerName, selectedAvatar: $avatarIcon) {
+                        observed.repository.createPlayer(name: playerName, avatar: avatarIcon)
                         playerName = ""
                         showingPopup = false
                         players = observed.repository.getPlayers()
