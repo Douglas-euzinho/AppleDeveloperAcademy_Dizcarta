@@ -12,7 +12,7 @@ protocol PlayerRepositoryProtocol: AnyObject, Repository {
     var context: NSManagedObjectContext { get set}
     
     func getPlayers() -> [Player]
-    func createPlayer(name: String, color: String)
+    func createPlayer(name: String, avatar: String)
     
 }
 
@@ -45,10 +45,10 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
         return []
     }
     
-    func createPlayer(name: String, color: String) {
+    func createPlayer(name: String, avatar: String) {
         let player = Player(context: context)
         player.name = name
-        player.color = color
+        player.avatar = avatar
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
         save()
@@ -75,10 +75,10 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         return []
     }
     
-    func createPlayer(name: String, color: String) {
+    func createPlayer(name: String, avatar: String) {
         let player = Player(context: context)
         player.name = name
-        player.color = color
+        player.avatar = avatar
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
         print("[CORE DATA]: PLAYER CREATED \(player)")

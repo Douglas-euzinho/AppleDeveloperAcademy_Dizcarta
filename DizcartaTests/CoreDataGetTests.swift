@@ -1,0 +1,36 @@
+//
+//  CoreDataGetTests.swift
+//  DizcartaTests
+//
+//  Created by Igor Samoel da Silva on 05/10/22.
+//
+
+import XCTest
+@testable import Dizcarta
+
+final class CoreDataGetTests: XCTestCase {
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testGetPlayers() throws {
+        let repository = PlayerRepositoryCoreData(context: PersistenceController.inMemoryContext)
+        for _ in 0...9 {
+            repository.createPlayer(name: UUID().uuidString, avatar: UUID().uuidString)
+        }
+        XCTAssertTrue(10 == repository.getPlayers().count, "Different amount of players than created")
+    }
+
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+
+}

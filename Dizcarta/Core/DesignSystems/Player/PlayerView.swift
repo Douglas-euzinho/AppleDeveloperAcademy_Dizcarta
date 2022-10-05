@@ -11,7 +11,6 @@ struct PlayerView: View {
   // MARK: - VARIABLES
   @State var name: String
   @State var avatar: String = "person.circle.fill"
-  @State var avatarColor: Color = .red
   @State var points: Int?
   
   // MARK: - BODY
@@ -20,11 +19,6 @@ struct PlayerView: View {
       Image(systemName: avatar)
         .resizable()
         .frame(width: 45, height: 45)
-        .foregroundColor(avatarColor)
-        .overlay(content: {
-          Circle()
-            .stroke(.black, lineWidth: 1)
-        })
         .padding(.trailing, 8)
       
       VStack(alignment: .leading) {

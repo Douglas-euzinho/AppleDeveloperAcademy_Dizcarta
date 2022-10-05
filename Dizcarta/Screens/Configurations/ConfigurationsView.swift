@@ -10,47 +10,50 @@ import SwiftUI
 struct ConfigurationsView: View {
   // MARK: - VARIABLES
   @Environment(\.presentationMode) var presentation
-    @State var isNarratorPressed: Bool
-    @State var isHapticsPressed: Bool
-    @State var isRulesPressed: Bool
-    @State var isColorBlindnessPressed: Bool
-    @State var isMessageOn = true
-
+  @State var isMessageOn = false
+  @State var messageToShow: String = ""
+  @StateObject var observed = Observed()
+  
   // MARK: - BODY
   var body: some View {
     VStack {
       HStack {
-        ConfigButton(isPressed: $isNarratorPressed, icon: "speaker.wave.3.fill", text: "Narrador")
-        ConfigButton(isPressed: $isHapticsPressed, icon: "waveform", text: "Haptics")
+        // TODO: - FIX THE FAST ACTIVATE AND DEACTIVATE THE BUTTONS LOGIC
+        ForEach(0..<2) { data in
+          ConfigButton(data: observed.buttonsData[data]) { message in
+            self.isMessageOn = true
+            self.messageToShow = message
+          }
+        }
       }
+      .padding(.top, 50)
       
       HStack {
-        ConfigButton(isPressed: $isRulesPressed, icon: "questionmark.app.fill", text: "Regras")
-        ConfigButton(isPressed: $isColorBlindnessPressed, icon: "drop.fill", text: "Color Blindness")
+        ForEach(2..<4) { data in
+          ConfigButton(data: observed.buttonsData[data]) { message in
+            self.isMessageOn = true
+            self.messageToShow = message
+          }
+        }
       }
-        
-        if isNarratorPressed == true {
-            FeedbackButtonPress(selected: "Narrador")
+      .padding(.bottom, 35)
+      
+      ZStack {
+        if isMessageOn {
+          FeedbackButtonPress(hideMessage: $isMessageOn, selected: messageToShow)
         }
-        if isHapticsPressed == true {
-            FeedbackButtonPress(selected: "Haptics")
-        }
-        if isRulesPressed == true {
-            FeedbackButtonPress(selected: "Regras")
-        }
-        if isColorBlindnessPressed == true {
-            FeedbackButtonPress(selected: "Color Blindness")
-        }
+      }
+      Spacer()
     }
     .navigationTitle("Configurações")
     .navigationBarTitleDisplayMode(.large)
     .navigationBarBackButtonHidden(true)
     .navigationBarItems(leading:
-      HStack {
-        Image(systemName: "chevron.left")
-        Text("Voltar")
-          .fontWeight(.medium)
-      }
+                          HStack {
+      Image(systemName: "chevron.left")
+      Text("Voltar")
+        .fontWeight(.medium)
+    }
       .foregroundColor(.black)
       .onTapGesture {
         self.presentation.wrappedValue.dismiss()
@@ -62,6 +65,6 @@ struct ConfigurationsView: View {
 // MARK: - PREVIEW
 struct ConfigurationsView_Previews: PreviewProvider {
   static var previews: some View {
-      ConfigurationsView(isNarratorPressed: false, isHapticsPressed: false, isRulesPressed: false, isColorBlindnessPressed: false)
+    ConfigurationsView()
   }
 }
