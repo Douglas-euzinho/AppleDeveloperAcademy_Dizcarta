@@ -9,14 +9,9 @@ import SwiftUI
 
 struct FeedbackButtonPress: View {
   @State var showFeedbackWithOpacity: Double = 1.0
-  @State var toggleSelectionOnButton: Bool
+  @Binding var hideMessage: Bool
   let animation = Animation.linear(duration: 1.50)
   var selected: String
-  
-  init(selected: String, toggleSelectionOnButton: Bool) {
-    self.selected = selected
-    self.toggleSelectionOnButton = toggleSelectionOnButton
-  }
   
   var body: some View {
     VStack {
@@ -25,13 +20,14 @@ struct FeedbackButtonPress: View {
         .cornerRadius(20)
         .foregroundColor(Color.feedbackButtonSelected)
         .overlay(alignment: .center) {
-          Text(toggleSelectionOnButton ? "\(selected) activated!" : "\(selected) deactivated!")
+          Text( "\(selected)")
         }
     }
     .opacity(showFeedbackWithOpacity)
     .onAppear {
       withAnimation(animation) {
         showFeedbackWithOpacity = 0.0
+        hideMessage = false
       }
     }
   }
@@ -39,6 +35,6 @@ struct FeedbackButtonPress: View {
 
 struct FeedbackButtonPress_Previews: PreviewProvider {
   static var previews: some View {
-    FeedbackButtonPress(selected: "miau", toggleSelectionOnButton: false)
+    FeedbackButtonPress(hideMessage: .constant(true), selected: "miau")
   }
 }

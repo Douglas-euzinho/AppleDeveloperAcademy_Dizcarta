@@ -10,77 +10,40 @@ import SwiftUI
 struct ConfigurationsView: View {
   // MARK: - VARIABLES
   @Environment(\.presentationMode) var presentation
-  @State var isMessageOn = true
-  @State var pressedButtons = [false, false, false, false]
-  @State var buttonState: ButtonState = .firstPresent
-  
-  let buttonTittles = ["Narrador", "Haptics", "Regras", "Color Blindness"]
-  let buttonIcons = ["speaker.wave.3.fill", "waveform", "questionmark.app.fill", "drop.fill"]
-  
-  enum ButtonState {
-    case firstPresent
-    case inactive
-    case active
-    
-    mutating func advanceState() {
-      switch self {
-        case .firstPresent:
-        self = .active
-        case .inactive:
-        self = .active
-        case .active:
-        self = .inactive
-      }
-    }
-  }
+  @State var isMessageOn = false
+  @State var messageToShow: String = ""
+  @StateObject var observed = Observed()
   
   // MARK: - BODY
   var body: some View {
     VStack {
       HStack {
-        ForEach(0..<2) { index in
-          ConfigButton(isPressed: $pressedButtons[index], icon: buttonIcons[index], text: buttonTittles[index])
-            .onTapGesture {
-              buttonState.advanceState()
-            }
+        // TODO: - FIX THE FAST ACTIVATE AND DEACTIVATE THE BUTTONS LOGIC
+        ForEach(0..<2) { data in
+          ConfigButton(data: observed.buttonsData[data]) { message in
+            self.isMessageOn = true
+            self.messageToShow = message
+          }
         }
       }
       .padding(.top, 50)
       
       HStack {
-        ForEach(2..<4) { index in
-          ConfigButton(isPressed: $pressedButtons[index], icon: buttonIcons[index], text: buttonTittles[index])
+        ForEach(2..<4) { data in
+          ConfigButton(data: observed.buttonsData[data]) { message in
+            self.isMessageOn = true
+            self.messageToShow = message
+          }
         }
       }
       .padding(.bottom, 35)
       
       ZStack {
-        if pressedButtons[0] && (buttonState == .firstPresent || buttonState == .inactive) {
-          FeedbackButtonPress(selected: buttonTittles[0], toggleSelectionOnButton: pressedButtons[0])
-            .onDisappear {
-              buttonState.advanceState()
-            }
-        } else if !pressedButtons[0] && buttonState == .active {
-          FeedbackButtonPress(selected: buttonTittles[0], toggleSelectionOnButton: pressedButtons[0])
-            .onDisappear {
-              buttonState.advanceState()
-            }
+        if isMessageOn {
+          FeedbackButtonPress(hideMessage: $isMessageOn, selected: messageToShow)
         }
-        //        if isNarratorPressedActivated {
-        //          FeedbackButtonPress(selected: , toggleSelectionOnButton: isNarratorPressedActivated)
-        //        }
-        //        if isHapticsPressedActivated == true {
-        //          FeedbackButtonPress(selected: "Haptics", toggleSelectionOnButton: isHapticsPressedActivated)
-        //        }
-        //        if isRulesPressedActivated == true {
-        //          FeedbackButtonPress(selected: "Regras", toggleSelectionOnButton: isRulesPressedActivated)
-        //        }
-        //        if isColorBlindnessPressedActivated == true {
-        //          FeedbackButtonPress(selected: "Color Blindness", toggleSelectionOnButton: isColorBlindnessPressedActivated)
-        //        }
-        Spacer()
       }
-
+      Spacer()
     }
     .navigationTitle("Configurações")
     .navigationBarTitleDisplayMode(.large)

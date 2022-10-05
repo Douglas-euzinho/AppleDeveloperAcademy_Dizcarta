@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ConfigButton: View {
-    // MARK: - VARIABLES
-    @Binding var isPressed: Bool
-    @State var icon: String = "speaker.wave.3.fill"
-    @State var text: String = "Narrador"
-    
+  // MARK: - VARIABLES
+  @State var isPressed: Bool = false
+  @State var data: ButtonData
+  var action: (String) -> Void
+  
   // MARK: - BODY
   var body: some View {
     ZStack {
@@ -22,25 +22,32 @@ struct ConfigButton: View {
         .cornerRadius(15)
       
       VStack {
-        Image(systemName: icon)
+        Image(systemName: data.icon)
           .resizable()
           .frame(width: 33, height: 33, alignment: .center)
           .foregroundColor(isPressed ? Color.configurationButtonUnselected : Color.configurationButtonSelected)
         
-        Text(text)
+        Text(data.title)
           .font(.system(size: 14))
           .foregroundColor(isPressed ? Color.configurationButtonUnselected : Color.configurationButtonSelected)
       }
     }
     .onTapGesture {
-      isPressed.toggle()
+        isPressed.toggle()
+        UserDefaults.standard.set(isPressed, forKey: data.defaultKey)
+        action(isPressed ? data.enableMessage : data.disableMessage)
+    }
+    .onAppear {
+      isPressed = UserDefaults.standard.bool(forKey: data.defaultKey)
     }
   }
 }
 
- // MARK: - PREVIEW
+// MARK: - PREVIEW
 struct ConfButton_Previews: PreviewProvider {
   static var previews: some View {
-      ConfigButton(isPressed: .constant(true), icon: "speaker.wave.3.fill", text: "Narrador")
+    ConfigButton(data: ButtonData(defaultKey: "Config", title: "Titutlo", icon: "Icone", enableMessage: "message", disableMessage: "Message")) { message in
+      print("Tocado")
+    }
   }
 }
