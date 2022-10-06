@@ -20,16 +20,6 @@ struct GameOverView: View {
         .padding(.top, 50)
       
       Spacer(minLength: 30.0)
-      
-      PlayerGameOver(name: "Alice", avatarColor: Color(.avatarColorPurple), podiumPosition: 1, points: 20)
-        .padding()
-      
-      HStack {
-        PlayerGameOver(name: "João", avatarColor: Color(.avatarColorYellow), podiumPosition: 2, points: 16)
-          .padding(.horizontal)
-        
-        PlayerGameOver(name: "Zion", avatarColor: Color(.avatarColorPatina), podiumPosition: 3, points: 15)
-          .padding(.horizontal)
       } //: HSTACK
       
       Spacer()
@@ -45,7 +35,6 @@ struct GameOverView: View {
 
     } //: VSTACK
   }
-}
 
 // MARK: - PREVIEW
 struct GameOverView_Previews: PreviewProvider {

@@ -23,13 +23,16 @@ struct FeedbackButtonPress: View {
           Text( "\(selected)")
         }
     }
+    
     .opacity(showFeedbackWithOpacity)
     .onAppear {
-      withAnimation(animation) {
-        showFeedbackWithOpacity = 0.0
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
         hideMessage = false
+        showFeedbackWithOpacity = 0
       }
+    
     }
+    .animation(.easeInOut(duration: 1.5), value: hideMessage)
   }
 }
 
