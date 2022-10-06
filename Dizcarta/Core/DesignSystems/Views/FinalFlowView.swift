@@ -1,5 +1,5 @@
 //
-//  FinalFluxView.swift
+//  FinalFlowView.swift
 //  Dizcarta
 //
 //  Created by Douglas Figueirôa on 26/09/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FinalFluxView: View {
+struct FinalFlowView: View {
     
     var body: some View {
         VStack(alignment: .center) {
@@ -28,8 +28,8 @@ struct FinalFluxView: View {
     }
 }
 
-struct FinalFluxView_Previews: PreviewProvider {
+struct FinalFlowView_Previews: PreviewProvider {
     static var previews: some View {
-        FinalFluxView()
+        FinalFlowView()
     }
 }
