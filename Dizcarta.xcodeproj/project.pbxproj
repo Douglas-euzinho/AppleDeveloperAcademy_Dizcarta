@@ -41,6 +41,11 @@
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		366229A228EF55F400907C73 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A128EF55F400907C73 /* NeonButton.swift */; };
+		23C90ECF28EF5D020079EEFA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ECE28EF5D020079EEFA /* cards.json */; };
+		23C90ED128EF5D3B0079EEFA /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED028EF5D3B0079EEFA /* JsonManager.swift */; };
+		23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED328EF6AAB0079EEFA /* CardCodable.swift */; };
+		23C90ED628EF706D0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
+		23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
 		36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BE666828E37BA30069BB60 /* ActionChoise.swift */; };
@@ -110,6 +115,10 @@
 		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		366229A128EF55F400907C73 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
+		23C90ECE28EF5D020079EEFA /* cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
+		23C90ED028EF5D3B0079EEFA /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
+		23C90ED328EF6AAB0079EEFA /* CardCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCodable.swift; sourceTree = "<group>"; };
+		23C90ED528EF706D0079EEFA /* cardsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardsMock.json; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
 		36BE666828E37BA30069BB60 /* ActionChoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChoise.swift; sourceTree = "<group>"; };
@@ -258,6 +267,7 @@
 				2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */,
 				232E1D7328EE034D00BBA976 /* CoreDataCreateTests.swift */,
 				232E1D7528EE058100BBA976 /* CoreDataGetTests.swift */,
+				23C90ED528EF706D0079EEFA /* cardsMock.json */,
 			);
 			path = DizcartaTests;
 			sourceTree = "<group>";
@@ -377,6 +387,8 @@
 		238DF94728DA383D00F9A23B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				23C90ED228EF6A990079EEFA /* CardModel */,
+				23C90ECD28EF5BE20079EEFA /* JsonManager */,
 				23199ECF28DE239B0064E574 /* Repositories */,
 				1555380728D8E3DC00CA5573 /* Dizcarta.xcdatamodeld */,
 				1555380528D8E3DC00CA5573 /* PersistenceController.swift */,
@@ -408,6 +420,23 @@
 				155537FE28D8E3DA00CA5573 /* HomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		23C90ECD28EF5BE20079EEFA /* JsonManager */ = {
+			isa = PBXGroup;
+			children = (
+				23C90ECE28EF5D020079EEFA /* cards.json */,
+				23C90ED028EF5D3B0079EEFA /* JsonManager.swift */,
+			);
+			path = JsonManager;
+			sourceTree = "<group>";
+		};
+		23C90ED228EF6A990079EEFA /* CardModel */ = {
+			isa = PBXGroup;
+			children = (
+				23C90ED328EF6AAB0079EEFA /* CardCodable.swift */,
+			);
+			path = CardModel;
 			sourceTree = "<group>";
 		};
 		3606A1F128DA5486004C9BF9 /* DesignSystems */ = {
@@ -582,6 +611,8 @@
 				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */,
+				23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */,
+				23C90ECF28EF5D020079EEFA /* cards.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +620,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C90ED628EF706D0079EEFA /* cardsMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +661,7 @@
 			files = (
 				23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */,
 				151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */,
+				23C90ED128EF5D3B0079EEFA /* JsonManager.swift in Sources */,
 				1552780028DCE7E0003F83EF /* InGameView.swift in Sources */,
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				15A0819528E2417A00D479B8 /* RankingView.swift in Sources */,
@@ -646,6 +679,7 @@
 				15A0819128E2280900D479B8 /* HistoryData.swift in Sources */,
 				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
 				36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */,
+				23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */,
 				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
 				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
