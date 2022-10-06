@@ -1,0 +1,19 @@
+{
+    "cards": [
+        {
+            "title": "Card Title",
+            "image": "imageLocal",
+            "winPoints": 3,
+            "losePoints": 2,
+            "dizDescription": "Alguma descrição"
+        },
+        {
+            "title": "Card Title",
+            "image": "imageLocal",
+            "winPoints": 3,
+            "losePoints": 2,
+            "dizDescription": "Alguma descrição"
+        }
+    ]
+}
+
