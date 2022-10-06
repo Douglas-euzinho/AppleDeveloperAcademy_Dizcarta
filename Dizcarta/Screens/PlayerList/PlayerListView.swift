@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerListView: View {
-  
+    
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
     @State var showingPopup = false
@@ -46,10 +46,10 @@ struct PlayerListView: View {
                 // TODO: - TROCAR A ALERT VIEW POR UM POPOVER
                 AlertView(isActive: $showingPopup) {
                     InputPlayerView(text: $playerName, selectedAvatar: $avatarIcon) {
-                        observed.repository.createPlayer(name: playerName, avatar: avatarIcon)
+                        observed.createPlayer(name: playerName, avatar: avatarIcon, match: observed.matchInProgress)
                         playerName = ""
                         showingPopup = false
-                        players = observed.repository.getPlayers()
+                        observed.fetchPlayers()
                     } cancelAction: {
                         showingPopup = false
                         playerName = ""
@@ -62,15 +62,16 @@ struct PlayerListView: View {
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
-          HStack {
+                                HStack {
             Image(systemName: "chevron.left")
             Text("Voltar")
-              .fontWeight(.medium)
+                .fontWeight(.medium)
         }
-          .foregroundColor(.black)
-          .onTapGesture {
-            self.presentation.wrappedValue.dismiss()
-          }
+            .foregroundColor(.black)
+            .onTapGesture {
+                self.presentation.wrappedValue.dismiss()
+                self.observed.resetMatch()
+            }
         )
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

@@ -12,7 +12,8 @@ protocol PlayerRepositoryProtocol: AnyObject, Repository {
     var context: NSManagedObjectContext { get set}
     
     func getPlayers() -> [Player]
-    func createPlayer(name: String, avatar: String)
+    func createPlayer(name: String, avatar: String, match: MatchInProgress)
+    func createMatch() -> MatchInProgress
     
 }
 
@@ -25,6 +26,10 @@ extension PlayerRepositoryProtocol {
                 print("[SAVE CORE DATA]: ERROR TO SAVE CONTEXT")
             }
         }
+    }
+    func delete(object: NSManagedObject) {
+        context.delete(object)
+        save()
     }
 }
 
@@ -45,13 +50,20 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
         return []
     }
     
-    func createPlayer(name: String, avatar: String) {
+    func createPlayer(name: String, avatar: String, match: MatchInProgress) {
         let player = Player(context: context)
         player.name = name
         player.avatar = avatar
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
         save()
+    }
+    
+    func createMatch() -> MatchInProgress {
+        let matchInProgress = MatchInProgress(context: context)
+        matchInProgress.dizDate = Date()
+        save()
+        return matchInProgress
     }
     
 }
@@ -75,7 +87,7 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         return []
     }
     
-    func createPlayer(name: String, avatar: String) {
+    func createPlayer(name: String, avatar: String, match: MatchInProgress) {
         let player = Player(context: context)
         player.name = name
         player.avatar = avatar
@@ -84,6 +96,14 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         print("[CORE DATA]: PLAYER CREATED \(player)")
         save()
     }
+    
+    func createMatch() -> MatchInProgress {
+        let matchInProgress = MatchInProgress(context: context)
+        matchInProgress.dizDate = Date()
+        save()
+        return matchInProgress
+    }
+    
 }
 
 final class PlayerRepository {
