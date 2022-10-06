@@ -13,26 +13,33 @@ struct HomeView: View {
     @State var isPlayerListView = false
     
     var body: some View {
-        ZStack {
-            Color(.homeColor)
-                .ignoresSafeArea()
-            VStack(alignment: .center) {
-                GenericFunctions.checkIfImageExist(name: "LogoHome")
-                GenericFunctions.checkIfImageExist(name: "HomePlay")
-                GenericFunctions.checkIfImageExist(name: "HomeMatches")
-            }
-            .overlay {
-                HStack {
+        GeometryReader { geometry in
+            ZStack(alignment: .top) {
+                Color(.homeColor)
+                    .ignoresSafeArea()
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "HomeButtonConfig")
+                    GenericFunctions.checkIfImageExist(name: "HomeLogo")
+                        .frame(width: geometry.size.width/2, height: geometry.size.height/2)
+                    Spacer()
+                    NeonButton(text: "Jogar")
+                    NeonButton(text: "Histórico")
                     Spacer()
                 }
-                Spacer()
-                .safeAreaInset(edge: .bottom) {
-                    GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
-                        .frame(height: 50)
-                        .padding(.bottom)
+                .overlay {
+                    HStack {
                         Spacer()
+                    }
+                    Spacer()
+                    .safeAreaInset(edge: .bottom) {
+                        GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
+                            .frame(height: 50)
+                            .padding(.bottom)
+                            Spacer()
+                    }
                 }
             }
+            .padding(.all, 0)
         }
     }
 }
