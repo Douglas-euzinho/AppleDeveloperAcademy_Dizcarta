@@ -28,7 +28,7 @@ struct HomeView: View {
                 Spacer()
                 .safeAreaInset(edge: .bottom) {
                     GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
-                        .frame(width: .infinity, height: 50)
+                        .frame(height: 50)
                         .padding(.bottom)
                         Spacer()
                 }

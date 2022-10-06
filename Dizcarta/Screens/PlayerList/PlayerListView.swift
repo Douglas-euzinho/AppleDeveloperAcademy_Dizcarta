@@ -13,7 +13,6 @@ struct PlayerListView: View {
     @Environment(\.presentationMode) var presentation
     @State var showingPopup = false
     @State var playerName = ""
-    @State var players = [Player]()
     @State var avatarIcon = ""
     @StateObject var observed = Observed(context: PersistenceController.context)
     
@@ -23,7 +22,7 @@ struct PlayerListView: View {
             ZStack {
                 Color(.playerListColor)
                     .ignoresSafeArea()
-                if players.isEmpty {
+                if observed.players.isEmpty {
                     VStack {
                         Button {
                             showingPopup = true
@@ -35,7 +34,7 @@ struct PlayerListView: View {
                     }
                 } else {
                     VStack(alignment: .leading) {
-                        ForEach(players.reversed()) { player in
+                        ForEach(observed.players.reversed()) { player in
                             PlayerView(name: player.name ?? "", avatar: avatarIcon)
                                 .padding()
                             Divider()
@@ -75,7 +74,7 @@ struct PlayerListView: View {
         )
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                if !players.isEmpty && players.count < 6  && !showingPopup {
+                if !observed.players.isEmpty && observed.players.count < 6  && !showingPopup {
                     Button {
                         showingPopup = true
                     } label: {
