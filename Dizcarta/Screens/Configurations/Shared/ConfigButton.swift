@@ -33,9 +33,11 @@ struct ConfigButton: View {
       }
     }
     .onTapGesture {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
         isPressed.toggle()
         UserDefaults.standard.set(isPressed, forKey: data.defaultKey)
         action(isPressed ? data.enableMessage : data.disableMessage)
+      }
     }
     .onAppear {
       isPressed = UserDefaults.standard.bool(forKey: data.defaultKey)

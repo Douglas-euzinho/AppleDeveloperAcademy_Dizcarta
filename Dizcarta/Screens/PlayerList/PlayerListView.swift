@@ -44,15 +44,7 @@ struct PlayerListView: View {
                 }
                 // TODO: - TROCAR A ALERT VIEW POR UM POPOVER
                 AlertView(isActive: $showingPopup) {
-                    InputPlayerView(text: $playerName, selectedAvatar: $avatarIcon) {
-                        observed.createPlayer(name: playerName, avatar: avatarIcon, match: observed.matchInProgress)
-                        playerName = ""
-                        showingPopup = false
-                        observed.fetchPlayers()
-                    } cancelAction: {
-                        showingPopup = false
-                        playerName = ""
-                    }
+                    EmptyView()
                 }
             }
         } //: VSTACK

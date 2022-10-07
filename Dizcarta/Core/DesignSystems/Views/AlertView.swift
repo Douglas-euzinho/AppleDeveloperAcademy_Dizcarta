@@ -17,7 +17,7 @@ struct AlertView<Content>: View where Content: View {
         self.isActive = isActive
         self.content = content()
     }
-
+    
     var body: some View {
         ZStack {
             if isActive.wrappedValue {
@@ -37,7 +37,7 @@ struct AlertView_Previews: PreviewProvider {
     @State var shown = false
     static var previews: some View {
         AlertView(isActive: .constant(false), content: {
-            InputPlayerView(text: .constant(""), selectedAvatar: .constant(""))
+            EmptyView()
         })
     }
 }
