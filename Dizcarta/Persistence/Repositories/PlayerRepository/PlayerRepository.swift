@@ -11,7 +11,7 @@ import CoreData
 protocol PlayerRepositoryProtocol: AnyObject, Repository {
     var context: NSManagedObjectContext { get set}
     
-    func getPlayers() -> [Player]
+    func getPlayers(match: MatchInProgress) -> [Player]
     func createPlayer(name: String, avatar: String, match: MatchInProgress)
     func createMatch() -> MatchInProgress
     
@@ -41,7 +41,7 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
         self.context = context
     }
     
-    func getPlayers() -> [Player] {
+    func getPlayers(match: MatchInProgress) -> [Player] {
         do {
             return try context.fetch(Player.fetchRequest())
         } catch {
@@ -77,10 +77,11 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         self.context = PersistenceController.inMemoryContext
     }
     
-    func getPlayers() -> [Player] {
+    func getPlayers(match: MatchInProgress) -> [Player] {
         do {
             print("[CORE DATA]: GET PLAYERS ")
-            return try context.fetch(Player.fetchRequest())
+            let matches = try context.fetch(MatchInProgress.fetchRequest())
+            return matches.first!.players?.allObjects as! [Player]
         } catch {
             print("[CORE DATA]: ERRO TO GET PLAYERS")
         }

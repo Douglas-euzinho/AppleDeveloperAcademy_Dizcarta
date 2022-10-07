@@ -21,17 +21,11 @@ final class CoreDataCreateTests: XCTestCase {
     func testCreatePlayer() throws {
         let context = PersistenceController.inMemoryContext
         let repository = PlayerRepositoryCoreData(context: context)
-        repository.createPlayer(name: "PlayerTest", avatar: "IconTest")
-        let player = repository.getPlayers().first
+        let match = repository.createMatch()
+        repository.createPlayer(name: "PlayerTest", avatar: "IconTest", match: match)
+        let player = repository.getPlayers(match: match).first
         XCTAssertTrue(player?.name == "PlayerTest", "Player Name different from the one created by the test")
         XCTAssertTrue(player?.avatar == "IconTest", "Player Icon different from the one created by the test")
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

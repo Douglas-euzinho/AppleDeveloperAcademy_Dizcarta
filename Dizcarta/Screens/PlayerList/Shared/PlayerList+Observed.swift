@@ -22,12 +22,12 @@ extension PlayerListView {
             self.matchInProgress = repository.createMatch()
         }
         
-        internal func getPlayers() -> [Player] {
-            repository.getPlayers()
+        internal func getPlayers(match: MatchInProgress) -> [Player] {
+            repository.getPlayers(match: match)
         }
         
         func fetchPlayers() {
-            self.players = getPlayers()
+            self.players = getPlayers(match: matchInProgress)
         }
         
         func createPlayer(name: String, avatar: String, match: MatchInProgress) {
