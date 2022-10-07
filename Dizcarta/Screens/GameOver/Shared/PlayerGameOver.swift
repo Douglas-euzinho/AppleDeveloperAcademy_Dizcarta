@@ -59,6 +59,6 @@ struct PlayerGameOver: View {
 // MARK: - PREVIEW
 struct PlayerGameOver_Previews: PreviewProvider {
   static var previews: some View {
-    PlayerGameOver(name: "Alice", avatarColor: Color(.avatarColorPurple), podiumPosition: 1, points: 20)
+      PlayerGameOver(name: "Alice", avatarColor: Color(.gray), podiumPosition: 1, points: 20)
   }
 }

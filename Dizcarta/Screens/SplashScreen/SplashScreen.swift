@@ -30,6 +30,7 @@ struct ContentView : View {
                 if splashScreen {
                     SplashScreen()
                 } else {
+                    #warning("Remover")
                     HomeView()
                 }
             }

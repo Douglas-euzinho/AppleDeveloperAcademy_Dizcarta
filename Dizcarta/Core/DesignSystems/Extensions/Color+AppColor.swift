@@ -15,20 +15,13 @@ extension Color {
 }
 
 enum AppColor: String, CaseIterable {
-    // MARK: - AVATARS
-    case avatarColorPurple
-    case avatarColorGreen
-    case avatarColorCopperRose
-    case avatarColorYellow
-    case avatarColorBlue
-    case avatarColorPatina
-    
     // MARK: - PICKER COLOR
     case backGroundPickerColor
     
     // MARK: - SCREENS COLOR
     case homeColor
     case playerListColor
+    case newPlayerColor
     
     // MARK: - BUTTONS
     case configurationButtonUnselected
