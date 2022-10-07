@@ -13,33 +13,42 @@ struct HomeView: View {
     @State var isPlayerListView = false
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .top) {
-                Color(.homeColor)
-                    .ignoresSafeArea()
-                VStack(alignment: .center) {
-                    GenericFunctions.checkIfImageExist(name: "HomeButtonConfig")
-                    GenericFunctions.checkIfImageExist(name: "HomeLogo")
-                        .frame(width: geometry.size.width/2, height: geometry.size.height/2)
-                    Spacer()
-                    NeonButton(text: "Jogar")
-                    NeonButton(text: "Histórico")
-                    Spacer()
-                }
-                .overlay {
-                    HStack {
+        NavigationView {
+            GeometryReader { geometry in
+                ZStack(alignment: .top) {
+                    Color(.homeColor)
+                        .ignoresSafeArea()
+                    VStack {
+                        GenericFunctions.checkIfImageExist(name: "HomeButtonConfig")
+                    }
+                    .padding(.leading, 270)
+                    
+                    VStack(alignment: .center) {
+                        GenericFunctions.checkIfImageExist(name: "HomeLogo")
+                            .frame(width: geometry.size.width/2, height: geometry.size.height/2)
+                        Spacer()
+                        NavigationLink(destination: PlayerListView()) {
+                            NeonButton(text: "Jogar")
+                        }
+                            .padding(-20)
+                        NeonButton(text: "Partidas")
                         Spacer()
                     }
-                    Spacer()
-                    .safeAreaInset(edge: .bottom) {
-                        GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
-                            .frame(height: 50)
-                            .padding(.bottom)
+                    .overlay {
+                        HStack {
                             Spacer()
+                        }
+                        Spacer()
+                            .safeAreaInset(edge: .bottom) {
+                                GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
+                                    .frame(height: 50)
+                                    .padding(.bottom)
+                                Spacer()
+                            }
                     }
                 }
+                .padding(.all, 0)
             }
-            .padding(.all, 0)
         }
     }
 }

@@ -57,16 +57,16 @@ struct PlayerListView: View {
             }
         } //: VSTACK
         .navigationTitle("Jogadores")
-        .foregroundColor(Color.white)
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
+
         .navigationBarItems(leading:
                                 HStack {
             Image(systemName: "chevron.left")
             Text("Voltar")
                 .fontWeight(.medium)
         }
-            .foregroundColor(.black)
+            .foregroundColor(.white)
             .onTapGesture {
                 self.presentation.wrappedValue.dismiss()
                 self.observed.resetMatch()
