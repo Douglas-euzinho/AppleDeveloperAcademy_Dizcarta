@@ -19,8 +19,8 @@ struct NeonButton: View {
             GenericFunctions.checkIfImageExist(name: "HomeButtonBackground")
                 .overlay {
                     Text(text)
+                        .font(Font.custom("DINAlternate-Bold", size: 30))
                         .bold()
-                        .font(.largeTitle)
                         .foregroundColor(.white)
                 }
         }

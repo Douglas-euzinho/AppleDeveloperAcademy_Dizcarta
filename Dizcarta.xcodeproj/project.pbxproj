@@ -40,12 +40,13 @@
 		233FB52128E622FE008EE961 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB52028E622FE008EE961 /* AlertView.swift */; };
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
-		366229A228EF55F400907C73 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A128EF55F400907C73 /* NeonButton.swift */; };
 		23C90ECF28EF5D020079EEFA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ECE28EF5D020079EEFA /* cards.json */; };
 		23C90ED128EF5D3B0079EEFA /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED028EF5D3B0079EEFA /* JsonManager.swift */; };
 		23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED328EF6AAB0079EEFA /* CardCodable.swift */; };
 		23C90ED628EF706D0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
 		23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
+		366229A228EF55F400907C73 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A128EF55F400907C73 /* NeonButton.swift */; };
+		366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
 		36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BE666828E37BA30069BB60 /* ActionChoise.swift */; };
@@ -114,11 +115,12 @@
 		233FB52028E622FE008EE961 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		366229A128EF55F400907C73 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
 		23C90ECE28EF5D020079EEFA /* cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		23C90ED028EF5D3B0079EEFA /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		23C90ED328EF6AAB0079EEFA /* CardCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCodable.swift; sourceTree = "<group>"; };
 		23C90ED528EF706D0079EEFA /* cardsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardsMock.json; sourceTree = "<group>"; };
+		366229A128EF55F400907C73 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
+		366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINAlternate-Bold.ttf"; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
 		36BE666828E37BA30069BB60 /* ActionChoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChoise.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				238DF94728DA383D00F9A23B /* Persistence */,
 				238DF94628DA383000F9A23B /* Screens */,
 				1555380028D8E3DC00CA5573 /* Assets.xcassets */,
+				366229A428F0AB6E00907C73 /* Fonts */,
 				1555380A28D8E3DC00CA5573 /* Info.plist */,
 				1555380228D8E3DC00CA5573 /* Preview Content */,
 			);
@@ -460,6 +463,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		366229A428F0AB6E00907C73 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3663D36928DE3033001F0FE3 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +623,7 @@
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */,
 				23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */,
+				366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */,
 				23C90ECF28EF5D020079EEFA /* cards.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
