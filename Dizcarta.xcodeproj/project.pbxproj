@@ -31,6 +31,8 @@
 		15A5A2CB28E624850038F2FF /* PlayerGameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */; };
 		15E07D7828EF4A2C005D2A80 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7728EF4A2C005D2A80 /* Avatar.swift */; };
 		15E07D7A28EF4A38005D2A80 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7928EF4A38005D2A80 /* NewPlayerView.swift */; };
+		15E07D8028EF6D52005D2A80 /* AvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7F28EF6D52005D2A80 /* AvatarData.swift */; };
+		15E07D8228EF6DC2005D2A80 /* NewPlayer+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D8128EF6DC2005D2A80 /* NewPlayer+Observable.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
 		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
@@ -98,6 +100,8 @@
 		15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameOver.swift; sourceTree = "<group>"; };
 		15E07D7728EF4A2C005D2A80 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		15E07D7928EF4A38005D2A80 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
+		15E07D7F28EF6D52005D2A80 /* AvatarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarData.swift; sourceTree = "<group>"; };
+		15E07D8128EF6DC2005D2A80 /* NewPlayer+Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewPlayer+Observable.swift"; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
@@ -314,8 +318,10 @@
 		15E07D7528EF4A05005D2A80 /* NewPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				15E07D7628EF4A15005D2A80 /* Shared */,
 				15E07D7928EF4A38005D2A80 /* NewPlayerView.swift */,
+				15E07D7C28EF6CED005D2A80 /* Observable */,
+				15E07D7D28EF6CF2005D2A80 /* Identifiable */,
+				15E07D7628EF4A15005D2A80 /* Shared */,
 			);
 			path = NewPlayer;
 			sourceTree = "<group>";
@@ -326,6 +332,22 @@
 				15E07D7728EF4A2C005D2A80 /* Avatar.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		15E07D7C28EF6CED005D2A80 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				15E07D8128EF6DC2005D2A80 /* NewPlayer+Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		15E07D7D28EF6CF2005D2A80 /* Identifiable */ = {
+			isa = PBXGroup;
+			children = (
+				15E07D7F28EF6D52005D2A80 /* AvatarData.swift */,
+			);
+			path = Identifiable;
 			sourceTree = "<group>";
 		};
 		23199ECF28DE239B0064E574 /* Repositories */ = {
@@ -633,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */,
+				15E07D8028EF6D52005D2A80 /* AvatarData.swift in Sources */,
 				151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */,
 				1552780028DCE7E0003F83EF /* InGameView.swift in Sources */,
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
@@ -643,6 +666,7 @@
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
 				15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */,
+				15E07D8228EF6DC2005D2A80 /* NewPlayer+Observable.swift in Sources */,
 				15A5A2C828E623E60038F2FF /* GameOverView.swift in Sources */,
 				15A5A2CB28E624850038F2FF /* PlayerGameOver.swift in Sources */,
 				1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */,

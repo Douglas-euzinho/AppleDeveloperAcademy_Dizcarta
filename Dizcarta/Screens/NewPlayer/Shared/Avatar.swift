@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct Avatar: View {
+    // MARK: - PROPERTIES
+    @State var isPressed: Bool = false
+    @State var avatar: String
+    @State var name: String?
+    
+    // MARK: - BODY
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            HStack {
+                Image(avatar)
+                    .padding((name != nil) ? 20 : -21)
+                    .opacity(isPressed ? 1.0 : 0.5)
+                    .onTapGesture {
+                        self.isPressed.toggle()
+                    }
+                
+                if let name {
+                    Text(name)
+                        .font(.system(size: 24, weight: .semibold))
+                }
+            }
+        }
     }
 }
 
+// MARK: - BODY
 struct Avatar_Previews: PreviewProvider {
     static var previews: some View {
-        Avatar()
+        Avatar(avatar: "avatarRed", name: "Alice")
+            .preferredColorScheme(.dark)
+            .previewLayout(.sizeThatFits)
     }
 }
