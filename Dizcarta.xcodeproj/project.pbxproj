@@ -47,6 +47,7 @@
 		23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
 		366229A228EF55F400907C73 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A128EF55F400907C73 /* NeonButton.swift */; };
 		366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */; };
+		366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
 		36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BE666828E37BA30069BB60 /* ActionChoise.swift */; };
@@ -121,6 +122,7 @@
 		23C90ED528EF706D0079EEFA /* cardsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardsMock.json; sourceTree = "<group>"; };
 		366229A128EF55F400907C73 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
 		366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINAlternate-Bold.ttf"; sourceTree = "<group>"; };
+		366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectedView.swift; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
 		36BE666828E37BA30069BB60 /* ActionChoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChoise.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */,
+				366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */,
 				23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
+				366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */,
 				CD70B77028DB900A007CF236 /* InputPlayerView.swift in Sources */,
 				233FB52128E622FE008EE961 /* AlertView.swift in Sources */,
 				155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */,
