@@ -12,4 +12,9 @@ class GenericFunctions {
         let uiImage = (UIImage(named: name) ?? UIImage(named: "MissingImage"))!
         return Image(uiImage: uiImage)
     }
+    
+    static func checkIfImageEnumExist(name: ButtonsNameImage) -> Image {
+        let uiImage = (UIImage(named: name.rawValue) ?? UIImage(named: "MissingImage"))!
+        return Image(uiImage: uiImage)
+    }
 }

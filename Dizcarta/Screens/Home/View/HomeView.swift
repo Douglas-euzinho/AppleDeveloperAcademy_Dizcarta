@@ -19,35 +19,23 @@ struct HomeView: View {
                     Color(.homeColor)
                         .ignoresSafeArea()
                     VStack {
-                        GenericFunctions.checkIfImageExist(name: "HomeButtonConfig")
+                        GenericFunctions.checkIfImageExist(name: "HomeButtonLeaderboard")
                     }
                     .padding(.leading, 270)
                     
                     VStack(alignment: .center) {
+                        Spacer()
                         GenericFunctions.checkIfImageExist(name: "HomeLogo")
                             .frame(width: geometry.size.width/2, height: geometry.size.height/2)
-                        Spacer()
+                        Spacer(minLength: 100)
                         NavigationLink(destination: PlayerListView()) {
-                            NeonButton(text: "Jogar")
+                            NeonButton(text: "Jogar", image: .homeButton)
                         }
                             .padding(-20)
-                        NeonButton(text: "Partidas")
+                        NeonButton(text: "Configurações", image: .configButton)
                         Spacer()
-                    }
-                    .overlay {
-                        HStack {
-                            Spacer()
-                        }
-                        Spacer()
-                            .safeAreaInset(edge: .bottom) {
-                                GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
-                                    .frame(height: 50)
-                                    .padding(.bottom)
-                                Spacer()
-                            }
                     }
                 }
-                .padding(.all, 0)
             }
         }
     }
