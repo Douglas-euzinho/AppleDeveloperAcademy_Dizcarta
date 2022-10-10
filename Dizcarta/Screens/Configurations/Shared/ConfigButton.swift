@@ -48,7 +48,11 @@ struct ConfigButton: View {
 // MARK: - PREVIEW
 struct ConfButton_Previews: PreviewProvider {
   static var previews: some View {
-    ConfigButton(data: ButtonData(defaultKey: "Config", title: "Titutlo", icon: "Icone", enableMessage: "message", disableMessage: "Message")) { message in
+    ConfigButton(data: ButtonData(defaultKey: "Config",
+                                  title: "Titutlo",
+                                  icon: "Icone",
+                                  enableMessage: "message",
+                                  disableMessage: "Message")) { _ in
       print("Tocado")
     }
   }
