@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum ButtonsNameImage: String {
-case homeButton = "HomeButtonYellow", configButton = "HomeButtonPurple"
+case homeButton = "button_neon_yellow", configButton = "button_neon_purple"
 }
 
 struct NeonButton: View {

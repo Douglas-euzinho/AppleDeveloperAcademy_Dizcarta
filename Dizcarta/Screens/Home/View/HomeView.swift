@@ -19,13 +19,13 @@ struct HomeView: View {
                     Color(.homeColor)
                         .ignoresSafeArea()
                     VStack {
-                        GenericFunctions.checkIfImageExist(name: "HomeButtonLeaderboard")
+                        GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
                     }
                     .padding(.leading, 270)
                     
                     VStack(alignment: .center) {
                         Spacer()
-                        GenericFunctions.checkIfImageExist(name: "HomeLogo")
+                        GenericFunctions.checkIfImageExist(name: "home_logo")
                             .frame(width: geometry.size.width/2, height: geometry.size.height/2)
                         Spacer(minLength: 100)
                         NavigationLink(destination: PlayerListView()) {
