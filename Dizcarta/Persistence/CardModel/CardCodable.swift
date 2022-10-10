@@ -10,6 +10,7 @@ import CoreData
 import UIKit
 
 struct CardCodable: Codable {
+    let id: Int
     let title: String
     let image: String
     let winPoints: Int
@@ -18,6 +19,7 @@ struct CardCodable: Codable {
     
     func createEntity(context: NSManagedObjectContext) -> Card {
         let card = Card(context: context)
+        card.cardId = Int16(id)
         card.title = title
         card.image = UIImage(named: image)?.pngData()
         card.winPoints = Int16(winPoints)
@@ -28,5 +30,5 @@ struct CardCodable: Codable {
 }
 
 struct CardList: Codable {
-    let cards: [CardCodable]
+    var cards: [CardCodable]
 }
