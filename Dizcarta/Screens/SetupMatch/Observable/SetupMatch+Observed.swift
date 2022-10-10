@@ -9,6 +9,6 @@ import Foundation
 
 extension SetupMatchView {
     class Observed: ObservableObject {
-        @Published var avatarData: [String] = ["avatarRed", "avatarBlue", "avatarPink", "avatarTurquoise", "avatarPurple", "avatarYellow"]
+        @Published var avatarData: [AvatarData] = [AvatarData(iamge: "avatarBlue", name: "Blue"), AvatarData(iamge: "avatarRed", name: "Red"), AvatarData(iamge: "avatarPurple", name: "Purple"), AvatarData(iamge: "avatarYellow", name: "Yellow"), AvatarData(iamge: "avatarPink", name: "Pink"), AvatarData(iamge: "avatarTurquoise", name: "Turquoise")]
     }
 }

@@ -31,7 +31,7 @@ struct ContentView : View {
                     SplashScreen()
                 } else {
                     #warning("Remover")
-                    HomeView()
+                    NewPlayerView()
                 }
             }
             .onAppear {
