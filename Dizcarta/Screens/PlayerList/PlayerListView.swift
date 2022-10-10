@@ -14,7 +14,7 @@ struct PlayerListView: View {
     @State var showingPopup = false
     @State var playerName = ""
     @State var avatarIcon = ""
-    @StateObject var observed = Observed(context: PersistenceController.context)
+    @StateObject var observed = GameCore(context: PersistenceController.context, cardFile: "cards")
     
     // MARK: - BODY
     var body: some View {

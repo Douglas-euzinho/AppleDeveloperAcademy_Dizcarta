@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol PlayerRepositoryProtocol: AnyObject, Repository {
+protocol GameRepositoryProtocol: AnyObject, Repository {
     var context: NSManagedObjectContext { get set}
     
     func getPlayers(match: MatchInProgress) -> [Player]
@@ -17,7 +17,7 @@ protocol PlayerRepositoryProtocol: AnyObject, Repository {
     
 }
 
-extension PlayerRepositoryProtocol {
+extension GameRepositoryProtocol {
     func save() {
         if context.hasChanges {
             do {
@@ -33,7 +33,7 @@ extension PlayerRepositoryProtocol {
     }
 }
 
-final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
+final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     @Published var players: [Player] = []
     var context: NSManagedObjectContext
     
@@ -68,7 +68,7 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
     
 }
 
-final class PlayerRepositoryMock: PlayerRepositoryProtocol {
+final class PlayerRepositoryMock: GameRepositoryProtocol {
     
     @Published var players: [Player] = []
     var context: NSManagedObjectContext
@@ -81,7 +81,8 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         do {
             print("[CORE DATA]: GET PLAYERS ")
             let matches = try context.fetch(MatchInProgress.fetchRequest())
-            return matches.first!.players?.allObjects as! [Player]
+            guard let players = matches.first?.players?.allObjects as? [Player] else { return []}
+            return players
         } catch {
             print("[CORE DATA]: ERRO TO GET PLAYERS")
         }
@@ -108,7 +109,7 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
 }
 
 final class PlayerRepository {
-    static func get(context: NSManagedObjectContext) -> PlayerRepositoryProtocol {
+    static func get(context: NSManagedObjectContext) -> GameRepositoryProtocol {
         AppConfig.isMocked ? PlayerRepositoryMock(context: context) : PlayerRepositoryCoreData(context: context)
     }
 }
