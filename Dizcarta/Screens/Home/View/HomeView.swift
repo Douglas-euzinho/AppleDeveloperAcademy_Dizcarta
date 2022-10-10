@@ -32,6 +32,7 @@ struct HomeView: View {
                             NeonButton(text: "Jogar", image: .homeButton)
                         }
                             .padding(-20)
+                        
                         NeonButton(text: "Configurações", image: .configButton)
                         Spacer()
                     }
