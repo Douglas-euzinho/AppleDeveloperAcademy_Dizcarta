@@ -20,6 +20,8 @@ struct HomeView: View {
                         .ignoresSafeArea()
                     VStack {
                         GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
+                            .padding(.trailing, -30)
+                            .padding(.top, +20)
                     }
                     .padding(.leading, 270)
                     
