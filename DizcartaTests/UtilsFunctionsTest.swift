@@ -19,13 +19,6 @@ final class UtilsFunctionsTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testColorName() throws {
-        let correctColor = Color(.avatarColorBlue)
-        let wrongColor = Color(.avatarColorCopperRose)
-        XCTAssertTrue(AppColor.colorName(correctColor) == AppColor.avatarColorBlue.rawValue, "The obtained color name is different from the existing color in AppColor")
-        XCTAssertTrue(AppColor.colorName(wrongColor) != AppColor.avatarColorBlue.rawValue, "The obtained color name is different from the existing color in AppColor")
-    }
-
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
