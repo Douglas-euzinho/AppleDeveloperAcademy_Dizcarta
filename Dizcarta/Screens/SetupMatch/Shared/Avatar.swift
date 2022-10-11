@@ -11,20 +11,23 @@ struct Avatar: View {
     // MARK: - PROPERTIES
     @State var isPressed: Bool = false
     @State var avatar: String
-    @State var name: String?
-    
+    @State var name: String
+    var isSelection: Bool
+    @EnvironmentObject var gameCore: GameCore
     // MARK: - BODY
     var body: some View {
         ZStack {
             HStack {
                 Image(avatar)
-                    .padding((name != nil) ? 20 : -21)
+                    .padding(isSelection ? -21 : 20)
                     .opacity(isPressed ? 1.0 : 0.5)
                     .onTapGesture {
                         self.isPressed.toggle()
+                        self.gameCore.createPlayer(name: name, avatar: avatar, match: MatchInProgress())
+                        print("Creating player")
                     }
                 
-                if let name {
+                if !isSelection {
                     Text(name)
                         .font(.system(size: 24, weight: .semibold))
                 }
@@ -36,7 +39,7 @@ struct Avatar: View {
 // MARK: - BODY
 struct Avatar_Previews: PreviewProvider {
     static var previews: some View {
-        Avatar(avatar: "avatarRed", name: "Alice")
+        Avatar(avatar: "avatarRed", name: "Alice", isSelection: true)
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
     }

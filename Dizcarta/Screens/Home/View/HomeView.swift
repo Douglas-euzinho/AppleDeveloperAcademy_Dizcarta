@@ -16,38 +16,29 @@ struct HomeView: View {
         NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .top) {
-                    Color(.homeColor)
+                    Color(.backgroundAppColor)
                         .ignoresSafeArea()
                     VStack {
-                        GenericFunctions.checkIfImageExist(name: "HomeButtonConfig")
+                        GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
+                            .padding(.trailing, -30)
+                            .padding(.top, +20)
                     }
                     .padding(.leading, 270)
                     
                     VStack(alignment: .center) {
-                        GenericFunctions.checkIfImageExist(name: "HomeLogo")
-                            .frame(width: geometry.size.width/2, height: geometry.size.height/2)
                         Spacer()
-                        NavigationLink(destination: PlayerListView()) {
-                            NeonButton(text: "Jogar")
+                        GenericFunctions.checkIfImageExist(name: "home_logo")
+                            .frame(width: geometry.size.width/2, height: geometry.size.height/2)
+                        Spacer(minLength: 100)
+                        NavigationLink(destination: SetupMatchView()) {
+                            NeonButton(text: "Jogar", image: .homeButton)
                         }
                             .padding(-20)
-                        NeonButton(text: "Partidas")
+                        
+                        NeonButton(text: "Configurações", image: .configButton)
                         Spacer()
-                    }
-                    .overlay {
-                        HStack {
-                            Spacer()
-                        }
-                        Spacer()
-                            .safeAreaInset(edge: .bottom) {
-                                GenericFunctions.checkIfImageExist(name: "HomeDetailsNeon")
-                                    .frame(height: 50)
-                                    .padding(.bottom)
-                                Spacer()
-                            }
                     }
                 }
-                .padding(.all, 0)
             }
         }
     }

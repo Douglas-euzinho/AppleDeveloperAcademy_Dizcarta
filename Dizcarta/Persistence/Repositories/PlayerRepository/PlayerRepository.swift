@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol PlayerRepositoryProtocol: AnyObject, Repository {
+protocol GameRepositoryProtocol: AnyObject, Repository {
     var context: NSManagedObjectContext { get set}
     
     func getPlayers(match: MatchInProgress) -> [Player]
@@ -17,7 +17,7 @@ protocol PlayerRepositoryProtocol: AnyObject, Repository {
     
 }
 
-extension PlayerRepositoryProtocol {
+extension GameRepositoryProtocol {
     func save() {
         if context.hasChanges {
             do {
@@ -33,7 +33,7 @@ extension PlayerRepositoryProtocol {
     }
 }
 
-final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
+final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     @Published var players: [Player] = []
     var context: NSManagedObjectContext
     
@@ -68,7 +68,7 @@ final class PlayerRepositoryCoreData: PlayerRepositoryProtocol {
     
 }
 
-final class PlayerRepositoryMock: PlayerRepositoryProtocol {
+final class PlayerRepositoryMock: GameRepositoryProtocol {
     
     @Published var players: [Player] = []
     var context: NSManagedObjectContext
@@ -79,9 +79,11 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
     
     func getPlayers(match: MatchInProgress) -> [Player] {
         do {
-            print("[CORE DATA]: GET PLAYERS ")
             let matches = try context.fetch(MatchInProgress.fetchRequest())
-            return matches.first!.players?.allObjects as! [Player]
+            print("matches \(matches)")
+            guard let players = matches.first?.players?.allObjects as? [Player] else { return []}
+            print("[CORE DATA]: GET PLAYERS \(players)")
+            return players
         } catch {
             print("[CORE DATA]: ERRO TO GET PLAYERS")
         }
@@ -94,6 +96,7 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
         player.avatar = avatar
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
+        player.matchInProgress = match
         print("[CORE DATA]: PLAYER CREATED \(player)")
         save()
     }
@@ -108,7 +111,7 @@ final class PlayerRepositoryMock: PlayerRepositoryProtocol {
 }
 
 final class PlayerRepository {
-    static func get(context: NSManagedObjectContext) -> PlayerRepositoryProtocol {
+    static func get(context: NSManagedObjectContext) -> GameRepositoryProtocol {
         AppConfig.isMocked ? PlayerRepositoryMock(context: context) : PlayerRepositoryCoreData(context: context)
     }
 }
