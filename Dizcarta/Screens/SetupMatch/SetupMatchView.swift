@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewPlayerView: View {
+struct SetupMatchView: View {
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
@@ -65,6 +65,6 @@ struct NewPlayerView: View {
 // MARK: - PREVIEW
 struct NewPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPlayerView()
+        SetupMatchView()
     }
 }
