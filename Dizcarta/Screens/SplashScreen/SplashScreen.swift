@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct SplashScreen: View {
     @State private var isRotated = false
@@ -13,13 +14,10 @@ struct SplashScreen: View {
     let shared = GenericFunctions()
 
     var body: some View {
-        ZStack {
-            GenericFunctions.checkIfImageExist(name: "LogoHome")
-                .resizable()
-                .frame(minWidth: 280, idealWidth: 340, maxWidth: 360, minHeight: 160, idealHeight: 192, maxHeight: 210, alignment: .center)
+            LottieView(animationName: "Splash.json", loopMode: .loop)
+                .frame(width: 800, height: 800)
         }
     }
-}
 
 struct ContentView : View {
     @State var splashScreen  = true
