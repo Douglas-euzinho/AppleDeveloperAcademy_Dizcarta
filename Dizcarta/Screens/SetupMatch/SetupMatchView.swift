@@ -50,7 +50,7 @@ struct SetupMatchView: View {
                     
                     Spacer()
                     
-                    NeonButton(text: "Jogar")
+                    NeonButton(text: "Jogar", image: .homeButton)
                     
                 } //: VSTACK
             } //: ZSTACK
@@ -73,9 +73,9 @@ struct SetupMatchView: View {
     }
 }
 
-// MARK: - PREVIEW
-struct NewPlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        SetupMatchView()
-    }
-}
+//// MARK: - PREVIEW
+//struct NewPlayerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SetupMatchView()
+//    }
+//}
