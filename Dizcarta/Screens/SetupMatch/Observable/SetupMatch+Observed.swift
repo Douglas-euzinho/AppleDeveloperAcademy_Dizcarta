@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NewPlayerView {
+extension SetupMatchView {
     class Observed: ObservableObject {
         @Published var avatarData: [String] = ["avatarRed", "avatarBlue", "avatarPink", "avatarTurquoise", "avatarPurple", "avatarYellow"]
     }
