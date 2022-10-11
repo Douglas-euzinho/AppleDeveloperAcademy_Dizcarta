@@ -30,8 +30,7 @@ struct ContentView : View {
                 if splashScreen {
                     SplashScreen()
                 } else {
-                    #warning("Remover")
-                    SetupMatchView()
+                    HomeView()
                 }
             }
             .onAppear {

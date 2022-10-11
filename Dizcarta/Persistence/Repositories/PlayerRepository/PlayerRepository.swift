@@ -79,9 +79,10 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
     
     func getPlayers(match: MatchInProgress) -> [Player] {
         do {
-            print("[CORE DATA]: GET PLAYERS ")
             let matches = try context.fetch(MatchInProgress.fetchRequest())
+            print("matches \(matches)")
             guard let players = matches.first?.players?.allObjects as? [Player] else { return []}
+            print("[CORE DATA]: GET PLAYERS \(players)")
             return players
         } catch {
             print("[CORE DATA]: ERRO TO GET PLAYERS")
@@ -95,6 +96,7 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
         player.avatar = avatar
         player.points = 0
         player.turn = Int16(Int.random(in: 1...6))
+        player.matchInProgress = match
         print("[CORE DATA]: PLAYER CREATED \(player)")
         save()
     }

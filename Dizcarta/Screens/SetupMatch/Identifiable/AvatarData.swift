@@ -9,6 +9,6 @@ import Foundation
 
 struct AvatarData: Hashable, Identifiable {
     let id = UUID()
-    let iamge: String
+    let image: String
     let name: String
 }

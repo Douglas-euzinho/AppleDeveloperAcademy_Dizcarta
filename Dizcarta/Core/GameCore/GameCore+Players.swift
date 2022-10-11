@@ -18,7 +18,11 @@ extension GameCore {
     }
     
     func createPlayer(name: String, avatar: String, match: MatchInProgress) {
-        repository.createPlayer(name: name, avatar: avatar, match: match)
+        if !players.contains(where: { $0.avatar == avatar }) {
+            repository.createPlayer(name: name, avatar: avatar, match: matchInProgress)
+        }
+        self.players = repository.getPlayers(match: matchInProgress)
+        self.objectWillChange.send()
     }
     
     internal func createMatch() -> MatchInProgress {
