@@ -11,7 +11,8 @@ struct SetupMatchView: View {
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
-    @ObservedObject var observed = Observed()
+   // @ObservedObject var observed = Observed()
+    @StateObject private var gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     
     init() {
         UITableView.appearance().separatorStyle = .none
@@ -23,34 +24,36 @@ struct SetupMatchView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.newPlayerColor)
+                Color(.homeColor)
                     .ignoresSafeArea()
-                
                 VStack {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        ZStack {
-                            Image("Border")
-                                .padding()
-                            
-                            LazyHStack(spacing: 0) {
-                                ForEach(observed.avatarData, id: \.id) { avatar in
-                                    Avatar(avatar: avatar.iamge)
-                                } //: FOREACH
-                            } //: LAZYHSTACK
-                        } //: ZSTACK
-                    } //: SCROLL VIEW
-                    .frame(height: 180)
-                    
-                    ScrollView(.vertical, showsIndicators: true) {
-                        ForEach(observed.avatarData, id: \.self) { avatar in
-                            PlayerSelectedView(imagePlayer: avatar.iamge, playerName: avatar.name)
+                    Spacer()
+                    if !gameCore.avatarDataList.isEmpty {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            ZStack {
+                                Image("Border")
+                                    .padding()
+                                
+                                LazyHStack(spacing: 0) {
+                                    ForEach(gameCore.avatarDataList, id: \.id) { avatar in
+                                        Avatar(avatar: avatar.image, name: avatar.name, isSelection: true)
+                                            .environmentObject(gameCore)
+                                    } //: FOREACH
+                                } //: LAZYHSTACK
+                            } //: ZSTACK
+                        } //: SCROLL VIEW
+                        .frame(height: 180)
+                    }
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ForEach(gameCore.players, id: \.self) { player in
+                            PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
                                 .frame(width: UIScreen.main.bounds.width - 5, height: 85)
+
                         }
                     }
-                    
-                    Spacer()
-                    
                     NeonButton(text: "Jogar", image: .homeButton)
+                        .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
+                        .frame(width: 170, height: 61)
                     
                 } //: VSTACK
             } //: ZSTACK
@@ -67,9 +70,14 @@ struct SetupMatchView: View {
         }
             .foregroundColor(.white)
             .onTapGesture {
+                gameCore.resetMatch()
                 self.presentation.wrappedValue.dismiss()
             }
         )
+    }
+    
+    func removePlayers(at offsets: IndexSet) {
+        gameCore.players.remove(atOffsets: offsets)
     }
 }
 

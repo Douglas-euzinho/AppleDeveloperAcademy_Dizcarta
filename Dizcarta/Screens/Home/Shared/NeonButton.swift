@@ -23,6 +23,7 @@ struct NeonButton: View {
     var body: some View {
         HStack {
             GenericFunctions.checkIfImageExist(name: image.rawValue)
+                .resizable()
                 .overlay {
                     Text(text)
                         .font(Font.custom("DINAlternate-Bold", size: 30))

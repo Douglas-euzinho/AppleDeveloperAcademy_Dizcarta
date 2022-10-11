@@ -10,7 +10,6 @@
 		151EA3A828EDFB9B000BEA9E /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3A728EDFB9B000BEA9E /* ButtonData.swift */; };
 		151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */; };
 		1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */; };
-		155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E528DB9DAB003F83EF /* ProgressBarView.swift */; };
 		155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* Color+AppColor.swift */; };
 		1552780028DCE7E0003F83EF /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FF28DCE7E0003F83EF /* InGameView.swift */; };
 		1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552780128DCE7EA003F83EF /* FrontCard.swift */; };
@@ -46,6 +45,7 @@
 		2358550228F4964000DFCE1B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2358550128F4964000DFCE1B /* Lottie */; };
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
+		23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */; };
 		23C90ECF28EF5D020079EEFA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ECE28EF5D020079EEFA /* cards.json */; };
 		23C90ED128EF5D3B0079EEFA /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED028EF5D3B0079EEFA /* JsonManager.swift */; };
 		23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED328EF6AAB0079EEFA /* CardCodable.swift */; };
@@ -85,7 +85,6 @@
 		151EA3A728EDFB9B000BEA9E /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
 		151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configurations+Observed.swift"; sourceTree = "<group>"; };
 		1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
-		155277E528DB9DAB003F83EF /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		155277EB28DC76E4003F83EF /* Color+AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColor.swift"; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		1552780128DCE7EA003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		2340D8F128F491BD0016CB0F /* GameCore+Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameCore+Players.swift"; sourceTree = "<group>"; };
 		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Wrapped.swift"; sourceTree = "<group>"; };
 		23C90ECE28EF5D020079EEFA /* cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		23C90ED028EF5D3B0079EEFA /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		23C90ED328EF6AAB0079EEFA /* CardCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCodable.swift; sourceTree = "<group>"; };
@@ -190,23 +190,6 @@
 				1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */,
 			);
 			path = TextField;
-			sourceTree = "<group>";
-		};
-		155277E028DB9137003F83EF /* PlayerList */ = {
-			isa = PBXGroup;
-			children = (
-				155277FA28DCE638003F83EF /* PlayerListView.swift */,
-				155277E428DB9D97003F83EF /* Shared */,
-			);
-			path = PlayerList;
-			sourceTree = "<group>";
-		};
-		155277E428DB9D97003F83EF /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				155277E528DB9DAB003F83EF /* ProgressBarView.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		155277EA28DC76CF003F83EF /* Extensions */ = {
@@ -456,6 +439,7 @@
 				23199ECF28DE239B0064E574 /* Repositories */,
 				1555380728D8E3DC00CA5573 /* Dizcarta.xcdatamodeld */,
 				1555380528D8E3DC00CA5573 /* PersistenceController.swift */,
+				23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -761,6 +745,7 @@
 				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
 				36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */,
 				15E07D7828EF4A2C005D2A80 /* Avatar.swift in Sources */,
+				23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */,
 				23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */,
 				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
 				15E07D7A28EF4A38005D2A80 /* SetupMatchView.swift in Sources */,

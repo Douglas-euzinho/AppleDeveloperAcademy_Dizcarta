@@ -52,6 +52,7 @@ struct PlayerSelectedView: View {
                 TextField("", text: $playerName)
                     .foregroundColor(.white)
                     .font(Font.custom("DINAlternate-Bold", size: 20))
+                    .disabled(!isEditing)
             }
                         
             Button {
@@ -75,6 +76,9 @@ struct PlayerSelectedView: View {
                     .frame(width: 56, height: 56)
                 }
             }
+        }
+        .onTapGesture {
+            print("Touch action")
         }
     }
 }
