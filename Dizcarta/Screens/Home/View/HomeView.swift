@@ -30,7 +30,7 @@ struct HomeView: View {
                         GenericFunctions.checkIfImageExist(name: "home_logo")
                             .frame(width: geometry.size.width/2, height: geometry.size.height/2)
                         Spacer(minLength: 100)
-                        NavigationLink(destination: PlayerListView()) {
+                        NavigationLink(destination: SetupMatchView()) {
                             NeonButton(text: "Jogar", image: .homeButton)
                         }
                             .padding(-20)

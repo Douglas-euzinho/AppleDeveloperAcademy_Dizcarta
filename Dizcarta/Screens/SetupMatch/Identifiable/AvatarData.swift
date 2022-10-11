@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct AvatarData: Identifiable {
+struct AvatarData: Hashable, Identifiable {
     let id = UUID()
+    let iamge: String
     let name: String
 }
