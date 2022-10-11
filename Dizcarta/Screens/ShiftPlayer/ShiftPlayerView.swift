@@ -15,7 +15,7 @@ struct ShiftPlayerView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.homeColor)
+                Color(.backgroundAppColor)
                     .ignoresSafeArea(.all)
                 
                 VStack {
