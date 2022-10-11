@@ -11,7 +11,6 @@ struct SetupMatchView: View {
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
-   // @ObservedObject var observed = Observed()
     @StateObject private var gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     
     init() {
