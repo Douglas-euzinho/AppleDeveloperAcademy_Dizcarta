@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum ButtonsNameImage: String {
-case homeButton = "button_neon_yellow", configButton = "button_neon_purple"
-}
-
 struct NeonButton: View {
     var text: String
     var image: ButtonsNameImage
@@ -25,7 +21,7 @@ struct NeonButton: View {
             GenericFunctions.checkIfImageExist(name: image.rawValue)
                 .overlay {
                     Text(text)
-                        .font(Font.custom("DINAlternate-Bold", size: 30))
+                        .font(Font(name: .primaryFont, size: 30))
                         .bold()
                         .foregroundColor(.white)
                 }

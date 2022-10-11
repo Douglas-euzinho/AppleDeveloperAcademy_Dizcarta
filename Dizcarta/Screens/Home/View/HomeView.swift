@@ -16,7 +16,7 @@ struct HomeView: View {
         NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .top) {
-                    Color(.homeColor)
+                    Color(.backgroundAppColor)
                         .ignoresSafeArea()
                     VStack {
                         GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
