@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		151EA3A828EDFB9B000BEA9E /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3A728EDFB9B000BEA9E /* ButtonData.swift */; };
 		151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */; };
+		153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */; };
 		1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */; };
 		155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* Color+AppColor.swift */; };
 		1552780028DCE7E0003F83EF /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FF28DCE7E0003F83EF /* InGameView.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		151EA3A728EDFB9B000BEA9E /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
 		151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configurations+Observed.swift"; sourceTree = "<group>"; };
+		153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		155277EB28DC76E4003F83EF /* Color+AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColor.swift"; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 		366229A428F0AB6E00907C73 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */,
 				366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */,
 			);
 			path = Fonts;
@@ -676,6 +679,7 @@
 			files = (
 				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
+				153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */,
 				1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */,
 				23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */,
 				366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */,
