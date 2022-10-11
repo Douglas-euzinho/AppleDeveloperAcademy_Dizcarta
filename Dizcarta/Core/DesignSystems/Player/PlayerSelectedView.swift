@@ -33,7 +33,7 @@ struct PlayerSelectedView: View {
             if isEditing {
                 TextField("", text: $playerName)
                     .foregroundColor(.white)
-                    .font(Font.custom("DINAlternate-Bold", size: 20))
+                    .font(Font(name: .primaryFont, size: 30))
                     .textInputAutocapitalization(.words)
                     .autocorrectionDisabled(true)
                     .focused($nameIsFocused)

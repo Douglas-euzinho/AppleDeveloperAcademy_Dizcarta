@@ -15,11 +15,8 @@ extension Color {
 }
 
 enum AppColor: String, CaseIterable {
-    // MARK: - PICKER COLOR
-    case backGroundPickerColor = "background_picker_color"
-    
     // MARK: - SCREENS COLOR
-    case homeColor = "home_color"
+    case backgroundAppColor = "background_app_color"
     case playerListColor = "player_list_color"
     case newPlayerColor = "new_player_color"
     

@@ -10,7 +10,6 @@
 		151EA3A828EDFB9B000BEA9E /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3A728EDFB9B000BEA9E /* ButtonData.swift */; };
 		151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */; };
 		1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */; };
-		155277E628DB9DAB003F83EF /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277E528DB9DAB003F83EF /* ProgressBarView.swift */; };
 		155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* Color+AppColor.swift */; };
 		1552780028DCE7E0003F83EF /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FF28DCE7E0003F83EF /* InGameView.swift */; };
 		1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552780128DCE7EA003F83EF /* FrontCard.swift */; };
@@ -56,6 +55,8 @@
 		366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */; };
 		3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36328DE2230001F0FE3 /* GenericButtons.swift */; };
 		3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */; };
+		367C85ED28F5E8C80041137A /* ButtonsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C85EC28F5E8C80041137A /* ButtonsEnum.swift */; };
+		367C85EF28F5E9240041137A /* Fonts+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C85EE28F5E9240041137A /* Fonts+Enum.swift */; };
 		36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BE666828E37BA30069BB60 /* ActionChoise.swift */; };
 		36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */; };
 		36DFD53528E23BED002D1399 /* FinalFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53428E23BED002D1399 /* FinalFlowView.swift */; };
@@ -85,7 +86,6 @@
 		151EA3A728EDFB9B000BEA9E /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
 		151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configurations+Observed.swift"; sourceTree = "<group>"; };
 		1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
-		155277E528DB9DAB003F83EF /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		155277EB28DC76E4003F83EF /* Color+AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColor.swift"; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		1552780128DCE7EA003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
@@ -134,6 +134,8 @@
 		366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectedView.swift; sourceTree = "<group>"; };
 		3663D36328DE2230001F0FE3 /* GenericButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericButtons.swift; sourceTree = "<group>"; };
 		3663D36728DE2E25001F0FE3 /* GenericFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFunctions.swift; sourceTree = "<group>"; };
+		367C85EC28F5E8C80041137A /* ButtonsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsEnum.swift; sourceTree = "<group>"; };
+		367C85EE28F5E9240041137A /* Fonts+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Enum.swift"; sourceTree = "<group>"; };
 		36BE666828E37BA30069BB60 /* ActionChoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChoise.swift; sourceTree = "<group>"; };
 		36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButtonPress.swift; sourceTree = "<group>"; };
 		36DFD53428E23BED002D1399 /* FinalFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFlowView.swift; sourceTree = "<group>"; };
@@ -192,27 +194,12 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		155277E028DB9137003F83EF /* PlayerList */ = {
-			isa = PBXGroup;
-			children = (
-				155277FA28DCE638003F83EF /* PlayerListView.swift */,
-				155277E428DB9D97003F83EF /* Shared */,
-			);
-			path = PlayerList;
-			sourceTree = "<group>";
-		};
-		155277E428DB9D97003F83EF /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				155277E528DB9DAB003F83EF /* ProgressBarView.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		155277EA28DC76CF003F83EF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				155277EB28DC76E4003F83EF /* Color+AppColor.swift */,
+				367C85EC28F5E8C80041137A /* ButtonsEnum.swift */,
+				367C85EE28F5E9240041137A /* Fonts+Enum.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -752,6 +739,7 @@
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
 				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
+				367C85EF28F5E9240041137A /* Fonts+Enum.swift in Sources */,
 				15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */,
 				15E07D8228EF6DC2005D2A80 /* SetupMatch+Observed.swift in Sources */,
 				15A5A2C828E623E60038F2FF /* GameOverView.swift in Sources */,
@@ -774,6 +762,7 @@
 				1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */,
 				23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
+				367C85ED28F5E8C80041137A /* ButtonsEnum.swift in Sources */,
 				366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */,
 				233FB52128E622FE008EE961 /* AlertView.swift in Sources */,
 				2340D8EF28F4904C0016CB0F /* GameCore.swift in Sources */,
