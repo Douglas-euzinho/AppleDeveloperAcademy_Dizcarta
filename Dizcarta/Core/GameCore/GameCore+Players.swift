@@ -30,8 +30,7 @@ extension GameCore {
     }
     
     func resetMatch() {
-        let players = matchInProgress.players?.allObjects as? [Player]
-        guard let players else { return }
+        let players = getPlayers(match: matchInProgress)
         players.forEach { player in
             repository.delete(object: player)
         }
@@ -39,10 +38,28 @@ extension GameCore {
     }
     
     func getRandomCard() -> CardCodable? {
-        guard var cards = self.cardList else { return nil}
-        let card = cards.cards.remove(at: Int.random(in: 0...cards.cards.count - 1))
-        self.cardList?.cards = cards.cards
-        print("Quantidade cartas \(cards.cards.count)")
+        guard var list = self.cardList else { return nil}
+        let card = list.cards.remove(at: Int.random(in: 0...list.cards.count - 1))
+        self.cardList? = list
+        if self.cardList?.cards.count == 0 {
+            self.isLastCard = true
+        }
         return card
+    }
+    
+    func removePlayerPoints(player: Player, points: Int) {
+        repository.removePlayerPoints(player: player, points: points)
+        if player.points == 0 {
+            playerLost = PlayerLost(player: player, isLost: true)
+        }
+    }
+    
+    func addPlayerPoints(player: Player, points: Int) {
+        repository.addPlayerPoints(player: player, points: points)
+    }
+    
+    func transferPlayerPoints(from: Player, to: Player, points: Int) {
+        removePlayerPoints(player: from, points: points)
+        addPlayerPoints(player: to, points: points)
     }
 }

@@ -36,4 +36,8 @@ extension Player {
             avatar = newValue
         }
     }
+    
+    public override var description: String {
+        "[\n Name: \(wrappedName) \n Avatar: \(wrappedAvatar) \n Points: \(wrappedPoints) \n Turn: \(turn)]"
+    }
 }
