@@ -19,7 +19,7 @@ struct CardCodable: Codable {
     
     func createEntity(context: NSManagedObjectContext) -> Card {
         let card = Card(context: context)
-        card.cardId = Int16(id)
+//        card.cardId = Int16(id)
         card.title = title
         card.image = UIImage(named: image)?.pngData()
         card.winPoints = Int16(winPoints)
