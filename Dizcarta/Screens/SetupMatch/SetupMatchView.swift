@@ -44,6 +44,7 @@ struct SetupMatchView: View {
                             } //: SCROLL VIEW
                             .frame(height: 100)
                         }
+                        
                         ScrollView(.vertical, showsIndicators: false) {
                             ForEach(gameCore.players, id: \.self) { player in
                                 PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
