@@ -26,12 +26,4 @@ final class CoreDataGetTests: XCTestCase {
         }
         XCTAssertTrue(10 == repository.getPlayers(match: match).count, "Different amount of players than created")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

@@ -1,6 +1,7 @@
 {
     "cards": [
         {
+            "id": 1,
             "title": "Card Title",
             "image": "imageLocal",
             "winPoints": 3,
@@ -8,6 +9,7 @@
             "dizDescription": "Alguma descrição"
         },
         {
+            "id": 2,
             "title": "Card Title",
             "image": "imageLocal",
             "winPoints": 3,
