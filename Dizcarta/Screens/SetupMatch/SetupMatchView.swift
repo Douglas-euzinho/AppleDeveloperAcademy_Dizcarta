@@ -21,7 +21,6 @@ struct SetupMatchView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
             ZStack {
                 Color(.backgroundAppColor)
                     .ignoresSafeArea()
@@ -60,7 +59,6 @@ struct SetupMatchView: View {
                     
                 } //: VSTACK
             } //: ZSTACK
-        } //: NAVIGATION VIEW
         .navigationTitle("Jogadores")
         .tint(.white)
         .navigationBarTitleDisplayMode(.inline)

@@ -10,9 +10,10 @@ import Lottie
 
 struct ShuffleAnimation: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Color(.backgroundAppColor)
-            LottieView(animationName: "ShuffleAnimation.json", loopMode: .loop)
+                .ignoresSafeArea()
+            LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1))
                 .frame(width: 900, height: 900)
         }
     }

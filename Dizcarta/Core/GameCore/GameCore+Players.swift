@@ -41,7 +41,7 @@ extension GameCore {
         guard var list = self.cardList else { return nil}
         let card = list.cards.remove(at: Int.random(in: 0...list.cards.count - 1))
         self.cardList? = list
-        if self.cardList?.cards.count == 0 {
+        if list.cards.isEmpty {
             self.isLastCard = true
         }
         return card
@@ -58,8 +58,8 @@ extension GameCore {
         repository.addPlayerPoints(player: player, points: points)
     }
     
-    func transferPlayerPoints(from: Player, to: Player, points: Int) {
+    func transferPlayerPoints(from: Player, toPlayer: Player, points: Int) {
         removePlayerPoints(player: from, points: points)
-        addPlayerPoints(player: to, points: points)
+        addPlayerPoints(player: toPlayer, points: points)
     }
 }
