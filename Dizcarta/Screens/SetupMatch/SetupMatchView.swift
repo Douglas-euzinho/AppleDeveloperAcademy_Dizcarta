@@ -50,9 +50,13 @@ struct SetupMatchView: View {
 
                         }
                     }
-                    NeonButton(text: "Jogar", image: .homeButton)
-                        .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
-                        .frame(width: 170, height: 61)
+                    
+                    //MARK: ARRUMAR AQUI
+                    NavigationLink(destination: ShuffleAnimation()) {
+                        NeonButton(text: "Jogar", image: .homeButton)
+                            .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
+                            .frame(width: 170, height: 61)
+                    }
                     
                 } //: VSTACK
             } //: ZSTACK
