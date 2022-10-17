@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct SetupMatchView: View {
+    
+    
+    
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
     @StateObject private var gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     
     init() {
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = UIColor(Color.clear)
         UITableView.appearance().backgroundColor = UIColor(Color.clear)
@@ -21,45 +25,41 @@ struct SetupMatchView: View {
     
     // MARK: - BODY
     var body: some View {
-            ZStack {
-                Color(.backgroundAppColor)
-                    .ignoresSafeArea()
-                VStack {
-                    Spacer()
-                    if !gameCore.avatarDataList.isEmpty {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            ZStack {
-                                Image("Border")
-                                    .padding()
-                                
-                                LazyHStack(spacing: 0) {
-                                    ForEach(gameCore.avatarDataList, id: \.id) { avatar in
-                                        Avatar(avatar: avatar.image, name: avatar.name, isSelection: true)
-                                            .environmentObject(gameCore)
-                                    } //: FOREACH
-                                } //: LAZYHSTACK
-                            } //: ZSTACK
-                        } //: SCROLL VIEW
-                        .frame(height: 180)
-                    }
-                    ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(gameCore.players, id: \.self) { player in
-                            PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
-                                .frame(width: UIScreen.main.bounds.width - 5, height: 85)
-
+            GeometryReader { geometry in
+                ZStack {
+                    Color(.backgroundAppColor)
+                        .ignoresSafeArea()
+                    VStack {
+                        Spacer()
+                        if !gameCore.avatarDataList.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                ZStack {
+                                    LazyHStack(spacing: 0) {
+                                        ForEach(gameCore.avatarDataList, id: \.id) { avatar in
+                                            Avatar(avatar: avatar.image, name: avatar.name, isSelection: true)
+                                                .environmentObject(gameCore)
+                                        } //: FOREACH
+                                    } //: LAZYHSTACK
+                                } //: ZSTACK
+                            } //: SCROLL VIEW
+                            .frame(height: 100)
                         }
-                    }
-                    
-                    //MARK: ARRUMAR AQUI
-                    NavigationLink(destination: ShuffleAnimation()) {
-                        NeonButton(text: "Jogar", image: .homeButton)
-                            .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
-                            .frame(width: 170, height: 61)
-                    }
-                    
-                } //: VSTACK
+                        ScrollView(.vertical, showsIndicators: false) {
+                            ForEach(gameCore.players, id: \.self) { player in
+                                PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
+                                    .frame(width: UIScreen.main.bounds.width - 5, height: 85)
+
+                            }
+                        }
+                        NavigationLink(destination: ShuffleAnimation()) {
+                            NeonButton(text: "Jogar", image: .homeButton)
+                                .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
+                                .frame(width: 170, height: 61)
+                        }
+                    } //: VSTACK
+                }
             } //: ZSTACK
-        .navigationTitle("Jogadores")
+        .navigationBarTitle("Jogadores")
         .tint(.white)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -82,9 +82,15 @@ struct SetupMatchView: View {
     }
 }
 
-//// MARK: - PREVIEW
-//struct NewPlayerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SetupMatchView()
-//    }
-//}
+// MARK: - PREVIEW
+struct NewPlayerView_Previews: PreviewProvider {
+    static var previews: some View {
+        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+        
+        ForEach(devices, id: \.self) { device in
+            SetupMatchView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
+    }
+}

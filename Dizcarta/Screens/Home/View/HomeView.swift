@@ -24,18 +24,16 @@ struct HomeView: View {
                             .padding(.top, +20)
                     }
                     .padding(.leading, 270)
+                    .hidden()
                     
                     VStack(alignment: .center) {
-                        Spacer()
                         GenericFunctions.checkIfImageExist(name: "home_logo")
-                            .frame(width: geometry.size.width/2, height: geometry.size.height/2)
-                        Spacer(minLength: 100)
+                            .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
+                        Spacer()
                         NavigationLink(destination: SetupMatchView()) {
                             NeonButton(text: "Jogar", image: .homeButton)
+                                .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
                         }
-                            .padding(-20)
-                        
-                        NeonButton(text: "Configurações", image: .configButton)
                         Spacer()
                     }
                 }
@@ -46,6 +44,12 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+        
+        ForEach(devices, id: \.self) { device in
+            HomeView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
     }
 }

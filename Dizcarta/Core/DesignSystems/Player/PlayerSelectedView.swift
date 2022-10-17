@@ -24,61 +24,64 @@ struct PlayerSelectedView: View {
     
     // MARK: - BODY
     var body: some View {
-        HStack {
-            GenericFunctions.checkIfImageExist(name: imagePlayer)
-                .resizable()
-                .frame(width: 112, height: 112)
-                .opacity(1.0)
-            
-            if isEditing {
-                TextField("", text: $playerName)
-                    .foregroundColor(.white)
-                    .font(Font(name: .primaryFont, size: 30))
-                    .textInputAutocapitalization(.words)
-                    .autocorrectionDisabled(true)
-                    .focused($nameIsFocused)
-                    .modifier(TextFieldClearButton(text: $playerName))
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 5)
-                    .background(
-                        HStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.white)
-                                .opacity(0.5)
-                        }
-                    )
+        GeometryReader { geometry in
+            HStack {
+                GenericFunctions.checkIfImageExist(name: imagePlayer)
+                    .resizable()
+                    .frame(width: 112, height: 112)
+                    .opacity(1.0)
                 
-            } else {
-                TextField("", text: $playerName)
-                    .foregroundColor(.white)
-                    .font(Font.custom("DINAlternate-Bold", size: 20))
-                    .disabled(!isEditing)
-            }
-                        
-            Button {
-                self.isEditing.toggle()
-            } label: {
                 if isEditing {
-                    Image(systemName: "checkmark")
-                        .foregroundColor(.green)
-                        .padding()
-                        .onTapGesture {
-                            if self.playerName == "" {
-                                self.playerName = backupName
+                    TextField("", text: $playerName)
+                        .foregroundColor(.white)
+                        .font(Font(name: .primaryFont, size: 20))
+                        .textInputAutocapitalization(.words)
+                        .autocorrectionDisabled(true)
+                        .focused($nameIsFocused)
+                        .modifier(TextFieldClearButton(text: $playerName))
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
+                        .background(
+                            HStack {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(.white)
+                                    .opacity(0.5)
                             }
-                            
-                            self.isEditing.toggle()
-                        }
+                        )
                     
                 } else {
-                GenericFunctions.checkIfImageExist(name: "ChangeNamePencil")
-                    .resizable()
-                    .frame(width: 56, height: 56)
+                    TextField("", text: $playerName)
+                        .foregroundColor(.white)
+                        .font(Font.custom("DINAlternate-Bold", size: 20))
+                        .disabled(!isEditing)
+                }
+                
+                Button {
+                    self.isEditing.toggle()
+                } label: {
+                    if isEditing {
+                        GenericFunctions.checkIfImageExist(name: "checkmark")
+//                            .resizable()
+                            .frame(width: 22, height: 18)
+                            .padding()
+                            .onTapGesture {
+                                if self.playerName == "" {
+                                    self.playerName = backupName
+                                }
+                                
+                                self.isEditing.toggle()
+                            }
+                        
+                    } else {
+                        GenericFunctions.checkIfImageExist(name: "ChangeNamePencil")
+                            .resizable()
+                            .frame(width: 70, height: 70)
+                    }
                 }
             }
-        }
-        .onTapGesture {
-            print("Touch action")
+            .onTapGesture {
+                print("Touch action")
+            }
         }
     }
 }
