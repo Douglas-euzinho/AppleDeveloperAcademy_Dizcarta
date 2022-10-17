@@ -8,11 +8,19 @@
 import Foundation
 import CoreData
 
+struct PlayerLost {
+    var player: Player
+    var isLost: Bool
+}
+
 final class GameCore: ObservableObject {
 
     let cardFile: String
     var cardList: CardList?
     
+    @Published var isLastCard: Bool = false
+    
+    @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
     @Published var matchInProgress: MatchInProgress
     @Published var players: [Player] = []

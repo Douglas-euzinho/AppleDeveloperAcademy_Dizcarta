@@ -34,7 +34,7 @@
 		15E07D8028EF6D52005D2A80 /* AvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7F28EF6D52005D2A80 /* AvatarData.swift */; };
 		15E07D8228EF6DC2005D2A80 /* SetupMatch+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D8128EF6DC2005D2A80 /* SetupMatch+Observed.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
-		23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* PlayerRepository.swift */; };
+		23199ED428DE24C20064E574 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* GameRepository.swift */; };
 		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
 		23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDF28DE527B0064E574 /* ConfigurationsView.swift */; };
 		23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EE228DE53270064E574 /* ButtonCardView.swift */; };
@@ -120,7 +120,7 @@
 		15E07D7F28EF6D52005D2A80 /* AvatarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarData.swift; sourceTree = "<group>"; };
 		15E07D8128EF6DC2005D2A80 /* SetupMatch+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetupMatch+Observed.swift"; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		23199ED328DE24C20064E574 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
+		23199ED328DE24C20064E574 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 		23199EDF28DE527B0064E574 /* ConfigurationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		23199EE228DE53270064E574 /* ButtonCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
@@ -380,18 +380,18 @@
 		23199ECF28DE239B0064E574 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				23199ED028DE23A90064E574 /* PlayerRepository */,
+				23199ED028DE23A90064E574 /* GameRepository */,
 				23199ED128DE23DF0064E574 /* Repository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		23199ED028DE23A90064E574 /* PlayerRepository */ = {
+		23199ED028DE23A90064E574 /* GameRepository */ = {
 			isa = PBXGroup;
 			children = (
-				23199ED328DE24C20064E574 /* PlayerRepository.swift */,
+				23199ED328DE24C20064E574 /* GameRepository.swift */,
 			);
-			path = PlayerRepository;
+			path = GameRepository;
 			sourceTree = "<group>";
 		};
 		23199EDB28DE527B0064E574 /* Configurations */ = {
@@ -806,7 +806,7 @@
 				366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */,
 				233FB52128E622FE008EE961 /* AlertView.swift in Sources */,
 				2340D8EF28F4904C0016CB0F /* GameCore.swift in Sources */,
-				23199ED428DE24C20064E574 /* PlayerRepository.swift in Sources */,
+				23199ED428DE24C20064E574 /* GameRepository.swift in Sources */,
 				151EA3A828EDFB9B000BEA9E /* ButtonData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
