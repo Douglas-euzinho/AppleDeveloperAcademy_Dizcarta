@@ -10,17 +10,25 @@ import Lottie
 
 struct ShuffleAnimation: View {
     var body: some View {
-        ZStack {
-            Color(.backgroundAppColor)
-                .ignoresSafeArea()
-            LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1))
-                .frame(width: 900, height: 900)
+        GeometryReader { geometry in
+            ZStack {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea()
+                LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1))
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+            }
         }
     }
 }
 
 struct ShuffleAnimation_Previews: PreviewProvider {
     static var previews: some View {
-        ShuffleAnimation()
+        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+        
+        ForEach(devices, id: \.self) { device in
+            ShuffleAnimation()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
     }
 }
