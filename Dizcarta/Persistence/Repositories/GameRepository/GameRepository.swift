@@ -10,7 +10,7 @@ import CoreData
 
 protocol GameRepositoryProtocol: Repository {
     var context: NSManagedObjectContext { get set }
-    var turnCount: Int { get set }
+    var turnPosition: Int { get set }
     
     func getPlayers(match: MatchInProgress) -> [Player]
     func createPlayer(name: String, avatar: String, match: MatchInProgress)
@@ -41,7 +41,7 @@ extension GameRepositoryProtocol {
 
 final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     
-    var turnCount: Int = 0
+    var turnPosition: Int = 0
     var context: NSManagedObjectContext
     
     init(context: NSManagedObjectContext) {
@@ -65,9 +65,9 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
         let player = Player(context: context)
         player.name = name
         player.avatar = avatar
-        player.points = 0
-        turnCount += 1
-        player.turn = Int16(turnCount)
+        player.points = Int16(AppConfig.PlayerStartPoints)
+        turnPosition += 1
+        player.turn = Int16(turnPosition)
         save()
         print("[CORE DATA]: PLAYER CREATED \(player)")
     }
@@ -92,13 +92,11 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     func getRanking(match: MatchInProgress) -> [Player] {
         getPlayers(match: match).sorted(by: { $0.points > $1.points })
     }
-    
-    
 }
 
 final class PlayerRepositoryMock: GameRepositoryProtocol {
     
-    var turnCount: Int = 0
+    var turnPosition: Int = 0
     var context: NSManagedObjectContext
     
     init(context: NSManagedObjectContext) {
@@ -122,9 +120,9 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
         let player = Player(context: context)
         player.name = name
         player.avatar = avatar
-        player.points = 0
-        turnCount += 1
-        player.turn = Int16(turnCount)
+        player.points = Int16(AppConfig.PlayerStartPoints)
+        turnPosition += 1
+        player.turn = Int16(turnPosition)
         player.matchInProgress = match
         print("[CORE DATA]: PLAYER CREATED \(player)")
         save()
