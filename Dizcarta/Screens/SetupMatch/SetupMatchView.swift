@@ -48,8 +48,8 @@ struct SetupMatchView: View {
 
                             }
                         }
-                        NavigationLink(destination: ShuffleAnimation()) {
-                            NeonButton(text: "Jogar", image: .homeButton)
+                        NavigationLink(destination: ShiftPlayerView()) {
+                            NeonButton(text: "Jogar", image: .neonButtonYellow)
                                 .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
                                 .frame(width: 170, height: 61)
                         }

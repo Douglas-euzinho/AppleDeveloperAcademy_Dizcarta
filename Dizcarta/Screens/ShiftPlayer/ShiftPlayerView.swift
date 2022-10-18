@@ -13,7 +13,7 @@ struct ShiftPlayerView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             ZStack {
                 Color(.backgroundAppColor)
                     .ignoresSafeArea(.all)
@@ -38,13 +38,15 @@ struct ShiftPlayerView: View {
                     
                     Spacer()
                     
-                    NeonButton(text: "Embaralhar", image: .homeButton)
-                        .frame(width: 287, height: 65)
-                        .shadow(radius: 10)
-                        .padding(.bottom, 60)
+                    NavigationLink(destination: ShuffleAnimation()) {
+                        NeonButton(text: "Embaralhar", image: .neonButtonYellow)
+                            .frame(width: geometry.size.width/1.2, height: geometry.size.height/8)
+                            .shadow(radius: 10)
+                            .padding(.bottom, 60)
+                    }
                 } //: VSTACK
             } //: ZSTACK
-        } //: NAVIGATION VIEW
+        } //: GEOMETRYREADER VIEW
         .tint(.white)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
