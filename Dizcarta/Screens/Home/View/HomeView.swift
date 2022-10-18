@@ -31,7 +31,7 @@ struct HomeView: View {
                             .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
                         Spacer()
                         NavigationLink(destination: SetupMatchView()) {
-                            NeonButton(text: "Jogar", image: .homeButton)
+                            NeonButton(text: "Jogar", image: .neonButtonYellow)
                                 .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
                         }
                         Spacer()
