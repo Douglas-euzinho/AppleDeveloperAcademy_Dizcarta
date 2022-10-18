@@ -62,4 +62,16 @@ extension GameCore {
         removePlayerPoints(player: from, points: points)
         addPlayerPoints(player: toPlayer, points: points)
     }
+    
+    func nextPlayer() -> Player {
+        if turn == 6 {
+            turn = 1
+        }
+       guard let player = players.first(where: { Int($0.turn) ==  turn && $0.points > 0 })
+        else {
+           turn += 1
+           return nextPlayer()
+       }
+        return player
+    }
 }
