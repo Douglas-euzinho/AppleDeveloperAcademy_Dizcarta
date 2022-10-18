@@ -22,7 +22,7 @@ struct ShuffleAnimation: View {
                         .overlay(alignment: .bottom) {
                             NavigationLink(destination: InGameView()) {
                                 NeonButton(text: "Virar", image: .neonButtonYellow)
-                                    .frame(width: 120, height: 50)
+                                    .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
                             }
                         }
                 }
