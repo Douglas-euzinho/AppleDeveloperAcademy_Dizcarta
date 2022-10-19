@@ -27,8 +27,10 @@ enum AppColor: String, CaseIterable {
     // MARK: - FEEDBACK
     case feedbackButtonSelected = "feedback_button_selected"
     
-    // MARK: - NOT FOUND COLOR
+    // MARK: - CARD COLOR
+    case cardColor = "card_color"
     
+    // MARK: - NOT FOUND COLOR
     static func colorName(_ color: Color) -> String {
         var colorName = "emptyColor"
         allCases.forEach { appColor in

@@ -19,17 +19,18 @@ final class GameCore: ObservableObject {
     var cardList: CardList?
     
     @Published var isLastCard: Bool = false
+    internal var turn: Int = 1
     
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
     @Published var matchInProgress: MatchInProgress
     @Published var players: [Player] = []
-    var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Blue"),
-                                               AvatarData(image: "avatarRed", name: "Red"),
-                                               AvatarData(image: "avatarPurple", name: "Purple"),
-                                               AvatarData(image: "avatarYellow", name: "Yellow"),
-                                               AvatarData(image: "avatarPink", name: "Pink"),
-                                               AvatarData(image: "avatarTurquoise", name: "Turquoise")]
+    private var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
+                                               AvatarData(image: "avatarRed", name: "Vermelho"),
+                                               AvatarData(image: "avatarPurple", name: "Roxo"),
+                                               AvatarData(image: "avatarYellow", name: "Amarelo"),
+                                               AvatarData(image: "avatarPink", name: "Rosa"),
+                                               AvatarData(image: "avatarTurquoise", name: "Verde")]
     var avatarDataList: [AvatarData] {
             avatarData.filter { avatar in
                 !players.contains(where: { $0.wrappedAvatar == avatar.image })

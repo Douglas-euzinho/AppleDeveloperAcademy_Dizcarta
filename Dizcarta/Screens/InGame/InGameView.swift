@@ -8,50 +8,80 @@
 import SwiftUI
 
 struct InGameView: View {
-    @Environment(\.dismiss) var dismiss
-    
     // MARK: - VARIABLES
+    @Environment(\.presentationMode) var presentation
+    @Environment(\.dismiss) var dismiss
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
     var btnAction: (() -> Void) = {}
-    
     let durationAndDelay : CGFloat = 0.3
     
+    // MARK: - BODY
     var body: some View {
-        ZStack {
-            GenericFunctions.checkIfImageExist(name: "exitButton")
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: Alignment.topLeading)
-                .padding()
-            VStack {
-                ZStack {
-                    FrontCard(image: .constant("house.fill"),
-                              title: .constant("Doente de Amor"),
-                              description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
-                              acceptPoints: .constant(4), declinePoints: .constant(4), degree: $frontDegree)
-                    BackCard(degree: $backDegree)
-                }.onTapGesture {
-                    flipCard()
+        NavigationView {
+            ZStack {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea(.all)
+                
+                VStack {
+                    ZStack {
+                        FrontCard(title: .constant("Doente de Amor"),
+                                  description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
+                                  acceptPoints: .constant(4),
+                                  declinePoints: .constant(4),
+                                  degree: $frontDegree)
+                        BackCard(degree: $backDegree)
+                    }.onTapGesture {
+                        flipCard()
+                    }
+                    .padding(.top, 50)
+                    
+                    HStack {
+                        ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
+                            .frame(width: 180, height: 100)
+                            .onTapGesture {
+                                btnAction()
+                                dismiss.callAsFunction()
+                            }
+                        
+                        ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
+                            .frame(width: 180, height: 100)
+                            .onTapGesture {
+                                btnAction()
+                                dismiss.callAsFunction()
+                            }
+                    } //: HSTACK
+                    .padding(.bottom, 30)
+                } //: VSTACK
+            } //: ZSTACK
+            .tint(.white)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("Sair")
+                    .fontWeight(.medium)
+            }
+                .foregroundColor(.white)
+                .onTapGesture {
+                    self.presentation.wrappedValue.dismiss()
                 }
-                .padding(30)
-                HStack {
-                    ButtonCardView(iconName: "ButtonAccept", text: "Aceitar")
-                        .onTapGesture {
-                            btnAction()
-                            dismiss.callAsFunction()
-                        }
-                    ButtonCardView(iconName: "ButtonRefuse", text: "Recusar")
-                        .onTapGesture {
-                            btnAction()
-                            dismiss.callAsFunction()
-                        }
+            )
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    // MARK: - PLAYER SCORE
+                    PlayerView(name: "Vermelho", avatar: "avatarRed", points: 10)
                 }
             }
-        }
+        } //: NAVIGATION VIEW
     }
-    // MARK: Flip Card Function
-    func flipCard() {
+    
+    // MARK: - FLIP CARD
+    private func flipCard() {
         isFlipped.toggle()
+        
         if isFlipped {
             withAnimation(.linear(duration: durationAndDelay)) {
                 backDegree = 90
@@ -67,12 +97,18 @@ struct InGameView: View {
                 backDegree = 0
             }
         }
-
     }
-  }
+}
 
+// MARK: - PREVIEW
 struct InGameView_Previews: PreviewProvider {
     static var previews: some View {
-        InGameView()
+        let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+        
+        ForEach(devices, id: \.self) { device in
+            InGameView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
     }
 }

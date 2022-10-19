@@ -47,6 +47,7 @@
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */; };
+		23B61B6428FF29DD007FBCCD /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B61B6328FF29DD007FBCCD /* AppConstants.swift */; };
 		23C90ECF28EF5D020079EEFA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ECE28EF5D020079EEFA /* cards.json */; };
 		23C90ED128EF5D3B0079EEFA /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED028EF5D3B0079EEFA /* JsonManager.swift */; };
 		23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED328EF6AAB0079EEFA /* CardCodable.swift */; };
@@ -134,6 +135,7 @@
 		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Wrapped.swift"; sourceTree = "<group>"; };
+		23B61B6328FF29DD007FBCCD /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		23C90ECE28EF5D020079EEFA /* cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		23C90ED028EF5D3B0079EEFA /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		23C90ED328EF6AAB0079EEFA /* CardCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCodable.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 		238DF94828DA387100F9A23B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				23B61B6228FF29BF007FBCCD /* Constants */,
 				2340D8F028F491A30016CB0F /* GameCore */,
 				155537FC28D8E3DA00CA5573 /* AppCore.swift */,
 				3606A1F128DA5486004C9BF9 /* DesignSystems */,
@@ -488,6 +491,14 @@
 				155537FE28D8E3DA00CA5573 /* HomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		23B61B6228FF29BF007FBCCD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				23B61B6328FF29DD007FBCCD /* AppConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		23C90ECD28EF5BE20079EEFA /* JsonManager */ = {
@@ -790,6 +801,7 @@
 				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
 				36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */,
 				15E07D7828EF4A2C005D2A80 /* Avatar.swift in Sources */,
+				23B61B6428FF29DD007FBCCD /* AppConstants.swift in Sources */,
 				23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */,
 				23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */,
 				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
