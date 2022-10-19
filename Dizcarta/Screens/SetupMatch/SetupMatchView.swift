@@ -11,6 +11,7 @@ struct SetupMatchView: View {
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
+    @State var backHome = false
     @StateObject private var gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     
     init() {
@@ -23,54 +24,59 @@ struct SetupMatchView: View {
     // MARK: - BODY
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                Color(.backgroundAppColor)
-                    .ignoresSafeArea()
-                VStack {
-                    Spacer()
-                    if !gameCore.avatarDataList.isEmpty {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            ZStack {
-                                LazyHStack(spacing: 0) {
-                                    ForEach(gameCore.avatarDataList, id: \.id) { avatar in
-                                        Avatar(avatar: avatar.image, name: avatar.name, isSelection: true)
-                                            .environmentObject(gameCore)
-                                    } //: FOREACH
-                                } //: LAZYHSTACK
-                            } //: ZSTACK
-                        } //: SCROLL VIEW
-                        .frame(height: 100)
-                    }
-                    
-                    if !gameCore.players.isEmpty {
-                        ScrollView(.vertical, showsIndicators: false) {
-                            ForEach(gameCore.players, id: \.self) { player in
-                                PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
-                                    .frame(width: UIScreen.main.bounds.width - 5, height: 85)
-                                
-                            }
+            NavigationStack {
+                ZStack {
+                    Color(.backgroundAppColor)
+                        .ignoresSafeArea()
+                    VStack {
+                        Spacer()
+                        if !gameCore.avatarDataList.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                ZStack {
+                                    LazyHStack(spacing: 0) {
+                                        ForEach(gameCore.avatarDataList, id: \.id) { avatar in
+                                            Avatar(avatar: avatar.image, name: avatar.name, isSelection: true)
+                                                .environmentObject(gameCore)
+                                        } //: FOREACH
+                                    } //: LAZYHSTACK
+                                } //: ZSTACK
+                            } //: SCROLL VIEW
+                            .frame(height: 100)
                         }
-                    } else {
-                        Spacer(minLength: geometry.size.height / 3.7)
                         
-                        Text("Adicione pelo menos quatro personagens para" + "\ncomeçar a jogar.")
-                            .font(Font.custom("DINAlternate-Bold", size: 15))
-                            .lineLimit(2)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                            .frame(height: geometry.size.height / 10)
-                            .padding(.horizontal, 15)
+                        if !gameCore.players.isEmpty {
+                            ScrollView(.vertical, showsIndicators: false) {
+                                ForEach(gameCore.players, id: \.self) { player in
+                                    PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
+                                        .frame(width: UIScreen.main.bounds.width - 5, height: 85)
+                                    
+                                }
+                            }
+                        } else {
+                            Spacer(minLength: geometry.size.height / 3.7)
+                            
+                            Text("Adicione pelo menos quatro personagens para" + "\ncomeçar a jogar.")
+                                .font(Font.custom("DINAlternate-Bold", size: 15))
+                                .lineLimit(2)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                                .frame(height: geometry.size.height / 10)
+                                .padding(.horizontal, 15)
+                            
+                            Spacer(minLength: geometry.size.height / 3.7)
+                        }
                         
-                        Spacer(minLength: geometry.size.height / 3.7)
+                        NavigationLink(destination: ShiftPlayerView().environmentObject(gameCore)) {
+                            NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
+                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                                .padding()
+                        }
+                    } //: VSTACK
+                    .navigationDestination(isPresented: $backHome) {
+                        HomeView()
                     }
-                    
-                    NavigationLink(destination: ShiftPlayerView()) {
-                        NeonButton(text: "Jogar", image: .neonButtonYellow)
-                            .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
-                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
-                            .padding()
-                    }
-                } //: VSTACK
+                }
             }
         } //: ZSTACK
         .navigationBarTitle("Jogadores")
@@ -86,7 +92,7 @@ struct SetupMatchView: View {
             .foregroundColor(.white)
             .onTapGesture {
                 gameCore.resetMatch()
-                self.presentation.wrappedValue.dismiss()
+                backHome = true
             }
         )
     }

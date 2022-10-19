@@ -13,31 +13,31 @@ struct HomeView: View {
     @State var isPlayerListView = false
     
     var body: some View {
-        NavigationView {
             GeometryReader { geometry in
-                ZStack(alignment: .top) {
-                    Color(.backgroundAppColor)
-                        .ignoresSafeArea()
-                    VStack {
-                        GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
-                            .padding(.trailing, -30)
-                            .padding(.top, +20)
-                    }
-                    .padding(.leading, 270)
-                    .hidden()
-                    
-                    VStack(alignment: .center) {
-                        GenericFunctions.checkIfImageExist(name: "home_logo")
-                            .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
-                        Spacer()
-                        NavigationLink(destination: SetupMatchView()) {
-                            NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                NavigationStack {
+                    ZStack(alignment: .top) {
+                        Color(.backgroundAppColor)
+                            .ignoresSafeArea()
+                        VStack {
+                            GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
+                                .padding(.trailing, -30)
+                                .padding(.top, +20)
                         }
-                        Spacer()
+                        .padding(.leading, 270)
+                        .hidden()
+                        
+                        VStack(alignment: .center) {
+                            GenericFunctions.checkIfImageExist(name: "home_logo")
+                                .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
+                            Spacer()
+                            NavigationLink(destination: SetupMatchView()) {
+                                NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                    .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                            }
+                            Spacer()
+                        }
                     }
                 }
-            }
         }
         .navigationBarBackButtonHidden(true)
     }
