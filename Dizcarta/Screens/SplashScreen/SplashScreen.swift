@@ -28,7 +28,7 @@ struct ContentView : View {
                 if splashScreen {
                     SplashScreen()
                 } else {
-                    HomeView()
+                    InGameView()
                 }
             }
             .onAppear {

@@ -11,39 +11,43 @@ struct ButtonCardView: View {
     
     var iconName: String
     var text: String
+    var backgroundImage: String
     
-    init(iconName: String, text: String) {
+    init(iconName: String, text: String, backgroundImage: String) {
         self.iconName = iconName
         self.text = text
+        self.backgroundImage = backgroundImage
     }
     
     var body: some View {
-        HStack {
-            Rectangle()
-                .frame(minWidth: 110, idealWidth: 115, maxWidth: 130, minHeight: 60, idealHeight: 65, maxHeight: 80)
-                .cornerRadius(20)
-                .foregroundColor(.white)
-                .shadow(radius: 7)
-                .overlay {
-                    VStack {
-                        Spacer(minLength: 10)
-                        GenericFunctions.checkIfImageExist(name: iconName)
-                            .frame(width: 41, height: 10)
-                        Spacer()
-                        Text(text)
-                            .font(.custom("macrofont", size: 20))
-                            .minimumScaleFactor(0.01)
-                            .foregroundColor(.black)
-                    }
-                    .padding(5)
-                }
-                .padding(10)
-        }.frame(width: .infinity, height: .infinity)
+        ZStack {
+            Image(backgroundImage)
+                .resizable()
+                .cornerRadius(10)
+                .opacity(0.8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.black)
+                        .opacity(0.3)
+                        .frame(width: 140, height: 67)
+                )
+            
+            VStack {
+                GenericFunctions.checkIfImageExist(name: iconName)
+                    .resizable()
+                    .frame(width: 32, height: 32)
+                
+                Text(text)
+                    .font(.custom("macrofont", size: 15))
+                    .minimumScaleFactor(0.01)
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 
 struct ButtonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonCardView(iconName: "ButtonAccept", text: "Aceitar")
+        ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
     }
 }
