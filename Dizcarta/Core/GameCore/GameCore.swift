@@ -30,7 +30,7 @@ final class GameCore: ObservableObject {
                                                AvatarData(image: "avatarPurple", name: "Roxo"),
                                                AvatarData(image: "avatarYellow", name: "Amarelo"),
                                                AvatarData(image: "avatarPink", name: "Rosa"),
-                                               AvatarData(image: "avatarTurquoise", name: "Turquesa")]
+                                               AvatarData(image: "avatarTurquoise", name: "Verde")]
     var avatarDataList: [AvatarData] {
             avatarData.filter { avatar in
                 !players.contains(where: { $0.wrappedAvatar == avatar.image })

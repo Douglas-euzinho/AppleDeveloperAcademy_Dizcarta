@@ -19,7 +19,7 @@ struct Avatar: View {
         ZStack {
             HStack {
                 Image(avatar)
-                    .padding(isSelection ? -21 : 20)
+                    .padding(isSelection ? -10 : 20)
                     .opacity(isPressed ? 1.0 : 0.5)
                     .onTapGesture {
                         self.isPressed.toggle()
