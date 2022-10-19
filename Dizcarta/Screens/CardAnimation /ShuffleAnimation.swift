@@ -9,30 +9,38 @@ import SwiftUI
 import Lottie
 
 struct ShuffleAnimation: View {
+    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var gameCore: GameCore
+    @State var showInGame = false
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                HStack {
-                    Color(.backgroundAppColor)
-                        .ignoresSafeArea()
-                }
-                VStack {
-                    LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1))
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .overlay(alignment: .bottom) {
-                            NavigationLink(destination: InGameView()) {
-                                NeonButton(text: "Virar", image: .neonButtonYellow)
-                                    .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                NavigationStack {
+                    ZStack {
+                        Color(.backgroundAppColor)
+                            .ignoresSafeArea()
+                        VStack {
+                            LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1)) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    showInGame = true
+                                }
                             }
+                            .frame(width: geometry.size.width, height: geometry.size.height)
                         }
+                        .navigationDestination(isPresented: $showInGame, destination: {
+                            InGameView()
+                            .environmentObject(gameCore)                            })
+                    }
                 }
-            }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: HomeView()) {
                     GenericFunctions.checkIfImageExist(name: "exitButton")
+                        .onTapGesture {
+                            gameCore.resetMatch()
+                            showInGame = true
+                        }
                 }
             }
         }

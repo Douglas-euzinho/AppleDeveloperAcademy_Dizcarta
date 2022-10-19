@@ -29,7 +29,7 @@ struct ButtonCardView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(.black)
                         .opacity(0.3)
-                        .frame(width: 140, height: 67)
+                        .frame(width: 150, height: 70)
                 )
             
             VStack {

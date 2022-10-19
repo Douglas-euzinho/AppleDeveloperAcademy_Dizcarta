@@ -25,6 +25,7 @@ final class GameCore: ObservableObject {
     @Published var context: NSManagedObjectContext
     @Published var matchInProgress: MatchInProgress
     @Published var players: [Player] = []
+    @Published var playerPlaying: Player?
     private var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
                                                AvatarData(image: "avatarRed", name: "Vermelho"),
                                                AvatarData(image: "avatarPurple", name: "Roxo"),

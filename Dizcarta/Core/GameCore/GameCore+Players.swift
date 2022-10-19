@@ -34,6 +34,7 @@ extension GameCore {
         players.forEach { player in
             repository.delete(object: player)
         }
+        self.players = []
         repository.delete(object: matchInProgress)
     }
     
@@ -72,6 +73,8 @@ extension GameCore {
            turn += 1
            return nextPlayer()
        }
+        turn += 1
+        playerPlaying = player
         return player
     }
 }
