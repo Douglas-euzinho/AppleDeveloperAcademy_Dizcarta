@@ -19,12 +19,13 @@ final class GameCore: ObservableObject {
     var cardList: CardList?
     
     @Published var isLastCard: Bool = false
+    internal var turn: Int = 1
     
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
     @Published var matchInProgress: MatchInProgress
     @Published var players: [Player] = []
-    var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
+    private var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
                                                AvatarData(image: "avatarRed", name: "Vermelho"),
                                                AvatarData(image: "avatarPurple", name: "Roxo"),
                                                AvatarData(image: "avatarYellow", name: "Amarelo"),

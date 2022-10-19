@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct AppConfig {
-    static var isMocked = true
-}
-
 @main
 struct AppCore: App {
     var body: some Scene {

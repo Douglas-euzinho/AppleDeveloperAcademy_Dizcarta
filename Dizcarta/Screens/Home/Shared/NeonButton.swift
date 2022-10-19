@@ -32,6 +32,6 @@ struct NeonButton: View {
 
 struct NeonButton_Previews: PreviewProvider {
     static var previews: some View {
-        NeonButton(text: "auau", image: .configButton)
+        NeonButton(text: "auau", image: .neonButtonPurple)
     }
 }

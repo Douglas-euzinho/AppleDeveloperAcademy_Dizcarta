@@ -12,13 +12,24 @@ struct ShuffleAnimation: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color(.backgroundAppColor)
-                    .ignoresSafeArea()
-                LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1))
-                    .frame(width: geometry.size.width, height: geometry.size.height)
+                HStack {
+                    Color(.backgroundAppColor)
+                        .ignoresSafeArea()
+                }
+                VStack {
+                    LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1))
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .overlay(alignment: .bottom) {
+                            NavigationLink(destination: InGameView()) {
+                                NeonButton(text: "Virar", image: .neonButtonYellow)
+                                    .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                            }
+                        }
+                }
             }
         }
     }
+    
 }
 
 struct ShuffleAnimation_Previews: PreviewProvider {
