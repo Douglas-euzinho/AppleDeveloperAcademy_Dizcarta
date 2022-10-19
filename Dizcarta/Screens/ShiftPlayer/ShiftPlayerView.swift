@@ -48,6 +48,13 @@ struct ShiftPlayerView: View {
             } //: ZSTACK
         } //: GEOMETRYREADER VIEW
         .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink(destination: HomeView()) {
+                    GenericFunctions.checkIfImageExist(name: "exitButton")
+                }
+            }
+        }
     }
 }
 

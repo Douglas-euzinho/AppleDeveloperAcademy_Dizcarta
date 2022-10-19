@@ -30,9 +30,11 @@ struct InGameView: View {
                               declinePoints: .constant(4),
                               degree: $frontDegree)
                     BackCard(degree: $backDegree)
-                }.onTapGesture {
-                    flipCard()
-                }
+                }.onAppear(perform: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+                        flipCard()
+                    }
+                })
                 .padding(.top, 50)
                 
                 HStack {
@@ -54,6 +56,16 @@ struct InGameView: View {
             } //: VSTACK
         } //: ZSTACK
         .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink(destination: HomeView()) {
+                    GenericFunctions.checkIfImageExist(name: "exitButton")
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                PlayerView(name: "Vermelho", avatar: "avatarRed", points: 10)
+            }
+        }
     }
     
     // MARK: - FLIP CARD
