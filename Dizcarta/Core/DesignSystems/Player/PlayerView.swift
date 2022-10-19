@@ -18,30 +18,29 @@ struct PlayerView: View {
     HStack {
       Image(avatar)
         .resizable()
-        .frame(width: 80, height: 80)
-        .padding(.trailing, -16)
+        .frame(width: 60, height: 60)
+        .padding(.trailing, -14)
       
       VStack(alignment: .leading) {
         HStack {
           Text(name)
-            .font(Font.custom("DINAlternate-Bold", size: 18))
+            .font(Font.custom("DINAlternate-Bold", size: 16))
             .foregroundColor(.white)
         }
         
         if let points {
           HStack {
             Text("\(points)")
-                .font(Font.custom("DINAlternate-Bold", size: 13))
+                .font(Font.custom("DINAlternate-Bold", size: 11))
                 .foregroundColor(.black)
-              
             Text(points == 1 ? "ponto" : "pontos")
-                  .font(Font.custom("DINAlternate-Bold", size: 13))
+                  .font(Font.custom("DINAlternate-Bold", size: 11))
                   .foregroundColor(.black)
           } //: HSTACK
-          .padding(.vertical, 5)
-          .padding(.horizontal, 15)
+//          .padding(.vertical, 1)
+          .padding(.horizontal, 8)
           .background(
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.white)
                 .opacity(0.7)
           )
