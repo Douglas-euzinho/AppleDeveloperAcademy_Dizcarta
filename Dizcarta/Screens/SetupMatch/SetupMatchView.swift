@@ -51,7 +51,7 @@ struct SetupMatchView: View {
                         NavigationLink(destination: ShiftPlayerView()) {
                             NeonButton(text: "Jogar", image: .neonButtonYellow)
                                 .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
-                                .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                                .frame(width: geometry.size.width/1.6, height: geometry.size.height/7)
                                 .padding()
                         }
                     } //: VSTACK
@@ -83,7 +83,7 @@ struct SetupMatchView: View {
 // MARK: - PREVIEW
 struct NewPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+        let devices = ["iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
         ForEach(devices, id: \.self) { device in
             SetupMatchView()
                 .previewDevice(PreviewDevice(rawValue: device))

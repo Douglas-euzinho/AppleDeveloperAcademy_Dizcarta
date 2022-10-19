@@ -28,6 +28,7 @@ struct ShuffleAnimation: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
     
 }
