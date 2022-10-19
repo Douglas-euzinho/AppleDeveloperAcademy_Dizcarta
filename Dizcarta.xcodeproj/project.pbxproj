@@ -69,7 +69,7 @@
 		CD58D95A28F4BBF000486117 /* Splash.json in Resources */ = {isa = PBXBuildFile; fileRef = CD58D95928F4BBF000486117 /* Splash.json */; };
 		CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */; };
 		CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */; };
-		CDB53D3028FDF09000F55B96 /* ShuffleAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB53D2F28FDF09000F55B96 /* ShuffleAnimation.json */; };
+		CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB53D332900720A00F55B96 /* ShuffleAnimation.json */; };
 		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -156,7 +156,7 @@
 		CD58D95928F4BBF000486117 /* Splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Splash.json; sourceTree = "<group>"; };
 		CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlayerView.swift; sourceTree = "<group>"; };
 		CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnimation.swift; sourceTree = "<group>"; };
-		CDB53D2F28FDF09000F55B96 /* ShuffleAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShuffleAnimation.json; sourceTree = "<group>"; };
+		CDB53D332900720A00F55B96 /* ShuffleAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShuffleAnimation.json; sourceTree = "<group>"; };
 		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -589,7 +589,7 @@
 		CD58D95028F4A3F900486117 /* JsonFile */ = {
 			isa = PBXGroup;
 			children = (
-				CDB53D2F28FDF09000F55B96 /* ShuffleAnimation.json */,
+				CDB53D332900720A00F55B96 /* ShuffleAnimation.json */,
 				CD58D95928F4BBF000486117 /* Splash.json */,
 			);
 			path = JsonFile;
@@ -722,7 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB53D3028FDF09000F55B96 /* ShuffleAnimation.json in Resources */,
+				CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */,
 				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */,

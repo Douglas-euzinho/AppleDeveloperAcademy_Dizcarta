@@ -28,6 +28,14 @@ struct ShuffleAnimation: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink(destination: HomeView()) {
+                    GenericFunctions.checkIfImageExist(name: "exitButton")
+                }
+            }
+        }
     }
     
 }

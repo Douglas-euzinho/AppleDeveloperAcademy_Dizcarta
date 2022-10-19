@@ -19,63 +19,53 @@ struct InGameView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(.backgroundAppColor)
-                    .ignoresSafeArea(.all)
-                
-                VStack {
-                    ZStack {
-                        FrontCard(title: .constant("Doente de Amor"),
-                                  description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
-                                  acceptPoints: .constant(4),
-                                  declinePoints: .constant(4),
-                                  degree: $frontDegree)
-                        BackCard(degree: $backDegree)
-                    }.onTapGesture {
+        ZStack {
+            Color(.backgroundAppColor)
+                .ignoresSafeArea(.all)
+            VStack {
+                ZStack {
+                    FrontCard(title: .constant("Doente de Amor"),
+                              description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
+                              acceptPoints: .constant(4),
+                              declinePoints: .constant(4),
+                              degree: $frontDegree)
+                    BackCard(degree: $backDegree)
+                }.onAppear(perform: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
                         flipCard()
                     }
-                    .padding(.top, 50)
+                })
+                .padding(.top, 50)
+                
+                HStack {
+                    ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
+                        .frame(width: 180, height: 100)
+                        .onTapGesture {
+                            btnAction()
+                            dismiss.callAsFunction()
+                        }
                     
-                    HStack {
-                        ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
-                            .frame(width: 180, height: 100)
-                            .onTapGesture {
-                                btnAction()
-                                dismiss.callAsFunction()
-                            }
-                        
-                        ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
-                            .frame(width: 180, height: 100)
-                            .onTapGesture {
-                                btnAction()
-                                dismiss.callAsFunction()
-                            }
-                    } //: HSTACK
-                    .padding(.bottom, 30)
-                } //: VSTACK
-            } //: ZSTACK
-            .tint(.white)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading:
-            HStack {
-                Image(systemName: "chevron.left")
-                Text("Sair")
-                    .fontWeight(.medium)
-            }
-                .foregroundColor(.white)
-                .onTapGesture {
-                    self.presentation.wrappedValue.dismiss()
-                }
-            )
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    // MARK: - PLAYER SCORE
-                    PlayerView(name: "Vermelho", avatar: "avatarRed", points: 10)
+                    ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
+                        .frame(width: 180, height: 100)
+                        .onTapGesture {
+                            btnAction()
+                            dismiss.callAsFunction()
+                        }
+                } //: HSTACK
+                .padding(.bottom, 30)
+            } //: VSTACK
+        } //: ZSTACK
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink(destination: HomeView()) {
+                    GenericFunctions.checkIfImageExist(name: "exitButton")
                 }
             }
-        } //: NAVIGATION VIEW
+            ToolbarItem(placement: .navigationBarTrailing) {
+                PlayerView(name: "Vermelho", avatar: "avatarRed", points: 10)
+            }
+        }
     }
     
     // MARK: - FLIP CARD

@@ -40,26 +40,21 @@ struct ShiftPlayerView: View {
                     
                     NavigationLink(destination: ShuffleAnimation()) {
                         NeonButton(text: "Embaralhar", image: .neonButtonYellow)
-                            .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                            .frame(width: geometry.size.width/1.6, height: geometry.size.height/7)
                             .shadow(radius: 10)
-                            .padding(.bottom, 60)
+                            .padding(.bottom, 15)
                     }
                 } //: VSTACK
             } //: ZSTACK
         } //: GEOMETRYREADER VIEW
-        .tint(.white)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-                                HStack {
-            Image(systemName: "chevron.left")
-            Text("Sair")
-                .fontWeight(.medium)
-        }
-            .foregroundColor(.white)
-            .onTapGesture {
-                self.presentation.wrappedValue.dismiss()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink(destination: HomeView()) {
+                    GenericFunctions.checkIfImageExist(name: "exitButton")
+                }
             }
-        )
+        }
     }
 }
 

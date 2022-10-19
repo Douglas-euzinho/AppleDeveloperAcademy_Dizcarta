@@ -23,27 +23,33 @@ struct FrontCard: View {
                 .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.6)
                 .cornerRadius(10)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
+                Spacer()
                 Text(title)
                     .font(Font.custom("DINCondensed-Bold", size: 34))
                     .foregroundColor(.white)
-                    .padding(.bottom, 15)
+
+                Spacer()
                 
                 Text(description)
                     .font(Font.custom("DINAlternate-Bold", size: 22))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .lineLimit(6)
-                    .padding(.bottom, 20)
+                    .frame(width: UIScreen.main.bounds.width / 1.5)
                 
-                Text("Pontos ao aceitar: +\(acceptPoints) pontos")
-                    .font(Font.custom("DINAlternate-Bold", size: 15))
-                    .foregroundColor(.white)
-                    .padding(.bottom, 5)
+                Spacer()
                 
-                Text("Pontos ao recusar: -\(declinePoints) pontos")
-                    .font(Font.custom("DINAlternate-Bold", size: 15))
-                    .foregroundColor(.white)
+                VStack(spacing: 8) {
+                    Text("Pontos ao aceitar: +\(acceptPoints) pontos")
+                        .font(Font.custom("DINAlternate-Bold", size: 15))
+                        .foregroundColor(.white)
+                    
+                    Text("Pontos ao recusar: -\(declinePoints) pontos")
+                        .font(Font.custom("DINAlternate-Bold", size: 15))
+                        .foregroundColor(.white)
+                }
+                Spacer()
             }
             .padding(.horizontal)
 
@@ -56,7 +62,7 @@ struct FrontCard: View {
 struct FrontCard_Previews: PreviewProvider {
     static var previews: some View {
         FrontCard(title: .constant("Doente de Amor"),
-                  description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga"),
+                  description: .constant("Você deverá ficar de mãos dadas com a pessoa a sua esquerda, enquanto joga."),
                   acceptPoints: .constant(4),
                   declinePoints: .constant(4),
                   degree: .constant(0)

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "exitButton.svg",
+      "filename" : "$token-icon-close.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
