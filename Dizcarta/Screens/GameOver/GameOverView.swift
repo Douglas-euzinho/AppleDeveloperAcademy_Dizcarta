@@ -12,35 +12,37 @@ struct GameOverView: View {
   
   // MARK: - BODY
   var body: some View {
-    ZStack {
-      Color(.backgroundAppColor)
-        .ignoresSafeArea(.all)
-      
-      VStack {
-        
-        Text("Fim de Jogo!")
-          .font(.system(size: 34))
-          .foregroundColor(.white)
-          .fontWeight(.heavy)
-          .padding(.vertical, 30)
+    GeometryReader { geometry in
+      ZStack {
+        Color(.backgroundAppColor)
+          .ignoresSafeArea(.all)
         
         VStack {
-          PlayerGameOver(name: "Alice", avatarAsset: "avatarRed", podiumPosition: 1, points: 20)
-            .padding(.bottom, 20)
           
-          HStack(spacing: 60) {
-            PlayerGameOver(name: "João", avatarAsset: "avatarYellow", podiumPosition: 2, points: 16)
-            PlayerGameOver(name: "Zion", avatarAsset: "avatarTurquoise", podiumPosition: 3, points: 15)
+          Text("Fim de Jogo!")
+            .font(.system(size: 34))
+            .foregroundColor(.white)
+            .fontWeight(.heavy)
+            .padding(.vertical, 30)
+          
+          VStack {
+            PlayerGameOver(name: "Alice", avatarAsset: "avatarRed", podiumPosition: 1, points: 20)
+              .padding(.bottom, 20)
+            
+            HStack(spacing: 60) {
+              PlayerGameOver(name: "João", avatarAsset: "avatarYellow", podiumPosition: 2, points: 16)
+              PlayerGameOver(name: "Zion", avatarAsset: "avatarTurquoise", podiumPosition: 3, points: 15)
+            }
+            
           }
           
+          Spacer()
+          
+          NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
+            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+            .shadow(radius: 5)
+            .padding(20)
         }
-        
-        Spacer()
-        
-        NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
-          .frame(width: 233, height: 85)
-          .shadow(radius: 5)
-          .padding(20)
       }
     } //: VSTACK
   }

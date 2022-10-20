@@ -43,7 +43,7 @@ struct ShiftPlayerView: View {
                         
                         NavigationLink(destination: ShuffleAnimation().environmentObject(gameCore)) {
                             NeonButton(text: "Embaralhar", image: .neonButtonYellow)
-                                .frame(width: geometry.size.width/1.6, height: geometry.size.height/7)
+                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                                 .shadow(radius: 10)
                                 .padding(.bottom, 15)
                         }
