@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayerGameOver: View {
   // MARK: - VARIABLES
   @State var name: String
-  @State var avatarColor: Color
+  @State var avatarAsset: String
   @State var podiumPosition: Int
   @State var points: Int
   
@@ -18,39 +18,38 @@ struct PlayerGameOver: View {
   var body: some View {
     VStack {
       ZStack(alignment: .bottomLeading) {
-        Image(systemName: "person.circle.fill")
+        Image(avatarAsset)
           .resizable()
-          .frame(width: 94, height: 94)
-          .foregroundColor(avatarColor)
-          .overlay {
-            Circle()
-              .stroke(.black, lineWidth: 1 )
-          }
+          .frame(width: 150, height: 150)
+          .padding(-30)
         
           Text("\(podiumPosition)")
             .font(.system(size: 22))
             .fontWeight(.bold)
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .background(
               Circle()
                 .frame(width: 35, height: 35)
+                .foregroundColor(.white)
+                .opacity(0.9)
             )
       } //: ZSTACK
       
       Text(name)
         .font(.system(size: 24))
-        .fontWeight(.medium)
+        .foregroundColor(.white)
         .padding(.vertical, 2)
       
       Text("\(points) pontos")
         .font(.system(size: 15))
+        .foregroundColor(.black)
         .fontWeight(.semibold)
-        .foregroundColor(Color(.configurationButtonUnselected))
         .padding(.horizontal, 25)
         .padding(.vertical, 4)
         .background {
           RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(Color(.configurationButtonSelected))
+                .foregroundColor(.white)
+                .opacity(0.7)
         }
     } //: VSTACK
   }
@@ -59,6 +58,6 @@ struct PlayerGameOver: View {
 // MARK: - PREVIEW
 struct PlayerGameOver_Previews: PreviewProvider {
   static var previews: some View {
-      PlayerGameOver(name: "Alice", avatarColor: Color(.gray), podiumPosition: 1, points: 20)
+      PlayerGameOver(name: "Alice", avatarAsset: "avatarRed", podiumPosition: 1, points: 20)
   }
 }
