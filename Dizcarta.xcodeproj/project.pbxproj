@@ -192,32 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				151BCC1A2901D142007E4D67 /* AcceptRefuseView.swift */,
-				151BCC192901D132007E4D67 /* Observable */,
-				151BCC182901D128007E4D67 /* Identifiable */,
-				151BCC172901D121007E4D67 /* Shared */,
 			);
 			path = AcceptRefuse;
-			sourceTree = "<group>";
-		};
-		151BCC172901D121007E4D67 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		151BCC182901D128007E4D67 /* Identifiable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Identifiable;
-			sourceTree = "<group>";
-		};
-		151BCC192901D132007E4D67 /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Observable;
 			sourceTree = "<group>";
 		};
 		151EA3A528EDFB55000BEA9E /* Identifiable */ = {
