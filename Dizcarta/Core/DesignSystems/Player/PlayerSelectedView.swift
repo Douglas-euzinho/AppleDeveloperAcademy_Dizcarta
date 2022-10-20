@@ -61,7 +61,6 @@ struct PlayerSelectedView: View {
                 } label: {
                     if isEditing {
                         GenericFunctions.checkIfImageExist(name: "checkmark")
-//                            .resizable()
                             .frame(width: 22, height: 18)
                             .padding()
                             .onTapGesture {
