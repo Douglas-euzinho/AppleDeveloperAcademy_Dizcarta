@@ -65,13 +65,19 @@ struct SetupMatchView: View {
                             
                             Spacer(minLength: geometry.size.height / 3.7)
                         }
-                        
+                      if gameCore.players.count < 4 {
+                        NeonButton(text: "Jogar", image: .neonButtonYellow)
+                          .opacity(0.5)
+                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                            .padding()
+                      } else {
                         NavigationLink(destination: ShiftPlayerView().environmentObject(gameCore)) {
                             NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                .opacity( (gameCore.players.count >= 4 && gameCore.players.count <= 6) ? 1.0 : 0.5)
+                                .opacity(1.0)
                                 .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                                 .padding()
                         }
+                      }
                     } //: VSTACK
                     .navigationDestination(isPresented: $backHome) {
                         HomeView()

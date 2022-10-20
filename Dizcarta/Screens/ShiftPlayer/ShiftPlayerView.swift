@@ -74,15 +74,16 @@ struct ShiftPlayerView: View {
     }
 }
 
+//PREVIEW APRESENTANDO CRASH
 // MARK: - PREVIEW
-struct ShiftPlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
-        
-        ForEach(devices, id: \.self) { device in
-            ShiftPlayerView()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
-}
+//struct ShiftPlayerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+//
+//        ForEach(devices, id: \.self) { device in
+//            ShiftPlayerView()
+//                .previewDevice(PreviewDevice(rawValue: device))
+//                .previewDisplayName(device)
+//        }
+//    }
+//}
