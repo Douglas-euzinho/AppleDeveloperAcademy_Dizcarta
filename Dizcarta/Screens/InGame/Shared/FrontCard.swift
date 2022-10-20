@@ -9,10 +9,10 @@ import SwiftUI
 
 struct FrontCard: View {
     // MARK: - VARIABLES
-    @Binding var title: String
-    @Binding var description: String
-    @Binding var acceptPoints: Int
-    @Binding var declinePoints: Int
+    var title: String
+    var description: String
+    var acceptPoints: Int
+    var declinePoints: Int
     @Binding var degree: Double
     
     // MARK: - BODY
@@ -28,7 +28,7 @@ struct FrontCard: View {
                 Text(title)
                     .font(Font.custom("DINCondensed-Bold", size: 34))
                     .foregroundColor(.white)
-
+                
                 Spacer()
                 
                 Text(description)
@@ -52,7 +52,7 @@ struct FrontCard: View {
                 Spacer()
             }
             .padding(.horizontal)
-
+            
         } //: ZSTACK
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
         .frame(width: UIScreen.main.bounds.width / 4.0, height: UIScreen.main.bounds.height / 10)
@@ -61,11 +61,10 @@ struct FrontCard: View {
 
 struct FrontCard_Previews: PreviewProvider {
     static var previews: some View {
-        FrontCard(title: .constant("Doente de Amor"),
-                  description: .constant("Você deverá ficar de mãos dadas com a pessoa a sua esquerda, enquanto joga."),
-                  acceptPoints: .constant(4),
-                  declinePoints: .constant(4),
-                  degree: .constant(0)
-        )
+        FrontCard(title: "Doente de Amor",
+                  description: "Você deverá ficar de mãos dadas com a pessoa a sua esquerda, enquanto joga.",
+                  acceptPoints: 4,
+                  declinePoints: 4,
+                  degree: .constant(0))
     }
 }

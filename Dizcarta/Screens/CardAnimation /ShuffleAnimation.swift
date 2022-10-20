@@ -12,6 +12,7 @@ struct ShuffleAnimation: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var gameCore: GameCore
     @State var showInGame = false
+    @State var card: CardCodable!
     var body: some View {
         GeometryReader { geometry in
                 NavigationStack {
@@ -27,8 +28,11 @@ struct ShuffleAnimation: View {
                             .frame(width: geometry.size.width, height: geometry.size.height)
                         }
                         .navigationDestination(isPresented: $showInGame, destination: {
-                            InGameView()
+                            InGameView(card: card)
                             .environmentObject(gameCore)                            })
+                    }
+                    .onAppear {
+                        self.card = gameCore.getRandomCard()
                     }
                 }
         }

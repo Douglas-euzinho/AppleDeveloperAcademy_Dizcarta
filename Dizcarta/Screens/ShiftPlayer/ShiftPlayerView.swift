@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ShiftPlayerView: View {
     // MARK: - PROPERTIES
-    @State private var player: Player?
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var gameCore: GameCore
     @State var backToHome = false
@@ -30,11 +29,11 @@ struct ShiftPlayerView: View {
                             .font(.system(size: 22, weight: .regular))
                             .padding(5)
                         
-                        Text(player?.wrappedName ?? "")
+                        Text(gameCore.playerPlaying?.wrappedName ?? "")
                             .font(Font.custom("DINCondensed-Bold", size: 34))
                             .foregroundColor(.white)
                         
-                        Image(player?.wrappedAvatar ?? "")
+                        Image(gameCore.playerPlaying?.wrappedAvatar ?? "")
                             .resizable()
                             .padding(-50)
                             .frame(width: 200, height: 200)
@@ -52,10 +51,14 @@ struct ShiftPlayerView: View {
                     .navigationDestination(isPresented: $backToHome) {
                         HomeView()
                     }
+                    .navigationDestination(isPresented: $gameCore.isGameFinished) {
+                        GameOverView()
+                    }
                 } //: ZSTACK
                 .onAppear {
-                    player = gameCore.nextPlayer()
-            }
+                    gameCore.verifyMatchIsEnded()
+                    gameCore.nextPlayer()
+                }
             }
         } //: GEOMETRYREADER VIEW
         .navigationBarBackButtonHidden(true)

@@ -17,9 +17,9 @@ final class GameCore: ObservableObject {
 
     let cardFile: String
     var cardList: CardList?
-    
-    @Published var isLastCard: Bool = false
     internal var turn: Int = 1
+    
+    @Published var isGameFinished = false
     
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
@@ -44,5 +44,6 @@ final class GameCore: ObservableObject {
         self.context = context
         self.repository = PlayerRepository.get(context: context)
         self.matchInProgress = repository.createMatch()
+        self.cardList = JsonManager.decodeJson(forName: cardFile)
     }
 }

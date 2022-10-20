@@ -39,12 +39,9 @@ extension GameCore {
     }
     
     func getRandomCard() -> CardCodable? {
-        guard var list = self.cardList else { return nil}
-        let card = list.cards.remove(at: Int.random(in: 0...list.cards.count - 1))
-        self.cardList? = list
-        if list.cards.isEmpty {
-            self.isLastCard = true
-        }
+        guard var list = self.cardList?.cards, !list.isEmpty else { return nil}
+        let card = list.remove(at: Int.random(in: 0...(list.count - 1)))
+        self.cardList?.cards = list
         return card
     }
     
@@ -64,17 +61,29 @@ extension GameCore {
         addPlayerPoints(player: toPlayer, points: points)
     }
     
-    func nextPlayer() -> Player {
+    func nextPlayer() {
         if turn == 6 {
             turn = 1
         }
-       guard let player = players.first(where: { Int($0.turn) ==  turn && $0.points > 0 })
+       guard let player = players.first(where: { Int($0.turn) == turn && $0.points > 0 })
         else {
            turn += 1
            return nextPlayer()
        }
         turn += 1
         playerPlaying = player
-        return player
+    }
+    
+    func verifyMatchIsEnded() {
+        guard let cardList else { return }
+        if cardList.cards.isEmpty {
+            self.isGameFinished = true
+            return
+        }
+        
+        if players.filter({ $0.points > 0 }).count == 1 {
+            self.isGameFinished = true
+            return
+        }
     }
 }
