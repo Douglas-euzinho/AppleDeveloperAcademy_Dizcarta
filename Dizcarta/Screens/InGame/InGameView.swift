@@ -17,6 +17,7 @@ struct InGameView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
+    @State var card: CardCodable?
     let durationAndDelay : CGFloat = 0.3
     
     // MARK: - BODY
@@ -27,10 +28,10 @@ struct InGameView: View {
                     .ignoresSafeArea(.all)
                 VStack {
                     ZStack {
-                        FrontCard(title: .constant("Doente de Amor"),
-                                  description: .constant("Você deve ficar de mãos dadas com a pessoa a sua esquerda enquanto joga."),
-                                  acceptPoints: .constant(4),
-                                  declinePoints: .constant(4),
+                        FrontCard(title: card?.title ?? "",
+                                  description: card?.dizDescription ?? "",
+                                  acceptPoints: card?.winPoints ?? 0,
+                                  declinePoints: card?.losePoints ?? 0,
                                   degree: $frontDegree)
                         BackCard(degree: $backDegree)
                     }.onAppear(perform: {
