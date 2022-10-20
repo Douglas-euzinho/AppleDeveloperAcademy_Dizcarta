@@ -18,6 +18,8 @@ struct InGameView: View {
     @State var frontDegree = -90.0
     @State var isFlipped = false
     @State var card: CardCodable?
+    @State private var message: String = ""
+    @State private var title: String = ""
     let durationAndDelay : CGFloat = 0.3
     
     // MARK: - BODY
@@ -45,14 +47,18 @@ struct InGameView: View {
                         ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
                             .frame(width: 180, height: 100)
                             .onTapGesture {
-                                gameCore.addPlayerPoints(player: gameCore.playerPlaying!, points: 3)
+                                gameCore.addPlayerPoints(player: gameCore.playerPlaying!, points: card?.winPoints ?? 0)
+                                message = "Você ganhou \(card?.winPoints ?? 0) pontos."
                                 nextPlayer = true
+                                title = "Parabéns"
                             }
                         
                         ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
                             .frame(width: 180, height: 100)
                             .onTapGesture {
-                                gameCore.removePlayerPoints(player: gameCore.playerPlaying!, points: 5)
+                                gameCore.removePlayerPoints(player: gameCore.playerPlaying!, points: card?.losePoints ?? 0)
+                                message = "Você ganhou \(card?.losePoints ?? 0) pontos."
+                                title = "Que pena!"
                                 nextPlayer = true
                             }
                     } //: HSTACK
@@ -62,7 +68,7 @@ struct InGameView: View {
                     HomeView()
                 }
                 .navigationDestination(isPresented: $nextPlayer) {
-                    ShiftPlayerView()
+                    AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: title, text: message)
                         .environmentObject(gameCore)
                 }
             } //: ZSTACK

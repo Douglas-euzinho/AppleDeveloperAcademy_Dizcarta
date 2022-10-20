@@ -53,11 +53,14 @@ struct ShiftPlayerView: View {
                     }
                     .navigationDestination(isPresented: $gameCore.isGameFinished) {
                         GameOverView()
+                            .environmentObject(gameCore)
                     }
                 } //: ZSTACK
                 .onAppear {
                     gameCore.verifyMatchIsEnded()
-                    gameCore.nextPlayer()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        gameCore.nextPlayer()
+                    }
                 }
             }
         } //: GEOMETRYREADER VIEW
