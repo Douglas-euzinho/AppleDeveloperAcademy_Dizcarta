@@ -18,13 +18,14 @@ struct ShuffleAnimation: View {
                     ZStack {
                         Color(.backgroundAppColor)
                             .ignoresSafeArea()
-                        VStack {
+                      VStack(alignment: .center) {
                             LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1)) {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                     showInGame = true
                                 }
                             }
                             .frame(width: geometry.size.width, height: geometry.size.height)
+                        Spacer()
                         }
                         .navigationDestination(isPresented: $showInGame, destination: {
                             InGameView()
