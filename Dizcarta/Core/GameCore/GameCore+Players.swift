@@ -61,6 +61,10 @@ extension GameCore {
         addPlayerPoints(player: toPlayer, points: points)
     }
     
+    func getRanking() -> [Player] {
+        repository.getRanking(match: matchInProgress)
+    }
+    
     func nextPlayer() {
         if turn == 6 {
             turn = 1
@@ -78,11 +82,13 @@ extension GameCore {
         guard let cardList else { return }
         if cardList.cards.isEmpty {
             self.isGameFinished = true
+            self.top3Players = getRanking()
             return
         }
         
         if players.filter({ $0.points > 0 }).count == 1 {
             self.isGameFinished = true
+            self.top3Players = getRanking()
             return
         }
     }

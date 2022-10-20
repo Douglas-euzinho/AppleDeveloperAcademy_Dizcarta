@@ -24,6 +24,8 @@ struct ContentView : View {
     
     var body: some View {
         ZStack {
+            Color(.backgroundAppColor)
+                .ignoresSafeArea()
             Group {
                 if splashScreen {
                     SplashScreen()
@@ -34,7 +36,7 @@ struct ContentView : View {
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                 splashScreen = false
-                            }
+               }
             }
         }
     }
