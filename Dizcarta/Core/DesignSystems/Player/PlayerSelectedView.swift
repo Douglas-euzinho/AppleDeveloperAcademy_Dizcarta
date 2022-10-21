@@ -79,11 +79,11 @@ struct PlayerSelectedView: View {
 }
 
 // MARK: - PREVIEW
-struct PlayerSelectedView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerSelectedView(player: Player()) {
-            print("Hello World")
-        }
-            .preferredColorScheme(.dark)
-    }
-}
+//struct PlayerSelectedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerSelectedView(player: Player()) {
+//            print("Hello World")
+//        }
+//            .preferredColorScheme(.dark)
+//    }
+//}

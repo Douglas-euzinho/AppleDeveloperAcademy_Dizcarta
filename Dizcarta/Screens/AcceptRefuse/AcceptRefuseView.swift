@@ -17,39 +17,49 @@ struct AcceptRefuseView: View {
     // MARK: - BODY
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color(.backgroundAppColor)
-                    .ignoresSafeArea(.all)
-                
-                VStack {
-                    Image(avatar)
-                        .resizable()
-                        .frame(width: 240, height: 240)
-                        .padding(-20)
+            GeometryReader { geometry in
+                ZStack {
+                    Color(.backgroundAppColor)
+                        .ignoresSafeArea(.all)
                     
-                    Text(title)
-                        .font(Font.custom("DINCondensed-Bold", size: 34))
-                        .foregroundColor(.white)
-                    
-                    Text(text)
-                        .font(Font.custom("DINCondensed-Bold", size: 22))
-                        .foregroundColor(.white)
+                    VStack {
+                        Spacer()
+                        
+                        Image(avatar)
+                            .resizable()
+                            .frame(width: 240, height: 240)
+                            .padding(-20)
+                        
+                        Text(title)
+                            .font(Font.custom("DINCondensed-Bold", size: 34))
+                            .foregroundColor(.white)
+                        
+                        Text(text)
+                            .font(Font.custom("DINCondensed-Bold", size: 22))
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        NeonButton(text: "Continuar", image: .neonButtonYellow)
+                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                            .padding(.bottom)
+                            .onTapGesture {
+                                showShuffle = true
+                            }
+                    }
                 }
-            }
-            .onTapGesture {
-                showShuffle = true
-            }
-            .navigationDestination(isPresented: $showShuffle) {
-                ShiftPlayerView()
-                    .environmentObject(gameCore)
-            }
+                .navigationDestination(isPresented: $showShuffle) {
+                    ShiftPlayerView()
+                        .environmentObject(gameCore)
+                }
             .navigationBarBackButtonHidden(true)
+            }
         }
     }
 }
 
-struct AcceptRefuseView_Previews: PreviewProvider {
-    static var previews: some View {
-        AcceptRefuseView(avatar: "avatarRed", title: "Parabéns", text: "Você ganhou 4 pontos")
-    }
-}
+//struct AcceptRefuseView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AcceptRefuseView(avatar: "avatarRed", title: "Parabéns", text: "Você ganhou 4 pontos")
+//    }
+//}
