@@ -47,9 +47,10 @@ struct SetupMatchView: View {
                         if !gameCore.players.isEmpty {
                             ScrollView(.vertical, showsIndicators: false) {
                                 ForEach(gameCore.players, id: \.self) { player in
-                                    PlayerSelectedView(imagePlayer: player.wrappedAvatar, playerName: player.wrappedName)
+                                    PlayerSelectedView(player: player) {
+                                        gameCore.repository.save()
+                                    }
                                         .frame(width: UIScreen.main.bounds.width - 5, height: 85)
-                                    
                                 }
                             }
                         } else {

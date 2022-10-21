@@ -11,34 +11,27 @@ struct PlayerSelectedView: View {
     // MARK: - PROPERTIES
     @State var isEditing: Bool = false
     @FocusState var nameIsFocused: Bool
-    @State var playerName: String
-    var imagePlayer: String
-    var backupName: String
-    
-    init(imagePlayer: String, playerName: String) {
-        self.imagePlayer = imagePlayer
-        self.playerName = playerName
-        self.isEditing = false
-        self.backupName = playerName
-    }
+    @ObservedObject var player: Player
+    @State private var backupName: String = ""
+    var saveAction: () -> Void = {}
     
     // MARK: - BODY
     var body: some View {
         GeometryReader { geometry in
             HStack {
-                GenericFunctions.checkIfImageExist(name: imagePlayer)
+                GenericFunctions.checkIfImageExist(name: player.wrappedAvatar)
                     .resizable()
                     .frame(width: 112, height: 112)
                     .opacity(1.0)
                 
                 if isEditing {
-                    TextField("", text: $playerName)
+                    TextField("", text: $player.wrappedName)
                         .foregroundColor(.white)
                         .font(Font(name: .primaryFont, size: 20))
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                         .focused($nameIsFocused)
-                        .modifier(TextFieldClearButton(text: $playerName))
+                        .modifier(TextFieldClearButton(text: $player.wrappedName))
                         .padding(.horizontal, 20)
                         .padding(.vertical, 5)
                         .background(
@@ -50,7 +43,7 @@ struct PlayerSelectedView: View {
                         )
                     
                 } else {
-                    TextField("", text: $playerName)
+                    TextField("", text: $player.wrappedName)
                         .foregroundColor(.white)
                         .font(Font.custom("DINAlternate-Bold", size: 20))
                         .disabled(!isEditing)
@@ -64,10 +57,10 @@ struct PlayerSelectedView: View {
                             .frame(width: 22, height: 18)
                             .padding()
                             .onTapGesture {
-                                if self.playerName == "" {
-                                    self.playerName = backupName
+                                if player.wrappedName == "" {
+                                    player.wrappedName = backupName
                                 }
-                                
+                                saveAction()
                                 self.isEditing.toggle()
                             }
                         
@@ -78,8 +71,8 @@ struct PlayerSelectedView: View {
                     }
                 }
             }
-            .onTapGesture {
-                print("Touch action")
+            .onAppear {
+                backupName = player.wrappedName
             }
         }
     }
@@ -88,7 +81,9 @@ struct PlayerSelectedView: View {
 // MARK: - PREVIEW
 struct PlayerSelectedView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerSelectedView(imagePlayer: "avatarBlue", playerName: "Blue")
+        PlayerSelectedView(player: Player()) {
+            print("Hello World")
+        }
             .preferredColorScheme(.dark)
     }
 }
