@@ -65,26 +65,26 @@ struct SetupMatchView: View {
                             
                             Spacer(minLength: geometry.size.height / 3.7)
                         }
-                      if gameCore.players.count < 4 {
-                        NeonButton(text: "Jogar", image: .neonButtonYellow)
-                          .opacity(0.5)
-                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
-                            .padding()
-                      } else {
-                        NavigationLink(destination: ShiftPlayerView().environmentObject(gameCore)) {
+                        if gameCore.players.count < 4 {
                             NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                .opacity(1.0)
+                                .opacity(0.5)
                                 .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
-                                .padding()
+                        } else {
+                            NavigationLink(destination: ShiftPlayerView().environmentObject(gameCore)) {
+                                NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                    .opacity(1.0)
+                                    .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                            }
                         }
-                      }
                     } //: VSTACK
+                    .ignoresSafeArea(.keyboard)
                     .navigationDestination(isPresented: $backHome) {
                         HomeView()
                     }
                 }
+                .ignoresSafeArea(.keyboard)
             }
-        } //: ZSTACK
+        }
         .navigationBarTitle("Jogadores")
         .tint(.white)
         .navigationBarTitleDisplayMode(.inline)
