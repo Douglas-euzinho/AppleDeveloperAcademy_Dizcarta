@@ -57,7 +57,7 @@ struct InGameView: View {
                             .frame(width: 180, height: 100)
                             .onTapGesture {
                                 gameCore.removePlayerPoints(player: gameCore.playerPlaying!, points: card?.losePoints ?? 0)
-                                message = "Você ganhou \(card?.losePoints ?? 0) pontos."
+                                message = "Você perdeu \(card?.losePoints ?? 0) pontos."
                                 title = "Que pena!"
                                 nextPlayer = true
                             }
