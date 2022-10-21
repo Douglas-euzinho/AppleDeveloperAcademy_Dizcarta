@@ -10,12 +10,14 @@ import Lottie
 
 struct SplashScreen: View {
     @State private var isRotated = false
-
+    @Binding var isShowingSplash: Bool
     let shared = GenericFunctions()
 
     var body: some View {
-            LottieView(animationName: "Splash.json", loopMode: .loop)
-                .frame(width: 800, height: 800)
+        LottieView(animationName: "Splash.json", loopMode: .playOnce) {
+            isShowingSplash = false
+        }
+                .frame(width: 400, height: 400)
         }
     }
 
@@ -28,15 +30,10 @@ struct ContentView : View {
                 .ignoresSafeArea()
             Group {
                 if splashScreen {
-                    SplashScreen()
+                    SplashScreen(isShowingSplash: $splashScreen)
                 } else {
                     HomeView()
                 }
-            }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                splashScreen = false
-               }
             }
         }
     }
@@ -44,6 +41,6 @@ struct ContentView : View {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        SplashScreen(isShowingSplash: .constant(true))
     }
 }
