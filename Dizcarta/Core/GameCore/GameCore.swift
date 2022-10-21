@@ -14,7 +14,7 @@ struct PlayerLost {
 }
 
 final class GameCore: ObservableObject {
-
+    
     let cardFile: String
     var cardList: CardList?
     internal var turn: Int = 1
@@ -45,5 +45,13 @@ final class GameCore: ObservableObject {
         self.repository = PlayerRepository.get(context: context)
         self.matchInProgress = repository.createMatch()
         self.cardList = JsonManager.decodeJson(forName: cardFile)
+        var cards = self.cardList?.cards.shuffled() ?? []
+        self.cardList?.cards = cards
+        print("[GAME CORE]: >>>>>>Created<<<<<")
     }
+    
+    deinit {
+        print("[GAME CORE]: >>>>>>>> Is Deiniting <<<<<<")
+    }
+    
 }

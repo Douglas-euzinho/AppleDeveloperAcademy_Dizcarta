@@ -12,8 +12,7 @@ struct SetupMatchView: View {
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
     @State var backHome = false
-    @StateObject private var gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
-    
+    @StateObject private var gameCore: GameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         UITableView.appearance().separatorStyle = .none
