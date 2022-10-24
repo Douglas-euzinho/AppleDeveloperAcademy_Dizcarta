@@ -13,11 +13,12 @@ struct PlayerSelectedView: View {
     @FocusState var nameIsFocused: Bool
     @ObservedObject var player: Player
     @State private var backupName: String = ""
-    var saveAction: () -> Void = {}
+    var saveAction: () -> Void
+    var deleteAction: () -> Void
     
     // MARK: - BODY
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             HStack {
                 GenericFunctions.checkIfImageExist(name: player.wrappedAvatar)
                     .resizable()
@@ -73,6 +74,17 @@ struct PlayerSelectedView: View {
             }
             .onAppear {
                 backupName = player.wrappedName
+            }
+            .contextMenu {
+                Button(role: .destructive) {
+                    deleteAction()
+                } label: {
+                    Label {
+                        Text("Remover Jogador")
+                    } icon: {
+                        Image(systemName: "trash")
+                    }
+                }
             }
         }
     }
