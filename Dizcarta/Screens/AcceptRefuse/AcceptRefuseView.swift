@@ -58,8 +58,8 @@ struct AcceptRefuseView: View {
     }
 }
 
-//struct AcceptRefuseView_Previews: PreviewProvider {
+// struct AcceptRefuseView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        AcceptRefuseView(avatar: "avatarRed", title: "Parabéns", text: "Você ganhou 4 pontos")
 //    }
-//}
+// }
