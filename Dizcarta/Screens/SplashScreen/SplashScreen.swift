@@ -12,14 +12,16 @@ struct SplashScreen: View {
     @State private var isRotated = false
     @Binding var isShowingSplash: Bool
     let shared = GenericFunctions()
-
+    
     var body: some View {
         LottieView(animationName: "Splash.json", loopMode: .playOnce) {
-            isShowingSplash = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                isShowingSplash = false
+            }
         }
-                .frame(width: 400, height: 400)
-        }
+        .frame(width: 400, height: 400)
     }
+}
 
 struct ContentView : View {
     @State var splashScreen  = true
