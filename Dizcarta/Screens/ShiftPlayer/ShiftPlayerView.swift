@@ -80,9 +80,9 @@ struct ShiftPlayerView: View {
     }
 }
 
-//PREVIEW APRESENTANDO CRASH
+// PREVIEW APRESENTANDO CRASH
 // MARK: - PREVIEW
-//struct ShiftPlayerView_Previews: PreviewProvider {
+// struct ShiftPlayerView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
 //
@@ -92,4 +92,4 @@ struct ShiftPlayerView: View {
 //                .previewDisplayName(device)
 //        }
 //    }
-//}
+// }

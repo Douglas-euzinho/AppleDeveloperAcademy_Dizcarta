@@ -17,7 +17,7 @@ struct PlayerSelectedView: View {
     
     // MARK: - BODY
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             HStack {
                 GenericFunctions.checkIfImageExist(name: player.wrappedAvatar)
                     .resizable()
@@ -79,11 +79,11 @@ struct PlayerSelectedView: View {
 }
 
 // MARK: - PREVIEW
-//struct PlayerSelectedView_Previews: PreviewProvider {
+// struct PlayerSelectedView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        PlayerSelectedView(player: Player()) {
 //            print("Hello World")
 //        }
 //            .preferredColorScheme(.dark)
 //    }
-//}
+// }
