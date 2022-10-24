@@ -17,6 +17,7 @@ struct InGameView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
+    @State var hasTimeElapsed = false
     @State var card: CardCodable?
     @State private var message: String = ""
     @State private var title: String = ""
@@ -39,30 +40,33 @@ struct InGameView: View {
                     }.onAppear(perform: {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
                             flipCard()
+                            delayButton()
                         }
                     })
                     .padding(.top, 50)
                     
-                    HStack {
-                        ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
-                            .frame(width: 180, height: 100)
-                            .onTapGesture {
-                                gameCore.addPlayerPoints(player: gameCore.playerPlaying!, points: card?.winPoints ?? 0)
-                                message = "Você ganhou \(card?.winPoints ?? 0) pontos."
-                                nextPlayer = true
-                                title = "Parabéns"
-                            }
-                        
-                        ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
-                            .frame(width: 180, height: 100)
-                            .onTapGesture {
-                                gameCore.removePlayerPoints(player: gameCore.playerPlaying!, points: card?.losePoints ?? 0)
-                                message = "Você perdeu \(card?.losePoints ?? 0) pontos."
-                                title = "Que pena!"
-                                nextPlayer = true
-                            }
-                    } //: HSTACK
-                    .padding(.bottom, 30)
+                    if hasTimeElapsed {
+                        HStack {
+                            ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
+                                .frame(width: 180, height: 100)
+                                .onTapGesture {
+                                    gameCore.addPlayerPoints(player: gameCore.playerPlaying!, points: card?.winPoints ?? 0)
+                                    message = "Você ganhou \(card?.winPoints ?? 0) pontos."
+                                    nextPlayer = true
+                                    title = "Parabéns"
+                                }
+                            
+                            ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
+                                .frame(width: 180, height: 100)
+                                .onTapGesture {
+                                    gameCore.removePlayerPoints(player: gameCore.playerPlaying!, points: card?.losePoints ?? 0)
+                                    message = "Você perdeu \(card?.losePoints ?? 0) pontos."
+                                    title = "Que pena!"
+                                    nextPlayer = true
+                                }
+                        } //: HSTACK
+                        .padding(.bottom, 30)
+                    }
                 } //: VSTACK
                 .navigationDestination(isPresented: $backToHome) {
                     HomeView()
@@ -92,6 +96,12 @@ struct InGameView: View {
         }
     }
     
+    private func delayButton() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+                hasTimeElapsed = true
+            }
+        }
+    
     // MARK: - FLIP CARD
     private func flipCard() {
         isFlipped.toggle()
@@ -115,14 +125,14 @@ struct InGameView: View {
 }
 
 // MARK: - PREVIEW
-struct InGameView_Previews: PreviewProvider {
-    static var previews: some View {
-        let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
-        
-        ForEach(devices, id: \.self) { device in
-            InGameView()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
-}
+//struct InGameView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+//
+//        ForEach(devices, id: \.self) { device in
+//            InGameView()
+//                .previewDevice(PreviewDevice(rawValue: device))
+//                .previewDisplayName(device)
+//        }
+//    }
+//}
