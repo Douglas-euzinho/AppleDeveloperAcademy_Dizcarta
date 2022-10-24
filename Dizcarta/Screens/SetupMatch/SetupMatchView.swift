@@ -55,7 +55,7 @@ struct SetupMatchView: View {
                         } else {
                             Spacer(minLength: geometry.size.height / 3.7)
                             
-                            Text("Adicione pelo menos quatro personagens para" + "\ncomeçar a jogar.")
+                            Text("Adicione pelo menos quatro jogadores para" + "\ncomeçar a jogar.")
                                 .font(Font.custom("DINAlternate-Bold", size: 15))
                                 .lineLimit(2)
                                 .multilineTextAlignment(.center)
