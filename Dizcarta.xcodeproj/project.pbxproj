@@ -1000,6 +1000,7 @@
 				DEVELOPMENT_TEAM = 272983AP33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dizcarta/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dizcarta;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1036,6 +1037,7 @@
 				DEVELOPMENT_TEAM = 272983AP33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dizcarta/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dizcarta;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
