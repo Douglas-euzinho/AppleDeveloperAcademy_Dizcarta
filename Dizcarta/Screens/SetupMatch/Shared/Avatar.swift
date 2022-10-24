@@ -20,11 +20,9 @@ struct Avatar: View {
             HStack {
                 Image(avatar)
                     .padding(isSelection ? -10 : 20)
-                    .opacity(isPressed ? 1.0 : 0.5)
+                    .opacity(0.5)
                     .onTapGesture {
-                        self.isPressed.toggle()
                         self.gameCore.createPlayer(name: name, avatar: avatar, match: MatchInProgress())
-                        print("Creating player")
                     }
                 
                 if !isSelection {

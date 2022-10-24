@@ -48,8 +48,11 @@ struct SetupMatchView: View {
                                 ForEach(gameCore.players, id: \.self) { player in
                                     PlayerSelectedView(player: player) {
                                         gameCore.repository.save()
+                                    } deleteAction: {
+                                        gameCore.players.removeAll(where: {$0.wrappedName == player.wrappedName })
+                                        gameCore.repository.delete(object: player)
                                     }
-                                        .frame(width: UIScreen.main.bounds.width - 5, height: 85)
+                                    .frame(width: UIScreen.main.bounds.width - 5, height: 85)
                                 }
                             }
                         } else {
