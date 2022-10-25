@@ -36,6 +36,7 @@ extension GameCore {
         }
         self.players = []
         repository.delete(object: matchInProgress)
+        repository.removeAllMatchesInProgress()
     }
     
     func getRandomCard() -> CardCodable? {

@@ -20,6 +20,7 @@ protocol GameRepositoryProtocol: Repository {
     func addPlayerPoints(player: Player, points: Int)
     
     func getRanking(match: MatchInProgress) -> [Player]
+    func removeAllMatchesInProgress()
     
 }
 
@@ -33,9 +34,20 @@ extension GameRepositoryProtocol {
             }
         }
     }
+    
     func delete(object: NSManagedObject) {
         context.delete(object)
         save()
+    }
+    
+    func removeAllMatchesInProgress() {
+        do {
+            let matches = try? context.fetch(MatchInProgress.fetchRequest())
+            guard let matches else { return }
+            matches.forEach { match in
+                delete(object: match)
+            }
+        }
     }
 }
 
@@ -51,8 +63,8 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     func getPlayers(match: MatchInProgress) -> [Player] {
         do {
             let matches = try context.fetch(MatchInProgress.fetchRequest())
-            print("matches \(matches)")
-            guard let players = matches.first?.players?.allObjects as? [Player] else { return []}
+            guard let matchInProgress = matches.first(where: { $0 == match }),
+                    let players = matchInProgress.players?.allObjects as? [Player] else { return []}
             print("[CORE DATA]: GET PLAYERS \(players)")
             return players
         } catch {
@@ -106,8 +118,8 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
     func getPlayers(match: MatchInProgress) -> [Player] {
         do {
             let matches = try context.fetch(MatchInProgress.fetchRequest())
-            print("matches \(matches)")
-            guard let players = matches.first?.players?.allObjects as? [Player] else { return []}
+            guard let matchInProgress = matches.first(where: { $0 == match }),
+                    let players = matchInProgress.players?.allObjects as? [Player] else { return []}
             print("[CORE DATA]: GET PLAYERS \(players)")
             return players.sorted(by: { $0.points > $1.points })
         } catch {
