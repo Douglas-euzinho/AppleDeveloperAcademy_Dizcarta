@@ -28,7 +28,6 @@ struct SetupMatchView: View {
                     Color(.backgroundAppColor)
                         .ignoresSafeArea()
                     VStack {
-                        Spacer()
                         if !gameCore.avatarDataList.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 ZStack {
