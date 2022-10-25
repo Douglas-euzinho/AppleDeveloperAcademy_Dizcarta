@@ -90,6 +90,7 @@ struct InGameView: View {
                                 }
                         }
                     }
+                    
                     ToolbarItem(placement: .navigationBarTrailing) {
                         PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
                                    avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
