@@ -40,6 +40,7 @@ struct InGameView: View {
                     }.onAppear(perform: {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
                             flipCard()
+                            delayButton()
                         }
                     })
                     .padding(.top, 50)
@@ -67,40 +68,39 @@ struct InGameView: View {
                                 } else {
                                     message = "Você perdeu \(card?.losePoints ?? 0) ponto."
                                 }
-                            } //: HSTACK
-                            .opacity(isButtonHiden ? 0 : 1)
-                            .padding(.bottom, 30)
-                    } //: VSTACK
-                    .navigationDestination(isPresented: $backToHome) {
-                        HomeView()
+                            }
+                    }//: HSTACK
+                    .opacity(isButtonHiden ? 0 : 1)
+                    .padding(.bottom, 30)
+                } //: VSTACK
+                .navigationDestination(isPresented: $backToHome) {
+                    HomeView()
+                }
+                .navigationDestination(isPresented: $nextPlayer) {
+                    AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: title, text: message)
+                        .environmentObject(gameCore)
+                }
+            } //: ZSTACK
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink(destination: HomeView()) {
+                        GenericFunctions.checkIfImageExist(name: "exitButton")
+                            .onTapGesture {
+                                gameCore.resetMatch()
+                                backToHome = true
+                            }
                     }
-                    .navigationDestination(isPresented: $nextPlayer) {
-                        AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: title, text: message)
-                            .environmentObject(gameCore)
-                    }
-                } //: ZSTACK
-                .navigationBarBackButtonHidden(true)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: HomeView()) {
-                            GenericFunctions.checkIfImageExist(name: "exitButton")
-                                .onTapGesture {
-                                    gameCore.resetMatch()
-                                    backToHome = true
-                                }
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
-                                   avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
-                                   points: gameCore.playerPlaying?.wrappedPoints)
-                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
+                               avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
+                               points: gameCore.playerPlaying?.wrappedPoints)
                 }
             }
         }
     }
-    
     private func delayButton() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
             isButtonHiden.toggle()
