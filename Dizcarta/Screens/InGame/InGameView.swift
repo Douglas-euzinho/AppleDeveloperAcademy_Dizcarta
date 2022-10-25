@@ -17,6 +17,7 @@ struct InGameView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
+    @State var isButtonHiden = true
     @State var card: CardCodable?
     @State private var message: String = ""
     @State private var title: String = ""
@@ -66,40 +67,44 @@ struct InGameView: View {
                                 } else {
                                     message = "Você perdeu \(card?.losePoints ?? 0) ponto."
                                 }
-                                title = "Que pena!"
-                                nextPlayer = true
-                            }
-                    } //: HSTACK
-                    .padding(.bottom, 30)
-                } //: VSTACK
-                .navigationDestination(isPresented: $backToHome) {
-                    HomeView()
-                }
-                .navigationDestination(isPresented: $nextPlayer) {
-                    AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: title, text: message)
-                        .environmentObject(gameCore)
-                }
-            } //: ZSTACK
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: HomeView()) {
-                        GenericFunctions.checkIfImageExist(name: "exitButton")
-                            .onTapGesture {
-                                gameCore.resetMatch()
-                                backToHome = true
-                            }
+                            } //: HSTACK
+                            .opacity(isButtonHiden ? 0 : 1)
+                            .padding(.bottom, 30)
+                    } //: VSTACK
+                    .navigationDestination(isPresented: $backToHome) {
+                        HomeView()
                     }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
-                               avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
-                               points: gameCore.playerPlaying?.wrappedPoints)
+                    .navigationDestination(isPresented: $nextPlayer) {
+                        AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: title, text: message)
+                            .environmentObject(gameCore)
+                    }
+                } //: ZSTACK
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink(destination: HomeView()) {
+                            GenericFunctions.checkIfImageExist(name: "exitButton")
+                                .onTapGesture {
+                                    gameCore.resetMatch()
+                                    backToHome = true
+                                }
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
+                                   avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
+                                   points: gameCore.playerPlaying?.wrappedPoints)
+                    }
                 }
             }
         }
     }
     
+    private func delayButton() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+            isButtonHiden.toggle()
+        }
+    }
     // MARK: - FLIP CARD
     private func flipCard() {
         isFlipped.toggle()
