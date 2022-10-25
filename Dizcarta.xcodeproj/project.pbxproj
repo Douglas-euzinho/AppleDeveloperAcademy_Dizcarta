@@ -71,7 +71,7 @@
 		CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */; };
 		CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB53D332900720A00F55B96 /* ShuffleAnimation.json */; };
 		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
-		CDCFA96A29033414003ADEDC /* Splash.json in Resources */ = {isa = PBXBuildFile; fileRef = CDCFA96929033414003ADEDC /* Splash.json */; };
+		CDCFA96E29085DBE003ADEDC /* SplashScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = CDCFA96D29085DBE003ADEDC /* SplashScreen.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,7 +159,7 @@
 		CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnimation.swift; sourceTree = "<group>"; };
 		CDB53D332900720A00F55B96 /* ShuffleAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShuffleAnimation.json; sourceTree = "<group>"; };
 		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		CDCFA96929033414003ADEDC /* Splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Splash.json; sourceTree = "<group>"; };
+		CDCFA96D29085DBE003ADEDC /* SplashScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SplashScreen.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,7 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				CDB53D332900720A00F55B96 /* ShuffleAnimation.json */,
-				CDCFA96929033414003ADEDC /* Splash.json */,
+				CDCFA96D29085DBE003ADEDC /* SplashScreen.json */,
 			);
 			path = JsonFile;
 			sourceTree = "<group>";
@@ -733,11 +733,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCFA96E29085DBE003ADEDC /* SplashScreen.json in Resources */,
 				CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */,
 				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */,
-				CDCFA96A29033414003ADEDC /* Splash.json in Resources */,
 				1555380128D8E3DC00CA5573 /* Assets.xcassets in Resources */,
 				23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */,
 				366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */,
