@@ -66,15 +66,12 @@ struct ShiftPlayerView: View {
         } //: GEOMETRYREADER VIEW
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                NavigationLink(destination: HomeView()) {
-                    // TODO: Trocar por button
+            ToolbarItem(placement: .navigationBarTrailing) {
                     GenericFunctions.checkIfImageExist(name: "exitButton")
                         .onTapGesture {
                             gameCore.resetMatch()
                             backToHome = true
                         }
-                }
             }
         }
     }
