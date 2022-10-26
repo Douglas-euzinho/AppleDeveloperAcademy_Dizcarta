@@ -23,6 +23,78 @@
       "winPoints": 3,
       "losePoints": 3,
       "dizDescription": "Imite uma pescaria e fique fora durante uma rodada."
+    },
+    {
+      "id": 4,
+      "title": "Doente de Amor",
+      "image": "imageLocal",
+      "winPoints": 4,
+      "losePoints": 4,
+      "dizDescription": "Você deverá escolher uma pessoa para ficar abraçado(a) durante uma rodada."
+    },
+    {
+      "id": 5,
+      "title": "Saci Pererê",
+      "image": "imageLocal",
+      "winPoints": 2,
+      "losePoints": 2,
+      "dizDescription": "Dê a volta no grupo pulando com uma perna só!"
+    },
+    {
+      "id": 6,
+      "title": "As árvores somos nozes!",
+      "image": "imageLocal",
+      "winPoints": 1,
+      "losePoints": 1,
+      "dizDescription": "Você deve ficar em pé e imitar uma árvore sem poder se mexer e falar durante uma rodada!"
+    },
+    {
+      "id": 7,
+      "title": "Em boca fechada não se entra mosca",
+      "image": "imageLocal",
+      "winPoints": 2,
+      "losePoints": 2,
+      "dizDescription": "Você deve ficar uma rodada sem poder falar ou sorrir."
+    },
+    {
+      "id": 8,
+      "title": "Espelho, espelho meu...",
+      "image": "imageLocal",
+      "winPoints": 3,
+      "losePoints": 3,
+      "dizDescription": "Você deve realizar a ação da última carta."
+    },
+    {
+      "id": 9,
+      "title": "O gato comeu a sua língua!",
+      "image": "imageLocal",
+      "winPoints": 2,
+      "losePoints": 2,
+      "dizDescription": "Você deve ficar em silêncio durante uma rodada, sem poder falar ou rir."
+    },
+    {
+      "id": 10,
+      "title": "Sapo Cururu",
+      "image": "imageLocal",
+      "winPoints": 1,
+      "losePoints": 1,
+      "dizDescription": "Você deve dar a volta no grupo andando agachado."
+    },
+    {
+      "id": 11,
+      "title": "A felicidade se multiplica....",
+      "image": "imageLocal",
+      "winPoints": 3,
+      "losePoints": 3,
+      "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada. Caso alguém do grupo dê uma risada, você ganhará 3 pontos."
+    },
+    {
+      "id": 12,
+      "title": "ABCdário",
+      "image": "imageLocal",
+      "winPoints": 3,
+      "losePoints": 3,
+      "dizDescription": "Você deve falar o alfabeto inteiro ao contrário, sem errar a ordem inversa!"
     }
   ]
 }
