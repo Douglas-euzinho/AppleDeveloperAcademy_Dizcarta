@@ -10,4 +10,5 @@ import Foundation
 enum AppConfig {
     static var isMocked = true
     static var PlayerStartPoints = 15
+    static var isHapticsOn = true
 }

@@ -67,6 +67,7 @@
 		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD58D94F28F4A36200486117 /* CardsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58D94E28F4A36200486117 /* CardsAnimation.swift */; };
 		CD58D95428F4A49500486117 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58D95328F4A49500486117 /* LottieView.swift */; };
+		CD83429A2909D15900EA6775 /* HapiticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8342992909D15900EA6775 /* HapiticsManager.swift */; };
 		CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */; };
 		CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */; };
 		CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB53D332900720A00F55B96 /* ShuffleAnimation.json */; };
@@ -155,6 +156,7 @@
 		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD58D94E28F4A36200486117 /* CardsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsAnimation.swift; sourceTree = "<group>"; };
 		CD58D95328F4A49500486117 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CD8342992909D15900EA6775 /* HapiticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapiticsManager.swift; sourceTree = "<group>"; };
 		CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlayerView.swift; sourceTree = "<group>"; };
 		CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnimation.swift; sourceTree = "<group>"; };
 		CDB53D332900720A00F55B96 /* ShuffleAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShuffleAnimation.json; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 			children = (
 				2340D8EE28F4904C0016CB0F /* GameCore.swift */,
 				2340D8F128F491BD0016CB0F /* GameCore+Players.swift */,
+				CD8342992909D15900EA6775 /* HapiticsManager.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				23B61B6428FF29DD007FBCCD /* AppConstants.swift in Sources */,
 				23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */,
 				23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */,
+				CD83429A2909D15900EA6775 /* HapiticsManager.swift in Sources */,
 				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
 				15E07D7A28EF4A38005D2A80 /* SetupMatchView.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
