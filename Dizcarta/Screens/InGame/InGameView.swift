@@ -68,6 +68,8 @@ struct InGameView: View {
                                 } else {
                                     message = "Você perdeu \(card?.losePoints ?? 0) ponto."
                                 }
+                                nextPlayer = true
+                                title = "Que pena"
                             }
                     }//: HSTACK
                     .opacity(isButtonHiden ? 0 : 1)
