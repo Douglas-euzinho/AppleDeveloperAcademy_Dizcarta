@@ -15,27 +15,26 @@ struct ShuffleAnimation: View {
     @Binding var card: CardCodable!
     var body: some View {
         GeometryReader { geometry in
-                NavigationStack {
-                    ZStack {
-                        Color(.backgroundAppColor)
-                            .ignoresSafeArea()
-                      VStack(alignment: .center) {
-                            LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1)) {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                    showInGame = true
-                                }
+            NavigationStack {
+                ZStack {
+                    Color(.backgroundAppColor)
+                        .ignoresSafeArea()
+                    VStack(alignment: .center) {
+                        LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1)) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                showInGame = true
                             }
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                        Spacer()
                         }
-//                        .navigationDestination(isPresented: $showInGame, destination: {
-//                            InGameView(card: card)
-//                            .environmentObject(gameCore)                            })
-                    }
-                    .onAppear {
-                        self.card = gameCore.getRandomCard()
                     }
                 }
+                .onAppear {
+                    self.card = gameCore.getRandomCard()
+                }
+                .navigationDestination(isPresented: $showInGame, destination: {
+                    InGameView(card: card)
+                        .environmentObject(gameCore)
+                })
+            }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {

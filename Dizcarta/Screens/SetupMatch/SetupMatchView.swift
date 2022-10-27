@@ -44,7 +44,7 @@ struct SetupMatchView: View {
                         
                         if !gameCore.players.isEmpty {
                             ScrollView(.vertical, showsIndicators: false) {
-                                ForEach(gameCore.players, id: \.self) { player in
+                                ForEach(gameCore.players.sorted(by: {$0.turn < $1.turn }), id: \.self) { player in
                                     PlayerSelectedView(player: player) {
                                         gameCore.repository.save()
                                     } deleteAction: {

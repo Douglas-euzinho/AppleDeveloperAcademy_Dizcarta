@@ -67,15 +67,16 @@ extension GameCore {
     }
     
     func nextPlayer() {
-        if turn == 6 {
-            turn = 1
+        if playersTurn.isEmpty {
+            playersTurn = getPlayers(match: matchInProgress).map({ Int64($0.turn) })
+            playersTurn = playersTurn.sorted(by: { $0 < $1 })
         }
-       guard let player = players.first(where: { Int($0.turn) == turn && $0.points > 0 })
+
+        let turn = playersTurn.removeFirst()
+        guard let player = players.first(where: { $0.turn == turn && $0.points > 0 })
         else {
-           turn += 1
            return nextPlayer()
        }
-        turn += 1
         playerPlaying = player
     }
     

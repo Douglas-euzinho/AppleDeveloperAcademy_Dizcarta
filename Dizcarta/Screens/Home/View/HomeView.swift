@@ -11,7 +11,7 @@ import CoreData
 // MARK: Main view
 struct HomeView: View {
     @State var isPlayerListView = false
-    
+    @State private var goToSetupGame = false
     var body: some View {
             GeometryReader { geometry in
                 NavigationStack {
@@ -30,13 +30,19 @@ struct HomeView: View {
                             GenericFunctions.checkIfImageExist(name: "home_logo")
                                 .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
                             Spacer()
-                            NavigationLink(destination: SetupMatchView()) {
+                            
+                            Button {
+                                goToSetupGame = true
+                            } label: {
                                 NeonButton(text: "Jogar", image: .neonButtonYellow)
                                     .hapticFeedback(feedbackStyle: .heavy)
                                     .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
                             }
                             Spacer()
                         }
+                    }
+                    .navigationDestination(isPresented: $goToSetupGame) {
+                        SetupMatchView()
                     }
                 }
         }
