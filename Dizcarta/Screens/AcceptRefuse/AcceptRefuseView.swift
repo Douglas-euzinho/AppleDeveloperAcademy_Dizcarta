@@ -41,6 +41,7 @@ struct AcceptRefuseView: View {
                         Spacer()
                         
                         NeonButton(text: "Continuar", image: .neonButtonYellow)
+                            .hapticFeedback(feedbackStyle: .heavy)
                             .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                             .padding(.bottom)
                             .onTapGesture {

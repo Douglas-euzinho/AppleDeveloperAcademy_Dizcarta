@@ -58,6 +58,7 @@ struct InGameView: View {
                                 nextPlayer = true
                                 title = "Parabéns"
                             }
+                            .hapticFeedback(feedbackStyle: .heavy)
                         
                         ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
                             .frame(width: 180, height: 100)
@@ -71,6 +72,8 @@ struct InGameView: View {
                                 nextPlayer = true
                                 title = "Que pena"
                             }
+                            .hapticFeedback(feedbackStyle: .heavy)
+                        
                     }//: HSTACK
                     .opacity(isButtonHiden ? 0 : 1)
                     .padding(.bottom, 30)
