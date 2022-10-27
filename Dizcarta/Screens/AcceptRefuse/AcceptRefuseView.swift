@@ -10,8 +10,8 @@ import SwiftUI
 struct AcceptRefuseView: View {
     // MARK: - VARIABLES
     var avatar: String
-    var title: String
-    var text: String
+    @Binding var title: String
+    @Binding var text: String
     @State var showShuffle = false
     @EnvironmentObject var gameCore: GameCore
     // MARK: - BODY
@@ -54,6 +54,16 @@ struct AcceptRefuseView: View {
                         .environmentObject(gameCore)
                 }
             .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: HomeView()) {
+                        GenericFunctions.checkIfImageExist(name: "exitButton")
+                            .onTapGesture {
+                                gameCore.resetMatch()
+                            }
+                    }
+                }
+            }
             }
         }
     }

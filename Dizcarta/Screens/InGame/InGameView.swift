@@ -82,13 +82,19 @@ struct InGameView: View {
                     HomeView()
                 }
                 .navigationDestination(isPresented: $nextPlayer) {
-                    AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: title, text: message)
+                    AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: $title, text: $message)
                         .environmentObject(gameCore)
                 }
             } //: ZSTACK
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
+                    PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
+                               avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
+                               points: gameCore.playerPlaying?.wrappedPoints)
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: HomeView()) {
                         GenericFunctions.checkIfImageExist(name: "exitButton")
                             .onTapGesture {
@@ -96,12 +102,6 @@ struct InGameView: View {
                                 backToHome = true
                             }
                     }
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
-                               avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
-                               points: gameCore.playerPlaying?.wrappedPoints)
                 }
             }
         }

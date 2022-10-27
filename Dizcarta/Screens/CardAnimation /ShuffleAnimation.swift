@@ -37,18 +37,16 @@ struct ShuffleAnimation: View {
                     }
                 }
         }
+        .flipsForRightToLeftLayoutDirection(true)
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+            ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: HomeView()) {
                     GenericFunctions.checkIfImageExist(name: "exitButton")
-                        .onTapGesture {
-                            gameCore.resetMatch()
-                            showInGame = true
-                        }
                 }
             }
         }
+        .flipsForRightToLeftLayoutDirection(true)
     }
     
 }

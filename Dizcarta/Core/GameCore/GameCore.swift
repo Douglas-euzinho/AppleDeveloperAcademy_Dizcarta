@@ -20,7 +20,6 @@ final class GameCore: ObservableObject {
     internal var turn: Int = 1
     
     @Published var isGameFinished = false
-    @Published var top3Players: [Player] = []
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
     @Published var matchInProgress: MatchInProgress
@@ -46,6 +45,9 @@ final class GameCore: ObservableObject {
         self.matchInProgress = repository.createMatch()
         self.cardList = JsonManager.decodeJson(forName: cardFile)
         var cards = self.cardList?.cards.shuffled() ?? []
+      #if DEBUG
+      cards.removeSubrange(0...9)
+      #endif
         self.cardList?.cards = cards
         print("[GAME CORE]: >>>>>>Created<<<<<")
     }

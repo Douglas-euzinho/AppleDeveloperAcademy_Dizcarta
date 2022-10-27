@@ -83,13 +83,11 @@ extension GameCore {
         guard let cardList else { return }
         if cardList.cards.isEmpty {
             self.isGameFinished = true
-            self.top3Players = getRanking()
             return
         }
         
         if players.filter({ $0.points > 0 }).count == 1 {
             self.isGameFinished = true
-            self.top3Players = getRanking()
             return
         }
     }
