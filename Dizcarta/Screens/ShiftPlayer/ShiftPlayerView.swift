@@ -12,6 +12,7 @@ struct ShiftPlayerView: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var gameCore: GameCore
     @State var backToHome = false
+    @State var goToInGame = false
     
     // MARK: - BODY
     var body: some View {
@@ -41,19 +42,26 @@ struct ShiftPlayerView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: InGameView().environmentObject(gameCore)) {
+                        Button {
+                            goToInGame = true
+                        } label: {
                             NeonButton(text: "Embaralhar", image: .neonButtonYellow)
-                                .hapticFeedback(feedbackStyle: .heavy)
-                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                                 .shadow(radius: 10)
                                 .padding(.bottom, 15)
                         }
+                        .hapticFeedback(feedbackStyle: .heavy)
+                        
                     } //: VSTACK
                     .navigationDestination(isPresented: $backToHome) {
                         HomeView()
                     }
                     .navigationDestination(isPresented: $gameCore.isGameFinished) {
                         GameOverView()
+                            .environmentObject(gameCore)
+                    }
+                    .navigationDestination(isPresented: $goToInGame) {
+                        InGameView()
                             .environmentObject(gameCore)
                     }
                 } //: ZSTACK
@@ -68,11 +76,11 @@ struct ShiftPlayerView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                    GenericFunctions.checkIfImageExist(name: "exitButton")
-                        .onTapGesture {
-                            gameCore.resetMatch()
-                            backToHome = true
-                        }
+                GenericFunctions.checkIfImageExist(name: "exitButton")
+                    .onTapGesture {
+                        gameCore.resetMatch()
+                        backToHome = true
+                    }
             }
         }
     }
