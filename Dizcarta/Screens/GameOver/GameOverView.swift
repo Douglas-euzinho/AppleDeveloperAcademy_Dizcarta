@@ -65,7 +65,6 @@ struct GameOverView: View {
                 .padding(20)
                 .onTapGesture {
                   newGame = true
-                  gameCore.resetMatch()
                 }
             }
           }
@@ -79,6 +78,9 @@ struct GameOverView: View {
     .onAppear {
       players = gameCore.getRanking()
       players.removeSubrange(0...2)
+    }
+    .onDisappear {
+        gameCore.resetMatch()
     }
     //: VSTACK
   }
