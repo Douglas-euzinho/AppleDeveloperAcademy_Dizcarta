@@ -23,6 +23,7 @@ struct PlayerSelectedView: View {
                 GenericFunctions.checkIfImageExist(name: player.wrappedAvatar)
                     .resizable()
                     .frame(width: 112, height: 112)
+                    .padding(.trailing, -15)
                     .opacity(1.0)
                 
                 if isEditing {
@@ -33,13 +34,12 @@ struct PlayerSelectedView: View {
                         .autocorrectionDisabled(true)
                         .focused($nameIsFocused)
                         .modifier(TextFieldClearButton(text: $player.wrappedName))
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 5)
+                        .padding(.horizontal, 18)
+                        .padding(.vertical, 8)
                         .background(
                             HStack {
                                 RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.white)
-                                    .opacity(0.5)
+                                .foregroundColor(Color(.textFieldBackgroundColor))
                             }
                         )
                     
