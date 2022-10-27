@@ -32,6 +32,7 @@ struct HomeView: View {
                             Spacer()
                             NavigationLink(destination: SetupMatchView()) {
                                 NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                    .hapticFeedback(feedbackStyle: .heavy)
                                     .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
                             }
                             Spacer()

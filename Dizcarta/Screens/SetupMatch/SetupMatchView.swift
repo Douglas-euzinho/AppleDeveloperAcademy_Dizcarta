@@ -69,11 +69,13 @@ struct SetupMatchView: View {
                         }
                         if gameCore.players.count < 4 {
                             NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                .hapticFeedback(feedbackStyle: .heavy)
                                 .opacity(0.5)
                                 .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                         } else {
                             NavigationLink(destination: ShiftPlayerView().environmentObject(gameCore)) {
                                 NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                    .hapticFeedback(feedbackStyle: .heavy)
                                     .opacity(1.0)
                                     .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                             }

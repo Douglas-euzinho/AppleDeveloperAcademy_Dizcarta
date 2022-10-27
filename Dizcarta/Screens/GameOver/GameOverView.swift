@@ -68,6 +68,7 @@ struct GameOverView: View {
               Spacer()
               
               NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
+                    .hapticFeedback(feedbackStyle: .heavy)
                 .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                 .shadow(radius: 5)
                 .padding(20)
