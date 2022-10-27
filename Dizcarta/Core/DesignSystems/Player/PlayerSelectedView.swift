@@ -20,6 +20,15 @@ struct PlayerSelectedView: View {
     var body: some View {
         GeometryReader { _ in
             HStack {
+                if isEditing {
+                    GenericFunctions.checkIfImageExist(name: "removePlayer")
+                        .frame(width: 5, height: 5)
+                        .padding(.leading)
+                        .onTapGesture {
+                            deleteAction()
+                            self.isEditing.toggle()
+                        }
+                }
                 GenericFunctions.checkIfImageExist(name: player.wrappedAvatar)
                     .resizable()
                     .frame(width: 112, height: 112)
@@ -65,7 +74,6 @@ struct PlayerSelectedView: View {
                                 backupName = player.wrappedName
                                 self.isEditing.toggle()
                             }
-                        
                     } else {
                         GenericFunctions.checkIfImageExist(name: "ChangeNamePencil")
                             .resizable()
@@ -75,17 +83,6 @@ struct PlayerSelectedView: View {
             }
             .onAppear {
                 backupName = player.wrappedName
-            }
-            .contextMenu {
-                Button(role: .destructive) {
-                    deleteAction()
-                } label: {
-                    Label {
-                        Text("Remover Jogador")
-                    } icon: {
-                        Image(systemName: "trash")
-                    }
-                }
             }
         }
     }
