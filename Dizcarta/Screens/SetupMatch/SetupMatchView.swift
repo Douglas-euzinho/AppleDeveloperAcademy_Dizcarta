@@ -12,6 +12,7 @@ struct SetupMatchView: View {
     @Environment(\.presentationMode) var presentation
     @State var nameTextField: String = ""
     @State var backHome = false
+    @State private var goToShiftPlayer = false
     @StateObject private var gameCore: GameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -67,26 +68,32 @@ struct SetupMatchView: View {
                             
                             Spacer(minLength: geometry.size.height / 3.7)
                         }
-                        if gameCore.players.count < 4 {
-                            NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                .hapticFeedback(feedbackStyle: .heavy)
-                                .opacity(0.5)
-                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
-                        } else {
-                            NavigationLink(destination: ShiftPlayerView().environmentObject(gameCore)) {
-                                NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                    .hapticFeedback(feedbackStyle: .heavy)
-                                    .opacity(1.0)
-                                    .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+
+                        Button {
+                            if !(gameCore.players.count < 4) {
+                                goToShiftPlayer = true
                             }
+                        } label: {
+                            NeonButton(text: "Jogar", image: .neonButtonYellow)
+                                .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
+                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                         }
+                        .hapticFeedback(feedbackStyle: .heavy)
+                        
                     } //: VSTACK
                     .ignoresSafeArea(.keyboard)
                     .navigationDestination(isPresented: $backHome) {
                         HomeView()
                     }
+                    .navigationDestination(isPresented: $goToShiftPlayer) {
+                        ShiftPlayerView()
+                            .environmentObject(gameCore)
+                    }
                 }
                 .ignoresSafeArea(.keyboard)
+                .onAppear {
+                    gameCore.matchInProgress = gameCore.createMatch()
+                }
             }
         }
         .navigationBarTitle("Jogadores")

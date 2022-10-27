@@ -30,10 +30,6 @@ struct ShuffleAnimation: View {
                 .onAppear {
                     self.card = gameCore.getRandomCard()
                 }
-                .navigationDestination(isPresented: $showInGame, destination: {
-                    InGameView(card: card)
-                        .environmentObject(gameCore)
-                })
             }
         }
         .navigationBarBackButtonHidden(true)

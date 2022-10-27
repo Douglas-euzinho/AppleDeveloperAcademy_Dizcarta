@@ -12,7 +12,7 @@ struct AcceptRefuseView: View {
     var avatar: String
     @Binding var title: String
     @Binding var text: String
-    @State var showShuffle = false
+    @State var showShiftPlayer = false
     @EnvironmentObject var gameCore: GameCore
     // MARK: - BODY
     var body: some View {
@@ -40,16 +40,17 @@ struct AcceptRefuseView: View {
                         
                         Spacer()
                         
-                        NeonButton(text: "Continuar", image: .neonButtonYellow)
-                            .hapticFeedback(feedbackStyle: .heavy)
-                            .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
-                            .padding(.bottom)
-                            .onTapGesture {
-                                showShuffle = true
-                            }
+                        Button {
+                            showShiftPlayer = true
+                        } label: {
+                            NeonButton(text: "Continuar", image: .neonButtonYellow)
+                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                                .padding(.bottom)
+                        }
+                        .hapticFeedback(feedbackStyle: .heavy)
                     }
                 }
-                .navigationDestination(isPresented: $showShuffle) {
+                .navigationDestination(isPresented: $showShiftPlayer) {
                     ShiftPlayerView()
                         .environmentObject(gameCore)
                 }
