@@ -58,10 +58,11 @@ struct PlayerSelectedView: View {
                             .frame(width: 22, height: 18)
                             .padding()
                             .onTapGesture {
-                                if player.wrappedName == "" {
+                              if player.wrappedName.trimmingCharacters(in: .whitespaces).isEmpty {
                                     player.wrappedName = backupName
                                 }
                                 saveAction()
+                                backupName = player.wrappedName
                                 self.isEditing.toggle()
                             }
                         
