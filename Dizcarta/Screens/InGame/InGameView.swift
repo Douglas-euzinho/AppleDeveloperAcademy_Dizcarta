@@ -93,7 +93,7 @@ struct InGameView: View {
                                        avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
                                        points: gameCore.playerPlaying?.wrappedPoints)
                         }
-                        
+                            .hapticFeedback(feedbackStyle: .heavy)                        
                         ToolbarItem(placement: .navigationBarTrailing) {
                             NavigationLink(destination: HomeView()) {
                                 GenericFunctions.checkIfImageExist(name: "exitButton")
@@ -103,6 +103,7 @@ struct InGameView: View {
                                     }
                             }
                         }
+                            .hapticFeedback(feedbackStyle: .heavy)
                 }
                 } else {
                     ShuffleAnimation(card: $card).environmentObject(gameCore)
