@@ -78,10 +78,10 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
         player.name = name
         player.avatar = avatar
         player.points = Int16(AppConfig.PlayerStartPoints)
-        turnPosition += 1
         player.turn = Int16(turnPosition)
         save()
         print("[CORE DATA]: PLAYER CREATED \(player)")
+        turnPosition += 1
     }
     
     func createMatch() -> MatchInProgress {
@@ -133,11 +133,11 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
         player.name = name
         player.avatar = avatar
         player.points = Int16(AppConfig.PlayerStartPoints)
-        turnPosition += 1
         player.turn = Int16(turnPosition)
         player.matchInProgress = match
         print("[CORE DATA]: PLAYER CREATED \(player)")
         save()
+        turnPosition += 1
     }
     
     func createMatch() -> MatchInProgress {

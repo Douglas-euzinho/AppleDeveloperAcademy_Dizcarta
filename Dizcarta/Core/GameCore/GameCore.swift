@@ -18,7 +18,8 @@ final class GameCore: ObservableObject {
     let cardFile: String
     var cardList: CardList?
     internal var turn: Int = 1
-    
+    var playersTurn: [Int64] = []
+
     @Published var isGameFinished = false
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext

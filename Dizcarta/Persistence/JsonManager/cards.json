@@ -14,7 +14,7 @@
       "image": "imageLocal",
       "winPoints": 3,
       "losePoints": 3,
-      "dizDescription": "Você deve ficar em pé por uma rodada."
+      "dizDescription": "Você deve ficar em pé até chegar sua vez."
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "image": "imageLocal",
       "winPoints": 3,
       "losePoints": 3,
-      "dizDescription": "Imite uma pescaria e fique fora durante uma rodada."
+      "dizDescription": "Imite uma pescaria até chegar sua vez."
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "image": "imageLocal",
       "winPoints": 4,
       "losePoints": 4,
-      "dizDescription": "Você deverá escolher uma pessoa para ficar abraçado(a) durante uma rodada."
+      "dizDescription": "Você deverá escolher uma pessoa para ficar abraçado(a) até chegar sua vez."
     },
     {
       "id": 5,
@@ -46,7 +46,7 @@
       "image": "imageLocal",
       "winPoints": 1,
       "losePoints": 1,
-      "dizDescription": "Você deve ficar em pé e imitar uma árvore sem poder se mexer e falar durante uma rodada!"
+      "dizDescription": "Você deve ficar em pé e imitar uma árvore sem poder se mexer e falar até chegar sua vez!"
     },
     {
       "id": 7,
@@ -54,15 +54,7 @@
       "image": "imageLocal",
       "winPoints": 2,
       "losePoints": 2,
-      "dizDescription": "Você deve ficar uma rodada sem poder falar ou sorrir."
-    },
-    {
-      "id": 8,
-      "title": "Espelho, espelho meu...",
-      "image": "imageLocal",
-      "winPoints": 3,
-      "losePoints": 3,
-      "dizDescription": "Você deve realizar a ação da última carta."
+      "dizDescription": "Você deve ficar sem poder falar ou sorrir até chegar sua vez."
     },
     {
       "id": 9,
@@ -70,7 +62,7 @@
       "image": "imageLocal",
       "winPoints": 2,
       "losePoints": 2,
-      "dizDescription": "Você deve ficar em silêncio durante uma rodada, sem poder falar ou rir."
+      "dizDescription": "Você deve ficar em silêncio, sem poder falar ou rir até chegar sua vez."
     },
     {
       "id": 10,
@@ -86,7 +78,7 @@
       "image": "imageLocal",
       "winPoints": 3,
       "losePoints": 3,
-      "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada. Caso alguém do grupo dê uma risada, você ganhará 3 pontos."
+      "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada. Caso alguém do grupo dê uma risada."
     },
     {
       "id": 12,
@@ -94,7 +86,7 @@
       "image": "imageLocal",
       "winPoints": 3,
       "losePoints": 3,
-      "dizDescription": "Você deve falar o alfabeto inteiro ao contrário, sem errar a ordem inversa!"
+      "dizDescription": "Você deve falar o alfabeto inteiro cantando!"
     }
   ]
 }
