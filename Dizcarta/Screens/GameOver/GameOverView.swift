@@ -21,7 +21,6 @@ struct GameOverView: View {
                     Color(.backgroundAppColor)
                         .ignoresSafeArea(.all)
                     
-                    ScrollView(.vertical, showsIndicators: true) {
                         VStack {
                             Text("Fim de Jogo!")
                                 .font(.system(size: 34))
@@ -29,6 +28,7 @@ struct GameOverView: View {
                                 .fontWeight(.heavy)
                                 .padding(.vertical, 30)
                             
+                          ScrollView(.vertical, showsIndicators: true) {
                             VStack {
                                 PlayerGameOver(name: gameCore.getRanking()[0].wrappedName,
                                                avatarAsset: gameCore.getRanking()[0].wrappedAvatar,
