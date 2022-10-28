@@ -68,16 +68,15 @@ struct SetupMatchView: View {
                             
                             Spacer(minLength: geometry.size.height / 3.7)
                         }
-
+                        
                         Button {
-                            if !(gameCore.players.count < 4) {
-                                goToShiftPlayer = true
-                            }
+                            goToShiftPlayer = true
                         } label: {
                             NeonButton(text: "Jogar", image: .neonButtonYellow)
                                 .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
                                 .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
                         }
+                        .disabled(gameCore.players.count < 4)
                         .hapticFeedback(feedbackStyle: .heavy)
                         
                     } //: VSTACK
