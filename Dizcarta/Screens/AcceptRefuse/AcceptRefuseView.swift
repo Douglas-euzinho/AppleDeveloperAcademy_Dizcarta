@@ -13,6 +13,7 @@ struct AcceptRefuseView: View {
     @Binding var title: String
     @Binding var text: String
     @State var showShiftPlayer = false
+    @State var backToHome = false
     @EnvironmentObject var gameCore: GameCore
     // MARK: - BODY
     var body: some View {
@@ -54,17 +55,20 @@ struct AcceptRefuseView: View {
                     ShiftPlayerView()
                         .environmentObject(gameCore)
                 }
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: HomeView()) {
-                        GenericFunctions.checkIfImageExist(name: "exitButton")
-                            .onTapGesture {
-                                gameCore.resetMatch()
-                            }
+                .navigationDestination(isPresented: $backToHome) {
+                    HomeView()
+                }
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            gameCore.resetMatch()
+                            backToHome = true
+                        } label: {
+                            GenericFunctions.checkIfImageExist(name: "exitButton")
+                        }
                     }
                 }
-            }
             }
         }
     }

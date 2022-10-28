@@ -75,7 +75,7 @@ struct ShiftPlayerView: View {
         } //: GEOMETRYREADER VIEW
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .navigationBarLeading) {
                 GenericFunctions.checkIfImageExist(name: "exitButton")
                     .onTapGesture {
                         gameCore.resetMatch()

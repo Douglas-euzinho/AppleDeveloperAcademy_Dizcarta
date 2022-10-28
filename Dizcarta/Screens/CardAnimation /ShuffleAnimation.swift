@@ -34,7 +34,7 @@ struct ShuffleAnimation: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: HomeView()) {
                     GenericFunctions.checkIfImageExist(name: "exitButton")
                 }
