@@ -88,18 +88,17 @@ struct InGameView: View {
                     } //: ZSTACK
                     .navigationBarBackButtonHidden(true)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
+                        ToolbarItem(placement: .navigationBarTrailing) {
                             PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
                                        avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
                                        points: gameCore.playerPlaying?.wrappedPoints)
                         }
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            NavigationLink(destination: HomeView()) {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                gameCore.resetMatch()
+                                backToHome = true
+                            } label: {
                                 GenericFunctions.checkIfImageExist(name: "exitButton")
-                                    .onTapGesture {
-                                        gameCore.resetMatch()
-                                        backToHome = true
-                                    }
                             }
                         }
                 }
