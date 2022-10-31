@@ -20,7 +20,7 @@ final class DizcartaTests: XCTestCase {
     }
 
     func testLoadCards() throws {
-        let list: CardList? = JsonManager.decodeJson(forName: "cardsMock")
+        let list: CardList? = CardsManager.decodeJson(forName: "cardsMock")
         XCTAssertNotNil(list, "CardList loaded is nil")
     }
 

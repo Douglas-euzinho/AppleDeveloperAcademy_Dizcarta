@@ -19,7 +19,7 @@ final class GameCore: ObservableObject {
     var cardList: CardList?
     internal var turn: Int = 1
     var playersTurn: [Int64] = []
-
+    
     @Published var isGameFinished = false
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
@@ -27,15 +27,15 @@ final class GameCore: ObservableObject {
     @Published var players: [Player] = []
     @Published var playerPlaying: Player?
     private var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
-                                               AvatarData(image: "avatarRed", name: "Vermelho"),
-                                               AvatarData(image: "avatarPurple", name: "Roxo"),
-                                               AvatarData(image: "avatarYellow", name: "Amarelo"),
-                                               AvatarData(image: "avatarPink", name: "Rosa"),
-                                               AvatarData(image: "avatarTurquoise", name: "Verde")]
+                                            AvatarData(image: "avatarRed", name: "Vermelho"),
+                                            AvatarData(image: "avatarPurple", name: "Roxo"),
+                                            AvatarData(image: "avatarYellow", name: "Amarelo"),
+                                            AvatarData(image: "avatarPink", name: "Rosa"),
+                                            AvatarData(image: "avatarTurquoise", name: "Verde")]
     var avatarDataList: [AvatarData] {
-            avatarData.filter { avatar in
-                !players.contains(where: { $0.wrappedAvatar == avatar.image })
-            }
+        avatarData.filter { avatar in
+            !players.contains(where: { $0.wrappedAvatar == avatar.image })
+        }
     }
     var repository: GameRepositoryProtocol
     
@@ -44,12 +44,19 @@ final class GameCore: ObservableObject {
         self.context = context
         self.repository = PlayerRepository.get(context: context)
         self.matchInProgress = repository.createMatch()
-        self.cardList = JsonManager.decodeJson(forName: cardFile)
-        var cards = self.cardList?.cards.shuffled() ?? []
-      #if DEBUG
-      cards.removeSubrange(0...9)
-      #endif
-        self.cardList?.cards = cards
+        Task(priority: .high) {
+            if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards.json") {
+                self.cardList = allCards
+                print("ONLINE CARDS CREATED \(allCards)")
+            } else {
+                self.cardList = CardsManager.decodeJson(forName: cardFile)
+            }
+            var cards = self.cardList?.cards.shuffled() ?? []
+#if DEBUG
+            cards.removeSubrange(0...9)
+#endif
+            self.cardList?.cards = cards
+        }
         print("[GAME CORE]: >>>>>>Created<<<<<")
     }
     
