@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct JsonManager {
+struct CardsManager {
     
     static func readLocalFile(forName name: String) -> Data? {
         do {
@@ -33,6 +33,13 @@ struct JsonManager {
     
     static func decodeJson<T: Codable>(forName name: String) -> T? {
         guard let data = readLocalFile(forName: name) else { return nil }
+        return parse(data: data)
+    }
+    
+    static func requestCards(cardsURL: String) async throws -> CardList? {
+        guard let urlRequest = URL(string: cardsURL) else { return nil }
+        let (data, response) = try await URLSession.shared.data(from: urlRequest)
+        print("REQUEST CARDS RESPONSE: \(data)")
         return parse(data: data)
     }
 }
