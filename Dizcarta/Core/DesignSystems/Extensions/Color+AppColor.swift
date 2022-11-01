@@ -32,6 +32,8 @@ enum AppColor: String, CaseIterable {
   
   // MARK: - TEXT FIELD BACKGROUND COLOR
   case textFieldBackgroundColor = "textfield_background_color"
+  case textPlayersCount = "players_count_color"
+  case playerListBackgroundColor = "player_list_background_color"
   
   // MARK: - NOT FOUND COLOR
   static func colorName(_ color: Color) -> String {

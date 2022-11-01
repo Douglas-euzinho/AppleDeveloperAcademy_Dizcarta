@@ -12,6 +12,7 @@
 		151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */; };
 		153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */; };
 		1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */; };
+		154F3E0E291060E1006FB756 /* DotDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F3E0D291060E1006FB756 /* DotDividerView.swift */; };
 		155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277EB28DC76E4003F83EF /* Color+AppColor.swift */; };
 		1552780028DCE7E0003F83EF /* InGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155277FF28DCE7E0003F83EF /* InGameView.swift */; };
 		1552780328DCE7EA003F83EF /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552780128DCE7EA003F83EF /* FrontCard.swift */; };
@@ -98,6 +99,7 @@
 		151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configurations+Observed.swift"; sourceTree = "<group>"; };
 		153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
+		154F3E0D291060E1006FB756 /* DotDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotDividerView.swift; sourceTree = "<group>"; };
 		155277EB28DC76E4003F83EF /* Color+AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColor.swift"; sourceTree = "<group>"; };
 		155277FF28DCE7E0003F83EF /* InGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameView.swift; sourceTree = "<group>"; };
 		1552780128DCE7EA003F83EF /* FrontCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				15E07D7728EF4A2C005D2A80 /* Avatar.swift */,
+				154F3E0D291060E1006FB756 /* DotDividerView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				366229A228EF55F400907C73 /* NeonButton.swift in Sources */,
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,
+				154F3E0E291060E1006FB756 /* DotDividerView.swift in Sources */,
 				CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */,
 				367C85EF28F5E9240041137A /* Fonts+Enum.swift in Sources */,
 				15A0818F28E2274400D479B8 /* HistoryView.swift in Sources */,
