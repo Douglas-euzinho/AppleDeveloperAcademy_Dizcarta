@@ -26,17 +26,12 @@ final class GameCore: ObservableObject {
     @Published var matchInProgress: MatchInProgress
     @Published var players: [Player] = []
     @Published var playerPlaying: Player?
-    private var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
+    var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
                                             AvatarData(image: "avatarRed", name: "Vermelho"),
                                             AvatarData(image: "avatarPurple", name: "Roxo"),
                                             AvatarData(image: "avatarYellow", name: "Amarelo"),
                                             AvatarData(image: "avatarPink", name: "Rosa"),
                                             AvatarData(image: "avatarTurquoise", name: "Verde")]
-    var avatarDataList: [AvatarData] {
-        avatarData.filter { avatar in
-            !players.contains(where: { $0.wrappedAvatar == avatar.image })
-        }
-    }
     var repository: GameRepositoryProtocol
     
     init(context: NSManagedObjectContext, cardFile: String) {

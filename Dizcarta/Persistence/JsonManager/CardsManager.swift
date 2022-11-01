@@ -38,7 +38,7 @@ struct CardsManager {
     
     static func requestCards(cardsURL: String) async throws -> CardList? {
         guard let urlRequest = URL(string: cardsURL) else { return nil }
-        let (data, response) = try await URLSession.shared.data(from: urlRequest)
+        let (data, _) = try await URLSession.shared.data(from: urlRequest)
         print("REQUEST CARDS RESPONSE: \(data)")
         return parse(data: data)
     }

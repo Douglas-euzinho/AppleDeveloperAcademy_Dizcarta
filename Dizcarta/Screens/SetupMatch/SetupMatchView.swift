@@ -54,9 +54,6 @@ struct SetupMatchView: View {
               ForEach(gameCore.players.sorted(by: {$0.turn < $1.turn }), id: \.self) { player in
                 PlayerSelectedView(player: player) {
                   gameCore.repository.save()
-                } deleteAction: {
-                  gameCore.players.removeAll(where: {$0.wrappedName == player.wrappedName })
-                  gameCore.repository.delete(object: player)
                 }
                 .frame(width: UIScreen.main.bounds.width - 5, height: 60)
               }
@@ -69,19 +66,23 @@ struct SetupMatchView: View {
                 .ignoresSafeArea(.all)
               
               VStack {
-                if !gameCore.avatarDataList.isEmpty {
                   ScrollView(.horizontal, showsIndicators: false) {
                     ZStack {
                       LazyHStack(spacing: 0) {
-                        ForEach(gameCore.avatarDataList, id: \.id) { avatar in
-                          Avatar(avatar: avatar.image, name: avatar.name, isSelection: true)
+                          ForEach(gameCore.avatarData, id: \.id) { avatar in
+                              Avatar(avatar: avatar.image, name: avatar.name, isSelection: true) {
+                                  if let player = gameCore.players.first(where: {$0.wrappedAvatar == avatar.image}) {
+                                      gameCore.repository.delete(object: player)
+                                      gameCore.fetchPlayers()
+                                  }
+                              } createAction: {
+                                  self.gameCore.createPlayer(name: avatar.name, avatar: avatar.image, match: MatchInProgress())
+                              }
                             .environmentObject(gameCore)
                         } //: FOREACH
                       } //: LAZYHSTACK
                     } //: ZSTACK
                   } //: SCROLL VIEW
-                  .frame(height: 100)
-                }
                 
                 Text("Jogadores: mínimo 4, máximo 6.")
                   .font(Font.custom("DINAlternate-Bold", size: 12))
