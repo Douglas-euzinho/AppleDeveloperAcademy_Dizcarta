@@ -46,7 +46,7 @@ struct ShiftPlayerView: View {
                             goToInGame = true
                         } label: {
                             NeonButton(text: "Embaralhar", image: .neonButtonYellow)
-                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                                .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
                                 .shadow(radius: 10)
                                 .padding(.bottom, 15)
                         }

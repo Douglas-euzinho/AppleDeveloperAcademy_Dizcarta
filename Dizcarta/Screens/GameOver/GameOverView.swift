@@ -63,7 +63,7 @@ struct GameOverView: View {
                                 newGame = true
                             } label: {
                                 NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
-                                    .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                                    .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
                                     .shadow(radius: 5)
                                     .padding(20)
                             }

@@ -45,7 +45,7 @@ struct AcceptRefuseView: View {
                             showShiftPlayer = true
                         } label: {
                             NeonButton(text: "Continuar", image: .neonButtonYellow)
-                                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 7)
+                                .frame(width: geometry.size.width / 1.7, height: geometry.size.height / 15)
                                 .padding(.bottom)
                         }
                         .hapticFeedback(feedbackStyle: .heavy)
