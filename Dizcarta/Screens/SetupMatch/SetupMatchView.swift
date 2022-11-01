@@ -42,6 +42,8 @@ struct SetupMatchView: View {
               Text(String(format: "%02d", gameCore.players.count))
                 .font(Font.custom("DINCondensed-Bold", size: 100))
                 .foregroundColor(Color(.textPlayersCount))
+                .padding(.trailing)
+                .padding(.top)
             }
             .padding(.top, 10)
             
@@ -56,7 +58,7 @@ struct SetupMatchView: View {
                   gameCore.players.removeAll(where: {$0.wrappedName == player.wrappedName })
                   gameCore.repository.delete(object: player)
                 }
-                .frame(width: UIScreen.main.bounds.width - 5, height: 55)
+                .frame(width: UIScreen.main.bounds.width - 5, height: 60)
               }
             }
             .padding(.top, -34)
@@ -85,14 +87,14 @@ struct SetupMatchView: View {
                   .font(Font.custom("DINAlternate-Bold", size: 12))
                   .multilineTextAlignment(.center)
                   .foregroundColor(Color(.textPlayersCount))
-                  .padding(.horizontal, 15)
+                  .padding(.vertical, 8)
                 
                 Button {
                   goToShiftPlayer = true
                 } label: {
-                  NeonButton(text: "Jogar", image: .neonButtonYellow)
+                  NeonButton(text: "Iniciar", image: .neonButtonYellow)
                     .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
-                    .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 10)
+                    .frame(width: geometry.size.width / 1.8, height: geometry.size.height / 15)
                 }
                 .disabled(gameCore.players.count < 4)
                 .hapticFeedback(feedbackStyle: .heavy)
