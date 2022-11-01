@@ -29,17 +29,23 @@ enum AppColor: String, CaseIterable {
   
   // MARK: - CARD COLOR
   case cardColor = "card_color"
+  case yellowCard = "yellow_card"
+  case redCard = "red_card"
+  case greenCard = "green_card"
+  
+  // MARK: - CARD TEXT COLOR
+  case yellowTextCard = "yellow_text_card"
+  case redTextCard = "red_text_card"
+  case greenTextCard = "green_text_card"
+  
+  // MARK: - CARD BACKGROUND TEXT COLOR
+  case yellowBakcgroundTextCard = "yellow_background_text_card"
+  case redBakcgroundTextCard = "red_background_text_card"
+  case greenBakcgroundTextCard = "green_background_text_card"
   
   // MARK: - TEXT FIELD BACKGROUND COLOR
   case textFieldBackgroundColor = "textfield_background_color"
-  case textPlayersCount = "players_count_color"
-  case playerListBackgroundColor = "player_list_background_color"
-    
-    // MARK: - ALERT COLOR
-    case alertTextFieldAlertColor = "alert_textfield_background"
-    case alertTextButtonAlertColor = "alert_textbutton"
-    case alertBackgroundAlertColor = "alert_background"
-    
+  
   // MARK: - NOT FOUND COLOR
   static func colorName(_ color: Color) -> String {
     var colorName = "emptyColor"
