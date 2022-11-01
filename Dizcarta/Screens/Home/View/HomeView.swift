@@ -35,7 +35,7 @@ struct HomeView: View {
                                 goToSetupGame = true
                             } label: {
                                 NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                    .frame(width: geometry.size.width/1.2, height: geometry.size.height/7)
+                                    .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 13)
                             }
                             .hapticFeedback(feedbackStyle: .heavy)
                             Spacer()
