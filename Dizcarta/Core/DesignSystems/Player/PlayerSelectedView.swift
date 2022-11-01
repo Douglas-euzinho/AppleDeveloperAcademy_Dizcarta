@@ -10,12 +10,15 @@ import SwiftUI
 struct PlayerSelectedView: View {
   // MARK: - PROPERTIES
   @State var isEditing: Bool = false
-  @FocusState var nameIsFocused: Bool
+  @FocusState var nameIsFocused: FocusedField?
   @ObservedObject var player: Player
   @State private var backupName: String = ""
   var saveAction: () -> Void
   var deleteAction: () -> Void
-  
+  enum FocusedField {
+      case username
+  }
+
   // MARK: - BODY
   var body: some View {
     GeometryReader { geometry in
@@ -33,9 +36,12 @@ struct PlayerSelectedView: View {
             .font(Font(name: .primaryFont, size: 20))
             .textInputAutocapitalization(.words)
             .autocorrectionDisabled(true)
-            .focused($nameIsFocused)
+            .focused($nameIsFocused, equals: .username)
             .modifier(TextFieldClearButton(text: $player.wrappedName))
             .padding(.vertical, 8)
+            .task {
+              self.nameIsFocused = .username
+            }
           
         } else {
           TextField("", text: $player.wrappedName)
