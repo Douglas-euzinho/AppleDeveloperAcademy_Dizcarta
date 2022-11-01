@@ -56,7 +56,6 @@ struct ConfigurationsView: View {
                 
                 HStack {
                     Button {
-                        
                     } label: {
                         GenericFunctions.checkIfImageExist(name: "suporte")
                         Text("Ajuda e Suporte")
