@@ -14,7 +14,6 @@ struct PlayerSelectedView: View {
   @ObservedObject var player: Player
   @State private var backupName: String = ""
   var saveAction: () -> Void
-  var deleteAction: () -> Void
   enum FocusedField {
       case username
   }

@@ -14,7 +14,9 @@ struct Avatar: View {
   @State var name: String
   @State private var changeOpacity: Bool = false
   var isSelection: Bool
-  
+  var removeAction: () -> Void
+  var createAction: () -> Void
+
   @EnvironmentObject var gameCore: GameCore
   
   // MARK: - BODY
@@ -26,7 +28,7 @@ struct Avatar: View {
           .opacity(changeOpacity ? 1.0 : 0.5)
           .onTapGesture {
             if !isPressed {
-              self.gameCore.createPlayer(name: name, avatar: avatar, match: MatchInProgress())
+              self.createAction()
               self.isPressed = true
               self.changeOpacity = true
             }
@@ -43,7 +45,7 @@ struct Avatar: View {
                   .opacity(0.0)
                 Image("removePlayer")
                   .onTapGesture {
-                    // TODO: PUT THE REMOVE PLAYER FROM LIST HERE
+                    self.removeAction()
                     self.isPressed = false
                     self.changeOpacity = false
                   }
@@ -63,7 +65,10 @@ struct Avatar: View {
 // MARK: - BODY
 struct Avatar_Previews: PreviewProvider {
   static var previews: some View {
-    Avatar(avatar: "avatarRed", name: "Alice", isSelection: true)
+      Avatar(avatar: "avatarRed", name: "Alice", isSelection: true) {
+          
+      } createAction: {
+      }
       .preferredColorScheme(.light)
       .previewLayout(.sizeThatFits)
   }
