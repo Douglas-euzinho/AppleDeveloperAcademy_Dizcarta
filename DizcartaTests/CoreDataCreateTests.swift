@@ -20,7 +20,7 @@ final class CoreDataCreateTests: XCTestCase {
 
     func testCreatePlayer() throws {
         let context = PersistenceController.inMemoryContext
-        let repository = PlayerRepositoryCoreData(context: context)
+        let repository = PlayerRepositoryMock(context: context)
         let match = repository.createMatch()
         repository.createPlayer(name: "PlayerTest", avatar: "IconTest", match: match)
         let player = repository.getPlayers(match: match).first
