@@ -49,6 +49,7 @@
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */; };
+		23B0938329143C19006D2D04 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0938229143C19006D2D04 /* String+Utils.swift */; };
 		23B61B6428FF29DD007FBCCD /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B61B6328FF29DD007FBCCD /* AppConstants.swift */; };
 		23C90ECF28EF5D020079EEFA /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ECE28EF5D020079EEFA /* cards.json */; };
 		23C90ED128EF5D3B0079EEFA /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C90ED028EF5D3B0079EEFA /* CardsManager.swift */; };
@@ -140,6 +141,7 @@
 		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Wrapped.swift"; sourceTree = "<group>"; };
+		23B0938229143C19006D2D04 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		23B61B6328FF29DD007FBCCD /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		23C90ECE28EF5D020079EEFA /* cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		23C90ED028EF5D3B0079EEFA /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				155277EB28DC76E4003F83EF /* Color+AppColor.swift */,
 				367C85EC28F5E8C80041137A /* ButtonsEnum.swift */,
 				367C85EE28F5E9240041137A /* Fonts+Enum.swift */,
+				23B0938229143C19006D2D04 /* String+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
 				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
+				23B0938329143C19006D2D04 /* String+Utils.swift in Sources */,
 				155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */,
 				36DFD53528E23BED002D1399 /* FinalFlowView.swift in Sources */,
 				3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */,
@@ -1005,7 +1009,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 3753BCYQD8;
+				DEVELOPMENT_TEAM = 272983AP33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dizcarta/Info.plist;
@@ -1042,7 +1046,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 3753BCYQD8;
+				DEVELOPMENT_TEAM = 272983AP33;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dizcarta/Info.plist;

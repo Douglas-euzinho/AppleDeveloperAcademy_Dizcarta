@@ -19,6 +19,13 @@ extension GameCore {
     
     func createPlayer(name: String, avatar: String, match: MatchInProgress) {
         if !players.contains(where: { $0.avatar == avatar }) {
+            do {
+                let matches = try? repository.context.fetch(MatchInProgress.fetchRequest())
+                guard let matches else { return }
+                if matches.firstIndex(of: matchInProgress) == nil {
+                    matchInProgress = createMatch()
+                }
+            }
             repository.createPlayer(name: name, avatar: avatar, match: matchInProgress)
         }
         self.players = repository.getPlayers(match: matchInProgress)
@@ -71,12 +78,12 @@ extension GameCore {
             playersTurn = getPlayers(match: matchInProgress).map({ Int64($0.turn) })
             playersTurn = playersTurn.sorted(by: { $0 < $1 })
         }
-
+        
         let turn = playersTurn.removeFirst()
         guard let player = players.first(where: { $0.turn == turn && $0.points > 0 })
         else {
-           return nextPlayer()
-       }
+            return nextPlayer()
+        }
         playerPlaying = player
     }
     

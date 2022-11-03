@@ -13,14 +13,7 @@ struct SetupMatchView: View {
   @State var nameTextField: String = ""
   @State var backHome = false
   @State private var goToShiftPlayer = false
-  @ObservedObject private var gameCore: GameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
-  
-  init() {
-    UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-    UITableView.appearance().separatorStyle = .none
-    UITableViewCell.appearance().backgroundColor = UIColor(Color.clear)
-    UITableView.appearance().backgroundColor = UIColor(Color.clear)
-  }
+  @StateObject var gameCore: GameCore
   
   // MARK: - BODY
   var body: some View {
@@ -60,10 +53,11 @@ struct SetupMatchView: View {
             }
             .padding(.top, -34)
             .padding(.bottom, -7)
+            .ignoresSafeArea(.keyboard)
             
             ZStack {
               Color(.playerListBackgroundColor)
-                .ignoresSafeArea(.all)
+                    .ignoresSafeArea(.keyboard)
               
               VStack {
                   ScrollView(.horizontal, showsIndicators: false) {
@@ -101,10 +95,10 @@ struct SetupMatchView: View {
                 .hapticFeedback(feedbackStyle: .heavy)
               } //: VSTACK
             }
+            .ignoresSafeArea(.keyboard)
             .frame(height: geometry.size.height / 4)
           }
         } //: VSTACK
-      .ignoresSafeArea(.keyboard)
       .navigationDestination(isPresented: $backHome) {
         HomeView()
       }
@@ -113,7 +107,6 @@ struct SetupMatchView: View {
           .environmentObject(gameCore)
       }
     }
-    .ignoresSafeArea(.keyboard)
     .onAppear {
       gameCore.matchInProgress = gameCore.createMatch()
     }
