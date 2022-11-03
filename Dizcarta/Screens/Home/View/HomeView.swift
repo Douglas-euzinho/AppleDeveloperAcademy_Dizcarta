@@ -42,7 +42,7 @@ struct HomeView: View {
                         }
                     }
                     .navigationDestination(isPresented: $goToSetupGame) {
-                        SetupMatchView()
+                        SetupMatchView(gameCore: GameCore(context: PersistenceController.context, cardFile: "cards"))
                     }
                 }
         }
