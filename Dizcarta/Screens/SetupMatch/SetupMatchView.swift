@@ -57,7 +57,7 @@ struct SetupMatchView: View {
             
             ZStack {
               Color(.playerListBackgroundColor)
-                    .ignoresSafeArea(.keyboard)
+                    .ignoresSafeArea(.all)
               
               VStack {
                   ScrollView(.horizontal, showsIndicators: false) {
@@ -74,10 +74,13 @@ struct SetupMatchView: View {
                               }
                             .environmentObject(gameCore)
                         } //: FOREACH
+                          .ignoresSafeArea(.keyboard)
                       } //: LAZYHSTACK
+                      .ignoresSafeArea(.keyboard)
                     } //: ZSTACK
+                    .ignoresSafeArea(.keyboard)
                   } //: SCROLL VIEW
-                
+                  .ignoresSafeArea(.keyboard)
                 Text("Jogadores: mínimo 4, máximo 6.")
                   .font(Font.custom("DINAlternate-Bold", size: 12))
                   .multilineTextAlignment(.center)
@@ -93,12 +96,16 @@ struct SetupMatchView: View {
                 }
                 .disabled(gameCore.players.count < 4)
                 .hapticFeedback(feedbackStyle: .heavy)
+                .ignoresSafeArea(.keyboard)
               } //: VSTACK
+              .ignoresSafeArea(.keyboard)
             }
             .ignoresSafeArea(.keyboard)
             .frame(height: geometry.size.height / 4)
           }
+          .ignoresSafeArea(.keyboard)
         } //: VSTACK
+        .ignoresSafeArea(.keyboard)
       .navigationDestination(isPresented: $backHome) {
         HomeView()
       }
@@ -107,6 +114,7 @@ struct SetupMatchView: View {
           .environmentObject(gameCore)
       }
     }
+      .ignoresSafeArea(.keyboard)
     .onAppear {
       gameCore.matchInProgress = gameCore.createMatch()
     }
