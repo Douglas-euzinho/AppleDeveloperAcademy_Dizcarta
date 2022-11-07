@@ -14,7 +14,7 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deve ficar em pé até chegar sua vez."
+            "dizDescription": "Você deverá ficar em pé até chegar sua vez."
         },
         {
             "id": 3,
@@ -46,7 +46,7 @@
             "image": "imageLocal",
             "winPoints": 1,
             "losePoints": 1,
-            "dizDescription": "Você deve ficar em pé e imitar uma árvore sem poder se mexer e falar até chegar sua vez!"
+            "dizDescription": "Você deverá ficar em pé e imitar uma árvore sem poder se mexer e falar até chegar sua vez!"
         },
         {
             "id": 7,
@@ -54,7 +54,7 @@
             "image": "imageLocal",
             "winPoints": 2,
             "losePoints": 2,
-            "dizDescription": "Você deve ficar sem poder falar ou sorrir até chegar sua vez."
+            "dizDescription": "Você deverá ficar sem poder falar ou sorrir até chegar sua vez."
         },
         {
             "id": 9,
@@ -62,7 +62,7 @@
             "image": "imageLocal",
             "winPoints": 2,
             "losePoints": 2,
-            "dizDescription": "Você deve ficar em silêncio, sem poder falar ou rir até chegar sua vez."
+            "dizDescription": "Você deverá ficar em silêncio, sem poder falar ou rir até chegar sua vez."
         },
         {
             "id": 10,
@@ -70,15 +70,15 @@
             "image": "imageLocal",
             "winPoints": 1,
             "losePoints": 1,
-            "dizDescription": "Você deve dar a volta no grupo andando agachado."
+            "dizDescription": "Você deverá dar a volta no grupo andando agachado."
         },
         {
             "id": 11,
-            "title": "A felicidade se multiplica....",
+            "title": "A felicidade se multiplica...",
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada. Caso alguém do grupo dê uma risada."
+            "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada."
         },
         {
             "id": 12,
@@ -86,7 +86,7 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deve falar o alfabeto inteiro cantando!"
+            "dizDescription": "Você deverá falar o alfabeto inteiro cantando!"
         }
     ]
 }
