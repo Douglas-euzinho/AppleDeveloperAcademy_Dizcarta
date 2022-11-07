@@ -18,7 +18,7 @@ struct HapticFeedback: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onTapGesture {
-                if AppConfig.isHapticsOn == true {
+                if UserDefaults.standard.bool(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) {
                     generator.impactOccurred()
                 }
             }
