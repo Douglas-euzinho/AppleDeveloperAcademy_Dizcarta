@@ -13,7 +13,7 @@ struct SetupMatchView: View {
   @State var nameTextField: String = ""
   @State var backHome = false
   @State private var goToShiftPlayer = false
-  @StateObject var gameCore: GameCore
+  @ObservedObject private var gameCore: GameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
   
   // MARK: - BODY
   var body: some View {

@@ -51,12 +51,12 @@ struct HomeView: View {
                             .hapticFeedback(feedbackStyle: .heavy)
                             Spacer()
                         }
-                    }
-                    .navigationDestination(isPresented: $goToConfig) {
-                        ConfigurationsView()
+                        .navigationDestination(isPresented: $goToConfig) {
+                            ConfigurationsView()
+                        }
                     }
                     .navigationDestination(isPresented: $goToSetupGame) {
-                        SetupMatchView(gameCore: GameCore(context: PersistenceController.context, cardFile: "cards"))
+                        SetupMatchView()
                     }
                 }
         }
