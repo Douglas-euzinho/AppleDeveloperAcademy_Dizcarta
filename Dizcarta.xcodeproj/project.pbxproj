@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		151BCC1B2901D142007E4D67 /* AcceptRefuseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151BCC1A2901D142007E4D67 /* AcceptRefuseView.swift */; };
-		151EA3A828EDFB9B000BEA9E /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3A728EDFB9B000BEA9E /* ButtonData.swift */; };
-		151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */; };
 		153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */; };
 		1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */; };
 		154F3E0E291060E1006FB756 /* DotDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F3E0D291060E1006FB756 /* DotDividerView.swift */; };
@@ -37,7 +35,6 @@
 		15E07D8228EF6DC2005D2A80 /* SetupMatch+Observed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D8128EF6DC2005D2A80 /* SetupMatch+Observed.swift */; };
 		23199ED228DE23DF0064E574 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED128DE23DF0064E574 /* Repository.swift */; };
 		23199ED428DE24C20064E574 /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199ED328DE24C20064E574 /* GameRepository.swift */; };
-		23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDE28DE527B0064E574 /* ConfigButton.swift */; };
 		23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EDF28DE527B0064E574 /* ConfigurationsView.swift */; };
 		23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23199EE228DE53270064E574 /* ButtonCardView.swift */; };
 		232E14A328FDC6F800D68141 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 232E14A228FDC6F800D68141 /* Lottie */; };
@@ -64,7 +61,6 @@
 		367C85ED28F5E8C80041137A /* ButtonsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C85EC28F5E8C80041137A /* ButtonsEnum.swift */; };
 		367C85EF28F5E9240041137A /* Fonts+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C85EE28F5E9240041137A /* Fonts+Enum.swift */; };
 		36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BE666828E37BA30069BB60 /* ActionChoise.swift */; };
-		36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */; };
 		36DFD53528E23BED002D1399 /* FinalFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53428E23BED002D1399 /* FinalFlowView.swift */; };
 		CD0D94552911585400F790E4 /* NewCardsYellowAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0D94542911585400F790E4 /* NewCardsYellowAnimation.json */; };
 		CD0D9457291158A400F790E4 /* NewCardsGreenAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0D9456291158A400F790E4 /* NewCardsGreenAnimation.json */; };
@@ -98,8 +94,6 @@
 
 /* Begin PBXFileReference section */
 		151BCC1A2901D142007E4D67 /* AcceptRefuseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptRefuseView.swift; sourceTree = "<group>"; };
-		151EA3A728EDFB9B000BEA9E /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
-		151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configurations+Observed.swift"; sourceTree = "<group>"; };
 		153F260F28F5E7B2000B4AA0 /* DINCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		1540DD7328F4A3200079A4EC /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		154F3E0D291060E1006FB756 /* DotDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotDividerView.swift; sourceTree = "<group>"; };
@@ -131,7 +125,6 @@
 		15E07D8128EF6DC2005D2A80 /* SetupMatch+Observed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetupMatch+Observed.swift"; sourceTree = "<group>"; };
 		23199ED128DE23DF0064E574 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23199ED328DE24C20064E574 /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
-		23199EDE28DE527B0064E574 /* ConfigButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 		23199EDF28DE527B0064E574 /* ConfigurationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		23199EE228DE53270064E574 /* ButtonCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCardView.swift; sourceTree = "<group>"; };
 		232E1D7328EE034D00BBA976 /* CoreDataCreateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCreateTests.swift; sourceTree = "<group>"; };
@@ -157,7 +150,6 @@
 		367C85EC28F5E8C80041137A /* ButtonsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsEnum.swift; sourceTree = "<group>"; };
 		367C85EE28F5E9240041137A /* Fonts+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Enum.swift"; sourceTree = "<group>"; };
 		36BE666828E37BA30069BB60 /* ActionChoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChoise.swift; sourceTree = "<group>"; };
-		36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButtonPress.swift; sourceTree = "<group>"; };
 		36DFD53428E23BED002D1399 /* FinalFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFlowView.swift; sourceTree = "<group>"; };
 		CD0D94542911585400F790E4 /* NewCardsYellowAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewCardsYellowAnimation.json; sourceTree = "<group>"; };
 		CD0D9456291158A400F790E4 /* NewCardsGreenAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewCardsGreenAnimation.json; sourceTree = "<group>"; };
@@ -204,22 +196,6 @@
 				151BCC1A2901D142007E4D67 /* AcceptRefuseView.swift */,
 			);
 			path = AcceptRefuse;
-			sourceTree = "<group>";
-		};
-		151EA3A528EDFB55000BEA9E /* Identifiable */ = {
-			isa = PBXGroup;
-			children = (
-				151EA3A728EDFB9B000BEA9E /* ButtonData.swift */,
-			);
-			path = Identifiable;
-			sourceTree = "<group>";
-		};
-		151EA3A628EDFB5C000BEA9E /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-				151EA3AA28EDFC4B000BEA9E /* Configurations+Observed.swift */,
-			);
-			path = Observable;
 			sourceTree = "<group>";
 		};
 		1540DD7228F4A30D0079A4EC /* TextField */ = {
@@ -424,20 +400,8 @@
 			isa = PBXGroup;
 			children = (
 				23199EDF28DE527B0064E574 /* ConfigurationsView.swift */,
-				151EA3A628EDFB5C000BEA9E /* Observable */,
-				151EA3A528EDFB55000BEA9E /* Identifiable */,
-				23199EDD28DE527B0064E574 /* Shared */,
 			);
 			path = Configurations;
-			sourceTree = "<group>";
-		};
-		23199EDD28DE527B0064E574 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				23199EDE28DE527B0064E574 /* ConfigButton.swift */,
-				36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		233FB51B28E4CF4F008EE961 /* Recovered References */ = {
@@ -816,7 +780,6 @@
 				23199EE328DE53270064E574 /* ButtonCardView.swift in Sources */,
 				2340D8F228F491BD0016CB0F /* GameCore+Players.swift in Sources */,
 				15E07D8028EF6D52005D2A80 /* AvatarData.swift in Sources */,
-				151EA3AB28EDFC4B000BEA9E /* Configurations+Observed.swift in Sources */,
 				23C90ED128EF5D3B0079EEFA /* CardsManager.swift in Sources */,
 				CD58D94F28F4A36200486117 /* CardsAnimation.swift in Sources */,
 				151BCC1B2901D142007E4D67 /* AcceptRefuseView.swift in Sources */,
@@ -846,7 +809,6 @@
 				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
 				15E07D7A28EF4A38005D2A80 /* SetupMatchView.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,
-				36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */,
 				155537FD28D8E3DA00CA5573 /* AppCore.swift in Sources */,
 				23B0938329143C19006D2D04 /* String+Utils.swift in Sources */,
 				155277EC28DC76E4003F83EF /* Color+AppColor.swift in Sources */,
@@ -856,14 +818,12 @@
 				CD58D95428F4A49500486117 /* LottieView.swift in Sources */,
 				CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */,
 				1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */,
-				23199EE028DE527B0064E574 /* ConfigButton.swift in Sources */,
 				1555380928D8E3DC00CA5573 /* Dizcarta.xcdatamodeld in Sources */,
 				367C85ED28F5E8C80041137A /* ButtonsEnum.swift in Sources */,
 				366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */,
 				233FB52128E622FE008EE961 /* AlertView.swift in Sources */,
 				2340D8EF28F4904C0016CB0F /* GameCore.swift in Sources */,
 				23199ED428DE24C20064E574 /* GameRepository.swift in Sources */,
-				151EA3A828EDFB9B000BEA9E /* ButtonData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

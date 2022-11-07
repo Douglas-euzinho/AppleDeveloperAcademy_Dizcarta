@@ -10,11 +10,9 @@ import SwiftUI
 struct ConfigurationsView: View {
     // MARK: - VARIABLES
     @Environment(\.presentationMode) var presentation
-    @StateObject var observed = Observed()
-    @State var isSpeakerOn = false
-    @State var isHapticsOn = false
-    @State var isColorBlindnessOn = false
-    
+    @AppStorage(UserDefaultsConfigurations.isHapticsOn.rawValue) var isHapticsOn = true
+    @AppStorage(UserDefaultsConfigurations.isNarratorOn.rawValue) var isNarratorOn = false
+    @AppStorage(UserDefaultsConfigurations.isColorBlindnessOn.rawValue) var isColorBlindnessOn = false
     // MARK: - BODY
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -23,7 +21,7 @@ struct ConfigurationsView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 20) {
                     GenericFunctions.checkIfImageExist(name: "narrador")
-                    Toggle("Narrador", isOn: $isSpeakerOn)
+                    Toggle("Narrador", isOn: $isNarratorOn)
                         .foregroundColor(.white)
                 }
                 .padding()
