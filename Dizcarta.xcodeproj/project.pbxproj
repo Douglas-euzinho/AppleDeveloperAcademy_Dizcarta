@@ -66,13 +66,15 @@
 		36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BE666828E37BA30069BB60 /* ActionChoise.swift */; };
 		36DFD53328E21F01002D1399 /* FeedbackButtonPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */; };
 		36DFD53528E23BED002D1399 /* FinalFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DFD53428E23BED002D1399 /* FinalFlowView.swift */; };
+		CD0D94552911585400F790E4 /* NewCardsYellowAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0D94542911585400F790E4 /* NewCardsYellowAnimation.json */; };
+		CD0D9457291158A400F790E4 /* NewCardsGreenAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0D9456291158A400F790E4 /* NewCardsGreenAnimation.json */; };
 		CD33B49228DE2B9D00E25CF5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */; };
 		CD58D94F28F4A36200486117 /* CardsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58D94E28F4A36200486117 /* CardsAnimation.swift */; };
 		CD58D95428F4A49500486117 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58D95328F4A49500486117 /* LottieView.swift */; };
 		CD83429A2909D15900EA6775 /* HapiticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8342992909D15900EA6775 /* HapiticsManager.swift */; };
+		CD9102442919814B005102D1 /* NewCardsRedAnimationFix.json in Resources */ = {isa = PBXBuildFile; fileRef = CD9102432919814B005102D1 /* NewCardsRedAnimationFix.json */; };
 		CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */; };
 		CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */; };
-		CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB53D332900720A00F55B96 /* ShuffleAnimation.json */; };
 		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
 		CDCFA96E29085DBE003ADEDC /* SplashScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = CDCFA96D29085DBE003ADEDC /* SplashScreen.json */; };
 /* End PBXBuildFile section */
@@ -157,13 +159,15 @@
 		36BE666828E37BA30069BB60 /* ActionChoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChoise.swift; sourceTree = "<group>"; };
 		36DFD53228E21F01002D1399 /* FeedbackButtonPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButtonPress.swift; sourceTree = "<group>"; };
 		36DFD53428E23BED002D1399 /* FinalFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFlowView.swift; sourceTree = "<group>"; };
+		CD0D94542911585400F790E4 /* NewCardsYellowAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewCardsYellowAnimation.json; sourceTree = "<group>"; };
+		CD0D9456291158A400F790E4 /* NewCardsGreenAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewCardsGreenAnimation.json; sourceTree = "<group>"; };
 		CD33B49128DE2B9D00E25CF5 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		CD58D94E28F4A36200486117 /* CardsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsAnimation.swift; sourceTree = "<group>"; };
 		CD58D95328F4A49500486117 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		CD8342992909D15900EA6775 /* HapiticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapiticsManager.swift; sourceTree = "<group>"; };
+		CD9102432919814B005102D1 /* NewCardsRedAnimationFix.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewCardsRedAnimationFix.json; sourceTree = "<group>"; };
 		CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlayerView.swift; sourceTree = "<group>"; };
 		CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnimation.swift; sourceTree = "<group>"; };
-		CDB53D332900720A00F55B96 /* ShuffleAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShuffleAnimation.json; sourceTree = "<group>"; };
 		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		CDCFA96D29085DBE003ADEDC /* SplashScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SplashScreen.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -586,6 +590,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CD0D945A291158CC00F790E4 /* CardsShuffle */ = {
+			isa = PBXGroup;
+			children = (
+				CD9102432919814B005102D1 /* NewCardsRedAnimationFix.json */,
+				CD0D94542911585400F790E4 /* NewCardsYellowAnimation.json */,
+				CD0D9456291158A400F790E4 /* NewCardsGreenAnimation.json */,
+			);
+			path = CardsShuffle;
+			sourceTree = "<group>";
+		};
 		CD33B49028DE2B7700E25CF5 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,7 +623,7 @@
 		CD58D95028F4A3F900486117 /* JsonFile */ = {
 			isa = PBXGroup;
 			children = (
-				CDB53D332900720A00F55B96 /* ShuffleAnimation.json */,
+				CD0D945A291158CC00F790E4 /* CardsShuffle */,
 				CDCFA96D29085DBE003ADEDC /* SplashScreen.json */,
 			);
 			path = JsonFile;
@@ -743,7 +757,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCFA96E29085DBE003ADEDC /* SplashScreen.json in Resources */,
-				CDB53D342900720A00F55B96 /* ShuffleAnimation.json in Resources */,
 				238DF95028DA509900F9A23B /* README.md in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */,
@@ -751,6 +764,9 @@
 				23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */,
 				366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */,
 				23C90ECF28EF5D020079EEFA /* cards.json in Resources */,
+				CD0D9457291158A400F790E4 /* NewCardsGreenAnimation.json in Resources */,
+				CD9102442919814B005102D1 /* NewCardsRedAnimationFix.json in Resources */,
+				CD0D94552911585400F790E4 /* NewCardsYellowAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

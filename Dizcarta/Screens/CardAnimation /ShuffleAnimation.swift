@@ -20,7 +20,7 @@ struct ShuffleAnimation: View {
                     Color(.backgroundAppColor)
                         .ignoresSafeArea()
                     VStack(alignment: .center) {
-                        LottieView(animationName: "ShuffleAnimation.json", loopMode: .repeat(1)) {
+                        LottieView(animationName: "NewCardsRedAnimationFix.json", loopMode: .repeat(1)) {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                 showInGame = true
                             }
