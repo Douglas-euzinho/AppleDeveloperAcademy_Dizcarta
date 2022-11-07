@@ -12,6 +12,8 @@ import CoreData
 struct HomeView: View {
     @State var isPlayerListView = false
     @State private var goToSetupGame = false
+    @State private var goToConfig = false
+
     var body: some View {
             GeometryReader { geometry in
                 NavigationStack {
@@ -38,8 +40,20 @@ struct HomeView: View {
                                     .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 13)
                             }
                             .hapticFeedback(feedbackStyle: .heavy)
+                            .padding(2)
+                            
+                            Button {
+                                goToConfig = true
+                            } label: {
+                                NeonButton(text: "Configurações", image: .neonButtonPurple)
+                                    .frame(width: geometry.size.width / 1.23, height: geometry.size.height / 9)
+                            }
+                            .hapticFeedback(feedbackStyle: .heavy)
                             Spacer()
                         }
+                    }
+                    .navigationDestination(isPresented: $goToConfig) {
+                        ConfigurationsView()
                     }
                     .navigationDestination(isPresented: $goToSetupGame) {
                         SetupMatchView(gameCore: GameCore(context: PersistenceController.context, cardFile: "cards"))
