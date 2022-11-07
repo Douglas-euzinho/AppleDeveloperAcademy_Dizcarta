@@ -72,7 +72,7 @@ struct GameOverView: View {
                     }
                     .navigationBarBackButtonHidden(true)
                     .navigationDestination(isPresented: $newGame) {
-                        SetupMatchView(gameCore:  GameCore(context: PersistenceController.context, cardFile: "cards"))
+                        SetupMatchView()
                     }
                 }
             }
