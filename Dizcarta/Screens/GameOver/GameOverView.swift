@@ -61,13 +61,13 @@ struct GameOverView: View {
                             
                             Button {
                                 newGame = true
+                                HapticManager.send(style: .heavy)
                             } label: {
                                 NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
                                     .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
                                     .shadow(radius: 5)
                                     .padding(20)
                             }
-                            .hapticFeedback(feedbackStyle: .heavy)
                         }
                     }
                     .navigationBarBackButtonHidden(true)

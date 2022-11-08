@@ -95,14 +95,14 @@ struct InGameView: View {
                         }
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button {
+                                HapticManager.send(style: .heavy)
                                 gameCore.resetMatch()
                                 backToHome = true
                             } label: {
                                 GenericFunctions.checkIfImageExist(name: "exitButton")
                             }
                         }
-                }
-                    .hapticFeedback(feedbackStyle: .heavy)
+                    }
                 } else {
                     ShuffleAnimation(card: $card).environmentObject(gameCore)
                         .onAppear {
