@@ -14,7 +14,7 @@ struct SplashScreen: View {
     let shared = GenericFunctions()
     
     var body: some View {
-        LottieView(animationName: "SplashScreen.json", loopMode: .playOnce) {
+        LottieView(animationName: "SplashScreenApp.json", loopMode: .playOnce) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 isShowingSplash = false
             }
