@@ -20,8 +20,25 @@ struct HapticFeedback: ViewModifier {
             .onTapGesture {
                 if UserDefaults.standard.bool(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) {
                     generator.impactOccurred()
+                    Logger(context: .haptics).log("Impact occurred")
                 }
             }
+    }
+}
+
+struct HapticManager {
+    static func send(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        if UserDefaults.standard.bool(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) {
+            UIImpactFeedbackGenerator(style: style).impactOccurred()
+            Logger(context: .haptics).log("Impact occurred \(String(describing: style))")
+        }
+    }
+    
+    static func send(style: UIImpactFeedbackGenerator.FeedbackStyle, intensity: CGFloat) {
+        if UserDefaults.standard.bool(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) {
+            UIImpactFeedbackGenerator(style: style).impactOccurred(intensity: intensity)
+            Logger(context: .haptics).log("Impact occurred \(String(describing: style))")
+        }
     }
 }
 

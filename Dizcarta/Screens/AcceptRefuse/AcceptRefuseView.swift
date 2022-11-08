@@ -43,12 +43,12 @@ struct AcceptRefuseView: View {
                         
                         Button {
                             showShiftPlayer = true
+                            HapticManager.send(style: .heavy)
                         } label: {
                             NeonButton(text: "Continuar", image: .neonButtonYellow)
                                 .frame(width: geometry.size.width / 1.7, height: geometry.size.height / 15)
                                 .padding(.bottom)
                         }
-                        .hapticFeedback(feedbackStyle: .heavy)
                     }
                 }
                 .navigationDestination(isPresented: $showShiftPlayer) {

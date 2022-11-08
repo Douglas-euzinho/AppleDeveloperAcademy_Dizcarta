@@ -17,7 +17,7 @@ struct CardsManager {
                 return jsonData
             }
         } catch {
-            debugPrint("[ERROR] Load json file: \(error)")
+            Logger(context: .error).log("Load json file: \(error)")
         }
         return nil
     }
@@ -25,8 +25,8 @@ struct CardsManager {
     static func parse<T: Codable> (data: Data) -> T? {
         do {
            return try JSONDecoder().decode(T.self, from: data)
-        } catch {
-            debugPrint("[ERROR] \(error)")
+        } catch let error {
+            Logger(context: .error).log(error.localizedDescription)
         }
         return nil
     }
@@ -39,7 +39,7 @@ struct CardsManager {
     static func requestCards(cardsURL: String) async throws -> CardList? {
         guard let urlRequest = URL(string: cardsURL) else { return nil }
         let (data, _) = try await URLSession.shared.data(from: urlRequest)
-        print("REQUEST CARDS RESPONSE: \(data)")
+        Logger(context: .message).log("REQUEST CARDS RESPONSE: \(data)")
         return parse(data: data)
     }
 }
