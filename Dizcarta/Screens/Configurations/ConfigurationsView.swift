@@ -55,6 +55,9 @@ struct ConfigurationsView: View {
                     
                     HStack {
                         Button {
+                            if let supportUrl = URL(string: "https://dizcarta.github.io/#contact") {
+                                UIApplication.shared.open(supportUrl)
+                            }
                         } label: {
                             GenericFunctions.checkIfImageExist(name: "suporte")
                             Text("Ajuda e Suporte")
