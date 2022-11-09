@@ -49,7 +49,6 @@ struct PlayerSelectedView: View {
                                 save()
                             }
                         }
-                    
                 } else {
                     TextField("", text: $player.wrappedName)
                         .foregroundColor(.white)
@@ -75,7 +74,7 @@ struct PlayerSelectedView: View {
                             .foregroundColor(Color(.textPlayersCount))
                     }
                 }
-            }
+            } //: HStack
             .background(
                 HStack {
                     RoundedRectangle(cornerRadius: 5)
@@ -86,6 +85,7 @@ struct PlayerSelectedView: View {
             .onAppear {
                 backupName = player.wrappedName
             }
+                
             
         }
     }
