@@ -36,7 +36,7 @@ struct ShuffleAnimation: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: HomeView()) {
-                    GenericFunctions.checkIfImageExist(name: "exitButton")
+                    GenericFunctions.checkIfImageExist(name: "pauseButton")
                 }
             }
         }
