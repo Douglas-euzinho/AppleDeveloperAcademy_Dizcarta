@@ -13,6 +13,11 @@ struct AppCore: App {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.dark)
+                .onAppear {
+                    if UserDefaults.standard.value(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) == nil {
+                        UserDefaults.standard.set(true, forKey: UserDefaultsConfigurations.isHapticsOn.rawValue)
+                    }
+                }
         }
     }
 }
