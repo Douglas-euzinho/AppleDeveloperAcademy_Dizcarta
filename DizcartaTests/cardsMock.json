@@ -2,20 +2,57 @@
     "cards": [
         {
             "id": 1,
-            "title": "Card Title",
+            "title": "Ninguém solta a mão de ninguém",
             "image": "imageLocal",
             "winPoints": 3,
-            "losePoints": 2,
-            "dizDescription": "Alguma descrição"
+            "losePoints": 3,
+            "dizDescription": "Você deverá ficar de mãos dadas com a pessoa a sua esquerda, enquanto joga.",
+            "type": 1
         },
         {
             "id": 2,
-            "title": "Card Title",
+            "title": "Levanta Soldado!",
             "image": "imageLocal",
             "winPoints": 3,
+            "losePoints": 3,
+            "dizDescription": "Você deverá ficar em pé até chegar sua vez.",
+            "type": 1
+        },
+        {
+            "id": 3,
+            "title": "Tá nervoso? Vai pescar!",
+            "image": "imageLocal",
+            "winPoints": 3,
+            "losePoints": 3,
+            "dizDescription": "Imite uma pescaria até chegar sua vez.",
+            "type": 1
+        },
+        {
+            "id": 4,
+            "title": "Doente de Amor",
+            "image": "imageLocal",
+            "winPoints": 4,
+            "losePoints": 4,
+            "dizDescription": "Você deverá escolher uma pessoa para ficar abraçado(a) até chegar sua vez.",
+            "type": 1
+        },
+        {
+            "id": 5,
+            "title": "Saci Pererê",
+            "image": "imageLocal",
+            "winPoints": 2,
             "losePoints": 2,
-            "dizDescription": "Alguma descrição"
+            "dizDescription": "Dê a volta no grupo pulando com uma perna só!",
+            "type": 1
+        },
+        {
+            "id": 6,
+            "title": "As árvores somos nozes!",
+            "image": "imageLocal",
+            "winPoints": 1,
+            "losePoints": 1,
+            "dizDescription": "Você deverá ficar em pé e imitar uma árvore sem poder se mexer e falar até chegar sua vez!",
+            "type": 1
         }
     ]
 }
-

@@ -73,7 +73,9 @@ struct SetupMatchView: View {
                                                             gameCore.fetchPlayers()
                                                         }
                                                     } createAction: {
-                                                        self.gameCore.createPlayer(name: avatar.name, avatar: avatar.image, match: MatchInProgress())
+                                                        self.gameCore.createPlayer(name: avatar.name,
+                                                                                   avatar: avatar.image,
+                                                                                   match: MatchInProgress())
                                                     }
                                                     .environmentObject(gameCore)
                                                 } //: For

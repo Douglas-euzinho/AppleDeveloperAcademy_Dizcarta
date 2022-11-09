@@ -14,7 +14,7 @@ struct ShuffleAnimation: View {
     @State var showInGame = false
     @Binding var card: CardCodable!
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             NavigationStack {
                 ZStack {
                     Color(.backgroundAppColor)
@@ -44,7 +44,7 @@ struct ShuffleAnimation: View {
     
 }
 
-//struct ShuffleAnimation_Previews: PreviewProvider {
+// struct ShuffleAnimation_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
 //
@@ -54,4 +54,4 @@ struct ShuffleAnimation: View {
 //                .previewDisplayName(device)
 //        }
 //    }
-//}
+// }

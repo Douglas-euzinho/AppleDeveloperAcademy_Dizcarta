@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum CardType {
-    case conventional, surprise, loss
-}
-
 struct ActionChoise: View {
     var backgroundColor: Color
     var actionChoosed: Int?
@@ -38,7 +34,7 @@ struct ActionChoise: View {
     }
     
     func checkAction(cardType: CardType) -> Image? {
-        if cardType == .conventional {
+        if cardType == .challenge {
             switch actionChoosed {
             case 0:
                 return GenericFunctions.checkIfImageExist(name: "FaceSad")
@@ -54,7 +50,7 @@ struct ActionChoise: View {
     }
     
     func checkText(points: Int, cardType: CardType) -> Text? {
-        if cardType == .conventional {
+        if cardType == .challenge {
             switch actionChoosed {
             case 0:
                 return Text("Você perdeu \(points) pontos!")
@@ -70,7 +66,7 @@ struct ActionChoise: View {
     
     func checkCardType(actionChoosed: Int) -> Text? {
         switch cardType {
-        case .conventional:
+        case .challenge:
             if actionChoosed == 0 {
                 return Text("Poxa!")
                     .font(.headline)

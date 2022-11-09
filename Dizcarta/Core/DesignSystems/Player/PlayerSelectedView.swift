@@ -86,7 +86,6 @@ struct PlayerSelectedView: View {
                 backupName = player.wrappedName
             }
                 
-            
         }
     }
     private func save() {
