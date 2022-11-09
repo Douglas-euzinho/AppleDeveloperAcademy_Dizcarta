@@ -20,6 +20,18 @@ enum AppColor: String, CaseIterable {
   case playerListColor = "player_list_color"
   case newPlayerColor = "new_player_color"
   
+  // MARK: - SETUP MATCH
+  case textPlayersCount = "players_count_color"
+  case textFieldBackgroundColor = "textfield_background_color"
+  
+  // MARK: - PLAYER SELECTED VIEW
+  case playerListBackgroundColor = "player_list_background_color"
+  
+  // MARK: - ALERT
+  case alertBackgroundAlertColor = "alert_background"
+  case alertTextButtonAlertColor = "alert_textbutton"
+  case alertTextFieldAlertColor = "alert_textfield_background"
+  
   // MARK: - BUTTONS
   case configurationButtonUnselected = "configuration_button_unselected"
   case configurationButtonSelected = "configuration_button_selected"
@@ -42,10 +54,7 @@ enum AppColor: String, CaseIterable {
   case yellowBakcgroundTextCard = "yellow_background_text_card"
   case redBakcgroundTextCard = "red_background_text_card"
   case greenBakcgroundTextCard = "green_background_text_card"
-  
-  // MARK: - TEXT FIELD BACKGROUND COLOR
-  case textFieldBackgroundColor = "textfield_background_color"
-  
+    
   // MARK: - NOT FOUND COLOR
   static func colorName(_ color: Color) -> String {
     var colorName = "emptyColor"

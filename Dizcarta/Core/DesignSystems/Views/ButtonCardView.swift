@@ -22,25 +22,12 @@ struct ButtonCardView: View {
     var body: some View {
         ZStack {
             Image(backgroundImage)
-                .resizable()
-                .cornerRadius(10)
                 .opacity(0.8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.black)
-                        .opacity(0.3)
-                        .frame(width: 150, height: 70)
-                )
-            
+          
             VStack {
                 GenericFunctions.checkIfImageExist(name: iconName)
                     .resizable()
-                    .frame(width: 32, height: 32)
-                
-                Text(text)
-                    .font(.custom("macrofont", size: 15))
-                    .minimumScaleFactor(0.01)
-                    .foregroundColor(.white)
+                    .frame(width: 28, height: 28)
             }
         }
     }

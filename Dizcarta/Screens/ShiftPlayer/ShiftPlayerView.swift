@@ -76,7 +76,7 @@ struct ShiftPlayerView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                GenericFunctions.checkIfImageExist(name: "exitButton")
+                GenericFunctions.checkIfImageExist(name: "pauseButton")
                     .onTapGesture {
                         gameCore.resetMatch()
                         backToHome = true

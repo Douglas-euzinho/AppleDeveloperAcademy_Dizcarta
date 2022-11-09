@@ -60,7 +60,7 @@ struct SetupMatchView: View {
                         } //: VStack
                         
                         VStack {
-                            Color(.playerListBackgroundColor)
+                          Color(.playerListColor)
                                 .ignoresSafeArea(.all)
                                 .overlay {
                                     VStack {

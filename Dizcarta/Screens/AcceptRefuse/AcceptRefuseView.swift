@@ -65,7 +65,7 @@ struct AcceptRefuseView: View {
                             gameCore.resetMatch()
                             backToHome = true
                         } label: {
-                            GenericFunctions.checkIfImageExist(name: "exitButton")
+                            GenericFunctions.checkIfImageExist(name: "pauseButton")
                         }
                     }
                 }
