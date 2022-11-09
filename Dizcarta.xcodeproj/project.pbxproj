@@ -568,6 +568,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		367D6C1D291AE1CF00459342 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				367D6C20291AE22F00459342 /* AlertCustomView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		CD0D945A291158CC00F790E4 /* CardsShuffle */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,14 +584,6 @@
 				CD0D9456291158A400F790E4 /* NewCardsGreenAnimation.json */,
 			);
 			path = CardsShuffle;
-            sourceTree = "<group>";
-        };
-		367D6C1D291AE1CF00459342 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				367D6C20291AE22F00459342 /* AlertCustomView.swift */,
-			);
-			path = Alert;
 			sourceTree = "<group>";
 		};
 		CD33B49028DE2B7700E25CF5 /* Player */ = {
@@ -1009,7 +1009,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 272983AP33;
+				DEVELOPMENT_TEAM = MGFPJ5C76T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dizcarta/Info.plist;
@@ -1046,7 +1046,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 272983AP33;
+				DEVELOPMENT_TEAM = MGFPJ5C76T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dizcarta/Info.plist;

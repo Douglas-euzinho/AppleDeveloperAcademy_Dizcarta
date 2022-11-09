@@ -87,13 +87,13 @@ struct SetupMatchView: View {
                                         
                                         Button {
                                             goToShiftPlayer = true
+                                            HapticManager.send(style: .heavy)
                                         } label: {
                                             NeonButton(text: "Iniciar", image: .neonButtonYellow)
                                                 .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
                                                 .frame(width: geometry.size.width / 1.8, height: geometry.size.height / 15)
                                         }
                                         .disabled(gameCore.players.count < 4)
-                                        .hapticFeedback(feedbackStyle: .heavy)
                                     } //: VStack
                                 } //: Overlay
                         } //: VStack
