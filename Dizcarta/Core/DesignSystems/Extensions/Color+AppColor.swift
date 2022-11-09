@@ -34,7 +34,12 @@ enum AppColor: String, CaseIterable {
   case textFieldBackgroundColor = "textfield_background_color"
   case textPlayersCount = "players_count_color"
   case playerListBackgroundColor = "player_list_background_color"
-  
+    
+    // MARK: - ALERT COLOR
+    case alertTextFieldAlertColor = "alert_textfield_background"
+    case alertTextButtonAlertColor = "alert_textbutton"
+    case alertBackgroundAlertColor = "alert_background"
+    
   // MARK: - NOT FOUND COLOR
   static func colorName(_ color: Color) -> String {
     var colorName = "emptyColor"
