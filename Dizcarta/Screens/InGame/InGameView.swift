@@ -26,7 +26,7 @@ struct InGameView: View {
     
     // MARK: - BODY
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             NavigationStack {
                 if animationPresented {
                     ZStack {

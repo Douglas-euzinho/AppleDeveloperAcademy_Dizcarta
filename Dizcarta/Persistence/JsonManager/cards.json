@@ -6,7 +6,8 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deverá ficar de mãos dadas com a pessoa a sua esquerda, enquanto joga."
+            "dizDescription": "Você deverá ficar de mãos dadas com a pessoa a sua esquerda, enquanto joga.",
+            "type": 1
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deverá ficar em pé até chegar sua vez."
+            "dizDescription": "Você deverá ficar em pé até chegar sua vez.",
+            "type": 1
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Imite uma pescaria até chegar sua vez."
+            "dizDescription": "Imite uma pescaria até chegar sua vez.",
+            "type": 1
         },
         {
             "id": 4,
@@ -30,7 +33,8 @@
             "image": "imageLocal",
             "winPoints": 4,
             "losePoints": 4,
-            "dizDescription": "Você deverá escolher uma pessoa para ficar abraçado(a) até chegar sua vez."
+            "dizDescription": "Você deverá escolher uma pessoa para ficar abraçado(a) até chegar sua vez.",
+            "type": 1
         },
         {
             "id": 5,
@@ -38,7 +42,8 @@
             "image": "imageLocal",
             "winPoints": 2,
             "losePoints": 2,
-            "dizDescription": "Dê a volta no grupo pulando com uma perna só!"
+            "dizDescription": "Dê a volta no grupo pulando com uma perna só!",
+            "type": 1
         },
         {
             "id": 6,
@@ -46,7 +51,8 @@
             "image": "imageLocal",
             "winPoints": 1,
             "losePoints": 1,
-            "dizDescription": "Você deverá ficar em pé e imitar uma árvore sem poder se mexer e falar até chegar sua vez!"
+            "dizDescription": "Você deverá ficar em pé e imitar uma árvore sem poder se mexer e falar até chegar sua vez!",
+            "type": 1
         },
         {
             "id": 7,
@@ -54,7 +60,8 @@
             "image": "imageLocal",
             "winPoints": 2,
             "losePoints": 2,
-            "dizDescription": "Você deverá ficar sem poder falar ou sorrir até chegar sua vez."
+            "dizDescription": "Você deverá ficar sem poder falar ou sorrir até chegar sua vez.",
+            "type": 1
         },
         {
             "id": 9,
@@ -62,7 +69,8 @@
             "image": "imageLocal",
             "winPoints": 2,
             "losePoints": 2,
-            "dizDescription": "Você deverá ficar em silêncio, sem poder falar ou rir até chegar sua vez."
+            "dizDescription": "Você deverá ficar em silêncio, sem poder falar ou rir até chegar sua vez.",
+            "type": 1
         },
         {
             "id": 10,
@@ -70,7 +78,8 @@
             "image": "imageLocal",
             "winPoints": 1,
             "losePoints": 1,
-            "dizDescription": "Você deverá dar a volta no grupo andando agachado."
+            "dizDescription": "Você deverá dar a volta no grupo andando agachado.",
+            "type": 1
         },
         {
             "id": 11,
@@ -78,7 +87,8 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada."
+            "dizDescription": "Você deverá contar ou escolher alguém para contar uma piada.",
+            "type": 1
         },
         {
             "id": 12,
@@ -86,7 +96,8 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 3,
-            "dizDescription": "Você deverá falar o alfabeto inteiro cantando!"
+            "dizDescription": "Você deverá falar o alfabeto inteiro cantando!",
+            "type": 1
         }
     ]
 }

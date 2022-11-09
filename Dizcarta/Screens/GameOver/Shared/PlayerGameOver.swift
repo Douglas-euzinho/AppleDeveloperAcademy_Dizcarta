@@ -22,7 +22,7 @@ struct PlayerGameOver: View {
   
   // MARK: - BODY
   var body: some View {
-    if podiumPosition != nil  && podiumPosition < 4 {
+    if podiumPosition < 4 {
       VStack {
         ZStack(alignment: .bottomLeading) {
           Image(avatarAsset)
