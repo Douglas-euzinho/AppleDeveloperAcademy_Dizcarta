@@ -37,9 +37,13 @@ struct InGameView: View {
                                 FrontCard(title: card?.title ?? "",
                                           description: card?.dizDescription ?? "",
                                           acceptPoints: card?.winPoints ?? 0,
-                                          declinePoints: card?.losePoints ?? 0, cardColor: AppColor.yellowCard.rawValue, textCardColor: AppColor.yellowTextCard.rawValue, backgroundTextCardColor: AppColor.yellowBakcgroundTextCard.rawValue,
+                                          declinePoints: card?.losePoints ?? 0,
+                                          cardColor: AppColor.yellowCard.rawValue,
+                                          textCardColor: AppColor.yellowTextCard.rawValue,
+                                          backgroundTextCardColor: AppColor.yellowBakcgroundTextCard.rawValue,
                                           degree: $frontDegree)
-                                BackCard(degree: $backDegree)
+                              //: TODO: - CALL THE ASSET OF THE CARD HERE
+                              BackCard(degree: $backDegree, cardImage: "challengeCard")
                             }.onAppear(perform: {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
                                     flipCard()
