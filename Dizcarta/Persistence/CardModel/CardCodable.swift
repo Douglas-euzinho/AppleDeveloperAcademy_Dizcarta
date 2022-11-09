@@ -9,6 +9,12 @@ import Foundation
 import CoreData
 import UIKit
 
+enum CardType: Int, Codable {
+    case challenge = 1
+    case surprise = 2
+    case loss = 3
+}
+
 struct CardCodable: Codable {
     let id: Int
     let title: String
@@ -16,6 +22,7 @@ struct CardCodable: Codable {
     let winPoints: Int
     let losePoints: Int
     let dizDescription: String
+    let type: CardType
     
     func createEntity(context: NSManagedObjectContext) -> Card {
         let card = Card(context: context)

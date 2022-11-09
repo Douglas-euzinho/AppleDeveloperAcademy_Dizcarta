@@ -11,7 +11,7 @@ struct AlertCustomView: View {
     @Binding var nameTextField: String
     
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack(alignment: .center) {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color(AppColor.alertBackgroundAlertColor))
