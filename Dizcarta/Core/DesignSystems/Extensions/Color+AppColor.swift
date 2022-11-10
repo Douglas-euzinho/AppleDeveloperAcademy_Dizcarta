@@ -51,9 +51,43 @@ enum AppColor: String, CaseIterable {
   case greenTextCard = "green_text_card"
   
   // MARK: - CARD BACKGROUND TEXT COLOR
-  case yellowBakcgroundTextCard = "yellow_background_text_card"
-  case redBakcgroundTextCard = "red_background_text_card"
-  case greenBakcgroundTextCard = "green_background_text_card"
+  case yellowBackgroundTextCard = "yellow_background_text_card"
+  case redBackgroundTextCard = "red_background_text_card"
+  case greenBackgroundTextCard = "green_background_text_card"
+    
+ // MARK: CARD COLORS
+    static func getCardColor(type: CardType) -> String {
+        switch type {
+        case .challenge:
+            return yellowCard.rawValue
+        case .surprise:
+            return greenCard.rawValue
+        case .loss:
+            return redCard.rawValue
+        }
+    }
+    
+    static func getCardTextColor(type: CardType) -> String {
+        switch type {
+        case .challenge:
+            return yellowTextCard.rawValue
+        case .surprise:
+            return greenTextCard.rawValue
+        case .loss:
+            return redTextCard.rawValue
+        }
+    }
+    
+    static func getBackgroundTextColor(type: CardType) -> String {
+        switch type {
+        case .challenge:
+            return yellowBackgroundTextCard.rawValue
+        case .surprise:
+            return greenBackgroundTextCard.rawValue
+        case .loss:
+            return redBackgroundTextCard.rawValue
+        }
+    }
     
   // MARK: - NOT FOUND COLOR
   static func colorName(_ color: Color) -> String {

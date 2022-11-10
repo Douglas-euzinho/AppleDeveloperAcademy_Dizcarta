@@ -13,9 +13,7 @@ struct FrontCard: View {
   var description: String
   var acceptPoints: Int
   var declinePoints: Int
-  var cardColor: String
-  var textCardColor: String
-  var backgroundTextCardColor: String
+  @State var cardType: CardType
   @Binding var degree: Double
   
   // MARK: - BODY
@@ -23,14 +21,14 @@ struct FrontCard: View {
     GeometryReader { geometry in
       ZStack {
         Rectangle()
-          .foregroundColor(Color(cardColor))
+              .foregroundColor(Color(AppColor.getCardColor(type: cardType)))
           .frame(width: UIScreen.main.bounds.width / 1.1, height: UIScreen.main.bounds.height / 1.6)
           .cornerRadius(10)
           .overlay {
             GeometryReader { geometry2 in
               VStack {
                 Rectangle()
-                  .foregroundColor(Color(backgroundTextCardColor))
+                      .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
                   .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 10)
                   .cornerRadius(10)
                   .overlay {
@@ -44,14 +42,14 @@ struct FrontCard: View {
                   .padding()
                 
                 Rectangle()
-                  .foregroundColor(Color(backgroundTextCardColor))
+                      .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
                   .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 1.9)
                   .cornerRadius(10)
                   .overlay {
                     VStack(alignment: .leading) {
                       Text("Descrição:")
                         .font(.system(size: 30, weight: .bold))
-                        .foregroundColor(Color(textCardColor))
+                        .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
                         .padding(.bottom, -5)
                         .minimumScaleFactor(0.2)
                       
@@ -67,20 +65,20 @@ struct FrontCard: View {
                   }
                 
                 Rectangle()
-                  .foregroundColor(Color(backgroundTextCardColor))
+                      .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
                   .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 4.6)
                   .cornerRadius(10)
                   .overlay {
                     VStack(alignment: .leading) {
                       Text("Pontuação:")
                         .font(.system(size: 30, weight: .bold))
-                        .foregroundColor(Color(textCardColor))
+                        .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
                         .padding(.bottom, -5)
                       
                       HStack {
                         Text("Aceitação:")
                           .font(.system(size: 14, weight: .regular))
-                          .foregroundColor(Color(textCardColor))
+                          .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
                         
                         Spacer()
                         
@@ -91,7 +89,7 @@ struct FrontCard: View {
                       HStack {
                         Text("Recusa:")
                           .font(.system(size: 14, weight: .regular))
-                          .foregroundColor(Color(textCardColor))
+                          .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
                         
                         Spacer()
                         
@@ -119,10 +117,7 @@ struct FrontCard_Previews: PreviewProvider {
       FrontCard(title: "Ninguém solta a mão de ninguém",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
                 acceptPoints: 4,
-                declinePoints: 4,
-                cardColor: "yellow_card",
-                textCardColor: "yellow_text_card",
-                backgroundTextCardColor: "yellow_background_text_card",
+                declinePoints: 4, cardType: .challenge,
                 degree: .constant(0))
       .previewDevice(PreviewDevice(rawValue: device))
       .previewDisplayName(device)

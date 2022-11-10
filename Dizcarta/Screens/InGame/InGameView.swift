@@ -26,7 +26,7 @@ struct InGameView: View {
   
   // MARK: - BODY
   var body: some View {
-    GeometryReader { geometry in
+    GeometryReader { _ in
       NavigationStack {
         if animationPresented {
           ZStack {
@@ -38,12 +38,9 @@ struct InGameView: View {
                           description: card?.dizDescription ?? "",
                           acceptPoints: card?.winPoints ?? 0,
                           declinePoints: card?.losePoints ?? 0,
-                          cardColor: AppColor.yellowCard.rawValue,
-                          textCardColor: AppColor.yellowTextCard.rawValue,
-                          backgroundTextCardColor: AppColor.yellowBakcgroundTextCard.rawValue,
+                          cardType: card?.type ?? .challenge,
                           degree: $frontDegree)
-                //: TODO: - CALL THE ASSET OF THE CARD HERE
-                BackCard(degree: $backDegree, cardImage: "challengeCard")
+                  BackCard(degree: $backDegree, cardImage: getBackgroundCardAsset(type: card?.type ?? .challenge))
               }.onAppear(perform: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
                   flipCard()
@@ -130,6 +127,17 @@ struct InGameView: View {
       }
     }
   }
+    
+    private func getBackgroundCardAsset(type: CardType) -> String {
+        switch type {
+        case .challenge:
+            return "challengeCard"
+        case .surprise:
+            return "surpriseCard"
+        case .loss:
+            return "prankCard"
+        }
+    }
   
   private func changeShuffle() {
     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {

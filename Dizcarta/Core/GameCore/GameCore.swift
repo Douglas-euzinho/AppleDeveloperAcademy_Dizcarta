@@ -40,7 +40,7 @@ final class GameCore: ObservableObject {
         self.repository = PlayerRepository.get(context: context)
         self.matchInProgress = repository.createMatch()
         Task(priority: .high) {
-            if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardsV2.json") {
+            if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardnsV2.json") {
                 self.cardList = allCards
                 print("ONLINE CARDS CREATED \(allCards.cards.count)")
             } else {
