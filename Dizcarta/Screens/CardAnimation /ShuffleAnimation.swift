@@ -12,7 +12,7 @@ struct ShuffleAnimation: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var gameCore: GameCore
     @State var showInGame = false
-    @Binding var card: CardCodable!
+    @Binding var card: CardCodable?
     var body: some View {
         GeometryReader { _ in
             NavigationStack {
@@ -20,10 +20,28 @@ struct ShuffleAnimation: View {
                     Color(.backgroundAppColor)
                         .ignoresSafeArea()
                     VStack(alignment: .center) {
-                        LottieView(animationName: "NewCardsRedAnimationFix.json", loopMode: .repeat(1)) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                showInGame = true
+                        
+                        switch card?.type {
+                        case .challenge:
+                            LottieView(animationName: "NewCardsYellowAnimation.json", loopMode: .repeat(1)) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    showInGame = true
+                                }
                             }
+                        case .surprise:
+                            LottieView(animationName: "NewCardsGreenAnimation.json", loopMode: .repeat(1)) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    showInGame = true
+                                }
+                            }
+                        case .loss:
+                            LottieView(animationName: "NewCardsRedAnimation.json", loopMode: .repeat(1)) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    showInGame = true
+                                }
+                            }
+                        case .none:
+                            EmptyView()
                         }
                     }
                 }
@@ -41,7 +59,6 @@ struct ShuffleAnimation: View {
             }
         }
     }
-    
 }
 
 // struct ShuffleAnimation_Previews: PreviewProvider {
