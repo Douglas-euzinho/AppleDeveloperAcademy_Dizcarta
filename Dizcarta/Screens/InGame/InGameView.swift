@@ -14,7 +14,7 @@ struct InGameView: View {
   @EnvironmentObject var gameCore: GameCore
   @State var animationPresented = false
   @State var nextPlayer = false
-  @State var backToHome = false
+  @State var pauseIsPressed = false
   @State var backDegree = 0.0
   @State var frontDegree = -90.0
   @State var isFlipped = false
@@ -93,8 +93,8 @@ struct InGameView: View {
               .opacity(isButtonHiden ? 0 : 1)
               .padding(.bottom, 30)
             } //: VSTACK
-            .navigationDestination(isPresented: $backToHome) {
-              HomeView()
+            .navigationDestination(isPresented: $pauseIsPressed) {
+              GamePausedView()
             }
             .navigationDestination(isPresented: $nextPlayer) {
               AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: $title, text: $message)
@@ -112,7 +112,7 @@ struct InGameView: View {
               Button {
                 HapticManager.send(style: .heavy)
                 gameCore.resetMatch()
-                backToHome = true
+                pauseIsPressed = true
               } label: {
                 GenericFunctions.checkIfImageExist(name: "pauseButton")
               }
