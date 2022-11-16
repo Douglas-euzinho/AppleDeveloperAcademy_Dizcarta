@@ -29,6 +29,7 @@
 		15A0819528E2417A00D479B8 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0819428E2417A00D479B8 /* RankingView.swift */; };
 		15A5A2C828E623E60038F2FF /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5A2C728E623E60038F2FF /* GameOverView.swift */; };
 		15A5A2CB28E624850038F2FF /* PlayerGameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */; };
+		15B52A00291D7FF200A3AF3A /* GamePausedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B529FF291D7FF200A3AF3A /* GamePausedView.swift */; };
 		15E07D7828EF4A2C005D2A80 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7728EF4A2C005D2A80 /* Avatar.swift */; };
 		15E07D7A28EF4A38005D2A80 /* SetupMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7928EF4A38005D2A80 /* SetupMatchView.swift */; };
 		15E07D8028EF6D52005D2A80 /* AvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E07D7F28EF6D52005D2A80 /* AvatarData.swift */; };
@@ -123,6 +124,7 @@
 		15A0819428E2417A00D479B8 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		15A5A2C728E623E60038F2FF /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		15A5A2CA28E624850038F2FF /* PlayerGameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameOver.swift; sourceTree = "<group>"; };
+		15B529FF291D7FF200A3AF3A /* GamePausedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePausedView.swift; sourceTree = "<group>"; };
 		15E07D7728EF4A2C005D2A80 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		15E07D7928EF4A38005D2A80 /* SetupMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMatchView.swift; sourceTree = "<group>"; };
 		15E07D7F28EF6D52005D2A80 /* AvatarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarData.swift; sourceTree = "<group>"; };
@@ -353,6 +355,22 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		15B529FE291D7FD400A3AF3A /* GamePaused */ = {
+			isa = PBXGroup;
+			children = (
+				15B529FF291D7FF200A3AF3A /* GamePausedView.swift */,
+				15B52A01291D7FFA00A3AF3A /* Shared */,
+			);
+			path = GamePaused;
+			sourceTree = "<group>";
+		};
+		15B52A01291D7FFA00A3AF3A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		15E07D7528EF4A05005D2A80 /* SetupMatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +453,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				15B529FE291D7FD400A3AF3A /* GamePaused */,
 				367D6C1D291AE1CF00459342 /* Alert */,
 				151BCC162901D109007E4D67 /* AcceptRefuse */,
 				CD58D94D28F4A33D00486117 /* CardAnimation  */,
@@ -830,6 +849,7 @@
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				15A0819528E2417A00D479B8 /* RankingView.swift in Sources */,
 				23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */,
+				15B52A00291D7FF200A3AF3A /* GamePausedView.swift in Sources */,
 				366229A228EF55F400907C73 /* NeonButton.swift in Sources */,
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
 				155537FF28D8E3DA00CA5573 /* HomeView.swift in Sources */,

@@ -11,7 +11,7 @@ struct ShiftPlayerView: View {
     // MARK: - PROPERTIES
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var gameCore: GameCore
-    @State var backToHome = false
+    @State var pauseIsPressed = false
     @State var goToInGame = false
     
     // MARK: - BODY
@@ -53,8 +53,8 @@ struct ShiftPlayerView: View {
                         }
                         
                     } //: VSTACK
-                    .navigationDestination(isPresented: $backToHome) {
-                        HomeView()
+                    .navigationDestination(isPresented: $pauseIsPressed) {
+                        GamePausedView()
                     }
                     .navigationDestination(isPresented: $gameCore.isGameFinished) {
                         GameOverView()
@@ -79,7 +79,7 @@ struct ShiftPlayerView: View {
                 GenericFunctions.checkIfImageExist(name: "pauseButton")
                     .onTapGesture {
                         gameCore.resetMatch()
-                        backToHome = true
+                        pauseIsPressed = true
                     }
             }
         }

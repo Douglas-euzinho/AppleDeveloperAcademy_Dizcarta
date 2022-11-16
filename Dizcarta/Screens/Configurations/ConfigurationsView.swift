@@ -68,13 +68,44 @@ struct ConfigurationsView: View {
                 Text("Voltar")
                     .fontWeight(.medium)
             }
+          }
+          .padding()
+          
+          HStack {
+            Button {
+              if let supportUrl = URL(string: "https://dizcarta.github.io/#contact") {
+                UIApplication.shared.open(supportUrl)
+              }
+            } label: {
+              GenericFunctions.checkIfImageExist(name: "suporte")
+              Text("Ajuda e Suporte")
                 .foregroundColor(.white)
-                .onTapGesture {
-                    backToHome = true
-                }
-            )
+                .padding(.leading)
+            }
+          }
+          .padding()
+          
         }
+        .navigationDestination(isPresented: $backToHome) {
+          HomeView()
+        }
+      }
+      .navigationTitle("Configurações")
+      .navigationBarTitleDisplayMode(.large)
+      .navigationBarBackButtonHidden(true)
+      .navigationBarItems(leading:
+                            HStack {
+        Image(systemName: "chevron.left")
+        Text("Voltar")
+          .fontWeight(.medium)
+      }
+        .foregroundColor(.white)
+        .onTapGesture {
+          backToHome = true
+        }
+      )
     }
+  }
 }
 
 // MARK: - PREVIEW
