@@ -1,0 +1,33 @@
+/* 
+  Localizable (Portuguese).strings
+  Dizcarta
+
+  Created by Victor Brito on 16/11/22.
+  
+*/
+"Jogar" = "Jogar";
+"Configurações" = "Configurações";
+"Recusar" = "Recusar";
+"Você perdeu" = "Você perdeu";
+"pontos" = "pontos";
+"Que pena" = "Que pena";
+"Aceitar" = "Aceitar";
+"Você ganhou" = "Você ganhou";
+"Parabéns" = "Parabéns";
+"Haptics" = "Haptics";
+"Regras" = "Regras";
+"Ajuda e Suporte" = "Ajuda e Suporte";
+"Voltar" = "Voltar";
+"Histórico" = "Histórico";
+"Ranking" = "Ranking";
+"Agora é a vez de:" = "Agora é a vez de:";
+"Embaralhar" = "Embaralhar";
+"Fim de jogo" = "Fim de jogo";
+"Novo Jogo" = "Novo Jogo";
+"Jogadores" = "Jogadores";
+"Jogadores: mínimo 4, máximo 6." = "Jogadores: mínimo 4, máximo 6.";
+"Iniciar" = "Iniciar";
+"Continuar" = "Continuar";
+"Alterar nome" = "Alterar nome";
+"Nome" = "Nome";
+"Salvar" = "Salvar";

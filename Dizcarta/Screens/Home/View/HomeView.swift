@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import AVFoundation
 
 // MARK: Main view
 struct HomeView: View {
@@ -40,6 +41,7 @@ struct HomeView: View {
                                 NeonButton(text: "Jogar", image: .neonButtonYellow)
                                     .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 13)
                             }
+                            .accessibility(label: Text("Jogar"))
                             .padding(2)
                             
                             Button {
@@ -49,6 +51,7 @@ struct HomeView: View {
                                 NeonButton(text: "Configurações", image: .neonButtonPurple)
                                     .frame(width: geometry.size.width / 1.23, height: geometry.size.height / 9)
                             }
+                            .accessibility(label: Text("Configurações"))
                             Spacer()
                         }
                         .navigationDestination(isPresented: $goToConfig) {

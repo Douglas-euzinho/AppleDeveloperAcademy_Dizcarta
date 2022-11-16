@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Dizcarta
+
+  Created by Victor Brito on 11/11/22.
+  
+*/
+"Jogar" = "Play";
+"Configurações" = "Settings";
+"Recusar" = "Refuse";
+"Você perdeu" = "You Lost";
+"pontos" = "Points";
+"Que pena" = "Bad luck";
+"Aceitar" = "Acept";
+"Você ganhou" = "You Win";
+"Parabéns" = "Congratulations";
+"Haptics" = "Haptics";
+"Regras" = "Rules";
+"Ajuda e Suporte" = "Help and suport";
+"Voltar" = "Back";
+"Histórico" = "History";
+"Ranking" = "Ranking";
+"Agora é a vez de:" = "Turn of:";
+"Embaralhar" = "shuffle";
+"Fim de jogo" = "End game";
+"Novo Jogo" = "New Game";
+"Jogadores" = "Players";
+"Jogadores: mínimo 4, máximo 6." = "Players: minimum 4, maximum 6.";
+"Iniciar" = "Start";
+"Continuar" = "Continue";
+"Alterar nome" = "Change the name";
+"Nome" = "Name";
+"Salvar" = "Save";

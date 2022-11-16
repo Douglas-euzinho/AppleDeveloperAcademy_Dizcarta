@@ -20,23 +20,10 @@ struct ConfigurationsView: View {
                 Color(.backgroundAppColor)
                     .ignoresSafeArea(.all)
                 VStack(alignment: .leading) {
-                    HStack(spacing: 20) {
-                        GenericFunctions.checkIfImageExist(name: "narrador")
-                        Toggle("Narrador", isOn: $isNarratorOn)
-                            .foregroundColor(.white)
-                    }
-                    .padding()
                     
                     HStack(spacing: 20) {
                         GenericFunctions.checkIfImageExist(name: "haptics")
                         Toggle("Haptics", isOn: $isHapticsOn)
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    
-                    HStack(spacing: 20) {
-                        GenericFunctions.checkIfImageExist(name: "color_blindness")
-                        Toggle("Color Blindness", isOn: $isColorBlindnessOn)
                             .foregroundColor(.white)
                     }
                     .padding()
