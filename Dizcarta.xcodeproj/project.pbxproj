@@ -73,6 +73,8 @@
 		CD83429A2909D15900EA6775 /* HapiticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8342992909D15900EA6775 /* HapiticsManager.swift */; };
 		CD9102442919814B005102D1 /* NewCardsRedAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CD9102432919814B005102D1 /* NewCardsRedAnimation.json */; };
 		CD910248291AD785005102D1 /* SplashScreenApp.json in Resources */ = {isa = PBXBuildFile; fileRef = CD910247291AD785005102D1 /* SplashScreenApp.json */; };
+		CD91024B29255917005102D1 /* Localizable (English).strings in Resources */ = {isa = PBXBuildFile; fileRef = CD91024D29255917005102D1 /* Localizable (English).strings */; };
+		CD91025429256B47005102D1 /* Localizable (Portuguese).strings in Resources */ = {isa = PBXBuildFile; fileRef = CD91025629256B47005102D1 /* Localizable (Portuguese).strings */; };
 		CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */; };
 		CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */; };
 		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
@@ -165,6 +167,10 @@
 		CD8342992909D15900EA6775 /* HapiticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapiticsManager.swift; sourceTree = "<group>"; };
 		CD9102432919814B005102D1 /* NewCardsRedAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewCardsRedAnimation.json; sourceTree = "<group>"; };
 		CD910247291AD785005102D1 /* SplashScreenApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SplashScreenApp.json; sourceTree = "<group>"; };
+		CD91024C29255917005102D1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable (English).strings"; sourceTree = "<group>"; };
+		CD91024E29255939005102D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable (English).strings"; sourceTree = "<group>"; };
+		CD91025529256B47005102D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable (Portuguese).strings"; sourceTree = "<group>"; };
+		CD91025729256B4D005102D1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable (Portuguese).strings"; sourceTree = "<group>"; };
 		CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlayerView.swift; sourceTree = "<group>"; };
 		CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnimation.swift; sourceTree = "<group>"; };
 		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -480,6 +486,7 @@
 		238DF94828DA387100F9A23B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CD91024F292561BE005102D1 /* Localizable */,
 				23FD8C74291ACB6A0095F3E6 /* Logger */,
 				23B61B6228FF29BF007FBCCD /* Constants */,
 				2340D8F028F491A30016CB0F /* GameCore */,
@@ -634,6 +641,15 @@
 			path = JsonFile;
 			sourceTree = "<group>";
 		};
+		CD91024F292561BE005102D1 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				CD91024D29255917005102D1 /* Localizable (English).strings */,
+				CD91025629256B47005102D1 /* Localizable (Portuguese).strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		CDA35D0A28E4E17F0064B3B8 /* ShiftPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +756,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				ar,
+				"en-GB",
 			);
 			mainGroup = 155537F028D8E3DA00CA5573;
 			packageReferences = (
@@ -762,6 +781,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				238DF95028DA509900F9A23B /* README.md in Resources */,
+				CD91024B29255917005102D1 /* Localizable (English).strings in Resources */,
 				1555380428D8E3DC00CA5573 /* Preview Assets.xcassets in Resources */,
 				CD910248291AD785005102D1 /* SplashScreenApp.json in Resources */,
 				153F261028F5E7B2000B4AA0 /* DINCondensed-Bold.ttf in Resources */,
@@ -772,6 +792,7 @@
 				CD0D9457291158A400F790E4 /* NewCardsGreenAnimation.json in Resources */,
 				CD9102442919814B005102D1 /* NewCardsRedAnimation.json in Resources */,
 				CD0D94552911585400F790E4 /* NewCardsYellowAnimation.json in Resources */,
+				CD91025429256B47005102D1 /* Localizable (Portuguese).strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,6 +927,27 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		CD91024D29255917005102D1 /* Localizable (English).strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD91024C29255917005102D1 /* pt-BR */,
+				CD91024E29255939005102D1 /* en */,
+			);
+			name = "Localizable (English).strings";
+			sourceTree = "<group>";
+		};
+		CD91025629256B47005102D1 /* Localizable (Portuguese).strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD91025529256B47005102D1 /* en */,
+				CD91025729256B4D005102D1 /* pt-BR */,
+			);
+			name = "Localizable (Portuguese).strings";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		1555382128D8E3DD00CA5573 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1029,7 +1071,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dizcarta/Preview Content\"";
-				DEVELOPMENT_TEAM = 3753BCYQD8;
+				DEVELOPMENT_TEAM = 9HBFB9D4T4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dizcarta/Info.plist;
