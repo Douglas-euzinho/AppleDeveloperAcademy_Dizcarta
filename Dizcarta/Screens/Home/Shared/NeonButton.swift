@@ -22,7 +22,7 @@ struct NeonButton: View {
                 .resizable()
                 .overlay {
                     Text(text)
-                        .font(Font(name: .primaryFont, size: 30))
+                        .font(Font.custom("DINAlternate-Bold", size: 28.0, relativeTo: .title2))
                         .bold()
                         .foregroundColor(.white)
                 }

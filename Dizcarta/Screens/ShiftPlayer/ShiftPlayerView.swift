@@ -31,7 +31,7 @@ struct ShiftPlayerView: View {
                             .padding(5)
                         
                         Text(gameCore.playerPlaying?.wrappedName ?? "")
-                            .font(Font.custom("DINCondensed-Bold", size: 34))
+                            .font(Font.custom("DINCondensed-Bold", size: 34, relativeTo: .title2))
                             .foregroundColor(.white)
                         
                         Image(gameCore.playerPlaying?.wrappedAvatar ?? "")

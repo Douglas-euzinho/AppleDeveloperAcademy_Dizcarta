@@ -65,7 +65,7 @@ struct InGameView: View {
                     .padding(.bottom, -15)
                   
                   Text("Recusar")
-                    .font(.custom("macrofont", size: 14))
+                    .font(.custom("macrofont", size: 14, relativeTo: .title2))
                     .minimumScaleFactor(0.01)
                     .foregroundColor(.white)
                 }
@@ -85,7 +85,7 @@ struct InGameView: View {
                     .padding(.bottom, -15)
                   
                   Text("Aceitar")
-                    .font(.custom("macrofont", size: 14))
+                    .font(.custom("macrofont", size: 14, relativeTo: .title2))
                     .minimumScaleFactor(0.01)
                     .foregroundColor(.white)
                 }
