@@ -15,20 +15,25 @@ struct FrontCard: View {
   var declinePoints: Int
   @State var cardType: CardType
   @Binding var degree: Double
-  
+  var isChallenge: Bool {
+    cardType == .challenge
+  }
   // MARK: - BODY
   var body: some View {
     GeometryReader { geometry in
       ZStack {
         Rectangle()
-              .foregroundColor(Color(AppColor.getCardColor(type: cardType)))
-          .frame(width: UIScreen.main.bounds.width / 1.1, height: UIScreen.main.bounds.height / 1.6)
+          .foregroundColor(Color(AppColor.getCardColor(type: cardType)))
+          .frame(
+            width: UIScreen.main.bounds.width / 1.1,
+            height: UIScreen.main.bounds.height / 1.6
+          )
           .cornerRadius(10)
           .overlay {
             GeometryReader { geometry2 in
               VStack {
                 Rectangle()
-                      .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
+                  .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
                   .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 10)
                   .cornerRadius(10)
                   .overlay {
@@ -42,8 +47,8 @@ struct FrontCard: View {
                   .padding()
                 
                 Rectangle()
-                      .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
-                  .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 1.9)
+                  .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
+                  .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / (isChallenge ? 1.9 : 1.3))
                   .cornerRadius(10)
                   .overlay {
                     VStack(alignment: .leading) {
@@ -64,41 +69,43 @@ struct FrontCard: View {
                     .padding()
                   }
                 
-                Rectangle()
-                      .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
-                  .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 4.6)
-                  .cornerRadius(10)
-                  .overlay {
-                    VStack(alignment: .leading) {
-                      Text("Pontuação:")
-                        .font(.system(size: 30, weight: .bold))
-                        .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
-                        .padding(.bottom, -5)
-                      
-                      HStack {
-                        Text("Aceitação:")
-                          .font(.system(size: 14, weight: .regular))
+                if cardType == .challenge {
+                  Rectangle()
+                    .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
+                    .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 4.6)
+                    .cornerRadius(10)
+                    .overlay {
+                      VStack(alignment: .leading) {
+                        Text("Pontuação:")
+                          .font(.system(size: 30, weight: .bold))
                           .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
+                          .padding(.bottom, -5)
                         
-                        Spacer()
+                        HStack {
+                          Text("Aceitação:")
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
+                          
+                          Spacer()
+                          
+                          Text("+\(acceptPoints)")
+                            .foregroundColor(.black)
+                        }
                         
-                        Text("+\(acceptPoints)")
-                          .foregroundColor(.black)
+                        HStack {
+                          Text("Recusa:")
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
+                          
+                          Spacer()
+                          
+                          Text("-\(declinePoints)")
+                            .foregroundColor(.black)
+                        }
                       }
-                      
-                      HStack {
-                        Text("Recusa:")
-                          .font(.system(size: 14, weight: .regular))
-                          .foregroundColor(Color(AppColor.getCardTextColor(type: cardType)))
-                        
-                        Spacer()
-                        
-                        Text("-\(declinePoints)")
-                          .foregroundColor(.black)
-                      }
+                      .padding()
                     }
-                    .padding()
-                  }
+                }
               }
             }
           }
@@ -107,6 +114,7 @@ struct FrontCard: View {
       .frame(width: geometry.size.width, height: geometry.size.height)
     }
   } //: BODY
+  
 }
 
 struct FrontCard_Previews: PreviewProvider {
