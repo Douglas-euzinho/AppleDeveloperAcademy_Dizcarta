@@ -32,11 +32,12 @@ struct AcceptRefuseView: View {
               .padding(-20)
             
             Text(title)
-              .font(Font.custom("DINCondensed-Bold", size: 34))
+              .font(Font.custom("DINCondensed-Bold", size: 34, relativeTo: .title2))
               .foregroundColor(.white)
             
             Text(text)
-              .font(Font.custom("DINCondensed-Bold", size: 22))
+              .font(Font.custom("DINCondensed-Bold", size: 22, relativeTo: .title2))
+
               .foregroundColor(.white)
             
             Spacer()

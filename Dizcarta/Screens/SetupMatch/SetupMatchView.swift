@@ -27,12 +27,13 @@ struct SetupMatchView: View {
                             Text("Jogadores\nselecionados:")
                                 .lineLimit(2, reservesSpace: true)
                                 .font(.system(size: 30, weight: .light))
+                                //.font(Font.custom("DINAlternate-Bold", size: 28.0, relativeTo: .title2))
                                 .padding(.leading)
                             
                             Spacer(minLength: 30)
                             
                             Text(String(format: "%02d", gameCore.players.count))
-                                .font(Font.custom("DINCondensed-Bold", size: 100))
+                                .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
                                 .foregroundColor(Color(.textPlayersCount))
                                 .padding(.trailing)
                                 .padding(.top)
@@ -82,7 +83,7 @@ struct SetupMatchView: View {
                                             } //: LazyHStack
                                         } //: ScrollView
                                         Text("Jogadores: mínimo 4, máximo 6.")
-                                            .font(Font.custom("DINAlternate-Bold", size: 12))
+                                            .font(Font.custom("DINAlternate-Bold", size: 12.0, relativeTo: .title2))
                                             .multilineTextAlignment(.center)
                                             .foregroundColor(Color(.textPlayersCount))
                                             .padding(.vertical, 8)

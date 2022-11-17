@@ -23,8 +23,8 @@ struct GamePausedView: View {
         VStack {
           Text("O que você deseja fazer?")
             .foregroundColor(.white)
-            .font(.custom("DINAlternate-Bold", size: 30))
-          
+            .font(Font.custom("DINCondensed-Bold", size: 30, relativeTo: .title2))
+
           Image("gamePausedImage")
             .colorMultiply(Color.white)
           
@@ -39,7 +39,7 @@ struct GamePausedView: View {
               
               Text("Sair do Jogo")
                 .foregroundColor(.white)
-                .font(.custom("DINCondensed-Bold", size: 30))
+                .font(Font.custom("DINCondensed-Bold", size: 30, relativeTo: .title2))
                 .padding(.top, 7)
             }
           }
