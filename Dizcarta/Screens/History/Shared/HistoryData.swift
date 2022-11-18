@@ -42,7 +42,7 @@ struct HistoryData: View {
           .foregroundColor(Color(.configurationButtonSelected))
           .padding(10)
           .sheet(isPresented: $isPresented) {
-            RankingView(isFromHistory: true, date: Date(), time: Date())
+            RankingView(isFromHistory: true)
           }
           .onTapGesture {
             isPresented.toggle()

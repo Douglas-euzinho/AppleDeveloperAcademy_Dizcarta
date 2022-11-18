@@ -12,6 +12,7 @@ struct GamePausedView: View {
   @State var isHomePressed: Bool = false
   @State var isBackToGamePressed: Bool = false
   @State var isSettingsPressed: Bool = false
+  @State var isRankingPressed: Bool = false
   
   // MARK: - BODY
   var body: some View {
@@ -48,7 +49,7 @@ struct GamePausedView: View {
           
           HStack(spacing: 35) {
             Button {
-              // TODO: - ADD THE LEAVE GAME ACTION HERE
+              self.isRankingPressed = true
             } label: {
               VStack {
                 ZStack {
@@ -108,6 +109,9 @@ struct GamePausedView: View {
           }
           .navigationDestination(isPresented: $isSettingsPressed) {
             ConfigurationsView()
+          }
+          .navigationDestination(isPresented: $isRankingPressed) {
+            RankingView()
           }
         }
       }
