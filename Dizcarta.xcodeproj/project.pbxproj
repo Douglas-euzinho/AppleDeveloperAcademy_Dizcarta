@@ -44,6 +44,7 @@
 		233FB52128E622FE008EE961 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FB52028E622FE008EE961 /* AlertView.swift */; };
 		2340D8EF28F4904C0016CB0F /* GameCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340D8EE28F4904C0016CB0F /* GameCore.swift */; };
 		2340D8F228F491BD0016CB0F /* GameCore+Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340D8F128F491BD0016CB0F /* GameCore+Players.swift */; };
+		236D9A9B2926B8B400D79911 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D9A9A2926B8B400D79911 /* Router.swift */; };
 		2387D35028ECAC8000BE761B /* UtilsFunctionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */; };
 		238DF95028DA509900F9A23B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 238DF94F28DA509900F9A23B /* README.md */; };
 		23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */; };
@@ -139,6 +140,7 @@
 		233FB52028E622FE008EE961 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		2340D8EE28F4904C0016CB0F /* GameCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCore.swift; sourceTree = "<group>"; };
 		2340D8F128F491BD0016CB0F /* GameCore+Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameCore+Players.swift"; sourceTree = "<group>"; };
+		236D9A9A2926B8B400D79911 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2387D34F28ECAC8000BE761B /* UtilsFunctionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctionsTest.swift; sourceTree = "<group>"; };
 		238DF94F28DA509900F9A23B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		23A7D2F828F5F10400BB7061 /* Player+Wrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Wrapped.swift"; sourceTree = "<group>"; };
@@ -359,16 +361,8 @@
 			isa = PBXGroup;
 			children = (
 				15B529FF291D7FF200A3AF3A /* GamePausedView.swift */,
-				15B52A01291D7FFA00A3AF3A /* Shared */,
 			);
 			path = GamePaused;
-			sourceTree = "<group>";
-		};
-		15B52A01291D7FFA00A3AF3A /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		15E07D7528EF4A05005D2A80 /* SetupMatch */ = {
@@ -492,6 +486,7 @@
 				2340D8F028F491A30016CB0F /* GameCore */,
 				155537FC28D8E3DA00CA5573 /* AppCore.swift */,
 				3606A1F128DA5486004C9BF9 /* DesignSystems */,
+				236D9A9A2926B8B400D79911 /* Router.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -734,7 +729,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					155537F828D8E3DA00CA5573 = {
 						CreatedOnToolsVersion = 14.0;
@@ -849,6 +844,7 @@
 				1555380628D8E3DC00CA5573 /* PersistenceController.swift in Sources */,
 				15A0819528E2417A00D479B8 /* RankingView.swift in Sources */,
 				23199EE128DE527B0064E574 /* ConfigurationsView.swift in Sources */,
+				236D9A9B2926B8B400D79911 /* Router.swift in Sources */,
 				15B52A00291D7FF200A3AF3A /* GamePausedView.swift in Sources */,
 				366229A228EF55F400907C73 /* NeonButton.swift in Sources */,
 				23199ED228DE23DF0064E574 /* Repository.swift in Sources */,
@@ -953,6 +949,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1013,6 +1010,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -9,13 +9,11 @@ import SwiftUI
 
 struct GameOverView: View {
   // MARK: - VARIABLES
-  @EnvironmentObject var gameCore: GameCore
-  @State private var newGame = false
+  @EnvironmentObject var router: Router
   @State private var players = [Player]()
   
   // MARK: - BODY
   var body: some View {
-    NavigationStack {
       GeometryReader { geometry in
         ZStack {
           Color(.backgroundAppColor)
@@ -30,21 +28,21 @@ struct GameOverView: View {
             
             ScrollView(.vertical, showsIndicators: true) {
               VStack {
-                PlayerGameOver(name: gameCore.getRanking()[0].wrappedName,
-                               avatarAsset: gameCore.getRanking()[0].wrappedAvatar,
-                               points: gameCore.getRanking()[0].wrappedPoints,
+                  PlayerGameOver(name: router.gameCore.getRanking()[0].wrappedName,
+                                 avatarAsset: router.gameCore.getRanking()[0].wrappedAvatar,
+                                 points: router.gameCore.getRanking()[0].wrappedPoints,
                                podiumPosition: 1)
                 .padding(.bottom, 20)
                 
                 HStack(spacing: 60) {
-                  PlayerGameOver(name: gameCore.getRanking()[1].wrappedName,
-                                 avatarAsset: gameCore.getRanking()[1].wrappedAvatar,
-                                 points: gameCore.getRanking()[1].wrappedPoints,
+                    PlayerGameOver(name: router.gameCore.getRanking()[1].wrappedName,
+                                   avatarAsset: router.gameCore.getRanking()[1].wrappedAvatar,
+                                   points: router.gameCore.getRanking()[1].wrappedPoints,
                                  podiumPosition: 2)
                   
-                  PlayerGameOver(name: gameCore.getRanking()[2].wrappedName,
-                                 avatarAsset: gameCore.getRanking()[2].wrappedAvatar,
-                                 points: gameCore.getRanking()[2].wrappedPoints,
+                    PlayerGameOver(name: router.gameCore.getRanking()[2].wrappedName,
+                                   avatarAsset: router.gameCore.getRanking()[2].wrappedAvatar,
+                                   points: router.gameCore.getRanking()[2].wrappedPoints,
                                  podiumPosition: 3)
                 }
                 
@@ -60,8 +58,8 @@ struct GameOverView: View {
               Spacer()
               
               Button {
-                newGame = true
                 HapticManager.send(style: .heavy)
+                router.newGame()
               } label: {
                 NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
                   .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
@@ -69,20 +67,13 @@ struct GameOverView: View {
                   .padding(20)
               }
             }
+            .onAppear {
+                players = router.gameCore.getRanking()
+              players.removeSubrange(0...2)
+            }
           }
           .navigationBarBackButtonHidden(true)
-          .navigationDestination(isPresented: $newGame) {
-            SetupMatchView()
-          }
-        }
       }
-    }
-    .onAppear {
-      players = gameCore.getRanking()
-      players.removeSubrange(0...2)
-    }
-    .onDisappear {
-      gameCore.resetMatch()
     }
     //: VSTACK
   }

@@ -9,16 +9,12 @@ import SwiftUI
 
 struct SetupMatchView: View {
     // MARK: - VARIABLES
-    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var router: Router
     @State var isAlertHiden: Bool = false
     @State var nameTextField: String = ""
-    @State var backHome = false
-    @State private var goToShiftPlayer = false
     @ObservedObject private var gameCore: GameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
-    
     var body: some View {
         GeometryReader { geometry in
-            NavigationStack {
                 ZStack {
                     Color(.backgroundAppColor)
                         .ignoresSafeArea(.all)
@@ -27,7 +23,6 @@ struct SetupMatchView: View {
                             Text("Jogadores\nselecionados:")
                                 .lineLimit(2, reservesSpace: true)
                                 .font(.system(size: 30, weight: .light))
-                                //.font(Font.custom("DINAlternate-Bold", size: 28.0, relativeTo: .title2))
                                 .padding(.leading)
                             
                             Spacer(minLength: 30)
@@ -75,8 +70,7 @@ struct SetupMatchView: View {
                                                         }
                                                     } createAction: {
                                                         self.gameCore.createPlayer(name: avatar.name,
-                                                                                   avatar: avatar.image,
-                                                                                   match: MatchInProgress())
+                                                                                   avatar: avatar.image)
                                                     }
                                                     .environmentObject(gameCore)
                                                 } //: For
@@ -89,8 +83,9 @@ struct SetupMatchView: View {
                                             .padding(.vertical, 8)
                                         
                                         Button {
-                                            goToShiftPlayer = true
                                             HapticManager.send(style: .heavy)
+                                            router.gameCore.nextPlayer()
+                                            router.pushView(screen: .shiftPlayer)
                                         } label: {
                                             NeonButton(text: "Iniciar", image: .neonButtonYellow)
                                                 .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
@@ -104,18 +99,12 @@ struct SetupMatchView: View {
                     } //: VStack
                     .scrollDismissesKeyboard(.never)
                 } //: ZStack
-                .navigationDestination(isPresented: $backHome) {
-                    HomeView()
-                }
-                .navigationDestination(isPresented: $goToShiftPlayer) {
-                    ShiftPlayerView()
-                        .environmentObject(gameCore)
-                }
-            } //: NavigationStack
             .opacity(isAlertHiden ? 0.5 : 1)
             .ignoresSafeArea(.keyboard)
             .onAppear {
-                gameCore.matchInProgress = gameCore.createMatch()
+                gameCore.repository.removeAllMatchesInProgress()
+                gameCore.repository.createMatch()
+                router.gameCore = gameCore
             }
         } //: GeometryReader
         .navigationBarTitleDisplayMode(.inline)
@@ -129,7 +118,7 @@ struct SetupMatchView: View {
             .foregroundColor(.white)
             .onTapGesture {
                 gameCore.resetMatch()
-                backHome = true
+                router.popView()
             }
         )
     } //: Body

@@ -16,7 +16,6 @@ struct NeonButton: View {
         self.image = image
     }
     
-    
     var body: some View {
         HStack {
             GenericFunctions.checkIfImageExist(name: image.rawValue)

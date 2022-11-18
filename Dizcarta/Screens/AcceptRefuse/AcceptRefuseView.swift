@@ -9,15 +9,9 @@ import SwiftUI
 
 struct AcceptRefuseView: View {
   // MARK: - VARIABLES
-  var avatar: String
-  @Binding var title: String
-  @Binding var text: String
-  @State var showShiftPlayer = false
-  @State var pauseIsPressed = false
-  @EnvironmentObject var gameCore: GameCore
+    @EnvironmentObject var router: Router
   // MARK: - BODY
   var body: some View {
-    NavigationStack {
       GeometryReader { geometry in
         ZStack {
           Color(.backgroundAppColor)
@@ -26,45 +20,40 @@ struct AcceptRefuseView: View {
           VStack {
             Spacer()
             
-            Image(avatar)
+              Image(router.gameCore.playerPlaying?.wrappedAvatar ?? "")
               .resizable()
               .frame(width: 240, height: 240)
               .padding(-20)
             
-            Text(title)
-              .font(Font.custom("DINCondensed-Bold", size: 34, relativeTo: .title2))
+              Text(router.gameCore.acceptOrRefuseTitle)
+              .font(Font.custom("DINCondensed-Bold", size: 34))
               .foregroundColor(.white)
             
-            Text(text)
-              .font(Font.custom("DINCondensed-Bold", size: 22, relativeTo: .title2))
-
+              Text(router.gameCore.acceptOrRefuseMessage)
+              .font(Font.custom("DINCondensed-Bold", size: 22))
               .foregroundColor(.white)
             
             Spacer()
             
             Button {
-              showShiftPlayer = true
               HapticManager.send(style: .heavy)
+                if router.gameCore.isGameFinished {
+                    router.pushView(screen: .gameOver)
+                } else {
+                    router.gameCore.nextPlayer()
+                    router.pushView(screen: .shiftPlayer)
+                }
             } label: {
               NeonButton(text: "Continuar", image: .neonButtonYellow)
                 .frame(width: geometry.size.width / 1.7, height: geometry.size.height / 15)
                 .padding(.bottom)
             }
           }
-        }
-        .navigationDestination(isPresented: $showShiftPlayer) {
-          ShiftPlayerView()
-            .environmentObject(gameCore)
-        }
-        .navigationDestination(isPresented: $pauseIsPressed) {
-          GamePausedView()
-        }
         .navigationBarBackButtonHidden(true)
         .toolbar {
           ToolbarItem(placement: .navigationBarLeading) {
             Button {
-              gameCore.resetMatch()
-              pauseIsPressed = true
+                router.pushView(screen: .gamePaused)
             } label: {
               GenericFunctions.checkIfImageExist(name: "pauseButton")
             }
