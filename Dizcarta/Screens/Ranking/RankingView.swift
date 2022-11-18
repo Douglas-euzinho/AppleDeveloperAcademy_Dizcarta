@@ -10,41 +10,60 @@ import SwiftUI
 struct RankingView: View {
   // MARK: - VARIABLES
   @State var isFromHistory: Bool = true
-  @State var date: Date
-  @State var time: Date
+  @EnvironmentObject var gameCore: GameCore
   
   var body: some View {
-    NavigationView {
-      VStack {
-        if isFromHistory {
-          Text("\(date.formatted(date: .numeric, time: .omitted))")
-            .font(.system(size: 22, weight: .medium))
-          
-          Text("\(time.formatted(date: .omitted, time: .shortened))")
-            .font(.system(size: 12, weight: .semibold))
-        }
+    ZStack {
+      Color(.backgroundAppColor)
+        .ignoresSafeArea(.all)
+      VStack(alignment: .leading) {
+        Text("Placar")
+          .font(.custom("DINCondensed-Bold", size: 34))
+          .foregroundColor(.white)
+          .padding(.vertical, 40)
+          .padding(.leading, 30)
+        
+        DotDividerView()
         
         LazyVStack(alignment: .leading) {
-          PlayerView(name: "Alice", avatar: "person.circle.fill", points: 20)
-          PlayerView(name: "Angelina", avatar: "person.circle.fill", points: 13)
-          PlayerView(name: "João", avatar: "person.circle.fill", points: 16)
-          PlayerView(name: "Zion", avatar: "person.circle.fill", points: 15)
-          PlayerView(name: "Lucca", avatar: "person.circle.fill", points: 14)
-          PlayerView(name: "Bella", avatar: "person.circle.fill", points: 12)
+          ForEach(gameCore.getRanking(), id: \.id) { player in
+            PlayerView(
+              avatar: player.wrappedAvatar,
+              name: player.wrappedName,
+              points: player.wrappedPoints,
+              playerPosition: gameCore.players.firstIndex(of: player) ?? 0
+            )
+          }
           
         } //: VSTACK
         .padding(.top, 30)
         .padding(30)
         Spacer()
       }
-      .navigationTitle("Ranking")
-      .navigationBarTitleDisplayMode(isFromHistory ? .inline : .large)
+    }
+    .navigationBarBackButtonHidden(true)
+    .toolbar {
+      ToolbarItem(placement: .navigationBarLeading) {
+        Button {
+          HapticManager.send(style: .heavy)
+        } label: {
+          GenericFunctions.checkIfImageExist(name: "exitButton")
+            .colorMultiply(.white)
+        }
+        .padding()
+      }
     }
   }
 }
 
-struct RankingView_Previews: PreviewProvider {
-  static var previews: some View {
-    RankingView(isFromHistory: false, date: Date(), time: Date())
-  }
-}
+//struct RankingView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+//
+//    ForEach(devices, id: \.self) { device in
+//      RankingView(isFromHistory: false)
+//        .previewDevice(PreviewDevice(rawValue: device))
+//        .previewDisplayName(device)
+//    }
+//  }
+//}

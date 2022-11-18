@@ -9,8 +9,6 @@ import SwiftUI
 
 struct InGameView: View {
   // MARK: - VARIABLES
-  @Environment(\.presentationMode) var presentation
-  @Environment(\.dismiss) var dismiss
   @EnvironmentObject var gameCore: GameCore
   @State var animationPresented = false
   @State var nextPlayer = false
@@ -104,9 +102,8 @@ struct InGameView: View {
           .navigationBarBackButtonHidden(true)
           .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-              PlayerView(name: gameCore.playerPlaying?.wrappedName ?? "",
-                         avatar: gameCore.playerPlaying?.wrappedAvatar ?? "",
-                         points: gameCore.playerPlaying?.wrappedPoints)
+              PlayerView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", name: gameCore.playerPlaying?.wrappedName ?? "",
+                         points: gameCore.playerPlaying?.wrappedPoints ?? 00)
             }
             ToolbarItem(placement: .navigationBarLeading) {
               Button {
