@@ -9,49 +9,46 @@ import SwiftUI
 import Lottie
 
 struct ShuffleAnimation: View {
-  @Environment(\.presentationMode) var presentation
-  @EnvironmentObject var gameCore: GameCore
-  @State var showInGame = false
-  @Binding var card: CardCodable?
-  var body: some View {
-    GeometryReader { _ in
-      NavigationStack {
-        ZStack {
-          Color(.backgroundAppColor)
-            .ignoresSafeArea()
-          VStack(alignment: .center) {
-            
-            switch card?.type {
-            case .challenge:
-              LottieView(animationName: "NewCardsYellowAnimation.json", loopMode: .repeat(1)) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                  showInGame = true
+    @EnvironmentObject var router: Router
+    @State private var card: CardCodable?
+    var body: some View {
+        GeometryReader { _ in
+            ZStack {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea()
+                VStack(alignment: .center) {
+                    
+                    switch card?.type {
+                    case .challenge:
+                        LottieView(animationName: "NewCardsYellowAnimation.json", loopMode: .repeat(1)) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                router.pushView(screen: .inGame)
+                            }
+                        }
+                    case .surprise:
+                        LottieView(animationName: "NewCardsGreenAnimation.json", loopMode: .repeat(1)) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                router.pushView(screen: .inGame)
+                            }
+                        }
+                    case .loss:
+                        LottieView(animationName: "NewCardsRedAnimation.json", loopMode: .repeat(1)) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                router.pushView(screen: .inGame)
+                            }
+                        }
+                    case .none:
+                        EmptyView()
+                    }
                 }
-              }
-            case .surprise:
-              LottieView(animationName: "NewCardsGreenAnimation.json", loopMode: .repeat(1)) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                  showInGame = true
+                .onAppear {
+                   router.gameCore.getRandomCard()
+                   self.card = router.gameCore.selectedCard
                 }
-              }
-            case .loss:
-              LottieView(animationName: "NewCardsRedAnimation.json", loopMode: .repeat(1)) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                  showInGame = true
-                }
-              }
-            case .none:
-              EmptyView()
             }
-          }
+            .navigationBarBackButtonHidden(true)
         }
-        .onAppear {
-          self.card = gameCore.getRandomCard()
-        }
-      }
-      .navigationBarBackButtonHidden(true)
     }
-  }
 }
 
 // struct ShuffleAnimation_Previews: PreviewProvider {

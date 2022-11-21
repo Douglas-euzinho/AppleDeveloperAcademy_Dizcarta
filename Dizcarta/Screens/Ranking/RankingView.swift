@@ -56,7 +56,7 @@ struct RankingView: View {
   }
 }
 
-//struct RankingView_Previews: PreviewProvider {
+// struct RankingView_Previews: PreviewProvider {
 //  static var previews: some View {
 //    let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
 //
@@ -66,4 +66,4 @@ struct RankingView: View {
 //        .previewDisplayName(device)
 //    }
 //  }
-//}
+// }

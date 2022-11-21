@@ -13,8 +13,9 @@ protocol GameRepositoryProtocol: Repository {
     var turnPosition: Int { get set }
     
     func getPlayers(match: MatchInProgress) -> [Player]
+    func getMatch() -> MatchInProgress
     func createPlayer(name: String, avatar: String, match: MatchInProgress)
-    func createMatch() -> MatchInProgress
+    func createMatch()
     
     func removePlayerPoints(player: Player, points: Int)
     func addPlayerPoints(player: Player, points: Int)
@@ -64,7 +65,7 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
         do {
             let matches = try context.fetch(MatchInProgress.fetchRequest())
             guard let matchInProgress = matches.first(where: { $0 == match }),
-                    let players = matchInProgress.players?.allObjects as? [Player] else { return []}
+                  let players = matchInProgress.players?.allObjects as? [Player] else { return []}
             print("[CORE DATA]: GET PLAYERS \(players)")
             return players
         } catch {
@@ -84,11 +85,10 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
         turnPosition += 1
     }
     
-    func createMatch() -> MatchInProgress {
+    func createMatch() {
         let matchInProgress = MatchInProgress(context: context)
         matchInProgress.dizDate = Date()
         save()
-        return matchInProgress
     }
     
     func removePlayerPoints(player: Player, points: Int) {
@@ -104,6 +104,11 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     func getRanking(match: MatchInProgress) -> [Player] {
         getPlayers(match: match).sorted(by: { $0.points > $1.points })
     }
+    
+    func getMatch() -> MatchInProgress {
+        MatchInProgress()
+    }
+    
 }
 
 final class PlayerRepositoryMock: GameRepositoryProtocol {
@@ -116,16 +121,9 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
     }
     
     func getPlayers(match: MatchInProgress) -> [Player] {
-        do {
-            let matches = try context.fetch(MatchInProgress.fetchRequest())
-            guard let matchInProgress = matches.first(where: { $0 == match }),
-                    let players = matchInProgress.players?.allObjects as? [Player] else { return []}
-            print("[CORE DATA]: GET PLAYERS \(players)")
-            return players.sorted(by: { $0.points > $1.points })
-        } catch {
-            print("[CORE DATA]: ERRO TO GET PLAYERS")
-        }
-        return []
+        guard let players = match.players?.allObjects as? [Player] else { return [] }
+        print("[CORE DATA]: GET PLAYERS \(players)")
+        return players.sorted(by: { $0.points > $1.points })
     }
     
     func createPlayer(name: String, avatar: String, match: MatchInProgress) {
@@ -140,11 +138,12 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
         turnPosition += 1
     }
     
-    func createMatch() -> MatchInProgress {
+    func createMatch() {
+        guard let matches = try? context.fetch(MatchInProgress.fetchRequest()), matches.isEmpty else { return }
         let matchInProgress = MatchInProgress(context: context)
         matchInProgress.dizDate = Date()
         save()
-        return matchInProgress
+        Logger(context: .coreData).log("Match in Progress Created")
     }
     
     func removePlayerPoints(player: Player, points: Int) {
@@ -161,6 +160,10 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
         getPlayers(match: match).sorted(by: { $0.points > $1.points })
     }
     
+    func getMatch() -> MatchInProgress {
+        let matches = try? context.fetch(MatchInProgress.fetchRequest())
+        return (matches?.first!)!
+    }
 }
 
 final class PlayerRepository {

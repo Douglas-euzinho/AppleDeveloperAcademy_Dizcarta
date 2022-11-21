@@ -23,7 +23,9 @@ final class GameCore: ObservableObject {
     @Published var isGameFinished = false
     @Published var playerLost: PlayerLost = PlayerLost(player: Player(), isLost: false)
     @Published var context: NSManagedObjectContext
-    @Published var matchInProgress: MatchInProgress
+    var matchInProgress: MatchInProgress {
+        repository.getMatch()
+    }
     @Published var players: [Player] = []
     @Published var playerPlaying: Player?
     var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
@@ -32,15 +34,19 @@ final class GameCore: ObservableObject {
                                             AvatarData(image: "avatarYellow", name: "Amarelo"),
                                             AvatarData(image: "avatarPink", name: "Rosa"),
                                             AvatarData(image: "avatarTurquoise", name: "Verde")]
+    
+    @Published var acceptOrRefuseMessage = ""
+    @Published var acceptOrRefuseTitle = ""
+    @Published var selectedCard: CardCodable?
     var repository: GameRepositoryProtocol
     
     init(context: NSManagedObjectContext, cardFile: String) {
         self.cardFile = cardFile
         self.context = context
         self.repository = PlayerRepository.get(context: context)
-        self.matchInProgress = repository.createMatch()
+        repository.createMatch()
         Task(priority: .high) {
-            if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardnsV2.json") {
+            if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardsV2.json") {
                 self.cardList = allCards
                 print("ONLINE CARDS CREATED \(allCards.cards.count)")
             } else {

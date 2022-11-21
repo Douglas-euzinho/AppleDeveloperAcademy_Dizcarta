@@ -9,68 +9,48 @@ import SwiftUI
 
 struct ShiftPlayerView: View {
     // MARK: - PROPERTIES
-    @Environment(\.presentationMode) var presentation
-    @EnvironmentObject var gameCore: GameCore
-    @State var pauseIsPressed = false
-    @State var goToInGame = false
+    @EnvironmentObject var router: Router
     
     // MARK: - BODY
     var body: some View {
         GeometryReader { geometry in
-            NavigationStack {
-                ZStack {
-                    Color(.backgroundAppColor)
-                        .ignoresSafeArea(.all)
+            ZStack {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea(.all)
+                
+                VStack {
+                    Spacer()
+                    Text("Agora é a vez de:")
+                        .foregroundColor(.white)
+                        .font(.system(size: 22, weight: .regular))
+                        .padding(5)
                     
-                    VStack {
-                        Spacer()
-                        
-                        Text("Agora é a vez de:")
-                            .foregroundColor(.white)
-                            .font(.system(size: 22, weight: .regular))
-                            .padding(5)
-                        
-                        Text(gameCore.playerPlaying?.wrappedName ?? "")
-                            .font(Font.custom("DINCondensed-Bold", size: 34, relativeTo: .title2))
-                            .foregroundColor(.white)
-                        
-                        Image(gameCore.playerPlaying?.wrappedAvatar ?? "")
-                            .resizable()
-                            .padding(-50)
-                            .frame(width: 200, height: 200)
-                            .disabled(true)
-                        
-                        Spacer()
-                        
-                        Button {
-                            goToInGame = true
-                            HapticManager.send(style: .heavy)
-                        } label: {
-                            NeonButton(text: "Embaralhar", image: .neonButtonYellow)
-                                .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
-                                .shadow(radius: 10)
-                                .padding(.bottom, 15)
-                        }
-                        
-                    } //: VSTACK
-                    .navigationDestination(isPresented: $pauseIsPressed) {
-                        GamePausedView()
+                    Text(router.gameCore.playerPlaying?.wrappedName ?? "")
+                        .font(Font.custom("DINCondensed-Bold", size: 34))
+                        .foregroundColor(.white)
+                    
+                    Image(router.gameCore.playerPlaying?.wrappedAvatar ?? "")
+                        .resizable()
+                        .padding(-50)
+                        .frame(width: 200, height: 200)
+                        .disabled(true)
+                    
+                    Spacer()
+                    
+                    Button {
+                        router.pushView(screen: .shuffleAnimation)
+                        HapticManager.send(style: .heavy)
+                    } label: {
+                        NeonButton(text: "Embaralhar", image: .neonButtonYellow)
+                            .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
+                            .shadow(radius: 10)
+                            .padding(.bottom, 15)
                     }
-                    .navigationDestination(isPresented: $gameCore.isGameFinished) {
-                        GameOverView()
-                            .environmentObject(gameCore)
-                    }
-                    .navigationDestination(isPresented: $goToInGame) {
-                        InGameView()
-                            .environmentObject(gameCore)
-                    }
-                } //: ZSTACK
-                .onAppear {
-                    gameCore.verifyMatchIsEnded()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        gameCore.nextPlayer()
-                    }
-                }
+                    
+                } //: VSTACK
+            } //: ZSTACK
+            .onAppear {
+                router.gameCore.verifyMatchIsEnded()
             }
         } //: GEOMETRYREADER VIEW
         .navigationBarBackButtonHidden(true)
@@ -78,8 +58,7 @@ struct ShiftPlayerView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 GenericFunctions.checkIfImageExist(name: "pauseButton")
                     .onTapGesture {
-                        gameCore.resetMatch()
-                        pauseIsPressed = true
+                        router.pushView(screen: .gamePaused)
                     }
             }
         }

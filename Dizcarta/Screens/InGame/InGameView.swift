@@ -8,122 +8,104 @@
 import SwiftUI
 
 struct InGameView: View {
-  // MARK: - VARIABLES
-  @EnvironmentObject var gameCore: GameCore
-  @State var animationPresented = false
-  @State var nextPlayer = false
-  @State var pauseIsPressed = false
-  @State var backDegree = 0.0
-  @State var frontDegree = -90.0
-  @State var isFlipped = false
-  @State var isButtonHiden = true
-  @State var card: CardCodable?
-  @State private var message: String = ""
-  @State private var title: String = ""
-  let durationAndDelay : CGFloat = 0.3
-  
-  // MARK: - BODY
-  var body: some View {
-    GeometryReader { _ in
-      NavigationStack {
-        if animationPresented {
-          ZStack {
-            Color(.backgroundAppColor)
-              .ignoresSafeArea(.all)
-            VStack {
-              ZStack {
-                FrontCard(title: card?.title ?? "",
-                          description: card?.dizDescription ?? "",
-                          acceptPoints: card?.winPoints ?? 0,
-                          declinePoints: card?.losePoints ?? 0,
-                          cardType: card?.type ?? .challenge,
-                          degree: $frontDegree)
-                  BackCard(degree: $backDegree, cardImage: getBackgroundCardAsset(type: card?.type ?? .challenge))
-              }.onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
-                  flipCard()
-                  delayButton()
-                }
-              })
-              .padding(.top, 50)
-              
-              HStack {
-                VStack {
-                  ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
-                    .onTapGesture {
-                      gameCore.removePlayerPoints(player: gameCore.playerPlaying!, points: card?.losePoints ?? 0)
-                      if (card?.losePoints ?? 0 > 1) {
-                        message = "Você perdeu \(card?.losePoints ?? 0) pontos."
-                      } else {
-                        message = "Você perdeu \(card?.losePoints ?? 0) ponto."
-                      }
-                      nextPlayer = true
-                      title = "Que pena"
+    // MARK: - VARIABLES
+    @State var animationPresented = false
+    @State var backDegree = 0.0
+    @State var frontDegree = -90.0
+    @State var isFlipped = false
+    @State var isButtonHiden = true
+    let durationAndDelay : CGFloat = 0.3
+    @EnvironmentObject var router: Router
+    // MARK: - BODY
+    var body: some View {
+        GeometryReader { _ in
+                ZStack {
+                    Color(.backgroundAppColor)
+                        .ignoresSafeArea(.all)
+                    VStack {
+                        ZStack {
+                            FrontCard(title: router.gameCore.selectedCard?.title ?? "",
+                                      description: router.gameCore.selectedCard?.dizDescription ?? "",
+                                      acceptPoints: router.gameCore.selectedCard?.winPoints ?? 0,
+                                      declinePoints: router.gameCore.selectedCard?.losePoints ?? 0,
+                                      cardType: router.gameCore.selectedCard?.type ?? .challenge,
+                                      degree: $frontDegree)
+                            BackCard(degree: $backDegree,
+                                     cardImage: getBackgroundCardAsset(type: router.gameCore.selectedCard?.type ?? .challenge))
+                        }.onAppear(perform: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+                                flipCard()
+                                delayButton()
+                            }
+                        })
+                        .padding(.top, 50)
+                        
+                        HStack {
+                            VStack {
+                                ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
+                                    .onTapGesture {
+                                        router.gameCore.removePlayerPoints(player: router.gameCore.playerPlaying!,
+                                                                           points: router.gameCore.selectedCard?.losePoints ?? 0)
+                                        
+                                        router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.losePoints ?? 0 > 1) ?
+                                        "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) pontos." :
+                                        "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) ponto."
+                                        router.gameCore.acceptOrRefuseTitle = "Que pena"
+                                        
+                                        router.pushView(screen: .acceptRefuse)
+                                    }
+                                    .padding(.bottom, -15)
+                                
+                                Text("Recusar")
+                                    .font(.custom("macrofont", size: 14))
+                                    .minimumScaleFactor(0.01)
+                                    .foregroundColor(.white)
+                            }
+                            
+                            VStack {
+                                ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
+                                    .onTapGesture {
+                                        router.gameCore.addPlayerPoints(player: router.gameCore.playerPlaying!,
+                                                                        points: router.gameCore.selectedCard?.winPoints ?? 0)
+                                        
+                                        router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.winPoints ?? 0 > 1) ?
+                                        "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) pontos." :
+                                        "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) ponto."
+                                        router.gameCore.acceptOrRefuseTitle = "Parabéns"
+                                        
+                                        router.pushView(screen: .acceptRefuse)
+                                    }
+                                    .padding(.bottom, -15)
+                                
+                                Text("Aceitar")
+                                    .font(.custom("macrofont", size: 14))
+                                    .minimumScaleFactor(0.01)
+                                    .foregroundColor(.white)
+                            }
+                        }//: HSTACK
+                        .opacity(isButtonHiden ? 0 : 1)
+                        .padding(.bottom, 30)
+                    } //: VSTACK
+                    
+                } //: ZSTACK
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        PlayerView(avatar: router.gameCore.playerPlaying?.wrappedAvatar ?? "",
+                                   name: router.gameCore.playerPlaying?.wrappedName ?? "",
+                                   points: router.gameCore.playerPlaying?.wrappedPoints ?? 0)
                     }
-                    .padding(.bottom, -15)
-                  
-                  Text("Recusar")
-                    .font(.custom("macrofont", size: 14, relativeTo: .title2))
-                    .minimumScaleFactor(0.01)
-                    .foregroundColor(.white)
-                }
-                
-                VStack {
-                  ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
-                    .onTapGesture {
-                      gameCore.addPlayerPoints(player: gameCore.playerPlaying!, points: card?.winPoints ?? 0)
-                      if (card?.winPoints ?? 0 > 1) {
-                        message = "Você ganhou \(card?.winPoints ?? 0) pontos."
-                      } else {
-                        message = "Você ganhou \(card?.winPoints ?? 0) ponto."
-                      }
-                      nextPlayer = true
-                      title = "Parabéns"
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            HapticManager.send(style: .heavy)
+                            router.pushView(screen: .gamePaused)
+                        } label: {
+                            GenericFunctions.checkIfImageExist(name: "pauseButton")
+                        }
                     }
-                    .padding(.bottom, -15)
-                  
-                  Text("Aceitar")
-                    .font(.custom("macrofont", size: 14, relativeTo: .title2))
-                    .minimumScaleFactor(0.01)
-                    .foregroundColor(.white)
                 }
-              }//: HSTACK
-              .opacity(isButtonHiden ? 0 : 1)
-              .padding(.bottom, 30)
-            } //: VSTACK
-            .navigationDestination(isPresented: $pauseIsPressed) {
-              GamePausedView()
-            }
-            .navigationDestination(isPresented: $nextPlayer) {
-              AcceptRefuseView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", title: $title, text: $message)
-                .environmentObject(gameCore)
-            }
-          } //: ZSTACK
-          .navigationBarBackButtonHidden(true)
-          .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-              PlayerView(avatar: gameCore.playerPlaying?.wrappedAvatar ?? "", name: gameCore.playerPlaying?.wrappedName ?? "",
-                         points: gameCore.playerPlaying?.wrappedPoints ?? 00)
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-              Button {
-                HapticManager.send(style: .heavy)
-                gameCore.resetMatch()
-                pauseIsPressed = true
-              } label: {
-                GenericFunctions.checkIfImageExist(name: "pauseButton")
-              }
-            }
-          }
-        } else {
-          ShuffleAnimation(card: $card).environmentObject(gameCore)
-            .onAppear {
-              changeShuffle()
-            }
         }
-      }
     }
-  }
     
     private func getBackgroundCardAsset(type: CardType) -> String {
         switch type {
@@ -135,38 +117,32 @@ struct InGameView: View {
             return "prankCard"
         }
     }
-  
-  private func changeShuffle() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-      self.animationPresented.toggle()
-    }
-  }
-  
-  private func delayButton() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
-      isButtonHiden.toggle()
-    }
-  }
-  // MARK: - FLIP CARD
-  private func flipCard() {
-    isFlipped.toggle()
     
-    if isFlipped {
-      withAnimation(.linear(duration: durationAndDelay)) {
-        backDegree = 90
-      }
-      withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
-        frontDegree = 0
-      }
-    } else {
-      withAnimation(.linear(duration: durationAndDelay)) {
-        frontDegree = -90
-      }
-      withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
-        backDegree = 0
-      }
+    private func delayButton() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+            isButtonHiden.toggle()
+        }
     }
-  }
+    // MARK: - FLIP CARD
+    private func flipCard() {
+        isFlipped.toggle()
+        
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
+                frontDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)) {
+                backDegree = 0
+            }
+        }
+    }
 }
 //
 // MARK: - PREVIEW
