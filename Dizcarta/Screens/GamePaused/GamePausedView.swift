@@ -54,7 +54,6 @@ struct GamePausedView: View {
                   
                     Image("trophyButton")
                       .foregroundColor(.white)
-                  
                 }
                 
                 Text("Ranking")

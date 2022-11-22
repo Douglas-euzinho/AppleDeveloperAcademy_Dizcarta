@@ -69,6 +69,9 @@ struct CoordinatorView : View {
                 case .rules:
                     RulesView()
                         .environmentObject(router)
+                case .ranking:
+                    RankingView()
+                        .environmentObject(router)
                 default:
                     HomeView()
                         .environmentObject(router)
