@@ -153,6 +153,7 @@ struct RulesPagination: View {
 
 
 struct RulesView: View {
+    @EnvironmentObject var router: Router
     var body: some View {
         ZStack {
             Color(.backgroundAppColor)
@@ -170,14 +171,17 @@ struct RulesView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-                                HStack {
-            Image(systemName: "chevron.left")
-            Text("Voltar")
-                .fontWeight(.medium)
-        })
-        .onTapGesture {
-            // TODO: - Adicionar ação de voltar
+        .toolbar {
+          ToolbarItem(placement: .navigationBarLeading) {
+            Button {
+              HapticManager.send(style: .heavy)
+                router.popView()
+            } label: {
+              GenericFunctions.checkIfImageExist(name: "exitButton")
+                .colorMultiply(.white)
+            }
+            .padding()
+          }
         }
     }
 }

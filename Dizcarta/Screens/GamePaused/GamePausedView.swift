@@ -20,7 +20,7 @@ struct GamePausedView: View {
             .foregroundColor(.white)
             .font(Font.custom("DINCondensed-Bold", size: 30, relativeTo: .title2))
 
-          Image("gamePausedImage")
+          Image("gamePausedImage_2")
             .colorMultiply(Color.white)
           
           Button {
@@ -41,7 +41,7 @@ struct GamePausedView: View {
           .padding(.top, 15)
           .padding(.bottom, -15)
           
-          HStack(spacing: 35) {
+          HStack {
             Button {
                 router.pushView(screen: .ranking)
             } label: {
@@ -63,6 +63,28 @@ struct GamePausedView: View {
                   .padding(.top, -15)
               }
             }
+              
+              Button {
+                  router.pushView(screen: .rules)
+              } label: {
+                  VStack {
+                    ZStack {
+                      Image("secondaryButton")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                        .colorMultiply(.white)
+                      
+                      Image("trophyButton")
+                        .foregroundColor(.white)
+                      
+                    }
+                    
+                    Text("Regras")
+                      .foregroundColor(.white)
+                      .font(.system(size: 15, weight: .medium))
+                      .padding(.top, -15)
+                  }
+              }
             
             Button {
                 router.pushView(screen: .configuration)
