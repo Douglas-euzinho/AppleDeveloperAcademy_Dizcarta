@@ -17,35 +17,30 @@ struct HomeView: View {
             ZStack(alignment: .top) {
                 Color(.backgroundAppColor)
                     .ignoresSafeArea()
-                ZStack {
-                    Button {
-                        HapticManager.send(style: .heavy)
-                        router.pushView(screen: .configuration)
-                    } label: {
-                        ZStack {
-                            Image("secondaryButton")
-                                .resizable()
-                                .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
-                                .colorMultiply(.white)
-                            
-                            Image("cogsButton")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-                .padding(.leading, 265)
-                
-                VStack {
-                    GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
-                        .padding(.trailing, -30)
-                        .padding(.top, +20)
-                }
-                .padding(.leading, 270)
-                .hidden()
                 
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "home_logo")
                         .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
+                        .overlay {
+                            VStack(alignment: .trailing) {
+                                Button {
+                                    router.pushView(screen: .configuration)
+                                } label: {
+                                  VStack {
+                                    ZStack {
+                                      Image("secondaryButton")
+                                        .resizable()
+                                        .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                                        .colorMultiply(.white)
+                                      
+                                        Image("cogsButton")
+                                          .foregroundColor(.white)
+                                    }
+                                  }
+                                }
+                            }
+                            .position(x: geometry.size.width/1.8, y: geometry.size.height/8)
+                        }
                     Spacer()
                     
                     Button {
