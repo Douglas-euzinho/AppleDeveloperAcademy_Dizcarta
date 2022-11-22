@@ -16,94 +16,77 @@ struct InGameView: View {
     @State var isButtonHiden = true
     let durationAndDelay : CGFloat = 0.3
     @EnvironmentObject var router: Router
+    private var isSpecialCard: Bool {
+        router.gameCore.selectedCard?.type != .challenge
+    }
     // MARK: - BODY
     var body: some View {
         GeometryReader { _ in
-                ZStack {
-                    Color(.backgroundAppColor)
-                        .ignoresSafeArea(.all)
-                    VStack {
-                        ZStack {
-                            FrontCard(title: router.gameCore.selectedCard?.title ?? "",
-                                      description: router.gameCore.selectedCard?.dizDescription ?? "",
-                                      acceptPoints: router.gameCore.selectedCard?.winPoints ?? 0,
-                                      declinePoints: router.gameCore.selectedCard?.losePoints ?? 0,
-                                      cardType: router.gameCore.selectedCard?.type ?? .challenge,
-                                      degree: $frontDegree)
-                            BackCard(degree: $backDegree,
-                                     cardImage: getBackgroundCardAsset(type: router.gameCore.selectedCard?.type ?? .challenge))
-                        }.onAppear(perform: {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
-                                flipCard()
-                                delayButton()
-                            }
-                        })
-                        .padding(.top, 50)
-                        
-                        HStack {
-                            VStack {
-                                ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
-                                    .onTapGesture {
-                                        router.gameCore.removePlayerPoints(player: router.gameCore.playerPlaying!,
-                                                                           points: router.gameCore.selectedCard?.losePoints ?? 0)
-                                        
-                                        router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.losePoints ?? 0 > 1) ?
-                                        "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) pontos." :
-                                        "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) ponto."
-                                        router.gameCore.acceptOrRefuseTitle = "Que pena"
-                                        
-                                        router.pushView(screen: .acceptRefuse)
-                                    }
-                                    .padding(.bottom, -15)
-                                
-                                Text("Recusar")
-                                    .font(.custom("macrofont", size: 14))
-                                    .minimumScaleFactor(0.01)
-                                    .foregroundColor(.white)
-                            }
-                            
-                            VStack {
-                                ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
-                                    .onTapGesture {
-                                        router.gameCore.addPlayerPoints(player: router.gameCore.playerPlaying!,
-                                                                        points: router.gameCore.selectedCard?.winPoints ?? 0)
-                                        
-                                        router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.winPoints ?? 0 > 1) ?
-                                        "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) pontos." :
-                                        "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) ponto."
-                                        router.gameCore.acceptOrRefuseTitle = "Parabéns"
-                                        
-                                        router.pushView(screen: .acceptRefuse)
-                                    }
-                                    .padding(.bottom, -15)
-                                
-                                Text("Aceitar")
-                                    .font(.custom("macrofont", size: 14))
-                                    .minimumScaleFactor(0.01)
-                                    .foregroundColor(.white)
-                            }
-                        }//: HSTACK
-                        .opacity(isButtonHiden ? 0 : 1)
-                        .padding(.bottom, 30)
-                    } //: VSTACK
-                    
-                } //: ZSTACK
-                .navigationBarBackButtonHidden(true)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        PlayerView(avatar: router.gameCore.playerPlaying?.wrappedAvatar ?? "",
-                                   name: router.gameCore.playerPlaying?.wrappedName ?? "",
-                                   points: router.gameCore.playerPlaying?.wrappedPoints ?? 0)
-                    }
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            HapticManager.send(style: .heavy)
-                            router.pushView(screen: .gamePaused)
-                        } label: {
-                            GenericFunctions.checkIfImageExist(name: "pauseButton")
+            ZStack {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea(.all)
+                VStack {
+                    ZStack {
+                        FrontCard(title: router.gameCore.selectedCard?.title ?? "",
+                                  description: router.gameCore.selectedCard?.dizDescription ?? "",
+                                  acceptPoints: router.gameCore.selectedCard?.winPoints ?? 0,
+                                  declinePoints: router.gameCore.selectedCard?.losePoints ?? 0,
+                                  cardType: router.gameCore.selectedCard?.type ?? .challenge,
+                                  degree: $frontDegree)
+                        BackCard(degree: $backDegree,
+                                 cardImage: getBackgroundCardAsset(type: router.gameCore.selectedCard?.type ?? .challenge))
+                    }.onAppear(perform: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+                            flipCard()
+                            delayButton()
                         }
+                    })
+                    .padding(.top, 50)
+                    // MARK: BUTTONS ACCEPT AND REFUSE
+                    HStack {
+                        if (!isSpecialCard) {
+                            ButtonCardView(iconName: "ButtonRefuse", text: "Recusar", backgroundImage: "refuseButton")
+                                .onTapGesture {
+                                    refuseAction()
+                                }
+                            
+                            ButtonCardView(iconName: "ButtonAccept", text: "Aceitar", backgroundImage: "acceptButton")
+                                .onTapGesture {
+                                   acceptAction()
+                                }
+                        } else {
+                            ButtonCardView(iconName: cardType == .surprise ? "happyAccept" : "sadAccept",
+                                           text: cardType == .surprise ? "Receber" : "Ok",
+                                           backgroundImage: "secondaryButton")
+                            .onTapGesture {
+                                specialAction()
+                            }
+                        }
+                        
+                    }//: HSTACK
+                    .padding(.bottom, 30)
+                    .opacity(isButtonHiden  ? 0 : 1)
+                    
+                } //: VSTACK
+                
+            } //: ZSTACK
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    PlayerView(avatar: router.gameCore.playerPlaying?.wrappedAvatar ?? "",
+                               name: router.gameCore.playerPlaying?.wrappedName ?? "",
+                               points: router.gameCore.playerPlaying?.wrappedPoints ?? 0)
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        HapticManager.send(style: .heavy)
+                        isFlipped.toggle()
+                        router.pushView(screen: .gamePaused)
+                    } label: {
+                        GenericFunctions.checkIfImageExist(name: "pauseButton")
                     }
                 }
+            }
         }
     }
     
@@ -115,6 +98,41 @@ struct InGameView: View {
             return "surpriseCard"
         case .loss:
             return "prankCard"
+        }
+    }
+    
+    private func acceptAction() {
+        router.gameCore.addPlayerPoints(player: router.gameCore.playerPlaying!,
+                                        points: router.gameCore.selectedCard?.winPoints ?? 0)
+        
+        router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.winPoints ?? 0 > 1) ?
+        "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) pontos." :
+        "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) ponto."
+        router.gameCore.acceptOrRefuseTitle = "Parabéns"
+        
+        router.pushView(screen: .acceptRefuse)
+    }
+    
+    private func refuseAction() {
+        router.gameCore.removePlayerPoints(player: router.gameCore.playerPlaying!,
+                                           points: router.gameCore.selectedCard?.losePoints ?? 0)
+        
+        router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.losePoints ?? 0 > 1) ?
+        "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) pontos." :
+        "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) ponto."
+        router.gameCore.acceptOrRefuseTitle = "Que pena"
+        
+        router.pushView(screen: .acceptRefuse)
+    }
+    
+    private func specialAction() {
+        switch cardType {
+        case .surprise:
+            acceptAction()
+        case .loss:
+            refuseAction()
+        default:
+            break
         }
     }
     
@@ -143,6 +161,14 @@ struct InGameView: View {
             }
         }
     }
+}
+
+extension InGameView {
+    
+    private var cardType: CardType {
+        router.gameCore.selectedCard?.type ?? .challenge
+    }
+    
 }
 //
 // MARK: - PREVIEW

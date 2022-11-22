@@ -43,7 +43,8 @@ struct FrontCard: View {
                                 
                                 Rectangle()
                                     .foregroundColor(Color(AppColor.getBackgroundTextColor(type: cardType)))
-                                    .frame(width: geometry2.size.width / 1.1, height: geometry2.size.height / 1.9)
+                                    .frame(width: geometry2.size.width / 1.1,
+                                           height: (cardType != .challenge) ? geometry2.size.height / 1.4 : geometry2.size.height / 1.9 )
                                     .cornerRadius(10)
                                     .overlay {
                                         VStack(alignment: .leading) {
@@ -102,6 +103,7 @@ struct FrontCard: View {
                                         }
                                         .padding()
                                     }
+                                    .opacity(cardType != .challenge ? 0 : 1)
                             }
                         }
                     }
