@@ -87,9 +87,9 @@ struct SetupMatchView: View {
                                             router.gameCore.nextPlayer()
                                             router.pushView(screen: .shiftPlayer)
                                         } label: {
-                                            NeonButton(text: "Iniciar", image: .neonButtonYellow)
+                                            NeonButton(text: "Iniciar", image: .newButtonStyle)
                                                 .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
-                                                .frame(width: geometry.size.width / 1.8, height: geometry.size.height / 15)
+                                                .frame(width: geometry.size.width / 1.5, height: geometry.size.height / 10)
                                         }
                                         .disabled(gameCore.players.count < 4)
                                     } //: VStack

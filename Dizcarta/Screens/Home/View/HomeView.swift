@@ -13,44 +13,53 @@ import AVFoundation
 struct HomeView: View {
     @EnvironmentObject var router: Router
     var body: some View {
-            GeometryReader { geometry in
-                    ZStack(alignment: .top) {
-                        Color(.backgroundAppColor)
-                            .ignoresSafeArea()
-                        VStack {
-                            GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
-                                .padding(.trailing, -30)
-                                .padding(.top, +20)
+        GeometryReader { geometry in
+            ZStack(alignment: .top) {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea()
+                ZStack {
+                    Button {
+                        HapticManager.send(style: .heavy)
+                        router.pushView(screen: .configuration)
+                    } label: {
+                        ZStack {
+                            Image("secondaryButton")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                                .colorMultiply(.white)
+                            
+                            Image("cogsButton")
+                                .foregroundColor(.white)
                         }
-                        .padding(.leading, 270)
-                        .hidden()
-                        
-                        VStack(alignment: .center) {
-                            GenericFunctions.checkIfImageExist(name: "home_logo")
-                                .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
-                            Spacer()
-                            
-                            Button {
-                                HapticManager.send(style: .heavy)
-                                 router.pushView(screen: .setupMatch)
-                            } label: {
-                                NeonButton(text: "Jogar", image: .neonButtonYellow)
-                                    .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 13)
-                            }
-                            .accessibility(label: Text("Jogar"))
-                            .padding(2)
-                            
-                            Button {
-                                HapticManager.send(style: .heavy)
-                                router.pushView(screen: .configuration)
-                            } label: {
-                                NeonButton(text: "Configurações", image: .neonButtonPurple)
-                                    .frame(width: geometry.size.width / 1.23, height: geometry.size.height / 9)
-                            }
-                            .accessibility(label: Text("Configurações"))
-                            Spacer()
                     }
                 }
+                .padding(.leading, 265)
+                
+                VStack {
+                    GenericFunctions.checkIfImageExist(name: "home_button_leaderboard")
+                        .padding(.trailing, -30)
+                        .padding(.top, +20)
+                }
+                .padding(.leading, 270)
+                .hidden()
+                
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "home_logo")
+                        .frame(width: geometry.size.width/2, height: geometry.size.height/1.5)
+                    Spacer()
+                    
+                    Button {
+                        HapticManager.send(style: .heavy)
+                        router.pushView(screen: .setupMatch)
+                    } label: {
+                        NeonButton(text: "Jogar", image: .newButtonStyle)
+                            .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 7)
+                    }
+                    .accessibility(label: Text("Jogar"))
+                    Spacer()
+
+                }
+            }
         }
         .navigationBarBackButtonHidden(true)
     }
