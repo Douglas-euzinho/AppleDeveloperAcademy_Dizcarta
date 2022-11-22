@@ -56,6 +56,7 @@
 		23C90ED628EF706D0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
 		23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
 		23FD8C76291ACB900095F3E6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD8C75291ACB900095F3E6 /* Logger.swift */; };
+		36517C40292BF03800E26626 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36517C3F292BF03800E26626 /* RulesView.swift */; };
 		366229A228EF55F400907C73 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A128EF55F400907C73 /* NeonButton.swift */; };
 		366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */; };
 		366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */; };
@@ -151,6 +152,7 @@
 		23C90ED328EF6AAB0079EEFA /* CardCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCodable.swift; sourceTree = "<group>"; };
 		23C90ED528EF706D0079EEFA /* cardsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardsMock.json; sourceTree = "<group>"; };
 		23FD8C75291ACB900095F3E6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		36517C3F292BF03800E26626 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		366229A128EF55F400907C73 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
 		366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINAlternate-Bold.ttf"; sourceTree = "<group>"; };
 		366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectedView.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				36517C3E292BF01500E26626 /* Rules */,
 				15B529FE291D7FD400A3AF3A /* GamePaused */,
 				367D6C1D291AE1CF00459342 /* Alert */,
 				151BCC162901D109007E4D67 /* AcceptRefuse */,
@@ -550,6 +553,14 @@
 				155277EA28DC76CF003F83EF /* Extensions */,
 			);
 			path = DesignSystems;
+			sourceTree = "<group>";
+		};
+		36517C3E292BF01500E26626 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				36517C3F292BF03800E26626 /* RulesView.swift */,
+			);
+			path = Rules;
 			sourceTree = "<group>";
 		};
 		366229A028EF55D800907C73 /* Shared */ = {
@@ -867,6 +878,7 @@
 				23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */,
 				23C90ED428EF6AAB0079EEFA /* CardCodable.swift in Sources */,
 				CD83429A2909D15900EA6775 /* HapiticsManager.swift in Sources */,
+				36517C40292BF03800E26626 /* RulesView.swift in Sources */,
 				CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */,
 				15E07D7A28EF4A38005D2A80 /* SetupMatchView.swift in Sources */,
 				1552780428DCE7EA003F83EF /* BackCard.swift in Sources */,

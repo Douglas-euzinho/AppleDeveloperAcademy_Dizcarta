@@ -110,7 +110,7 @@ struct FrontCard: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
     } //: BODY
-    
+}
     struct FrontCard_Previews: PreviewProvider {
         static var previews: some View {
             let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
@@ -126,4 +126,3 @@ struct FrontCard: View {
             }
         }
     }
-}
