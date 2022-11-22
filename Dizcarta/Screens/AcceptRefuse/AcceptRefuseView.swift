@@ -44,8 +44,8 @@ struct AcceptRefuseView: View {
                     router.pushView(screen: .shiftPlayer)
                 }
             } label: {
-              NeonButton(text: "Continuar", image: .neonButtonYellow)
-                .frame(width: geometry.size.width / 1.7, height: geometry.size.height / 15)
+                NeonButton(text: "Continuar", image: .newButtonStyle)
+                .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 8)
                 .padding(.bottom)
             }
           }

@@ -61,7 +61,7 @@ struct GameOverView: View {
                 HapticManager.send(style: .heavy)
                 router.newGame()
               } label: {
-                NeonButton(text: "Novo Jogo", image: .neonButtonYellow)
+                  NeonButton(text: "Novo Jogo", image: .newButtonStyle)
                   .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
                   .shadow(radius: 5)
                   .padding(20)
