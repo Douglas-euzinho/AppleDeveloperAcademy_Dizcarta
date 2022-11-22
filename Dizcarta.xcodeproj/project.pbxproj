@@ -56,8 +56,6 @@
 		23C90ED728EF711F0079EEFA /* cardsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 23C90ED528EF706D0079EEFA /* cardsMock.json */; };
 		23FD8C76291ACB900095F3E6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD8C75291ACB900095F3E6 /* Logger.swift */; };
 		36517C40292BF03800E26626 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36517C3F292BF03800E26626 /* RulesView.swift */; };
-		36517C42292BFD0100E26626 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36517C41292BFD0100E26626 /* PageControl.swift */; };
-		36517C44292C12BC00E26626 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36517C43292C12BC00E26626 /* testView.swift */; };
 		366229A228EF55F400907C73 /* NeonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A128EF55F400907C73 /* NeonButton.swift */; };
 		366229A628F0AB8E00907C73 /* DINAlternate-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */; };
 		366229A828F0BF3C00907C73 /* PlayerSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */; };
@@ -153,8 +151,6 @@
 		23C90ED528EF706D0079EEFA /* cardsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardsMock.json; sourceTree = "<group>"; };
 		23FD8C75291ACB900095F3E6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		36517C3F292BF03800E26626 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
-		36517C41292BFD0100E26626 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
-		36517C43292C12BC00E26626 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		366229A128EF55F400907C73 /* NeonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButton.swift; sourceTree = "<group>"; };
 		366229A528F0AB8D00907C73 /* DINAlternate-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINAlternate-Bold.ttf"; sourceTree = "<group>"; };
 		366229A728F0BF3C00907C73 /* PlayerSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectedView.swift; sourceTree = "<group>"; };
@@ -568,8 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				36517C3F292BF03800E26626 /* RulesView.swift */,
-				36517C41292BFD0100E26626 /* PageControl.swift */,
-				36517C43292C12BC00E26626 /* testView.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -883,7 +877,6 @@
 				CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */,
 				36BE666928E37BA30069BB60 /* ActionChoise.swift in Sources */,
 				15E07D7828EF4A2C005D2A80 /* Avatar.swift in Sources */,
-				36517C44292C12BC00E26626 /* testView.swift in Sources */,
 				23FD8C76291ACB900095F3E6 /* Logger.swift in Sources */,
 				23B61B6428FF29DD007FBCCD /* AppConstants.swift in Sources */,
 				23A7D2F928F5F10400BB7061 /* Player+Wrapped.swift in Sources */,
@@ -899,7 +892,6 @@
 				36DFD53528E23BED002D1399 /* FinalFlowView.swift in Sources */,
 				3663D36828DE2E25001F0FE3 /* GenericFunctions.swift in Sources */,
 				3663D36428DE2230001F0FE3 /* GenericButtons.swift in Sources */,
-				36517C42292BFD0100E26626 /* PageControl.swift in Sources */,
 				CD58D95428F4A49500486117 /* LottieView.swift in Sources */,
 				CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */,
 				1540DD7428F4A3200079A4EC /* TextFieldClearButton.swift in Sources */,
