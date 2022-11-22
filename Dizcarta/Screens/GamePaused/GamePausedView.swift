@@ -52,8 +52,8 @@ struct GamePausedView: View {
                     .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
                     .colorMultiply(.white)
                   
-                  Image("trophyButton")
-                    .foregroundColor(.white)
+                    Image("trophyButton")
+                      .foregroundColor(.white)
                   
                 }
                 
@@ -74,9 +74,8 @@ struct GamePausedView: View {
                         .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
                         .colorMultiply(.white)
                       
-                      Image("trophyButton")
-                        .foregroundColor(.white)
-                      
+                        Image("rulesImage")
+                          .foregroundColor(.white)
                     }
                     
                     Text("Regras")
@@ -119,7 +118,6 @@ struct GamePausedView: View {
             GenericFunctions.checkIfImageExist(name: "exitButton")
               .colorMultiply(.white)
           }
-          .padding()
         }
       }
     }

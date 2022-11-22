@@ -151,7 +151,6 @@ struct RulesPagination: View {
     }
 }
 
-
 struct RulesView: View {
     @EnvironmentObject var router: Router
     var body: some View {
@@ -159,30 +158,23 @@ struct RulesView: View {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack {
-                HStack {
-                    Text("Regras")
-                        .font(Font.custom("DINCondensed-Bold", size: 34))
-                        .foregroundColor(.white)
-                        .padding(.leading)
-                    Spacer()
-                }
-                .padding()
                 RulesPagination()
             }
         }
+        .navigationTitle("Regras")
+        .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
-        .toolbar {
-          ToolbarItem(placement: .navigationBarLeading) {
-            Button {
-              HapticManager.send(style: .heavy)
-                router.popView()
-            } label: {
-              GenericFunctions.checkIfImageExist(name: "exitButton")
-                .colorMultiply(.white)
-            }
-            .padding()
-          }
+        .navigationBarItems(leading:
+                                HStack {
+            Image(systemName: "chevron.left")
+            Text("Voltar")
+                .fontWeight(.medium)
         }
+            .foregroundColor(.white)
+            .onTapGesture {
+                router.popView()
+            }
+        )
     }
 }
 
