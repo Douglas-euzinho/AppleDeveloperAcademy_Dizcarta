@@ -29,11 +29,11 @@ final class GameCore: ObservableObject {
     @Published var players: [Player] = []
     @Published var playerPlaying: Player?
     var avatarData: [AvatarData] = [AvatarData(image: "avatarBlue", name: "Azul"),
-                                            AvatarData(image: "avatarRed", name: "Vermelho"),
-                                            AvatarData(image: "avatarPurple", name: "Roxo"),
-                                            AvatarData(image: "avatarYellow", name: "Amarelo"),
-                                            AvatarData(image: "avatarPink", name: "Rosa"),
-                                            AvatarData(image: "avatarTurquoise", name: "Verde")]
+                                    AvatarData(image: "avatarRed", name: "Vermelho"),
+                                    AvatarData(image: "avatarPurple", name: "Roxo"),
+                                    AvatarData(image: "avatarYellow", name: "Amarelo"),
+                                    AvatarData(image: "avatarPink", name: "Rosa"),
+                                    AvatarData(image: "avatarTurquoise", name: "Verde")]
     
     @Published var acceptOrRefuseMessage = ""
     @Published var acceptOrRefuseTitle = ""
@@ -46,15 +46,18 @@ final class GameCore: ObservableObject {
         self.repository = PlayerRepository.get(context: context)
         repository.createMatch()
         Task(priority: .high) {
-            if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardsV2.json") {
-                self.cardList = allCards
-                print("ONLINE CARDS CREATED \(allCards.cards.count)")
+            if AppConfig.useRemoteCards {
+                if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardsV2.json") {
+                    self.cardList = allCards
+                    print("ONLINE CARDS CREATED \(allCards.cards.count)")
+                }
             } else {
                 self.cardList = CardsManager.decodeJson(forName: cardFile)
             }
             var cards = self.cardList?.cards.shuffled() ?? []
 #if DEBUG
             cards.removeSubrange(0...9)
+            cards.removeAll(where: {$0.type == .challenge && AppConfig.onlySpecialCards })
 #endif
             self.cardList?.cards = cards
         }

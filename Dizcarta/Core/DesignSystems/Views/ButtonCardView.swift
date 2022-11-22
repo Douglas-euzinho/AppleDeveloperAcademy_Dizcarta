@@ -13,23 +13,20 @@ struct ButtonCardView: View {
     var text: String
     var backgroundImage: String
     
-    init(iconName: String, text: String, backgroundImage: String) {
-        self.iconName = iconName
-        self.text = text
-        self.backgroundImage = backgroundImage
-    }
-    
     var body: some View {
-        ZStack {
-            Image(backgroundImage)
-                .opacity(0.8)
-          
             VStack {
-                GenericFunctions.checkIfImageExist(name: iconName)
-                    .resizable()
-                    .frame(width: 28, height: 28)
+                ZStack {
+                    Image(backgroundImage)
+                        .opacity(0.8)
+                    GenericFunctions.checkIfImageExist(name: iconName)
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                }
+                Text(text)
+                    .font(.custom("macrofont", size: 14))
+                    .minimumScaleFactor(0.01)
+                    .foregroundColor(.white)
             }
-        }
     }
 }
 

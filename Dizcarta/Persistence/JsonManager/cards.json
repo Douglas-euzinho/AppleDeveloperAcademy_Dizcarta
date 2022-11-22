@@ -98,6 +98,46 @@
             "losePoints": 3,
             "dizDescription": "Você deverá falar o alfabeto inteiro cantando!",
             "type": 1
-        }
+        },
+        
+        {
+            "id": 13,
+            "title": "Felicidade só é boa quando é multiplicada!",
+            "image": "imageLocal",
+            "winPoints": 2,
+            "losePoints": 0,
+            "dizDescription": "Parabéns! \n Você acaba de ganhar 2 pontos! ",
+            "type": 2
+        },
+        {
+            "id": 14,
+            "title": "Dois é bom, três é demais!",
+            "image": "imageLocal",
+            "winPoints": 3,
+            "losePoints": 0,
+            "dizDescription": "Eba! \nVocê acaba de ganhar 3 pontos!",
+            "type": 2
+        },
+        {
+            "id": 15,
+            "title": "Caiu do Cavalo!",
+            "image": "imageLocal",
+            "winPoints": 0,
+            "losePoints": 3,
+            "dizDescription": "Você caiu do cavalo e tomou um coice, hein. \n Perdeu 3 pontos! ",
+            "type": 3
+        },
+        {
+            "id": 16,
+            "title": "Ouro de Tolo! ",
+            "image": "imageLocal",
+            "winPoints": 0,
+            "losePoints": 2,
+            "dizDescription": "Você acaba de perder \n 2 pontos!",
+            "type": 3
+        },
+        
+        
+        
     ]
 }
