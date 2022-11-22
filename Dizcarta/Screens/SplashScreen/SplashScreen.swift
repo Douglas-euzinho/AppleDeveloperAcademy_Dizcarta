@@ -66,6 +66,9 @@ struct CoordinatorView : View {
                 case .shuffleAnimation:
                     ShuffleAnimation()
                         .environmentObject(router)
+                case .rules:
+                    RulesView()
+                        .environmentObject(router)
                 default:
                     HomeView()
                         .environmentObject(router)

@@ -18,6 +18,7 @@ enum Screen: Hashable {
     case configuration
     case inGame
     case shuffleAnimation
+    case rules
 }
 
 final class Router: ObservableObject {

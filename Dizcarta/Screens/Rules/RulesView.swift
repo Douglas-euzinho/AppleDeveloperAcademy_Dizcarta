@@ -151,34 +151,30 @@ struct RulesPagination: View {
     }
 }
 
-
 struct RulesView: View {
+    @EnvironmentObject var router: Router
     var body: some View {
         ZStack {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack {
-                HStack {
-                    Text("Regras")
-                        .font(Font.custom("DINCondensed-Bold", size: 34))
-                        .foregroundColor(.white)
-                        .padding(.leading)
-                    Spacer()
-                }
-                .padding()
                 RulesPagination()
             }
         }
+        .navigationTitle("Regras")
+        .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
                                 HStack {
             Image(systemName: "chevron.left")
             Text("Voltar")
                 .fontWeight(.medium)
-        })
-        .onTapGesture {
-            // TODO: - Adicionar ação de voltar
         }
+            .foregroundColor(.white)
+            .onTapGesture {
+                router.popView()
+            }
+        )
     }
 }
 
