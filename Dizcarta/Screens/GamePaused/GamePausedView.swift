@@ -8,15 +8,9 @@
 import SwiftUI
 
 struct GamePausedView: View {
-  // MARK: - VARIABLES
-  @State var isHomePressed: Bool = false
-  @State var isBackToGamePressed: Bool = false
-  @State var isSettingsPressed: Bool = false
-  @State var isRankingPressed: Bool = false
-  
+    @EnvironmentObject var router: Router
   // MARK: - BODY
   var body: some View {
-    NavigationStack {
       ZStack {
         Color(.backgroundAppColor)
           .ignoresSafeArea(.all)
@@ -30,7 +24,7 @@ struct GamePausedView: View {
             .colorMultiply(Color.white)
           
           Button {
-            self.isHomePressed = true
+              router.goToRoot()
           } label: {
             ZStack {
               Image("leaveGameButton")
@@ -49,7 +43,7 @@ struct GamePausedView: View {
           
           HStack(spacing: 35) {
             Button {
-              self.isRankingPressed = true
+                router.pushView(screen: .ranking)
             } label: {
               VStack {
                 ZStack {
@@ -71,7 +65,7 @@ struct GamePausedView: View {
             }
             
             Button {
-              self.isSettingsPressed = true
+                router.pushView(screen: .configuration)
             } label: {
               VStack {
                 ZStack {
@@ -89,7 +83,6 @@ struct GamePausedView: View {
                   .foregroundColor(.white)
                   .font(.system(size: 15, weight: .medium))
                   .padding(.top, -15)
-              }
             }
           } //: HSTACK
         } //: VSTACK
@@ -99,20 +92,12 @@ struct GamePausedView: View {
         ToolbarItem(placement: .navigationBarLeading) {
           Button {
             HapticManager.send(style: .heavy)
+              router.popView()
           } label: {
             GenericFunctions.checkIfImageExist(name: "exitButton")
               .colorMultiply(.white)
           }
           .padding()
-          .navigationDestination(isPresented: $isHomePressed) {
-            HomeView()
-          }
-          .navigationDestination(isPresented: $isSettingsPressed) {
-            ConfigurationsView()
-          }
-          .navigationDestination(isPresented: $isRankingPressed) {
-            RankingView()
-          }
         }
       }
     }

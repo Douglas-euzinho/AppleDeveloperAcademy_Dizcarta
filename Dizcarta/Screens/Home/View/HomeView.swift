@@ -11,13 +11,9 @@ import AVFoundation
 
 // MARK: Main view
 struct HomeView: View {
-    @State var isPlayerListView = false
-    @State private var goToSetupGame = false
-    @State private var goToConfig = false
-
+    @EnvironmentObject var router: Router
     var body: some View {
             GeometryReader { geometry in
-                NavigationStack {
                     ZStack(alignment: .top) {
                         Color(.backgroundAppColor)
                             .ignoresSafeArea()
@@ -36,7 +32,7 @@ struct HomeView: View {
                             
                             Button {
                                 HapticManager.send(style: .heavy)
-                                goToSetupGame = true
+                                 router.pushView(screen: .setupMatch)
                             } label: {
                                 NeonButton(text: "Jogar", image: .neonButtonYellow)
                                     .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 13)
@@ -46,20 +42,13 @@ struct HomeView: View {
                             
                             Button {
                                 HapticManager.send(style: .heavy)
-                                goToConfig = true
+                                router.pushView(screen: .configuration)
                             } label: {
                                 NeonButton(text: "Configurações", image: .neonButtonPurple)
                                     .frame(width: geometry.size.width / 1.23, height: geometry.size.height / 9)
                             }
                             .accessibility(label: Text("Configurações"))
                             Spacer()
-                        }
-                        .navigationDestination(isPresented: $goToConfig) {
-                            ConfigurationsView()
-                        }
-                    }
-                    .navigationDestination(isPresented: $goToSetupGame) {
-                        SetupMatchView()
                     }
                 }
         }

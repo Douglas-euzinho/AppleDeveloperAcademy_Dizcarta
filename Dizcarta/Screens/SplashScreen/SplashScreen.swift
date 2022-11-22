@@ -23,18 +23,52 @@ struct SplashScreen: View {
     }
 }
 
-struct ContentView : View {
+struct CoordinatorView : View {
     @State var splashScreen  = true
-    
+    @StateObject var router = Router()
     var body: some View {
-        ZStack {
-            Color(.backgroundAppColor)
-                .ignoresSafeArea()
-            Group {
-                if splashScreen {
-                    SplashScreen(isShowingSplash: $splashScreen)
-                } else {
+        NavigationStack(path: $router.path) {
+            ZStack {
+                Color(.backgroundAppColor)
+                    .ignoresSafeArea()
+                Group {
+                    if splashScreen {
+                        SplashScreen(isShowingSplash: $splashScreen)
+                    } else {
+                        HomeView()
+                            .environmentObject(router)
+                    }
+                }
+            }
+            .navigationDestination(for: Screen.self) { screen in
+                switch screen {
+                case .configuration:
+                    ConfigurationsView()
+                        .environmentObject(router)
+                case .setupMatch:
+                    SetupMatchView()
+                        .environmentObject(router)
+                case .shiftPlayer:
+                    ShiftPlayerView()
+                        .environmentObject(router)
+                case .inGame:
+                    InGameView()
+                        .environmentObject(router)
+                case .gamePaused:
+                    GamePausedView()
+                        .environmentObject(router)
+                case .gameOver:
+                    GameOverView()
+                        .environmentObject(router)
+                case .acceptRefuse:
+                    AcceptRefuseView()
+                        .environmentObject(router)
+                case .shuffleAnimation:
+                    ShuffleAnimation()
+                        .environmentObject(router)
+                default:
                     HomeView()
+                        .environmentObject(router)
                 }
             }
         }

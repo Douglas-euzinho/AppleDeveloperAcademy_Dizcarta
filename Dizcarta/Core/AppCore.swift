@@ -11,7 +11,7 @@ import SwiftUI
 struct AppCore: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView()
                 .preferredColorScheme(.dark)
                 .onAppear {
                     if UserDefaults.standard.value(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) == nil {

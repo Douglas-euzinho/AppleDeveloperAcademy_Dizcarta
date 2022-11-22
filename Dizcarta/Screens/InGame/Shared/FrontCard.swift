@@ -111,19 +111,18 @@ struct FrontCard: View {
         }
     } //: BODY
 }
-
-struct FrontCard_Previews: PreviewProvider {
-    static var previews: some View {
-        let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
-        
-        ForEach(devices, id: \.self) { device in
-            FrontCard(title: "Ninguém solta a mão de ninguém",
-                      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-                      acceptPoints: 4,
-                      declinePoints: 4, cardType: .challenge,
-                      degree: .constant(0))
-            .previewDevice(PreviewDevice(rawValue: device))
-            .previewDisplayName(device)
+    struct FrontCard_Previews: PreviewProvider {
+        static var previews: some View {
+            let devices = ["iPhone SE (3rd generation)","iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
+            
+            ForEach(devices, id: \.self) { device in
+                FrontCard(title: "Ninguém solta a mão de ninguém",
+                          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+                          acceptPoints: 4,
+                          declinePoints: 4, cardType: .challenge,
+                          degree: .constant(0))
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+            }
         }
     }
-}
