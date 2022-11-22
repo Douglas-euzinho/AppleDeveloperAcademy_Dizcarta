@@ -138,7 +138,7 @@ struct InGameView: View {
     
     private func delayButton() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
-            isButtonHiden.toggle()
+            isButtonHiden = false
         }
     }
     // MARK: - FLIP CARD

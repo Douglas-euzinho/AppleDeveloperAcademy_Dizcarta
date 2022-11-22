@@ -28,7 +28,7 @@ struct ConfigurationsView: View {
                 
                 HStack {
                     Button {
-                        
+                        router.pushView(screen: .rules)
                     } label: {
                         GenericFunctions.checkIfImageExist(name: "regras")
                         Text("Regras")

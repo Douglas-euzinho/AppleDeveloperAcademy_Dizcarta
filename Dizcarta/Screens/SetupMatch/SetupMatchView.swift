@@ -95,7 +95,7 @@ struct SetupMatchView: View {
                                     } //: VStack
                                 } //: Overlay
                         } //: VStack
-                        .frame(height: geometry.size.height / 4)
+                        .frame(height: geometry.size.height / 3.2)
                     } //: VStack
                     .scrollDismissesKeyboard(.never)
                 } //: ZStack

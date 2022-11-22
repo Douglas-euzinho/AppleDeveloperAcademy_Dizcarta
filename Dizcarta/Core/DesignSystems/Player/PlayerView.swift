@@ -31,7 +31,7 @@ struct PlayerView: View {
       
       Image(avatar)
         .resizable()
-        .frame(width: 100, height: 100)
+        .frame(width: 65, height: 65)
         .padding(.trailing, -14)
       
       VStack(alignment: .leading) {
