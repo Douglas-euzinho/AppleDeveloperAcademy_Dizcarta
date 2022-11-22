@@ -151,6 +151,7 @@ struct RulesPagination: View {
     }
 }
 
+
 struct RulesView: View {
     var body: some View {
         ZStack {
