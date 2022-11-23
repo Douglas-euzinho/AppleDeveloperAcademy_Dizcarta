@@ -20,10 +20,10 @@ final class CoreDataGetTests: XCTestCase {
 
     func testGetPlayers() throws {
         let repository = PlayerRepositoryMock(context: PersistenceController.inMemoryContext)
-        let match = repository.createMatch()
+        repository.createMatch()
         for _ in 0...9 {
-            repository.createPlayer(name: UUID().uuidString, avatar: UUID().uuidString, match: match)
+            repository.createPlayer(name: UUID().uuidString, avatar: UUID().uuidString, match: repository.getMatch())
         }
-        XCTAssertTrue(10 == repository.getPlayers(match: match).count, "Different amount of players than created")
+        XCTAssertTrue(10 == repository.getPlayers(match: repository.getMatch()).count, "Different amount of players than created")
     }
 }
