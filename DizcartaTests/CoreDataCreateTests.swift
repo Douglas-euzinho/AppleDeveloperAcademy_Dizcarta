@@ -21,9 +21,9 @@ final class CoreDataCreateTests: XCTestCase {
     func testCreatePlayer() throws {
         let context = PersistenceController.inMemoryContext
         let repository = PlayerRepositoryMock(context: context)
-        let match = repository.createMatch()
-        repository.createPlayer(name: "PlayerTest", avatar: "IconTest", match: match)
-        let player = repository.getPlayers(match: match).first
+        repository.createMatch()
+        repository.createPlayer(name: "PlayerTest", avatar: "IconTest", match: repository.getMatch())
+        let player = repository.getPlayers(match: repository.getMatch()).first
         XCTAssertTrue(player?.name == "PlayerTest", "Player Name different from the one created by the test")
         XCTAssertTrue(player?.avatar == "IconTest", "Player Icon different from the one created by the test")
     }
