@@ -39,7 +39,7 @@ struct HomeView: View {
                                   }
                                 }
                             }
-                            .position(x: geometry.size.width/1.8, y: geometry.size.height/10)
+                            .position(x: geometry.size.width/1.8, y: geometry.size.height/20)
                         }
                     Spacer()
                     
