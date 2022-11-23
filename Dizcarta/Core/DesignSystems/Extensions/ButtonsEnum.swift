@@ -8,5 +8,6 @@
 import SwiftUI
 
 enum ButtonsNameImage: String {
-case newButtonStyle = "leaveGameButton"
+    case redButton = "leaveGameButton"
+    case blueButton = "blueButton"
 }

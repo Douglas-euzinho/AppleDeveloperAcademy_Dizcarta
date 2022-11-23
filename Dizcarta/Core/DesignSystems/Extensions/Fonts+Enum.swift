@@ -14,5 +14,6 @@ extension Font {
 }
 
 enum FontsName: String {
-case primaryFont = "DINAlternate-Bold", secondaryFont = ""
+    case dinAlternateBold = "DINAlternate-Bold"
+    case dinCondensedBold = "DINCondensed-Bold"
 }

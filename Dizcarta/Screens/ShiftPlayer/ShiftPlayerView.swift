@@ -41,7 +41,7 @@ struct ShiftPlayerView: View {
                         router.pushView(screen: .shuffleAnimation)
                         HapticManager.send(style: .heavy)
                     } label: {
-                        NeonButton(text: "Embaralhar", image: .newButtonStyle)
+                        NeonButton(text: "Embaralhar", image: .redButton, font: .dinCondensedBold)
                             .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 8)
                             .shadow(radius: 10)
                             .padding(.bottom, 15)

@@ -72,6 +72,9 @@ struct CoordinatorView : View {
                 case .ranking:
                     RankingView()
                         .environmentObject(router)
+                case .feedbackBack:
+                    FeedbackBackView()
+                        .environmentObject(router)
                 default:
                     HomeView()
                         .environmentObject(router)

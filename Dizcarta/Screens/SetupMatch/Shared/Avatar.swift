@@ -16,8 +16,6 @@ struct Avatar: View {
   var isSelection: Bool
   var removeAction: () -> Void
   var createAction: () -> Void
-
-  @EnvironmentObject var gameCore: GameCore
   
   // MARK: - BODY
   var body: some View {

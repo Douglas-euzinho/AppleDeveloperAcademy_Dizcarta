@@ -10,10 +10,12 @@ import SwiftUI
 struct NeonButton: View {
     var text: String
     var image: ButtonsNameImage
+    var font: FontsName
     
-    init(text: String, image: ButtonsNameImage) {
+    init(text: String, image: ButtonsNameImage, font: FontsName) {
         self.text = text
         self.image = image
+        self.font = font
     }
     
     var body: some View {
@@ -22,7 +24,7 @@ struct NeonButton: View {
                 .resizable()
                 .overlay {
                     Text(text)
-                        .font(Font.custom("DINAlternate-Bold", size: 28.0, relativeTo: .largeTitle))
+                        .font(Font(name: font, size: 28))
                         .bold()
                         .foregroundColor(.white)
                 }
@@ -33,6 +35,6 @@ struct NeonButton: View {
 
 struct NeonButton_Previews: PreviewProvider {
     static var previews: some View {
-        NeonButton(text: "auau", image: .newButtonStyle)
+        NeonButton(text: "auau", image: .redButton, font: .dinAlternateBold)
     }
 }

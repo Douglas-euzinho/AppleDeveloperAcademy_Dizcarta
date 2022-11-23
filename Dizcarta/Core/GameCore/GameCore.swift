@@ -56,7 +56,7 @@ final class GameCore: ObservableObject {
             }
             var cards = self.cardList?.cards.shuffled() ?? []
 #if DEBUG
-            cards.removeSubrange(0...9)
+            cards.removeSubrange(0...12)
             cards.removeAll(where: {$0.type == .challenge && AppConfig.onlySpecialCards })
 #endif
             self.cardList?.cards = cards
