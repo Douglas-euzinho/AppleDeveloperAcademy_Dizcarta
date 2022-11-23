@@ -30,7 +30,7 @@ struct HomeView: View {
                                     ZStack {
                                       Image("secondaryButton")
                                         .resizable()
-                                        .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                                        .frame(width: UIScreen.main.bounds.width / 3.8, height: UIScreen.main.bounds.height / 10)
                                         .colorMultiply(.white)
                                       
                                         Image("cogsButton")
@@ -39,7 +39,7 @@ struct HomeView: View {
                                   }
                                 }
                             }
-                            .position(x: geometry.size.width/1.8, y: geometry.size.height/8)
+                            .position(x: geometry.size.width/1.8, y: geometry.size.height/10)
                         }
                     Spacer()
                     
