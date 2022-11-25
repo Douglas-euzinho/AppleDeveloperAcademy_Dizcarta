@@ -525,8 +525,8 @@
 		23C90ECD28EF5BE20079EEFA /* JsonManager */ = {
 			isa = PBXGroup;
 			children = (
-				23C90ECE28EF5D020079EEFA /* cards.json */,
 				23C90ED028EF5D3B0079EEFA /* CardsManager.swift */,
+				23C90ECE28EF5D020079EEFA /* cards.json */,
 			);
 			path = JsonManager;
 			sourceTree = "<group>";
