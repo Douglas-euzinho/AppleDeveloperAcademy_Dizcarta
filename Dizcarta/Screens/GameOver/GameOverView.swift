@@ -20,11 +20,18 @@ struct GameOverView: View {
             .ignoresSafeArea(.all)
           
           VStack {
-            Text("Fim de Jogo!")
-              .font(.system(size: 34))
-              .foregroundColor(.white)
-              .fontWeight(.heavy)
-              .padding(.vertical, 30)
+              HStack {
+                  Text("Fim de Jogo!")
+                    .font(.system(size: 34))
+                    .foregroundColor(.white)
+                    .fontWeight(.medium)
+                  Spacer()
+              }
+              .padding(.top, 20)
+              .padding(.leading, 24)
+          
+              DotDividerView()
+                  .padding(.top, 20)
               if !router.gameCore.players.isEmpty {
                   ScrollView(.vertical, showsIndicators: true) {
                       VStack {
@@ -33,6 +40,7 @@ struct GameOverView: View {
                                          points: router.gameCore.getRanking()[0].wrappedPoints,
                                          podiumPosition: 1)
                           .padding(.bottom, 20)
+                          .padding(.top, 20)
                           
                           HStack(spacing: 60) {
                               PlayerGameOver(name: router.gameCore.getRanking()[1].wrappedName,
@@ -71,9 +79,21 @@ struct GameOverView: View {
                       players = router.gameCore.getRanking()
                       players.removeSubrange(0...2)
                   }
+                  .padding(.top, 20)
               }
           }
           .navigationBarBackButtonHidden(true)
+          .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+              Button {
+                HapticManager.send(style: .heavy)
+                  router.popView()
+              } label: {
+                GenericFunctions.checkIfImageExist(name: "exitButton")
+                  .colorMultiply(.white)
+              }
+            }
+          }
       }
     }
     //: VSTACK
