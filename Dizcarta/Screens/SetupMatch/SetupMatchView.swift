@@ -87,7 +87,7 @@ struct SetupMatchView: View {
                                             router.gameCore.nextPlayer()
                                             router.pushView(screen: .shiftPlayer)
                                         } label: {
-                                            NeonButton(text: "Iniciar", image: .redButton, font: .dinCondensedBold)
+                                            NeonButton(text: "Iniciar", image: .redButton, font: .dinCondensedBold, size: 34)
                                                 .opacity(router.gameCore.players.count < 4 ? 0.5 : 1.0)
                                                 .frame(width: geometry.size.width / 1.5, height: geometry.size.height / 10)
                                         }

@@ -18,29 +18,27 @@ struct RankingView: View {
                 .ignoresSafeArea(.all)
             VStack(alignment: .leading) {
                 Text("Placar")
-                    .font(.custom("DINCondensed-Bold", size: 34))
+                    .font(Font(name: .dinCondensedBold, size: 34))
                     .foregroundColor(.white)
                     .padding()
                 
                 DotDividerView()
+                    .padding()
                 
-                LazyVStack(alignment: .leading, spacing: -10) {
+                LazyVStack(alignment: .leading, spacing: -30) {
                     ForEach(router.gameCore.getRanking(), id: \.id) { player in
                         HStack {
-                            GenericFunctions.checkIfImageExist(name: "rankingCircle")
-                                .overlay {
-                                    Text("\((router.gameCore.players.firstIndex(of: player) ?? 0)+1)º")
-                                }
                             PlayerView(
                                 avatar: player.wrappedAvatar,
                                 name: player.wrappedName,
                                 points: player.wrappedPoints,
-                                playerPosition: router.gameCore.players.firstIndex(of: player) ?? 0
+                                playerPosition: router.gameCore.players.firstIndex(of: player) ?? 0, isGamePaused: true
                             )
                         } //: HStack
                         .padding(.leading)
                     }
                 } //: VSTACK
+                .padding(.top, -40)
                 Spacer()
             }
         }

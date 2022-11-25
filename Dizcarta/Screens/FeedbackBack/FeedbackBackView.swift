@@ -32,14 +32,14 @@ struct FeedbackBackView: View {
                         Button {
                             router.goToRoot()
                         } label: {
-                            NeonButton(text: "Sair", image: .redButton, font: .dinCondensedBold)
+                            NeonButton(text: "Sair", image: .redButton, font: .dinCondensedBold, size: 34)
                                 .frame(width: geometry.size.width/1.2, height: geometry.size.height/6.5)
                         }
                         
                         Button {
                             router.popView()
                         } label: {
-                            NeonButton(text: "Cancelar", image: .blueButton, font: .dinCondensedBold)
+                            NeonButton(text: "Cancelar", image: .blueButton, font: .dinCondensedBold, size: 30)
                                 .frame(width: geometry.size.width/1.2, height: geometry.size.height/6.5)
                         }
                     }

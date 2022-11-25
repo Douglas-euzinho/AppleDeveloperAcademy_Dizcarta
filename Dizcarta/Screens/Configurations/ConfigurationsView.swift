@@ -19,6 +19,7 @@ struct ConfigurationsView: View {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack(alignment: .leading) {
+
                 
                 HStack(spacing: 20) {
                     GenericFunctions.checkIfImageExist(name: "haptics")
