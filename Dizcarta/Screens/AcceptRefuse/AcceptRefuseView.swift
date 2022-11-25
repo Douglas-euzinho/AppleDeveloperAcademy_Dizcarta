@@ -19,11 +19,17 @@ struct AcceptRefuseView: View {
           
           VStack {
             Spacer()
-            
-              Image(router.gameCore.playerPlaying?.wrappedAvatar ?? "")
-              .resizable()
-              .frame(width: 240, height: 240)
-              .padding(-20)
+              if router.gameCore.acceptOrRefuseTitle.contains("Parabéns!") {
+                  GenericFunctions.checkIfImageExist(name: "feedback_positivo")
+                  .resizable()
+                  .frame(width: 200, height: 200)
+                  .padding(-20)
+              } else {
+                  GenericFunctions.checkIfImageExist(name: "feedback_negativo")
+                      .resizable()
+                      .frame(width: 200, height: 200)
+                      .padding(-20)
+              }
             
               Text(router.gameCore.acceptOrRefuseTitle)
               .font(Font.custom("DINCondensed-Bold", size: 34))
