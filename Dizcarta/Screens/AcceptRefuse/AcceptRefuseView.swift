@@ -19,17 +19,12 @@ struct AcceptRefuseView: View {
           
           VStack {
             Spacer()
-              if router.gameCore.acceptOrRefuseTitle.contains("Parabéns!") {
-                  GenericFunctions.checkIfImageExist(name: "feedback_positivo")
+              GenericFunctions
+                  .checkIfImageExist(name: router.gameCore.acceptOrRefuseTitle
+                    .contains("Parabéns!") ? "feedback_positivo" : "feedback_negativo")
                   .resizable()
                   .frame(width: 200, height: 200)
                   .padding(-20)
-              } else {
-                  GenericFunctions.checkIfImageExist(name: "feedback_negativo")
-                      .resizable()
-                      .frame(width: 200, height: 200)
-                      .padding(-20)
-              }
             
               Text(router.gameCore.acceptOrRefuseTitle)
               .font(Font.custom("DINCondensed-Bold", size: 34))
@@ -50,7 +45,7 @@ struct AcceptRefuseView: View {
                     router.pushView(screen: .shiftPlayer)
                 }
             } label: {
-                NeonButton(text: "Continuar", image: .redButton, font: .dinCondensedBold)
+                NeonButton(text: "Continuar", image: .redButton, font: .dinCondensedBold, size: 34)
                 .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 8)
                 .padding(.bottom)
             }

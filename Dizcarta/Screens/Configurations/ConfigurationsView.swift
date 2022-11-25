@@ -19,6 +19,9 @@ struct ConfigurationsView: View {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack(alignment: .leading) {
+                DotDividerView()
+                    .padding(.top, 40)
+                
                 HStack(spacing: 20) {
                     GenericFunctions.checkIfImageExist(name: "haptics")
                     Toggle("Haptics", isOn: $isHapticsOn)
@@ -52,7 +55,7 @@ struct ConfigurationsView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Configurações")
+            .navigationTitle("Ajustes")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:

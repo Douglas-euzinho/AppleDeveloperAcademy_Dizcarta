@@ -29,19 +29,20 @@ struct GamePausedView: View {
             ZStack {
               Image("leaveGameButton")
                 .resizable()
-                .frame(width: UIScreen.main.bounds.width / 1.4, height: UIScreen.main.bounds.height / 6.5)
+                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 6.5)
                 .colorMultiply(.white)
               
               Text("Sair do Jogo")
                 .foregroundColor(.white)
                 .font(Font.custom("DINCondensed-Bold", size: 30, relativeTo: .title2))
                 .padding(.top, 7)
-            }
+                
+            } //: ZSTACK
           }
           .padding(.top, 15)
           .padding(.bottom, -15)
-          
-          HStack {
+
+            HStack(spacing: -5) {
             Button {
                 router.pushView(screen: .ranking)
             } label: {
@@ -49,10 +50,12 @@ struct GamePausedView: View {
                 ZStack {
                   Image("secondaryButton")
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                    .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 8.6)
                     .colorMultiply(.white)
                   
                     Image("trophyButton")
+                        .resizable()
+                        .frame(width: 35, height: 35)
                       .foregroundColor(.white)
                 }
                 
@@ -70,10 +73,12 @@ struct GamePausedView: View {
                     ZStack {
                       Image("secondaryButton")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                        .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 8.6)
                         .colorMultiply(.white)
                       
                         Image("rulesImage")
+                            .resizable()
+                            .frame(width: 30, height: 30)
                           .foregroundColor(.white)
                     }
                     
@@ -91,10 +96,12 @@ struct GamePausedView: View {
                 ZStack {
                   Image("secondaryButton")
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.width / 3.4, height: UIScreen.main.bounds.height / 7)
+                    .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 8.6)
                     .colorMultiply(.white)
                   
                   Image("cogsButton")
+                        .resizable()
+                        .frame(width: 30, height: 30)
                     .foregroundColor(.white)
                   
                 }
@@ -103,10 +110,10 @@ struct GamePausedView: View {
                   .foregroundColor(.white)
                   .font(.system(size: 15, weight: .medium))
                   .padding(.top, -15)
-            }
-          } //: HSTACK
-        } //: VSTACK
-      } //: ZSTACK
+            } //: VSTACK
+          }
+        } //: HSTACK
+      } //: VSTACK
       .navigationBarBackButtonHidden(true)
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {

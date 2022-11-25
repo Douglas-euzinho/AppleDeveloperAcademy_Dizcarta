@@ -14,40 +14,36 @@ struct PlayerView: View {
   @State var points: Int
   @State var playerPosition: Int?
   @State var isGamePaused: Bool?
-  var rankingCircle: String = "rankingCircle"
   
   // MARK: - BODY
   var body: some View {
     HStack {
       if isGamePaused ?? false {
-        Image(rankingCircle)
-          .resizable()
-          .frame(width: 60, height: 60)
-          .overlay {
-            Text("\(playerPosition ?? 0) º")
-              .font(.custom("DINAlternate-Bold", size: 20))
-          }
+          GenericFunctions.checkIfImageExist(name: "rankingCircle")
+              .resizable()
+              .frame(width: 50, height: 50)
+              .overlay {
+                  Text("\(playerPosition ?? 0)º")
+                      .font(Font(name: .dinCondensedBold, size: 15))
+                      .padding(.top, 8)
+              }
       }
-      
       Image(avatar)
         .resizable()
-        .frame(width: 65, height: 65)
-        .padding(.trailing, -14)
+        .frame(width: isGamePaused ?? false ? 115 : 65, height: isGamePaused ?? false ? 115 : 65)
+        .padding(.trailing, isGamePaused ?? false ? -20 : -5)
       
-      VStack(alignment: .leading) {
-        HStack {
+        VStack(alignment: .leading) {
           Text(name)
             .font(Font.custom("DINAlternate-Bold", size: 16))
             .foregroundColor(.white)
-        }
         
         Text(points >= 1 ? "\(points) pontos" : "\(points) ponto")
           .font(Font.custom("DINAlternate-Bold", size: 11))
           .foregroundColor(.white)
-      } //: HSTACK
-      .padding(.horizontal, 8)
-    } //: VSTACK
-  } //: HSTACK
+      } //: VSTACK
+    } //: HSTACK
+  } //: BODY
 } //: BODY
 
 // MARK: - PREVIEW

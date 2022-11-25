@@ -30,10 +30,12 @@ struct HomeView: View {
                                     ZStack {
                                       Image("secondaryButton")
                                         .resizable()
-                                        .frame(width: UIScreen.main.bounds.width / 3.8, height: UIScreen.main.bounds.height / 10)
+                                        .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 10)
                                         .colorMultiply(.white)
                                       
                                         Image("cogsButton")
+                                            .resizable()
+                                            .frame(width: 25, height: 25)
                                           .foregroundColor(.white)
                                     }
                                   }
@@ -47,7 +49,7 @@ struct HomeView: View {
                         HapticManager.send(style: .heavy)
                         router.pushView(screen: .setupMatch)
                     } label: {
-                        NeonButton(text: "Jogar", image: .redButton, font: .dinCondensedBold)
+                        NeonButton(text: "Jogar", image: .redButton, font: .dinCondensedBold, size: 34)
                             .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 7)
                     }
                     .accessibility(label: Text("Jogar"))
