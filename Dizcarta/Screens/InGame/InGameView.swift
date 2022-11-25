@@ -108,7 +108,7 @@ struct InGameView: View {
         router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.winPoints ?? 0 > 1) ?
         "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) pontos." :
         "Você ganhou \(router.gameCore.selectedCard?.winPoints ?? 0) ponto."
-        router.gameCore.acceptOrRefuseTitle = "Parabéns"
+        router.gameCore.acceptOrRefuseTitle = "Parabéns!"
         
         router.pushView(screen: .acceptRefuse)
     }
@@ -120,7 +120,7 @@ struct InGameView: View {
         router.gameCore.acceptOrRefuseMessage = (router.gameCore.selectedCard?.losePoints ?? 0 > 1) ?
         "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) pontos." :
         "Você perdeu \(router.gameCore.selectedCard?.losePoints ?? 0) ponto."
-        router.gameCore.acceptOrRefuseTitle = "Que pena"
+        router.gameCore.acceptOrRefuseTitle = "Que pena!"
         
         router.pushView(screen: .acceptRefuse)
     }
