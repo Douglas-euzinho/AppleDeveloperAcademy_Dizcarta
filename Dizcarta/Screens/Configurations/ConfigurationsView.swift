@@ -19,6 +19,7 @@ struct ConfigurationsView: View {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack(alignment: .leading) {
+                
                 HStack(spacing: 20) {
                     GenericFunctions.checkIfImageExist(name: "haptics")
                     Toggle("Haptics", isOn: $isHapticsOn)
@@ -52,26 +53,27 @@ struct ConfigurationsView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Configurações")
+            .padding(.top, 75)
+            .navigationTitle("Ajustes")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading:
-                                    HStack {
-                Image(systemName: "chevron.left")
-                Text("Voltar")
-                    .fontWeight(.medium)
-            }
-                .foregroundColor(.white)
-                .onTapGesture {
-                    router.popView()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    GenericFunctions.checkIfImageExist(name: "exitButton")
+                        .onTapGesture {
+                            router.goToRoot()
+                        }
                 }
-            )
+            }
+            DotDividerView()
+                .padding(.top, 60)
+        }
+    }
+    // MARK: - PREVIEW
+    struct ConfigurationsView_Previews: PreviewProvider {
+        static var previews: some View {
+            ConfigurationsView()
         }
     }
 }
-// MARK: - PREVIEW
-struct ConfigurationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfigurationsView()
-    }
-}
+
