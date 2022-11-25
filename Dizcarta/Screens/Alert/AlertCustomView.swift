@@ -27,7 +27,7 @@ struct AlertCustomView: View {
                                 .overlay {
                                     TextField("Nome", text: $nameTextField)
                                         .foregroundColor(.white)
-                                        .font(Font(name: .primaryFont, size: 20))
+                                        .font(Font(name: .dinAlternateBold, size: 20))
                                         .textInputAutocapitalization(.words)
                                         .autocorrectionDisabled(true)
                                         .cornerRadius(10)

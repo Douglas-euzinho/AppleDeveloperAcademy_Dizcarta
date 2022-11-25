@@ -19,13 +19,17 @@ enum Screen: Hashable {
     case inGame
     case shuffleAnimation
     case rules
+    case feedbackBack
 }
 
 final class Router: ObservableObject {
     @Published var path: [Screen] = []
-    @Published var gameCore: GameCore!
+    @Published var gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
+    
     func goToRoot() {
         path = .init()
+        gameCore.repository.removeAllMatchesInProgress()
+        gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     }
     
     func pushView(screen: Screen) {
@@ -34,6 +38,8 @@ final class Router: ObservableObject {
     
     func newGame() {
         path.removeAll()
+        gameCore.repository.removeAllMatchesInProgress()
+        gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
         path.append(.setupMatch)
     }
     

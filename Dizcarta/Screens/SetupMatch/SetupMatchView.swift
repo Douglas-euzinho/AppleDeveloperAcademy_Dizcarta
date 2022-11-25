@@ -12,7 +12,6 @@ struct SetupMatchView: View {
     @EnvironmentObject var router: Router
     @State var isAlertHiden: Bool = false
     @State var nameTextField: String = ""
-    @ObservedObject private var gameCore: GameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
     var body: some View {
         GeometryReader { geometry in
                 ZStack {
@@ -27,7 +26,7 @@ struct SetupMatchView: View {
                             
                             Spacer(minLength: 30)
                             
-                            Text(String(format: "%02d", gameCore.players.count))
+                            Text(String(format: "%02d", router.gameCore.players.count))
                                 .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
                                 .foregroundColor(Color(.textPlayersCount))
                                 .padding(.trailing)
@@ -38,9 +37,9 @@ struct SetupMatchView: View {
                         
                         VStack {
                             ScrollView(.vertical, showsIndicators: false) {
-                                ForEach(gameCore.players.sorted(by: {$0.turn < $1.turn }), id: \.self) { player in
+                                ForEach(router.gameCore.players.sorted(by: {$0.turn < $1.turn }), id: \.self) { player in
                                     PlayerSelectedView(player: player) {
-                                        gameCore.repository.save()
+                                        router.gameCore.repository.save()
                                     }
                                     .frame(width: geometry.size.width, height: 60)
                                 }
@@ -62,17 +61,17 @@ struct SetupMatchView: View {
                                     VStack {
                                         ScrollView(.horizontal, showsIndicators: false) {
                                             LazyHStack(spacing: 0) {
-                                                ForEach(gameCore.avatarData, id: \.id) { avatar in
+                                                ForEach(router.gameCore.avatarData, id: \.id) { avatar in
                                                     Avatar(avatar: avatar.image, name: avatar.name, isSelection: true) {
-                                                        if let player = gameCore.players.first(where: {$0.wrappedAvatar == avatar.image}) {
-                                                            gameCore.repository.delete(object: player)
-                                                            gameCore.fetchPlayers()
+                                                        if let player = router.gameCore.players.first(where: {$0.wrappedAvatar == avatar.image}) {
+                                                            router.gameCore.repository.delete(object: player)
+                                                            router.gameCore.fetchPlayers()
                                                         }
                                                     } createAction: {
-                                                        self.gameCore.createPlayer(name: avatar.name,
+                                                        self.router.gameCore.createPlayer(name: avatar.name,
                                                                                    avatar: avatar.image)
+                                                        self.router.objectWillChange.send()
                                                     }
-                                                    .environmentObject(gameCore)
                                                 } //: For
                                             } //: LazyHStack
                                         } //: ScrollView
@@ -87,11 +86,11 @@ struct SetupMatchView: View {
                                             router.gameCore.nextPlayer()
                                             router.pushView(screen: .shiftPlayer)
                                         } label: {
-                                            NeonButton(text: "Iniciar", image: .newButtonStyle)
-                                                .opacity(gameCore.players.count < 4 ? 0.5 : 1.0)
+                                            NeonButton(text: "Iniciar", image: .redButton, font: .dinCondensedBold)
+                                                .opacity(router.gameCore.players.count < 4 ? 0.5 : 1.0)
                                                 .frame(width: geometry.size.width / 1.5, height: geometry.size.height / 10)
                                         }
-                                        .disabled(gameCore.players.count < 4)
+                                        .disabled(router.gameCore.players.count < 4)
                                     } //: VStack
                                 } //: Overlay
                         } //: VStack
@@ -101,11 +100,6 @@ struct SetupMatchView: View {
                 } //: ZStack
             .opacity(isAlertHiden ? 0.5 : 1)
             .ignoresSafeArea(.keyboard)
-            .onAppear {
-                gameCore.repository.removeAllMatchesInProgress()
-                gameCore.repository.createMatch()
-                router.gameCore = gameCore
-            }
         } //: GeometryReader
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -117,8 +111,7 @@ struct SetupMatchView: View {
         }
             .foregroundColor(.white)
             .onTapGesture {
-                gameCore.resetMatch()
-                router.popView()
+                router.pushView(screen: .feedbackBack)
             }
         )
     } //: Body

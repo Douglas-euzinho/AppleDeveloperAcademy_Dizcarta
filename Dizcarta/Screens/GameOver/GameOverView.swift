@@ -25,52 +25,53 @@ struct GameOverView: View {
               .foregroundColor(.white)
               .fontWeight(.heavy)
               .padding(.vertical, 30)
-            
-            ScrollView(.vertical, showsIndicators: true) {
-              VStack {
-                  PlayerGameOver(name: router.gameCore.getRanking()[0].wrappedName,
-                                 avatarAsset: router.gameCore.getRanking()[0].wrappedAvatar,
-                                 points: router.gameCore.getRanking()[0].wrappedPoints,
-                               podiumPosition: 1)
-                .padding(.bottom, 20)
-                
-                HStack(spacing: 60) {
-                    PlayerGameOver(name: router.gameCore.getRanking()[1].wrappedName,
-                                   avatarAsset: router.gameCore.getRanking()[1].wrappedAvatar,
-                                   points: router.gameCore.getRanking()[1].wrappedPoints,
-                                 podiumPosition: 2)
-                  
-                    PlayerGameOver(name: router.gameCore.getRanking()[2].wrappedName,
-                                   avatarAsset: router.gameCore.getRanking()[2].wrappedAvatar,
-                                   points: router.gameCore.getRanking()[2].wrappedPoints,
-                                 podiumPosition: 3)
-                }
-                
-                ForEach(players, id: \.self) { player in
-                  PlayerGameOver(name: player.wrappedName,
-                                 avatarAsset: player.wrappedAvatar,
-                                 points: player.wrappedPoints,
-                                 podiumPosition: (players.firstIndex(of: player) ?? 0) + 4)
-                  .padding()
-                }
+              if !router.gameCore.players.isEmpty {
+                  ScrollView(.vertical, showsIndicators: true) {
+                      VStack {
+                          PlayerGameOver(name: router.gameCore.getRanking()[0].wrappedName,
+                                         avatarAsset: router.gameCore.getRanking()[0].wrappedAvatar,
+                                         points: router.gameCore.getRanking()[0].wrappedPoints,
+                                         podiumPosition: 1)
+                          .padding(.bottom, 20)
+                          
+                          HStack(spacing: 60) {
+                              PlayerGameOver(name: router.gameCore.getRanking()[1].wrappedName,
+                                             avatarAsset: router.gameCore.getRanking()[1].wrappedAvatar,
+                                             points: router.gameCore.getRanking()[1].wrappedPoints,
+                                             podiumPosition: 2)
+                              
+                              PlayerGameOver(name: router.gameCore.getRanking()[2].wrappedName,
+                                             avatarAsset: router.gameCore.getRanking()[2].wrappedAvatar,
+                                             points: router.gameCore.getRanking()[2].wrappedPoints,
+                                             podiumPosition: 3)
+                          }
+                          
+                          ForEach(players, id: \.self) { player in
+                              PlayerGameOver(name: player.wrappedName,
+                                             avatarAsset: player.wrappedAvatar,
+                                             points: player.wrappedPoints,
+                                             podiumPosition: (players.firstIndex(of: player) ?? 0) + 4)
+                              .padding()
+                          }
+                      }
+                      
+                      Spacer()
+                      
+                      Button {
+                          HapticManager.send(style: .heavy)
+                          router.newGame()
+                      } label: {
+                          NeonButton(text: "Novo Jogo", image: .redButton, font: .dinCondensedBold)
+                              .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
+                              .shadow(radius: 5)
+                              .padding(20)
+                      }
+                  }
+                  .onAppear {
+                      players = router.gameCore.getRanking()
+                      players.removeSubrange(0...2)
+                  }
               }
-              
-              Spacer()
-              
-              Button {
-                HapticManager.send(style: .heavy)
-                router.newGame()
-              } label: {
-                  NeonButton(text: "Novo Jogo", image: .newButtonStyle)
-                  .frame(width: geometry.size.width / 1.6, height: geometry.size.height / 15)
-                  .shadow(radius: 5)
-                  .padding(20)
-              }
-            }
-            .onAppear {
-                players = router.gameCore.getRanking()
-              players.removeSubrange(0...2)
-            }
           }
           .navigationBarBackButtonHidden(true)
       }

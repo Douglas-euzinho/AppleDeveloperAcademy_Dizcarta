@@ -47,7 +47,7 @@ struct HomeView: View {
                         HapticManager.send(style: .heavy)
                         router.pushView(screen: .setupMatch)
                     } label: {
-                        NeonButton(text: "Jogar", image: .newButtonStyle)
+                        NeonButton(text: "Jogar", image: .redButton, font: .dinCondensedBold)
                             .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 7)
                     }
                     .accessibility(label: Text("Jogar"))
