@@ -63,15 +63,12 @@ struct SetupMatchView: View {
                                             LazyHStack(spacing: 0) {
                                                 ForEach(router.gameCore.avatarData, id: \.id) { avatar in
                                                     Avatar(avatar: avatar.image, name: avatar.name, isSelection: true) {
-                                                        if let player = router.gameCore.players
-                                                            .first(where: {$0.wrappedAvatar == avatar.image}) {
-                                                            router.gameCore.repository.delete(object: player)
-                                                            router.gameCore.fetchPlayers()
-                                                        }
+                                                        router.gameCore.removePlayer(avatarName: avatar.image)
+                                                        router.objectWillChange.send()
                                                     } createAction: {
                                                         self.router.gameCore.createPlayer(name: avatar.name,
                                                                                    avatar: avatar.image)
-                                                        self.router.objectWillChange.send()
+                                                        router.objectWillChange.send()
                                                     }
                                                 } //: For
                                             } //: LazyHStack
