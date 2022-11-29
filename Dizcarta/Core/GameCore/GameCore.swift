@@ -49,23 +49,23 @@ final class GameCore: ObservableObject {
             if AppConfig.useRemoteCards {
                 if let allCards = try? await CardsManager.requestCards(cardsURL: "https://dizcarta.github.io/cards/cardsV2.json") {
                     self.cardList = allCards
-                    print("ONLINE CARDS CREATED \(allCards.cards.count)")
+                    Logger(context: .game).log("ONLINE CARDS CREATED \(allCards.cards.count)")
                 }
             } else {
                 self.cardList = CardsManager.decodeJson(forName: cardFile)
             }
-            var cards = self.cardList?.cards.shuffled() ?? []
+            var cards = self.cardList?.cards ?? []
 #if DEBUG
             cards.removeSubrange(0...12)
             cards.removeAll(where: {$0.type == .challenge && AppConfig.onlySpecialCards })
 #endif
-            self.cardList?.cards = cards
+            self.cardList?.cards = cards.shuffled()
         }
-        print("[GAME CORE]: >>>>>>Created<<<<<")
+        Logger(context: .game).log(">>>>>>Created<<<<<")
     }
     
     deinit {
-        print("[GAME CORE]: >>>>>>>> Is Deiniting <<<<<<")
+        Logger(context: .game).log("[GAME CORE]: >>>>>>>> Is Deiniting <<<<<<")
     }
     
 }
