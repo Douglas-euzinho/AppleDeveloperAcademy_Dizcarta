@@ -15,6 +15,7 @@ extension GameCore {
     
     func fetchPlayers() {
         self.players = getPlayers(match: matchInProgress)
+        self.objectWillChange.send()
     }
     
     func createPlayer(name: String, avatar: String) {
@@ -23,6 +24,15 @@ extension GameCore {
         }
         self.players = repository.getPlayers(match: matchInProgress)
         self.objectWillChange.send()
+    }
+    
+    func removePlayer(avatarName: String) {
+        if let player = players.first(where: { $0.wrappedAvatar == avatarName }) {
+            players.removeAll(where: { player.wrappedAvatar == $0.wrappedAvatar })
+            repository.delete(object: player)
+            players = repository.getPlayers(match: matchInProgress)
+            self.objectWillChange.send()
+        }
     }
      
     func resetMatch() {
