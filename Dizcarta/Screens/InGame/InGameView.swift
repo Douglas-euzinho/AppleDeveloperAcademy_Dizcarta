@@ -57,7 +57,7 @@ struct InGameView: View {
                         } else {
                             ButtonCardView(iconName: cardType == .surprise ? "happyAccept" : "sadAccept",
                                            text: cardType == .surprise ? "Receber" : "Ok",
-                                           backgroundImage: "secondaryButton")
+                                           backgroundImage: cardType == .surprise ? "acceptButton" : "refuseButton" )
                             .onTapGesture {
                                 specialAction()
                             }
