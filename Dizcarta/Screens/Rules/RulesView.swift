@@ -9,127 +9,184 @@ import SwiftUI
 
 struct ViewOne: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text(String(format: "0%d", 1))
-                    .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
-                    .foregroundColor(Color(.textPlayersCount))
-                Text("Adicione os jogadores. No mínimo 3 no máximo 6.")
-                    .lineLimit(4, reservesSpace: true)
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                HStack {
+                    Text(String(format: "0%d", 1))
+                        .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
+                        .foregroundColor(Color(.textPlayersCount))
+                    Text("Comece adicionando jogadores, lembrando que o mínimo são 4!")
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.system(size: 22))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding([.leading, .bottom])
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "arrow_1")
+                        .resizable()
+                        .frame(width: geometry.size.width/4, height: geometry.size.height/8)
+                    GenericFunctions.checkIfImageExist(name: "image_1")
+                        .resizable()
+                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/3)
+                }
+                .padding([.leading])
+                Spacer(minLength: 40)
             }
-            .padding()
-            GenericFunctions.checkIfImageExist(name: "arrow_1")
-            GenericFunctions.checkIfImageExist(name: "image_1")
-            Spacer()
         }
     }
 }
 
 struct ViewTwo: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text(String(format: "0%d", 2))
-                    .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
-                    .foregroundColor(Color(.textPlayersCount))
-                Text("Cada jogador iniciará com 3 pontos.")
-                    .lineLimit(4, reservesSpace: true)
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                HStack {
+                    Text(String(format: "0%d", 2))
+                        .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
+                        .foregroundColor(Color(.textPlayersCount))
+                    Text("Ao iniciar a partida, todos os jogadores terão 15 pontos iniciais.")
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.system(size: 22))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding([.leading, .bottom])
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "arrow_2")
+                        .resizable()
+                        .frame(width: geometry.size.width/8, height: geometry.size.height/6)
+                    GenericFunctions.checkIfImageExist(name: "image_2")
+                        .resizable()
+                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/4)
+                }
+                .padding([.leading])
+                
+                Spacer(minLength: 40)
             }
-            .padding()
-            GenericFunctions.checkIfImageExist(name: "arrow_2")
-            GenericFunctions.checkIfImageExist(name: "image_2")
-            Spacer()
         }
     }
 }
 
 struct ViewThree: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text(String(format: "0%d", 3))
-                    .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
-                    .foregroundColor(Color(.textPlayersCount))
-                Text("O jogo consiste em cartas e cada carta contém um desafio.")
-                    .lineLimit(4, reservesSpace: true)
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
+        GeometryReader { geometry in
+            VStack {
+//                Spacer()
+                HStack {
+                    Text(String(format: "0%d", 3))
+                        .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
+                        .foregroundColor(Color(.textPlayersCount))
+                    Text("O jogo se baseia em desafios, cada carta contém um desafio único.")
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.system(size: 22))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding(.all)
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "arrow_3")
+                        .resizable()
+                        .frame(width: geometry.size.width/6, height: geometry.size.height/8)
+                    GenericFunctions.checkIfImageExist(name: "image_3")
+                        .resizable()
+                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.6)
+                }
+                .padding(.top, -30)
+                Spacer(minLength: 40)
             }
-            .padding()
-            GenericFunctions.checkIfImageExist(name: "arrow_3")
-            GenericFunctions.checkIfImageExist(name: "image_3")
-            Spacer()
         }
     }
 }
 struct ViewFour: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text(String(format: "0%d", 04))
-                    .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
-                    .foregroundColor(Color(.textPlayersCount))
-                Text("O desafio é direcionado para um jogador em específico. Onde o jogador pode aceitar ou recusar o desafio.")
-                    .lineLimit(4, reservesSpace: true)
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                HStack {
+                    Text(String(format: "0%d", 04))
+                        .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
+                        .foregroundColor(Color(.textPlayersCount))
+                    Text("O desafio é direcionado para o jogador da vez. E o mesmo deve escolher as opções presentes na tela.")
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.system(size: 22))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding([.leading, .bottom])
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "arrow_4")
+                        .resizable()
+                        .frame(width: geometry.size.width/6, height: geometry.size.height/8)
+                    GenericFunctions.checkIfImageExist(name: "image_4")
+                        .resizable()
+                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/4)
+                }
+                .padding(.bottom)
+                Spacer(minLength: 40)
             }
-            .padding()
-            GenericFunctions.checkIfImageExist(name: "arrow_4")
-            GenericFunctions.checkIfImageExist(name: "image_4")
-            Spacer()
         }
     }
 }
 struct ViewFive: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text(String(format: "0%d", 05))
-                    .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
-                    .foregroundColor(Color(.textPlayersCount))
-                Text("Ao aceitar fazer o desafio, o jogador ganhará pontos. Ao recusar, perderá pontos.")
-                    .lineLimit(4, reservesSpace: true)
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                HStack(spacing: 20) {
+                    Text(String(format: "0%d", 05))
+                        .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
+                        .foregroundColor(Color(.textPlayersCount))
+                    Text("Ao aceitar ou recusar o desafio, você ganhará ou perderá pontos!")
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.system(size: 22))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding([.leading, .bottom])
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "arrow_5")
+                        .resizable()
+                        .frame(width: geometry.size.width/4, height: geometry.size.height/9)
+                    GenericFunctions.checkIfImageExist(name: "image_5")
+                        .resizable()
+                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/2)
+                        .padding([.leading, .trailing])
+                }
+                .padding(.top, -20)
+                Spacer(minLength: 40)
             }
-            .padding()
-            GenericFunctions.checkIfImageExist(name: "arrow_5")
-            GenericFunctions.checkIfImageExist(name: "image_5")
-            Spacer()
         }
     }
 }
 struct ViewSix: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text(String(format: "%02d", 06))
-                    .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
-                    .foregroundColor(Color(.textPlayersCount))
-                Text("Ganha quem ao final tiver mais pontos.")
-                    .lineLimit(4, reservesSpace: true)
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
+        GeometryReader { geometry in
+            VStack(alignment: .center) {
+                HStack {
+                    Text(String(format: "%02d", 06))
+                        .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
+                        .foregroundColor(Color(.textPlayersCount))
+                    Text("Ganha quem ao final da partida obtiver a maior pontuação.")
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.system(size: 22))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding([.leading, .trailing], 30)
+                VStack(alignment: .center) {
+                    GenericFunctions.checkIfImageExist(name: "arrow_6")
+                        .resizable()
+                        .frame(width: geometry.size.width/5, height: geometry.size.height/10)
+                    GenericFunctions.checkIfImageExist(name: "image_6")
+                        .resizable()
+                        .frame(width: geometry.size.width/1.4, height: geometry.size.height/1.5)
+                }
+                .padding(.top, -70)
+                Spacer(minLength: 40)
             }
-            .padding()
-            GenericFunctions.checkIfImageExist(name: "arrow_6")
-            GenericFunctions.checkIfImageExist(name: "image_6")
-            Spacer()
         }
     }
 }
