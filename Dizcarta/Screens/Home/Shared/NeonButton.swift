@@ -16,17 +16,20 @@ struct NeonButton: View {
     var body: some View {
         ZStack {
             GenericFunctions.checkIfImageExist(name: image.rawValue)
-            Text(text)
-                .font(Font(name: font, size: size))
-                .bold()
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
+            VStack(alignment: .center) {
+                Text(text)
+                    .font(Font(name: font, size: size))
+                    .bold()
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.top, 10)
         }
     }
 }
 
 struct NeonButton_Previews: PreviewProvider {
     static var previews: some View {
-        NeonButton(text: "auau", image: .redButton, font: .dinAlternateBold, size: 20)
+        NeonButton(text: "auau", image: .redPrimaryButton, font: .dinAlternateBold, size: 20)
     }
 }

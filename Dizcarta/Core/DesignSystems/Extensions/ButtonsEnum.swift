@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum ButtonsNameImage: String {
-    case redButton = "leaveGameButton"
-    case blueButton = "blueButton"
+    case redPrimaryButton = "primaryButton5"
+    case blueButton = "blueButton2"
+    case redSecondaryButton = "secondaryButton2"
 }

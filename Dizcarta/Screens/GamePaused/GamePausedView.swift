@@ -27,7 +27,7 @@ struct GamePausedView: View {
               router.goToRoot()
           } label: {
             ZStack {
-              Image("leaveGameButton")
+                GenericFunctions.checkIfImageEnumExist(name: .redPrimaryButton)
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 6.5)
                 .colorMultiply(.white)
@@ -48,7 +48,7 @@ struct GamePausedView: View {
             } label: {
               VStack {
                 ZStack {
-                  Image("secondaryButton")
+                  Image("secondaryButton2")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 8.6)
                     .colorMultiply(.white)
@@ -71,7 +71,7 @@ struct GamePausedView: View {
               } label: {
                   VStack {
                     ZStack {
-                      Image("secondaryButton")
+                      Image("secondaryButton2")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 8.6)
                         .colorMultiply(.white)
@@ -94,7 +94,7 @@ struct GamePausedView: View {
             } label: {
               VStack {
                 ZStack {
-                  Image("secondaryButton")
+                  Image("secondaryButton2")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 8.6)
                     .colorMultiply(.white)

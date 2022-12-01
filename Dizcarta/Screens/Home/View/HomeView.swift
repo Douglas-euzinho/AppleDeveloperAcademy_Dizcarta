@@ -28,7 +28,7 @@ struct HomeView: View {
                                 } label: {
                                   VStack {
                                     ZStack {
-                                      Image("secondaryButton")
+                                      Image("secondaryButton2")
                                         .resizable()
                                         .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.height / 10)
                                         .colorMultiply(.white)
@@ -49,7 +49,7 @@ struct HomeView: View {
                         HapticManager.send(style: .heavy)
                         router.pushView(screen: .setupMatch)
                     } label: {
-                        NeonButton(text: "Jogar", image: .redButton, font: .dinCondensedBold, size: 34)
+                        NeonButton(text: "Jogar", image: .redPrimaryButton, font: .dinCondensedBold, size: 34)
                             .frame(width: geometry.size.width / 1.4, height: geometry.size.height / 7)
                     }
                     .accessibility(label: Text("Jogar"))
