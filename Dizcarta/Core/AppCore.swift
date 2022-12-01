@@ -11,13 +11,13 @@ import SwiftUI
 struct AppCore: App {
     var body: some Scene {
         WindowGroup {
-            CoordinatorView()
-                .preferredColorScheme(.dark)
-                .onAppear {
-                    if UserDefaults.standard.value(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) == nil {
-                        UserDefaults.standard.set(true, forKey: UserDefaultsConfigurations.isHapticsOn.rawValue)
+                CoordinatorView()
+                    .preferredColorScheme(.dark)
+                    .onAppear {
+                        if UserDefaults.standard.value(forKey: UserDefaultsConfigurations.isHapticsOn.rawValue) == nil {
+                            UserDefaults.standard.set(true, forKey: UserDefaultsConfigurations.isHapticsOn.rawValue)
+                        }
                     }
-                }
         }
     }
 }
