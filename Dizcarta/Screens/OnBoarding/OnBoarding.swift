@@ -65,7 +65,7 @@ struct ViewSixOB: View {
 }
 
 struct OnBoardingPagination: View {
-    @EnvironmentObject var router: Router
+    @Binding var isOnboardingMode: Bool
     @State var selectedPage = 0
     var body: some View {
         VStack {
@@ -83,49 +83,33 @@ struct OnBoardingPagination: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         if selectedPage == 5 {
-                            router.pushView(screen: .home)
+                           isOnboardingMode = false
                         }
                     } label: {
                         Text(selectedPage < 5 ? "Pular" : "Avançar")
                     }
                 }
             }
-            .onDisappear {
-                router.popView(screen: .onboarding)
-            }
         }
     }
 }
 
 struct OnBoardingView: View {
-    @EnvironmentObject var router: Router
+    @Binding var isShowingOnboarding: Bool
     var body: some View {
         ZStack {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack {
-                OnBoardingPagination()
+                OnBoardingPagination(isOnboardingMode: $isShowingOnboarding)
             }
         }
-        .navigationTitle("Regras")
-        .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-                                HStack {
-            Image(systemName: "chevron.left")
-            Text("Voltar")
-                .fontWeight(.medium)
-        }
-            .foregroundColor(.white)
-            .onTapGesture {
-                router.popView()
-            }
-        )
     }
 }
 
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingView()
+        OnBoardingView(isShowingOnboarding: .constant(false))
     }
 }
