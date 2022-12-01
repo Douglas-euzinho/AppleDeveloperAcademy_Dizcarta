@@ -24,7 +24,7 @@ struct SplashScreen: View {
 }
 
 struct CoordinatorView : View {
-    @AppStorage("userOnBoard") var isUserOnboarding: Bool = true
+    @AppStorage(UserDefaultsConfigurations.isOnboardOn.rawValue) var isOnboardingOn = true
     @State var splashScreen  = true
     @StateObject var router = Router()
     var body: some View {
@@ -35,8 +35,8 @@ struct CoordinatorView : View {
                 Group {
                     if splashScreen {
                         SplashScreen(isShowingSplash: $splashScreen)
-                    } else if isUserOnboarding && !splashScreen {
-                        OnBoardingView(isShowingOnboarding: $isUserOnboarding)
+                    } else if isOnboardingOn && !splashScreen {
+                        RulesView(isShowingOnboarding: $isOnboardingOn)
                     } else {
                         HomeView()
                             .environmentObject(router)
@@ -70,7 +70,7 @@ struct CoordinatorView : View {
                     ShuffleAnimation()
                         .environmentObject(router)
                 case .rules:
-                    RulesView()
+                    RulesView(isShowingOnboarding: .constant(false))
                         .environmentObject(router)
                 case .ranking:
                     RankingView()

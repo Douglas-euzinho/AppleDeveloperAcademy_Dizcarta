@@ -147,7 +147,11 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
     }
     
     func removePlayerPoints(player: Player, points: Int) {
-        player.points -= Int16(points)
+        if Int(player.points - Int16(points)) >= 0 {
+            player.points -= Int16(points)
+        } else {
+            player.points = Int16(0)
+        }
         save()
     }
     
