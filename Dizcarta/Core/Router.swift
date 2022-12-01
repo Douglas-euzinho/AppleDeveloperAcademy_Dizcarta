@@ -20,6 +20,7 @@ enum Screen: Hashable {
     case shuffleAnimation
     case rules
     case feedbackBack
+    case onboarding
 }
 
 final class Router: ObservableObject {

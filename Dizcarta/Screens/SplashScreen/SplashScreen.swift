@@ -11,12 +11,14 @@ import Lottie
 struct SplashScreen: View {
     @State private var isRotated = false
     @Binding var isShowingSplash: Bool
+    @Binding var onBoarding: Bool
     let shared = GenericFunctions()
     
     var body: some View {
         LottieView(animationName: "SplashScreenApp.json", loopMode: .playOnce) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 isShowingSplash = false
+                onBoarding = true
             }
         }
         .frame(width: 400, height: 400)
@@ -24,7 +26,9 @@ struct SplashScreen: View {
 }
 
 struct CoordinatorView : View {
+//    @AppStorage("userOnBoard") var userOnBoard: Bool = false
     @State var splashScreen  = true
+    @State var onBoarding = false
     @StateObject var router = Router()
     var body: some View {
         NavigationStack(path: $router.path) {
@@ -33,7 +37,10 @@ struct CoordinatorView : View {
                     .ignoresSafeArea()
                 Group {
                     if splashScreen {
-                        SplashScreen(isShowingSplash: $splashScreen)
+                        SplashScreen(isShowingSplash: $splashScreen, onBoarding: $onBoarding)
+                    } else if onBoarding {
+                        OnBoardingView()
+                            .environmentObject(router)
                     } else {
                         HomeView()
                             .environmentObject(router)
@@ -75,6 +82,9 @@ struct CoordinatorView : View {
                 case .feedbackBack:
                     FeedbackBackView()
                         .environmentObject(router)
+                case .onboarding:
+                    OnBoardingView()
+                        .environmentObject(router)
                 default:
                     HomeView()
                         .environmentObject(router)
@@ -86,6 +96,6 @@ struct CoordinatorView : View {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen(isShowingSplash: .constant(true))
+        SplashScreen(isShowingSplash: .constant(true), onBoarding: .constant(false))
     }
 }

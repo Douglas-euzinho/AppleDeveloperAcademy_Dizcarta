@@ -65,6 +65,7 @@ struct HomeView_Previews: PreviewProvider {
         let devices = [ "iPhone 8", "iPhone 12", "iPhone 14", "iPhone 11 Pro Max"]
         
         ForEach(devices, id: \.self) { device in
+            
             HomeView()
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)

@@ -81,6 +81,7 @@
 		CDA35D0C28E4E1B10064B3B8 /* ShiftPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */; };
 		CDB53D2E28FDF05D00F55B96 /* ShuffleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */; };
 		CDBFA47428E226B700BBD368 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFA47328E226B700BBD368 /* SplashScreen.swift */; };
+		CDD90AD329315B9C00C2399F /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD90AD229315B9C00C2399F /* OnBoarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,7 @@
 		CDA35D0B28E4E1B10064B3B8 /* ShiftPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlayerView.swift; sourceTree = "<group>"; };
 		CDB53D2D28FDF05D00F55B96 /* ShuffleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnimation.swift; sourceTree = "<group>"; };
 		CDBFA47328E226B700BBD368 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		CDD90AD229315B9C00C2399F /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +453,7 @@
 		238DF94628DA383000F9A23B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CDD90AD129315B8200C2399F /* OnBoarding */,
 				36406BFD292E934500B78AB6 /* FeedbackBack */,
 				36517C3E292BF01500E26626 /* Rules */,
 				15B529FE291D7FD400A3AF3A /* GamePaused */,
@@ -683,6 +686,14 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		CDD90AD129315B8200C2399F /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				CDD90AD229315B9C00C2399F /* OnBoarding.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -860,6 +871,7 @@
 				2340D8F228F491BD0016CB0F /* GameCore+Players.swift in Sources */,
 				15E07D8028EF6D52005D2A80 /* AvatarData.swift in Sources */,
 				23C90ED128EF5D3B0079EEFA /* CardsManager.swift in Sources */,
+				CDD90AD329315B9C00C2399F /* OnBoarding.swift in Sources */,
 				CD58D94F28F4A36200486117 /* CardsAnimation.swift in Sources */,
 				151BCC1B2901D142007E4D67 /* AcceptRefuseView.swift in Sources */,
 				1552780028DCE7E0003F83EF /* InGameView.swift in Sources */,

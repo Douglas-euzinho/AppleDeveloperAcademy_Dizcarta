@@ -11,7 +11,7 @@ struct ConfigurationsView: View {
     // MARK: - VARIABLES
     @AppStorage(UserDefaultsConfigurations.isHapticsOn.rawValue) var isHapticsOn = true
     @AppStorage(UserDefaultsConfigurations.isNarratorOn.rawValue) var isNarratorOn = false
-    @AppStorage(UserDefaultsConfigurations.isColorBlindnessOn.rawValue) var isColorBlindnessOn = false
+//    @AppStorage(UserDefaultsConfigurations.isColorBlindnessOn.rawValue) var isColorBlindnessOn = false
     @EnvironmentObject var router: Router
     // MARK: - BODY
     var body: some View {
