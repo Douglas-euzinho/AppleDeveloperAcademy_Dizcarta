@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct SetupMatchView: View {
     // MARK: - VARIABLES
     @EnvironmentObject var router: Router
-    @State var isAlertHiden: Bool = false
-    @State var nameTextField: String = ""
+    
     var body: some View {
         GeometryReader { geometry in
                 ZStack {
@@ -36,22 +36,22 @@ struct SetupMatchView: View {
                             .frame(height: 3)
                         
                         VStack {
-                            ScrollView(.vertical, showsIndicators: false) {
-                                ForEach(router.gameCore.players.sorted(by: {$0.turn < $1.turn }), id: \.self) { player in
-                                    PlayerSelectedView(player: player) {
-                                        router.gameCore.repository.save()
+                                ScrollView(.vertical, showsIndicators: true) {
+                                    ForEach(router.gameCore.players.sorted(by: {$0.turn < $1.turn }), id: \.self) { player in
+                                        PlayerSelectedView(player: player, gameCore: router.gameCore) {
+                                            router.gameCore.repository.save()
+                                        }
+                                        .frame(width: geometry.size.width, height: 60)
+                                        .id(player.id)
                                     }
-                                    .frame(width: geometry.size.width, height: 60)
-                                }
-                                .onTapGesture {
-                                    self.isAlertHiden.toggle()
-                                }
-                                if isAlertHiden {
-//                                    AlertCustomView(nameTextField: $nameTextField)
-                                }
-                            } //: ScrollView
-                            .padding(.top, -34)
-                            .padding(.bottom, -7)
+                                    if router.gameCore.players.count > 4 {
+                                        Rectangle()
+                                            .opacity(0)
+                                            .padding(40)
+                                    }
+                                } //: ScrollView
+                                .padding(.top, -34)
+                                .padding(.bottom, -7)
                         } //: VStack
                         
                         VStack {
@@ -97,7 +97,6 @@ struct SetupMatchView: View {
                     } //: VStack
                     .scrollDismissesKeyboard(.never)
                 } //: ZStack
-            .opacity(isAlertHiden ? 0.5 : 1)
             .ignoresSafeArea(.keyboard)
         } //: GeometryReader
         .navigationBarTitleDisplayMode(.inline)

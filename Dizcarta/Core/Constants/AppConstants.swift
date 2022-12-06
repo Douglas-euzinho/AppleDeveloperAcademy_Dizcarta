@@ -13,7 +13,7 @@ enum AppConfig {
     static var MaxPlayerInMatch = 6
     
     #if DEBUG
-    static var onlySpecialCards = true
+    static var onlySpecialCards = false
     static var useRemoteCards = false
     #else
     static var onlySpecialCards = false

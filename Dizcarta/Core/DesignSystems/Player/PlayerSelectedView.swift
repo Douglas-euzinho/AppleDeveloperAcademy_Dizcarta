@@ -12,6 +12,7 @@ struct PlayerSelectedView: View {
   @State var isEditing: Bool = false
   @FocusState var nameIsFocused: FocusedField?
   @ObservedObject var player: Player
+  @ObservedObject var gameCore: GameCore
   @State private var backupName: String = ""
   var saveAction: () -> Void
   enum FocusedField {
@@ -48,6 +49,17 @@ struct PlayerSelectedView: View {
               if focused != .username {
                 save()
               }
+            }
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    HStack {
+                        Image(player.wrappedAvatar)
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                        Text(player.wrappedName)
+                            .padding(.leading, 2)
+                    }
+                }
             }
         } else {
           TextField("", text: $player.wrappedName)
@@ -88,6 +100,12 @@ struct PlayerSelectedView: View {
     }
   }
   private func save() {
+      if gameCore.players.contains(where: { $0.wrappedName.lowercased() == player.wrappedName.lowercased()
+          && $0.wrappedAvatar != player.wrappedAvatar }) {
+          player.wrappedName = backupName
+          return
+      }
+      
     if player.wrappedName.isBlank {
       player.wrappedName = backupName
     }
