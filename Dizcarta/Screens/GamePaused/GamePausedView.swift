@@ -22,25 +22,6 @@ struct GamePausedView: View {
 
           Image("gamePausedImage_2")
             .colorMultiply(Color.white)
-          
-          Button {
-              router.goToRoot()
-          } label: {
-            ZStack {
-                GenericFunctions.checkIfImageEnumExist(name: .redPrimaryButton)
-                .resizable()
-                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 6.5)
-                .colorMultiply(.white)
-              
-              Text("Sair do Jogo")
-                .foregroundColor(.white)
-                .font(Font.custom("DINCondensed-Bold", size: 30, relativeTo: .title2))
-                .padding(.top, 7)
-                
-            } //: ZSTACK
-          }
-          .padding(.top, 15)
-          .padding(.bottom, -15)
 
             HStack(spacing: -5) {
             Button {
@@ -113,6 +94,24 @@ struct GamePausedView: View {
             } //: VSTACK
           }
         } //: HSTACK
+            Button {
+                router.goToRoot()
+            } label: {
+              ZStack {
+                  GenericFunctions.checkIfImageEnumExist(name: .redPrimaryButton)
+                  .resizable()
+                  .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 6.5)
+                  .colorMultiply(.white)
+                
+                Text("Sair do Jogo")
+                  .foregroundColor(.white)
+                  .font(Font.custom("DINCondensed-Bold", size: 30, relativeTo: .title2))
+                  .padding(.top, 7)
+                  
+              } //: ZSTACK
+            }
+            .padding(.top, 15)
+            .padding(.bottom, -15)
       } //: VSTACK
       .navigationBarBackButtonHidden(true)
       .toolbar {
