@@ -48,9 +48,7 @@ struct RankingView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
                                 HStack {
-            Image(systemName: "chevron.left")
-            Text("Voltar")
-                .fontWeight(.medium)
+            GenericFunctions.checkIfImageEnumExist(name: .redBackButton)
         }
             .foregroundColor(.white)
             .onTapGesture {

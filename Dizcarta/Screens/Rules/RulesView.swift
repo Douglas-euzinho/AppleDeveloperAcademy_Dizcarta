@@ -240,9 +240,7 @@ struct RulesView: View {
         .navigationBarItems(leading:
                                 HStack {
             if isShowingOnboarding == false {
-                Image(systemName: "chevron.left")
-                Text("Voltar")
-                    .fontWeight(.medium)
+                GenericFunctions.checkIfImageEnumExist(name: .redBackButton)
             }
         }
             .foregroundColor(.white)
