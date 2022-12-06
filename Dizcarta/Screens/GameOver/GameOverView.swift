@@ -87,7 +87,7 @@ struct GameOverView: View {
             ToolbarItem(placement: .navigationBarLeading) {
               Button {
                 HapticManager.send(style: .heavy)
-                  router.popView()
+                  router.goToRoot()
               } label: {
                 GenericFunctions.checkIfImageExist(name: "exitButton")
                   .colorMultiply(.white)

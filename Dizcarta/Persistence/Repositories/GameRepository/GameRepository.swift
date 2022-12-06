@@ -22,6 +22,7 @@ protocol GameRepositoryProtocol: Repository {
     
     func getRanking(match: MatchInProgress) -> [Player]
     func removeAllMatchesInProgress()
+    func resetPlayersPoints()
     
 }
 
@@ -106,8 +107,14 @@ final class PlayerRepositoryCoreData: GameRepositoryProtocol {
     }
     
     func getMatch() -> MatchInProgress {
-        MatchInProgress()
+        let matches = try? context.fetch(MatchInProgress.fetchRequest())
+        return (matches?.first!)!
     }
+    
+    func resetPlayersPoints() {
+        
+    }
+    
     
 }
 
@@ -163,6 +170,14 @@ final class PlayerRepositoryMock: GameRepositoryProtocol {
     func getMatch() -> MatchInProgress {
         let matches = try? context.fetch(MatchInProgress.fetchRequest())
         return (matches?.first!)!
+    }
+    
+    func resetPlayersPoints() {
+        guard let players = getMatch().players?.allObjects as? [Player] else { return }
+        players.forEach { player in
+            player.points = Int16(AppConfig.PlayerStartPoints)
+        }
+        save()
     }
 }
 

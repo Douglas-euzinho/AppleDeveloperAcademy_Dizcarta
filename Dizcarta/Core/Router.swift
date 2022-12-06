@@ -39,8 +39,7 @@ final class Router: ObservableObject {
     
     func newGame() {
         path.removeAll()
-        gameCore.repository.removeAllMatchesInProgress()
-        gameCore = GameCore(context: PersistenceController.context, cardFile: "cards")
+        gameCore.restartGame()
         path.append(.setupMatch)
     }
     
