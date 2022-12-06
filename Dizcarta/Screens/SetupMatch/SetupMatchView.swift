@@ -70,6 +70,7 @@ struct SetupMatchView: View {
                                                                                    avatar: avatar.image)
                                                         router.objectWillChange.send()
                                                     }
+                                                    .environmentObject(router.gameCore)
                                                 } //: For
                                             } //: LazyHStack
                                         } //: ScrollView

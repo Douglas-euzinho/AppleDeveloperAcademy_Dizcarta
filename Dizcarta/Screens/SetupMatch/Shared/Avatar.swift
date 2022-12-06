@@ -13,6 +13,7 @@ struct Avatar: View {
   @State var avatar: String
   @State var name: String
   @State private var changeOpacity: Bool = false
+  @EnvironmentObject var gameCore: GameCore
   var isSelection: Bool
   var removeAction: () -> Void
   var createAction: () -> Void
@@ -25,26 +26,22 @@ struct Avatar: View {
           .padding(isSelection ? -10 : 20)
           .opacity(changeOpacity ? 1.0 : 0.5)
           .onTapGesture {
-            if !isPressed {
               self.createAction()
-              self.isPressed = true
               self.changeOpacity = true
-            }
           }
           .background {
-            if isPressed {
+              if gameCore.players.contains(where: { $0.wrappedAvatar == avatar }) {
               Image("BackgroundSelectedPlayer")
             }
           }
           .overlay {
-            if isPressed {
+            if gameCore.players.contains(where: { $0.wrappedAvatar == avatar }) {
               ZStack(alignment: .bottomTrailing) {
                 Image("BackgroundSelectedPlayer")
                   .opacity(0.0)
                 Image("removePlayer")
                   .onTapGesture {
                     self.removeAction()
-                    self.isPressed = false
                     self.changeOpacity = false
                   }
               }
