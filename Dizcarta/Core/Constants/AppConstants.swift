@@ -24,9 +24,5 @@ enum AppConfig {
 enum UserDefaultsConfigurations: String {
     case isHapticsOn
     case isNarratorOn
-    case isColorBlindnessOnhapt
-}
-
-enum IsOnboarding {
-    static var UserOnboard: Bool = false
+    case isOnboardOn
 }

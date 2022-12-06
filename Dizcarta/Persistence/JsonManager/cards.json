@@ -106,7 +106,7 @@
             "image": "imageLocal",
             "winPoints": 2,
             "losePoints": 0,
-            "dizDescription": "Parabéns! \n Você acaba de ganhar 2 pontos! ",
+            "dizDescription": "Parabéns!\nVocê acaba de ganhar 2 pontos! ",
             "type": 2
         },
         {
@@ -115,7 +115,7 @@
             "image": "imageLocal",
             "winPoints": 3,
             "losePoints": 0,
-            "dizDescription": "Eba! \nVocê acaba de ganhar 3 pontos!",
+            "dizDescription": "Eba!\nVocê acaba de ganhar 3 pontos!",
             "type": 2
         },
         {
@@ -124,7 +124,7 @@
             "image": "imageLocal",
             "winPoints": 0,
             "losePoints": 3,
-            "dizDescription": "Você caiu do cavalo e tomou um coice, hein. \n Perdeu 3 pontos! ",
+            "dizDescription": "Você caiu do cavalo e tomou um coice, hein.\nPerdeu 3 pontos! ",
             "type": 3
         },
         {
@@ -133,7 +133,7 @@
             "image": "imageLocal",
             "winPoints": 0,
             "losePoints": 2,
-            "dizDescription": "Você acaba de perder \n 2 pontos!",
+            "dizDescription": "Você acaba de perder\n2 pontos!",
             "type": 3
         },
         

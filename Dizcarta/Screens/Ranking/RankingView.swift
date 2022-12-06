@@ -11,7 +11,7 @@ struct RankingView: View {
     // MARK: - VARIABLES
     @State var isFromHistory: Bool = true
     @EnvironmentObject var router: Router
-    
+    @State private var players: [Player] = []
     var body: some View {
         ZStack {
             Color(.backgroundAppColor)
@@ -26,13 +26,13 @@ struct RankingView: View {
                     .padding()
                 
                 LazyVStack(alignment: .leading, spacing: -30) {
-                    ForEach(router.gameCore.getRanking(), id: \.id) { player in
+                    ForEach(players, id: \.id) { player in
                         HStack {
                             PlayerView(
                                 avatar: player.wrappedAvatar,
                                 name: player.wrappedName,
                                 points: player.wrappedPoints,
-                                playerPosition: router.gameCore.players.firstIndex(of: player) ?? 0, isGamePaused: true
+                                playerPosition: (players.firstIndex(of: player) ?? 0) + 1, isGamePaused: true
                             )
                         } //: HStack
                         .padding(.leading)
@@ -40,6 +40,9 @@ struct RankingView: View {
                 } //: VSTACK
                 .padding(.top, -40)
                 Spacer()
+            }
+            .onAppear {
+                players = router.gameCore.getRanking()
             }
         }
         .navigationBarBackButtonHidden(true)

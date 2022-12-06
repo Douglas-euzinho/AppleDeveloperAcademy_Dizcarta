@@ -74,7 +74,7 @@ struct ViewThree: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-//                Spacer()
+                //                Spacer()
                 HStack {
                     Text(String(format: "0%d", 3))
                         .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
@@ -192,40 +192,58 @@ struct ViewSix: View {
 }
 
 struct RulesPagination: View {
+    @Binding var isOnboardingMode: Bool
+    @State var selectedPage = 0
     var body: some View {
         VStack {
             GenericFunctions.checkIfImageExist(name: "divider")
-            TabView {
-                ViewOne()
-                ViewTwo()
-                ViewThree()
-                ViewFour()
-                ViewFive()
-                ViewSix()
+            TabView(selection: $selectedPage) {
+                ViewOne().tag(0)
+                ViewTwo().tag(1)
+                ViewThree().tag(2)
+                ViewFour().tag(3)
+                ViewFive().tag(4)
+                ViewSix().tag(5)
             }
             .tabViewStyle(PageTabViewStyle())
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                            isOnboardingMode = false
+                    } label: {
+                        if isOnboardingMode {
+                            Text(selectedPage < 5 ? "Pular" : "Avançar")
+                                .foregroundColor(.orange)
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 struct RulesView: View {
+    @Binding var isShowingOnboarding: Bool
     @EnvironmentObject var router: Router
+
     var body: some View {
         ZStack {
             Color(.backgroundAppColor)
                 .ignoresSafeArea(.all)
             VStack {
-                RulesPagination()
+                RulesPagination(isOnboardingMode: $isShowingOnboarding)
             }
         }
-        .navigationTitle("Regras")
-        .navigationBarTitleDisplayMode(.large)
-        .navigationBarBackButtonHidden(true)
+        .navigationTitle(isShowingOnboarding ? "" : "Regras")
+        .navigationBarTitleDisplayMode(isShowingOnboarding ? .inline : .large)
+        .navigationBarBackButtonHidden(isShowingOnboarding ? false : true)
         .navigationBarItems(leading:
                                 HStack {
-            Image(systemName: "chevron.left")
-            Text("Voltar")
-                .fontWeight(.medium)
+            if isShowingOnboarding == false {
+                Image(systemName: "chevron.left")
+                Text("Voltar")
+                    .fontWeight(.medium)
+            }
         }
             .foregroundColor(.white)
             .onTapGesture {
@@ -235,8 +253,8 @@ struct RulesView: View {
     }
 }
 
-struct RulesView_Previews: PreviewProvider {
-    static var previews: some View {
-        RulesView()
-    }
-}
+// struct RulesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RulesView(isShowingOnboarding: .constant(false))
+//    }
+// }
