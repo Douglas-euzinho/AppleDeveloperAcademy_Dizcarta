@@ -61,7 +61,7 @@ struct ConfigurationsView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     GenericFunctions.checkIfImageExist(name: "exitButton")
                         .onTapGesture {
-                            router.goToRoot()
+                            router.popView()
                         }
                 }
             }
