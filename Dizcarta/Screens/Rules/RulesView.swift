@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ViewOne: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack {
                 Spacer()
                 HStack {
@@ -22,16 +22,14 @@ struct ViewOne: View {
                         .bold()
                         .foregroundColor(.white)
                 }
-                .padding([.leading, .bottom])
+                .padding([.leading, .trailing, .bottom])
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "arrow_1")
-                        .resizable()
-                        .frame(width: geometry.size.width/4, height: geometry.size.height/8)
                     GenericFunctions.checkIfImageExist(name: "image_1")
                         .resizable()
-                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/3)
+                        .scaledToFit()
                 }
-                .padding([.leading])
+                .padding()
                 Spacer(minLength: 40)
             }
         }
@@ -40,29 +38,27 @@ struct ViewOne: View {
 
 struct ViewTwo: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack {
                 Spacer()
                 HStack {
                     Text(String(format: "0%d", 2))
                         .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
                         .foregroundColor(Color(.textPlayersCount))
-                    Text("Ao iniciar a partida, todos os jogadores terão 15 pontos iniciais.")
+                    Text("Ao iniciar a partida, todos os jogadores começarão com 15 pontos.")
                         .lineLimit(4, reservesSpace: true)
                         .font(.system(size: 22))
                         .bold()
                         .foregroundColor(.white)
                 }
-                .padding([.leading, .bottom])
+                .padding([.leading, .trailing, .bottom])
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "arrow_2")
-                        .resizable()
-                        .frame(width: geometry.size.width/8, height: geometry.size.height/6)
                     GenericFunctions.checkIfImageExist(name: "image_2")
                         .resizable()
-                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/4)
+                        .scaledToFit()
                 }
-                .padding([.leading])
+                .padding()
                 
                 Spacer(minLength: 40)
             }
@@ -72,15 +68,15 @@ struct ViewTwo: View {
 
 struct ViewThree: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack {
-                //                Spacer()
+                Spacer()
                 HStack {
                     Text(String(format: "0%d", 3))
                         .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
                         .foregroundColor(Color(.textPlayersCount))
-                    Text("O jogo se baseia em desafios, cada carta contém um desafio único.")
-                        .lineLimit(4, reservesSpace: true)
+                    Text("O jogo se baseia em cartas com desafios únicos.")
+                        .lineLimit(3, reservesSpace: true)
                         .font(.system(size: 22))
                         .bold()
                         .foregroundColor(.white)
@@ -88,13 +84,11 @@ struct ViewThree: View {
                 .padding(.all)
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "arrow_3")
+                    GenericFunctions.checkIfImageExist(name: "image_3.1")
                         .resizable()
-                        .frame(width: geometry.size.width/6, height: geometry.size.height/8)
-                    GenericFunctions.checkIfImageExist(name: "image_3")
-                        .resizable()
-                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.6)
+                        .scaledToFit()
                 }
-                .padding(.top, -30)
+                .padding()
                 Spacer(minLength: 40)
             }
         }
@@ -102,29 +96,27 @@ struct ViewThree: View {
 }
 struct ViewFour: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack {
                 Spacer()
                 HStack {
                     Text(String(format: "0%d", 04))
                         .font(Font.custom("DINCondensed-Bold", size: 100.0, relativeTo: .title2))
                         .foregroundColor(Color(.textPlayersCount))
-                    Text("O desafio é direcionado para o jogador da vez. E o mesmo deve escolher as opções presentes na tela.")
+                    Text("O desafio é direcionado para o jogador da vez, o mesmo deve escolher as opções presentes na tela.")
                         .lineLimit(4, reservesSpace: true)
                         .font(.system(size: 22))
                         .bold()
                         .foregroundColor(.white)
                 }
-                .padding([.leading, .bottom])
+                .padding([.leading, .trailing, .bottom])
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "arrow_4")
-                        .resizable()
-                        .frame(width: geometry.size.width/6, height: geometry.size.height/8)
                     GenericFunctions.checkIfImageExist(name: "image_4")
                         .resizable()
-                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/4)
+                        .scaledToFit()
                 }
-                .padding(.bottom)
+                .padding()
                 Spacer(minLength: 40)
             }
         }
@@ -132,7 +124,7 @@ struct ViewFour: View {
 }
 struct ViewFive: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack {
                 Spacer()
                 HStack(spacing: 20) {
@@ -145,17 +137,14 @@ struct ViewFive: View {
                         .bold()
                         .foregroundColor(.white)
                 }
-                .padding([.leading, .bottom])
+                .padding([.leading, .trailing, .bottom])
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "arrow_5")
-                        .resizable()
-                        .frame(width: geometry.size.width/4, height: geometry.size.height/9)
                     GenericFunctions.checkIfImageExist(name: "image_5")
                         .resizable()
-                        .frame(width: geometry.size.width/1.2, height: geometry.size.height/2)
-                        .padding([.leading, .trailing])
+                        .scaledToFit()
                 }
-                .padding(.top, -20)
+                .padding()
                 Spacer(minLength: 40)
             }
         }
@@ -163,7 +152,7 @@ struct ViewFive: View {
 }
 struct ViewSix: View {
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             VStack(alignment: .center) {
                 HStack {
                     Text(String(format: "%02d", 06))
@@ -175,16 +164,14 @@ struct ViewSix: View {
                         .bold()
                         .foregroundColor(.white)
                 }
-                .padding([.leading, .trailing], 30)
+                .padding([.leading, .trailing, .bottom])
                 VStack(alignment: .center) {
                     GenericFunctions.checkIfImageExist(name: "arrow_6")
-                        .resizable()
-                        .frame(width: geometry.size.width/5, height: geometry.size.height/10)
                     GenericFunctions.checkIfImageExist(name: "image_6")
                         .resizable()
-                        .frame(width: geometry.size.width/1.4, height: geometry.size.height/1.5)
+                        .scaledToFit()
                 }
-                .padding(.top, -70)
+                .padding()
                 Spacer(minLength: 40)
             }
         }
